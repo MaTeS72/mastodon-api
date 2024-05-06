@@ -2,9 +2,10 @@
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided the conditions.
 
-// 🌎 Project imports:
 import '../core/client/client_context.dart';
 import 'v2/accounts/accounts_v2_service.dart';
+// 🌎 Project imports:
+import 'v2/instance/instance_v2_service.dart';
 import 'v2/media/media_v2_service.dart';
 import 'v2/search/search_v2_service.dart';
 
@@ -28,6 +29,8 @@ abstract class MastodonV2Service {
 
   /// Returns the media service.
   MediaV2Service get media;
+
+  InstanceV2Service get instance;
 }
 
 class _MastodonV2Service implements MastodonV2Service {
@@ -37,7 +40,8 @@ class _MastodonV2Service implements MastodonV2Service {
     required ClientContext context,
   })  : accounts = AccountsV2Service(instance: instance, context: context),
         search = SearchV2Service(instance: instance, context: context),
-        media = MediaV2Service(instance: instance, context: context);
+        media = MediaV2Service(instance: instance, context: context),
+        instance = InstanceV2Service(instance: instance, context: context);
 
   @override
   final AccountsV2Service accounts;
@@ -47,4 +51,7 @@ class _MastodonV2Service implements MastodonV2Service {
 
   @override
   final MediaV2Service media;
+
+  @override
+  final InstanceV2Service instance;
 }
