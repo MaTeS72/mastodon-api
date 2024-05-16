@@ -1432,11 +1432,17 @@ class _AccountsV1Service extends BaseService implements AccountsV1Service {
             'discoverable': discoverable,
             'bot': bot,
             'locked': locked,
-            'source': {
-              'privacy': defaultSettings?.privacy,
-              'sensitive': defaultSettings?.sensitive,
-              'language': defaultSettings?.language,
-            },
+            if (defaultSettings?.privacy != null ||
+                defaultSettings?.sensitive != null ||
+                defaultSettings?.language != null)
+              'source': {
+                if (defaultSettings?.privacy != null)
+                  'privacy': defaultSettings?.privacy,
+                if (defaultSettings?.sensitive != null)
+                  'sensitive': defaultSettings?.sensitive,
+                if (defaultSettings?.language != null)
+                  'language': defaultSettings?.language,
+              },
             'fields_attributes': profileMeta
                 ?.map(
                   (e) => {
