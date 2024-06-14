@@ -12,7 +12,7 @@ part of 'account.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 Account _$AccountFromJson(Map<String, dynamic> json) {
   return _Account.fromJson(json);
@@ -96,6 +96,10 @@ mixin _$Account {
   @JsonKey(name: 'bot')
   bool? get isBot => throw _privateConstructorUsedError;
 
+  /// Boolean. Whether to hide followers and followed accounts.
+  @JsonKey(name: 'hide_collections')
+  bool get hideCollections => throw _privateConstructorUsedError;
+
   /// When the most recent status was posted.
   DateTime? get lastStatusAt => throw _privateConstructorUsedError;
 
@@ -132,6 +136,7 @@ abstract class $AccountCopyWith<$Res> {
       @JsonKey(name: 'discoverable') bool? isDiscoverable,
       @JsonKey(name: 'locked') bool? isLocked,
       @JsonKey(name: 'bot') bool? isBot,
+      @JsonKey(name: 'hide_collections') bool hideCollections,
       DateTime? lastStatusAt,
       DateTime createdAt});
 }
@@ -168,6 +173,7 @@ class _$AccountCopyWithImpl<$Res, $Val extends Account>
     Object? isDiscoverable = freezed,
     Object? isLocked = freezed,
     Object? isBot = freezed,
+    Object? hideCollections = null,
     Object? lastStatusAt = freezed,
     Object? createdAt = null,
   }) {
@@ -248,6 +254,10 @@ class _$AccountCopyWithImpl<$Res, $Val extends Account>
           ? _value.isBot
           : isBot // ignore: cast_nullable_to_non_nullable
               as bool?,
+      hideCollections: null == hideCollections
+          ? _value.hideCollections
+          : hideCollections // ignore: cast_nullable_to_non_nullable
+              as bool,
       lastStatusAt: freezed == lastStatusAt
           ? _value.lastStatusAt
           : lastStatusAt // ignore: cast_nullable_to_non_nullable
@@ -261,10 +271,10 @@ class _$AccountCopyWithImpl<$Res, $Val extends Account>
 }
 
 /// @nodoc
-abstract class _$$_AccountCopyWith<$Res> implements $AccountCopyWith<$Res> {
-  factory _$$_AccountCopyWith(
-          _$_Account value, $Res Function(_$_Account) then) =
-      __$$_AccountCopyWithImpl<$Res>;
+abstract class _$$AccountImplCopyWith<$Res> implements $AccountCopyWith<$Res> {
+  factory _$$AccountImplCopyWith(
+          _$AccountImpl value, $Res Function(_$AccountImpl) then) =
+      __$$AccountImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -287,15 +297,17 @@ abstract class _$$_AccountCopyWith<$Res> implements $AccountCopyWith<$Res> {
       @JsonKey(name: 'discoverable') bool? isDiscoverable,
       @JsonKey(name: 'locked') bool? isLocked,
       @JsonKey(name: 'bot') bool? isBot,
+      @JsonKey(name: 'hide_collections') bool hideCollections,
       DateTime? lastStatusAt,
       DateTime createdAt});
 }
 
 /// @nodoc
-class __$$_AccountCopyWithImpl<$Res>
-    extends _$AccountCopyWithImpl<$Res, _$_Account>
-    implements _$$_AccountCopyWith<$Res> {
-  __$$_AccountCopyWithImpl(_$_Account _value, $Res Function(_$_Account) _then)
+class __$$AccountImplCopyWithImpl<$Res>
+    extends _$AccountCopyWithImpl<$Res, _$AccountImpl>
+    implements _$$AccountImplCopyWith<$Res> {
+  __$$AccountImplCopyWithImpl(
+      _$AccountImpl _value, $Res Function(_$AccountImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -320,10 +332,11 @@ class __$$_AccountCopyWithImpl<$Res>
     Object? isDiscoverable = freezed,
     Object? isLocked = freezed,
     Object? isBot = freezed,
+    Object? hideCollections = null,
     Object? lastStatusAt = freezed,
     Object? createdAt = null,
   }) {
-    return _then(_$_Account(
+    return _then(_$AccountImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -400,6 +413,10 @@ class __$$_AccountCopyWithImpl<$Res>
           ? _value.isBot
           : isBot // ignore: cast_nullable_to_non_nullable
               as bool?,
+      hideCollections: null == hideCollections
+          ? _value.hideCollections
+          : hideCollections // ignore: cast_nullable_to_non_nullable
+              as bool,
       lastStatusAt: freezed == lastStatusAt
           ? _value.lastStatusAt
           : lastStatusAt // ignore: cast_nullable_to_non_nullable
@@ -415,8 +432,8 @@ class __$$_AccountCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$_Account implements _Account {
-  const _$_Account(
+class _$AccountImpl implements _Account {
+  const _$AccountImpl(
       {required this.id,
       required this.username,
       required this.displayName,
@@ -436,13 +453,14 @@ class _$_Account implements _Account {
       @JsonKey(name: 'discoverable') this.isDiscoverable,
       @JsonKey(name: 'locked') this.isLocked,
       @JsonKey(name: 'bot') this.isBot,
+      @JsonKey(name: 'hide_collections') this.hideCollections = false,
       this.lastStatusAt,
       required this.createdAt})
       : _emojis = emojis,
         _fields = fields;
 
-  factory _$_Account.fromJson(Map<String, dynamic> json) =>
-      _$$_AccountFromJson(json);
+  factory _$AccountImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AccountImplFromJson(json);
 
   /// The account id.
   @override
@@ -555,6 +573,11 @@ class _$_Account implements _Account {
   @JsonKey(name: 'bot')
   final bool? isBot;
 
+  /// Boolean. Whether to hide followers and followed accounts.
+  @override
+  @JsonKey(name: 'hide_collections')
+  final bool hideCollections;
+
   /// When the most recent status was posted.
   @override
   final DateTime? lastStatusAt;
@@ -565,14 +588,14 @@ class _$_Account implements _Account {
 
   @override
   String toString() {
-    return 'Account(id: $id, username: $username, displayName: $displayName, acct: $acct, note: $note, url: $url, avatar: $avatar, avatarStatic: $avatarStatic, header: $header, headerStatic: $headerStatic, followersCount: $followersCount, followingCount: $followingCount, subscribingCount: $subscribingCount, statusesCount: $statusesCount, emojis: $emojis, fields: $fields, isDiscoverable: $isDiscoverable, isLocked: $isLocked, isBot: $isBot, lastStatusAt: $lastStatusAt, createdAt: $createdAt)';
+    return 'Account(id: $id, username: $username, displayName: $displayName, acct: $acct, note: $note, url: $url, avatar: $avatar, avatarStatic: $avatarStatic, header: $header, headerStatic: $headerStatic, followersCount: $followersCount, followingCount: $followingCount, subscribingCount: $subscribingCount, statusesCount: $statusesCount, emojis: $emojis, fields: $fields, isDiscoverable: $isDiscoverable, isLocked: $isLocked, isBot: $isBot, hideCollections: $hideCollections, lastStatusAt: $lastStatusAt, createdAt: $createdAt)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Account &&
+            other is _$AccountImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.username, username) ||
                 other.username == username) &&
@@ -602,6 +625,8 @@ class _$_Account implements _Account {
             (identical(other.isLocked, isLocked) ||
                 other.isLocked == isLocked) &&
             (identical(other.isBot, isBot) || other.isBot == isBot) &&
+            (identical(other.hideCollections, hideCollections) ||
+                other.hideCollections == hideCollections) &&
             (identical(other.lastStatusAt, lastStatusAt) ||
                 other.lastStatusAt == lastStatusAt) &&
             (identical(other.createdAt, createdAt) ||
@@ -631,6 +656,7 @@ class _$_Account implements _Account {
         isDiscoverable,
         isLocked,
         isBot,
+        hideCollections,
         lastStatusAt,
         createdAt
       ]);
@@ -638,12 +664,12 @@ class _$_Account implements _Account {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AccountCopyWith<_$_Account> get copyWith =>
-      __$$_AccountCopyWithImpl<_$_Account>(this, _$identity);
+  _$$AccountImplCopyWith<_$AccountImpl> get copyWith =>
+      __$$AccountImplCopyWithImpl<_$AccountImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AccountToJson(
+    return _$$AccountImplToJson(
       this,
     );
   }
@@ -670,10 +696,11 @@ abstract class _Account implements Account {
       @JsonKey(name: 'discoverable') final bool? isDiscoverable,
       @JsonKey(name: 'locked') final bool? isLocked,
       @JsonKey(name: 'bot') final bool? isBot,
+      @JsonKey(name: 'hide_collections') final bool hideCollections,
       final DateTime? lastStatusAt,
-      required final DateTime createdAt}) = _$_Account;
+      required final DateTime createdAt}) = _$AccountImpl;
 
-  factory _Account.fromJson(Map<String, dynamic> json) = _$_Account.fromJson;
+  factory _Account.fromJson(Map<String, dynamic> json) = _$AccountImpl.fromJson;
 
   @override
 
@@ -772,6 +799,11 @@ abstract class _Account implements Account {
   bool? get isBot;
   @override
 
+  /// Boolean. Whether to hide followers and followed accounts.
+  @JsonKey(name: 'hide_collections')
+  bool get hideCollections;
+  @override
+
   /// When the most recent status was posted.
   DateTime? get lastStatusAt;
   @override
@@ -780,6 +812,6 @@ abstract class _Account implements Account {
   DateTime get createdAt;
   @override
   @JsonKey(ignore: true)
-  _$$_AccountCopyWith<_$_Account> get copyWith =>
+  _$$AccountImplCopyWith<_$AccountImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
