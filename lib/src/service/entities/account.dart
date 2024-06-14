@@ -92,6 +92,9 @@ class Account with _$Account {
     /// may not be monitored, or identifies as a robot.
     @JsonKey(name: 'bot') bool? isBot,
 
+    /// Boolean. Whether to hide followers and followed accounts.
+    @JsonKey(name: 'hide_collections') @Default(false) bool hideCollections,
+
     /// When the most recent status was posted.
     DateTime? lastStatusAt,
 

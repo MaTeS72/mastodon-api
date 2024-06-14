@@ -8,11 +8,11 @@ part of 'account.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Account _$$_AccountFromJson(Map json) => $checkedCreate(
-      r'_$_Account',
+_$AccountImpl _$$AccountImplFromJson(Map json) => $checkedCreate(
+      r'_$AccountImpl',
       json,
       ($checkedConvert) {
-        final val = _$_Account(
+        final val = _$AccountImpl(
           id: $checkedConvert('id', (v) => v as String),
           username: $checkedConvert('username', (v) => v as String),
           displayName: $checkedConvert('display_name', (v) => v as String),
@@ -23,11 +23,14 @@ _$_Account _$$_AccountFromJson(Map json) => $checkedCreate(
           avatarStatic: $checkedConvert('avatar_static', (v) => v as String),
           header: $checkedConvert('header', (v) => v as String),
           headerStatic: $checkedConvert('header_static', (v) => v as String),
-          followersCount: $checkedConvert('followers_count', (v) => v as int),
-          followingCount: $checkedConvert('following_count', (v) => v as int),
+          followersCount:
+              $checkedConvert('followers_count', (v) => (v as num).toInt()),
+          followingCount:
+              $checkedConvert('following_count', (v) => (v as num).toInt()),
           subscribingCount:
-              $checkedConvert('subscribing_count', (v) => v as int?),
-          statusesCount: $checkedConvert('statuses_count', (v) => v as int),
+              $checkedConvert('subscribing_count', (v) => (v as num?)?.toInt()),
+          statusesCount:
+              $checkedConvert('statuses_count', (v) => (v as num).toInt()),
           emojis: $checkedConvert(
               'emojis',
               (v) => (v as List<dynamic>)
@@ -43,6 +46,8 @@ _$_Account _$$_AccountFromJson(Map json) => $checkedCreate(
           isDiscoverable: $checkedConvert('discoverable', (v) => v as bool?),
           isLocked: $checkedConvert('locked', (v) => v as bool?),
           isBot: $checkedConvert('bot', (v) => v as bool?),
+          hideCollections:
+              $checkedConvert('hide_collections', (v) => v as bool? ?? false),
           lastStatusAt: $checkedConvert('last_status_at',
               (v) => v == null ? null : DateTime.parse(v as String)),
           createdAt:
@@ -61,12 +66,13 @@ _$_Account _$$_AccountFromJson(Map json) => $checkedCreate(
         'isDiscoverable': 'discoverable',
         'isLocked': 'locked',
         'isBot': 'bot',
+        'hideCollections': 'hide_collections',
         'lastStatusAt': 'last_status_at',
         'createdAt': 'created_at'
       },
     );
 
-Map<String, dynamic> _$$_AccountToJson(_$_Account instance) {
+Map<String, dynamic> _$$AccountImplToJson(_$AccountImpl instance) {
   final val = <String, dynamic>{
     'id': instance.id,
     'username': instance.username,
@@ -95,6 +101,7 @@ Map<String, dynamic> _$$_AccountToJson(_$_Account instance) {
   writeNotNull('discoverable', instance.isDiscoverable);
   writeNotNull('locked', instance.isLocked);
   writeNotNull('bot', instance.isBot);
+  val['hide_collections'] = instance.hideCollections;
   writeNotNull('last_status_at', instance.lastStatusAt?.toIso8601String());
   val['created_at'] = instance.createdAt.toIso8601String();
   return val;
