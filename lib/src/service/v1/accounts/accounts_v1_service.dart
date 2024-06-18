@@ -311,6 +311,9 @@ abstract class AccountsV1Service {
   Future<MastodonResponse<List<Account>>> lookupFollowers({
     required String accountId,
     int? limit,
+    String? maxId,
+    String? minId,
+    String? sinceId,
   });
 
   /// Accounts which follow the given account, if network is not hidden by the
@@ -340,6 +343,9 @@ abstract class AccountsV1Service {
   Future<MastodonResponse<List<Account>>> lookupFollowings({
     required String accountId,
     int? limit,
+    String? maxId,
+    String? minId,
+    String? sinceId,
   });
 
   /// Tags featured by this account.
