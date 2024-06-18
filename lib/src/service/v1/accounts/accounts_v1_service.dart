@@ -1542,6 +1542,9 @@ class _AccountsV1Service extends BaseService implements AccountsV1Service {
   Future<MastodonResponse<List<Account>>> lookupFollowers({
     required String accountId,
     int? limit,
+    String? maxId,
+    String? minId,
+    String? sinceId,
   }) async =>
       super.transformMultiDataResponse(
         await super.get(
@@ -1549,6 +1552,9 @@ class _AccountsV1Service extends BaseService implements AccountsV1Service {
           '/api/v1/accounts/$accountId/followers',
           queryParameters: {
             'limit': limit,
+            if (maxId != null) 'max_id': maxId,
+            if (minId != null) 'min_id': minId,
+            if (sinceId != null) 'since_id': sinceId,
           },
         ),
         dataBuilder: Account.fromJson,
@@ -1558,6 +1564,9 @@ class _AccountsV1Service extends BaseService implements AccountsV1Service {
   Future<MastodonResponse<List<Account>>> lookupFollowings({
     required Object accountId,
     int? limit,
+    String? maxId,
+    String? minId,
+    String? sinceId,
   }) async =>
       super.transformMultiDataResponse(
         await super.get(
@@ -1565,6 +1574,9 @@ class _AccountsV1Service extends BaseService implements AccountsV1Service {
           '/api/v1/accounts/$accountId/following',
           queryParameters: {
             'limit': limit,
+            if (maxId != null) 'max_id': maxId,
+            if (minId != null) 'min_id': minId,
+            if (sinceId != null) 'since_id': sinceId,
           },
         ),
         dataBuilder: Account.fromJson,
