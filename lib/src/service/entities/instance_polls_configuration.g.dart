@@ -8,20 +8,20 @@ part of 'instance_polls_configuration.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_InstancePollsConfiguration _$$_InstancePollsConfigurationFromJson(
+_$InstancePollsConfigurationImpl _$$InstancePollsConfigurationImplFromJson(
         Map json) =>
     $checkedCreate(
-      r'_$_InstancePollsConfiguration',
+      r'_$InstancePollsConfigurationImpl',
       json,
       ($checkedConvert) {
-        final val = _$_InstancePollsConfiguration(
-          maxOptions: $checkedConvert('max_options', (v) => v as int),
-          maxCharactersPerOption:
-              $checkedConvert('max_characters_per_option', (v) => v as int),
+        final val = _$InstancePollsConfigurationImpl(
+          maxOptions: $checkedConvert('max_options', (v) => (v as num).toInt()),
+          maxCharactersPerOption: $checkedConvert(
+              'max_characters_per_option', (v) => (v as num).toInt()),
           maxExpiration: $checkedConvert('max_expiration',
-              (v) => const DurationConverter().fromJson(v as int)),
+              (v) => const DurationConverter().fromJson((v as num).toInt())),
           minExpiration: $checkedConvert('min_expiration',
-              (v) => const DurationConverter().fromJson(v as int)),
+              (v) => const DurationConverter().fromJson((v as num).toInt())),
         );
         return val;
       },
@@ -33,8 +33,8 @@ _$_InstancePollsConfiguration _$$_InstancePollsConfigurationFromJson(
       },
     );
 
-Map<String, dynamic> _$$_InstancePollsConfigurationToJson(
-        _$_InstancePollsConfiguration instance) =>
+Map<String, dynamic> _$$InstancePollsConfigurationImplToJson(
+        _$InstancePollsConfigurationImpl instance) =>
     <String, dynamic>{
       'max_options': instance.maxOptions,
       'max_characters_per_option': instance.maxCharactersPerOption,
