@@ -8,11 +8,11 @@ part of 'oembed_metadata.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_OEmbedMetadata _$$_OEmbedMetadataFromJson(Map json) => $checkedCreate(
-      r'_$_OEmbedMetadata',
+_$OEmbedMetadataImpl _$$OEmbedMetadataImplFromJson(Map json) => $checkedCreate(
+      r'_$OEmbedMetadataImpl',
       json,
       ($checkedConvert) {
-        final val = _$_OEmbedMetadata(
+        final val = _$OEmbedMetadataImpl(
           type: $checkedConvert('type', (v) => v as String),
           version: $checkedConvert('version', (v) => v as String),
           title: $checkedConvert('title', (v) => v as String?),
@@ -20,10 +20,10 @@ _$_OEmbedMetadata _$$_OEmbedMetadataFromJson(Map json) => $checkedCreate(
           authorUrl: $checkedConvert('author_url', (v) => v as String),
           providerName: $checkedConvert('provider_name', (v) => v as String),
           providerUrl: $checkedConvert('provider_url', (v) => v as String),
-          cacheAge: $checkedConvert('cache_age', (v) => v as int),
+          cacheAge: $checkedConvert('cache_age', (v) => (v as num).toInt()),
           html: $checkedConvert('html', (v) => v as String),
-          width: $checkedConvert('width', (v) => v as int),
-          height: $checkedConvert('height', (v) => v as int?),
+          width: $checkedConvert('width', (v) => (v as num).toInt()),
+          height: $checkedConvert('height', (v) => (v as num?)?.toInt()),
         );
         return val;
       },
@@ -36,7 +36,8 @@ _$_OEmbedMetadata _$$_OEmbedMetadataFromJson(Map json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$$_OEmbedMetadataToJson(_$_OEmbedMetadata instance) {
+Map<String, dynamic> _$$OEmbedMetadataImplToJson(
+    _$OEmbedMetadataImpl instance) {
   final val = <String, dynamic>{
     'type': instance.type,
     'version': instance.version,

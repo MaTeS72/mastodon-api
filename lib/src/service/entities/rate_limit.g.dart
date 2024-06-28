@@ -8,14 +8,15 @@ part of 'rate_limit.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_RateLimit _$$_RateLimitFromJson(Map json) => $checkedCreate(
-      r'_$_RateLimit',
+_$RateLimitImpl _$$RateLimitImplFromJson(Map json) => $checkedCreate(
+      r'_$RateLimitImpl',
       json,
       ($checkedConvert) {
-        final val = _$_RateLimit(
-          limitCount: $checkedConvert('x-ratelimit-limit', (v) => v as int),
-          remainingCount:
-              $checkedConvert('x-ratelimit-remaining', (v) => v as int),
+        final val = _$RateLimitImpl(
+          limitCount:
+              $checkedConvert('x-ratelimit-limit', (v) => (v as num).toInt()),
+          remainingCount: $checkedConvert(
+              'x-ratelimit-remaining', (v) => (v as num).toInt()),
           resetAt: $checkedConvert(
               'x-ratelimit-reset', (v) => DateTime.parse(v as String)),
         );
@@ -28,7 +29,7 @@ _$_RateLimit _$$_RateLimitFromJson(Map json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$$_RateLimitToJson(_$_RateLimit instance) =>
+Map<String, dynamic> _$$RateLimitImplToJson(_$RateLimitImpl instance) =>
     <String, dynamic>{
       'x-ratelimit-limit': instance.limitCount,
       'x-ratelimit-remaining': instance.remainingCount,
