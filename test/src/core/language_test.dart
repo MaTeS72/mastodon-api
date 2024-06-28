@@ -190,6 +190,7 @@ void main() {
     expect(Language.yoruba.name, 'yoruba');
     expect(Language.zhuang.name, 'zhuang');
     expect(Language.chinese.name, 'chinese');
+    expect(Language.chineseChina.name, 'chineseChina');
     expect(Language.zulu.name, 'zulu');
   });
 
@@ -375,6 +376,7 @@ void main() {
     expect(Language.yoruba.code, 'yo');
     expect(Language.zhuang.code, 'za');
     expect(Language.chinese.code, 'zh');
+    expect(Language.chineseChina.code, 'zh-CN');
     expect(Language.zulu.code, 'zu');
   });
 
@@ -560,6 +562,7 @@ void main() {
     expect(Language.yoruba.value, 'yo');
     expect(Language.zhuang.value, 'za');
     expect(Language.chinese.value, 'zh');
+    expect(Language.chineseChina.value, 'zh-CN');
     expect(Language.zulu.value, 'zu');
   });
 
@@ -746,6 +749,7 @@ void main() {
       expect(Language.valueOf('yo'), Language.yoruba);
       expect(Language.valueOf('za'), Language.zhuang);
       expect(Language.valueOf('zh'), Language.chinese);
+      expect(Language.valueOf('zh-CN'), Language.chineseChina);
       expect(Language.valueOf('zu'), Language.zulu);
     });
 
