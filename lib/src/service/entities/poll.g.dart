@@ -8,14 +8,15 @@ part of 'poll.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Poll _$$_PollFromJson(Map json) => $checkedCreate(
-      r'_$_Poll',
+_$PollImpl _$$PollImplFromJson(Map json) => $checkedCreate(
+      r'_$PollImpl',
       json,
       ($checkedConvert) {
-        final val = _$_Poll(
+        final val = _$PollImpl(
           id: $checkedConvert('id', (v) => v as String),
-          votesCount: $checkedConvert('votes_count', (v) => v as int),
-          votersCount: $checkedConvert('voters_count', (v) => v as int?),
+          votesCount: $checkedConvert('votes_count', (v) => (v as num).toInt()),
+          votersCount:
+              $checkedConvert('voters_count', (v) => (v as num?)?.toInt()),
           isMultiple: $checkedConvert('multiple', (v) => v as bool),
           isVoted: $checkedConvert('voted', (v) => v as bool?),
           isExpired: $checkedConvert('expired', (v) => v as bool),
@@ -25,8 +26,11 @@ _$_Poll _$$_PollFromJson(Map json) => $checkedCreate(
                   .map((e) =>
                       PollOption.fromJson(Map<String, Object?>.from(e as Map)))
                   .toList()),
-          ownVotes: $checkedConvert('own_votes',
-              (v) => (v as List<dynamic>?)?.map((e) => e as int).toList()),
+          ownVotes: $checkedConvert(
+              'own_votes',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => (e as num).toInt())
+                  .toList()),
           emojis: $checkedConvert(
               'emojis',
               (v) => (v as List<dynamic>)
@@ -49,7 +53,8 @@ _$_Poll _$$_PollFromJson(Map json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$$_PollToJson(_$_Poll instance) => <String, dynamic>{
+Map<String, dynamic> _$$PollImplToJson(_$PollImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'votes_count': instance.votesCount,
       'voters_count': instance.votersCount,

@@ -8,11 +8,11 @@ part of 'status.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Status _$$_StatusFromJson(Map json) => $checkedCreate(
-      r'_$_Status',
+_$StatusImpl _$$StatusImplFromJson(Map json) => $checkedCreate(
+      r'_$StatusImpl',
       json,
       ($checkedConvert) {
-        final val = _$_Status(
+        final val = _$StatusImpl(
           id: $checkedConvert('id', (v) => v as String),
           url: $checkedConvert('url', (v) => v as String?),
           uri: $checkedConvert('uri', (v) => v as String),
@@ -20,9 +20,12 @@ _$_Status _$$_StatusFromJson(Map json) => $checkedCreate(
           spoilerText: $checkedConvert('spoiler_text', (v) => v as String),
           visibility: $checkedConvert(
               'visibility', (v) => $enumDecode(_$VisibilityEnumMap, v)),
-          favouritesCount: $checkedConvert('favourites_count', (v) => v as int),
-          repliesCount: $checkedConvert('replies_count', (v) => v as int),
-          reblogsCount: $checkedConvert('reblogs_count', (v) => v as int),
+          favouritesCount:
+              $checkedConvert('favourites_count', (v) => (v as num).toInt()),
+          repliesCount:
+              $checkedConvert('replies_count', (v) => (v as num).toInt()),
+          reblogsCount:
+              $checkedConvert('reblogs_count', (v) => (v as num).toInt()),
           language: $checkedConvert(
               'language', (v) => $enumDecodeNullable(_$LanguageEnumMap, v)),
           inReplyToId: $checkedConvert('in_reply_to_id', (v) => v as String?),
@@ -94,7 +97,7 @@ _$_Status _$$_StatusFromJson(Map json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$$_StatusToJson(_$_Status instance) {
+Map<String, dynamic> _$$StatusImplToJson(_$StatusImpl instance) {
   final val = <String, dynamic>{
     'id': instance.id,
   };
@@ -325,5 +328,6 @@ const _$LanguageEnumMap = {
   Language.yoruba: 'yo',
   Language.zhuang: 'za',
   Language.chinese: 'zh',
+  Language.chineseChina: 'zh-CN',
   Language.zulu: 'zu',
 };

@@ -8,11 +8,11 @@ part of 'trends_link.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_TrendsLink _$$_TrendsLinkFromJson(Map json) => $checkedCreate(
-      r'_$_TrendsLink',
+_$TrendsLinkImpl _$$TrendsLinkImplFromJson(Map json) => $checkedCreate(
+      r'_$TrendsLinkImpl',
       json,
       ($checkedConvert) {
-        final val = _$_TrendsLink(
+        final val = _$TrendsLinkImpl(
           url: $checkedConvert('url', (v) => v as String),
           title: $checkedConvert('title', (v) => v as String),
           description: $checkedConvert('description', (v) => v as String),
@@ -23,8 +23,8 @@ _$_TrendsLink _$$_TrendsLinkFromJson(Map json) => $checkedCreate(
           providerName: $checkedConvert('provider_name', (v) => v as String),
           providerUrl: $checkedConvert('provider_url', (v) => v as String),
           html: $checkedConvert('html', (v) => v as String),
-          width: $checkedConvert('width', (v) => v as int),
-          height: $checkedConvert('height', (v) => v as int),
+          width: $checkedConvert('width', (v) => (v as num).toInt()),
+          height: $checkedConvert('height', (v) => (v as num).toInt()),
           imageUrl: $checkedConvert('image', (v) => v as String?),
           embedUrl: $checkedConvert('embed_url', (v) => v as String),
           blurHash: $checkedConvert('blurhash', (v) => v as String?),
@@ -49,7 +49,7 @@ _$_TrendsLink _$$_TrendsLinkFromJson(Map json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$$_TrendsLinkToJson(_$_TrendsLink instance) =>
+Map<String, dynamic> _$$TrendsLinkImplToJson(_$TrendsLinkImpl instance) =>
     <String, dynamic>{
       'url': instance.url,
       'title': instance.title,
