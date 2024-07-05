@@ -60,6 +60,7 @@ const _$NotificationTypeEnumMap = {
   NotificationType.status: 'status',
   NotificationType.reblog: 'reblog',
   NotificationType.follow: 'follow',
+  NotificationType.severedRelationShip: 'severed_relationships',
   NotificationType.followRequest: 'follow_request',
   NotificationType.favourite: 'favourite',
   NotificationType.poll: 'poll',
