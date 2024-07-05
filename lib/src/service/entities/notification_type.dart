@@ -19,6 +19,9 @@ enum NotificationType implements Serializable {
   /// Someone followed you
   follow('follow'),
 
+  /// Severed relationship
+  severedRelationShip('severed_relationships'),
+
   /// Someone requested to follow you
   @JsonValue('follow_request')
   followRequest('follow_request'),
