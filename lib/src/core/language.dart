@@ -298,6 +298,10 @@ enum Language implements Serializable {
   @JsonValue('is_')
   icelandic('is_', 'Íslenska'),
 
+  /// `is`
+  @JsonValue('is')
+  icelandicTrue('is', 'Íslenska true'),
+
   /// `it`
   @JsonValue('it')
   italian('it', 'Italiano'),

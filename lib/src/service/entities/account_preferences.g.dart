@@ -128,6 +128,7 @@ const _$LanguageEnumMap = {
   Language.inupiaq: 'ik',
   Language.ido: 'io',
   Language.icelandic: 'is_',
+  Language.icelandicTrue: 'is',
   Language.italian: 'it',
   Language.inuktitut: 'iu',
   Language.japanese: 'ja',
