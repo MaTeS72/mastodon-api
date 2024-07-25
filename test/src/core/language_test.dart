@@ -80,6 +80,7 @@ void main() {
     expect(Language.inupiaq.name, 'inupiaq');
     expect(Language.ido.name, 'ido');
     expect(Language.icelandic.name, 'icelandic');
+    expect(Language.icelandicTrue.name, 'icelandicTrue');
     expect(Language.italian.name, 'italian');
     expect(Language.inuktitut.name, 'inuktitut');
     expect(Language.japanese.name, 'japanese');
@@ -266,6 +267,7 @@ void main() {
     expect(Language.inupiaq.code, 'ik');
     expect(Language.ido.code, 'io');
     expect(Language.icelandic.code, 'is_');
+    expect(Language.icelandicTrue.code, 'is');
     expect(Language.italian.code, 'it');
     expect(Language.inuktitut.code, 'iu');
     expect(Language.japanese.code, 'ja');
@@ -452,6 +454,7 @@ void main() {
     expect(Language.inupiaq.value, 'ik');
     expect(Language.ido.value, 'io');
     expect(Language.icelandic.value, 'is_');
+    expect(Language.icelandicTrue.value, 'is');
     expect(Language.italian.value, 'it');
     expect(Language.inuktitut.value, 'iu');
     expect(Language.japanese.value, 'ja');
@@ -639,6 +642,7 @@ void main() {
       expect(Language.valueOf('ik'), Language.inupiaq);
       expect(Language.valueOf('io'), Language.ido);
       expect(Language.valueOf('is_'), Language.icelandic);
+      expect(Language.valueOf('is'), Language.icelandicTrue);
       expect(Language.valueOf('it'), Language.italian);
       expect(Language.valueOf('iu'), Language.inuktitut);
       expect(Language.valueOf('ja'), Language.japanese);
