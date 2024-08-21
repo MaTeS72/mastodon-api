@@ -20,12 +20,9 @@ _$StatusImpl _$$StatusImplFromJson(Map json) => $checkedCreate(
           spoilerText: $checkedConvert('spoiler_text', (v) => v as String),
           visibility: $checkedConvert(
               'visibility', (v) => $enumDecode(_$VisibilityEnumMap, v)),
-          favouritesCount:
-              $checkedConvert('favourites_count', (v) => (v as num).toInt()),
-          repliesCount:
-              $checkedConvert('replies_count', (v) => (v as num).toInt()),
-          reblogsCount:
-              $checkedConvert('reblogs_count', (v) => (v as num).toInt()),
+          favouritesCount: $checkedConvert('favourites_count', (v) => v as int),
+          repliesCount: $checkedConvert('replies_count', (v) => v as int),
+          reblogsCount: $checkedConvert('reblogs_count', (v) => v as int),
           language: $checkedConvert(
               'language', (v) => $enumDecodeNullable(_$LanguageEnumMap, v)),
           inReplyToId: $checkedConvert('in_reply_to_id', (v) => v as String?),
@@ -330,5 +327,6 @@ const _$LanguageEnumMap = {
   Language.zhuang: 'za',
   Language.chinese: 'zh',
   Language.chineseChina: 'zh-CN',
+  Language.chineseTaiwan: 'zh-TW',
   Language.zulu: 'zu',
 };
