@@ -18,7 +18,7 @@ class MediaMeta with _$MediaMeta {
   const factory MediaMeta({
     MediaFocalPoints? focus,
     required MediaVariants? original,
-    required MediaVariants small,
+    required MediaVariants? small,
   }) = _MediaMeta;
 
   factory MediaMeta.fromJson(Map<String, Object?> json) =>
