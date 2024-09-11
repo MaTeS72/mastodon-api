@@ -33,6 +33,20 @@ abstract class ListsV1Service {
   ///
   /// - https://docs.joinmastodon.org/methods/lists/#public
   Future<MastodonResponse<List<UserList>>> lookupLists();
+
+  /// Delete a list
+  ///
+  /// ## Endpoint Url
+  ///
+  /// - DELETE /api/v1/lists/:id
+  ///
+  /// ## Authentication Methods
+  ///
+  /// - OAuth 2.0
+  ///
+  ///
+  /// - https://docs.joinmastodon.org/methods/lists/#delete
+  Future<MastodonResponse<Empty>> deleteList(String listId);
 }
 
 class _ListsV1Service extends BaseService implements ListsV1Service {
@@ -50,5 +64,14 @@ class _ListsV1Service extends BaseService implements ListsV1Service {
           '/api/v1/lists',
         ),
         dataBuilder: UserList.fromJson,
+      );
+
+  @override
+  Future<MastodonResponse<Empty>> deleteList(String listId) async =>
+      super.transformEmptyResponse(
+        await super.delete(
+          UserContext.oauth2OrAnonymous,
+          '/api/v1/lists/$listId',
+        ),
       );
 }
