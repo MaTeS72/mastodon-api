@@ -96,6 +96,7 @@ export 'package:mastodon_api/src/service/v1/accounts/post_privacy.dart';
 export 'package:mastodon_api/src/service/v1/apps/apps_v1_service.dart';
 export 'package:mastodon_api/src/service/v1/instance/instance_account_order.dart';
 export 'package:mastodon_api/src/service/v1/instance/instance_v1_service.dart';
+export 'package:mastodon_api/src/service/v1/lists/lists_v1_service.dart';
 export 'package:mastodon_api/src/service/v1/media/media_v1_service.dart';
 export 'package:mastodon_api/src/service/v1/notifications/notifications_v1_service.dart';
 export 'package:mastodon_api/src/service/v1/statuses/status_poll_param.dart';
