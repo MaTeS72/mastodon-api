@@ -19,40 +19,19 @@ abstract class ListsV1Service {
         context: context,
       );
 
-  /// Read and view timelines of statuses.
-  ///
-  /// ## Parameters
-  ///
-  /// - [onlyLocal]: Show only local statuses? Defaults to false.
-  ///
-  /// - [onlyRemote]: Show only remote statuses? Defaults to false.
-  ///
-  /// - [onlyMedia]: Show only statuses with media attached? Defaults to false.
-  ///
-  /// - [maxStatusId]: Return results older than ID.
-  ///
-  /// - [minStatusId]: Return results immediately newer than ID.
-  ///
-  /// - [sinceStatusId]: Return results newer than ID.
-  ///
-  /// - [limit]: Maximum number of results to return. Defaults to 20. Max 40.
+  /// View and manage lists
   ///
   /// ## Endpoint Url
   ///
-  /// - GET /api/v1/timelines/public HTTP/1.1
+  /// - GET /api/v1/lists
   ///
   /// ## Authentication Methods
   ///
   /// - Anonymous
   /// - OAuth 2.0
   ///
-  /// ## Required Scopes
   ///
-  /// - read:statuses (if the instance has disabled public preview)
-  ///
-  /// ## Reference
-  ///
-  /// - https://docs.joinmastodon.org/methods/timelines/#public
+  /// - https://docs.joinmastodon.org/methods/lists/#public
   Future<MastodonResponse<List<UserList>>> lookupLists();
 }
 
