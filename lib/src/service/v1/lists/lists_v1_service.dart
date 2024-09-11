@@ -43,15 +43,7 @@ class _ListsV1Service extends BaseService implements ListsV1Service {
   });
 
   @override
-  Future<MastodonResponse<List<UserList>>> lookupLists({
-    bool? onlyLocal,
-    bool? onlyRemote,
-    bool? onlyMedia,
-    String? maxStatusId,
-    String? minStatusId,
-    String? sinceStatusId,
-    int? limit,
-  }) async =>
+  Future<MastodonResponse<List<UserList>>> lookupLists() async =>
       super.transformMultiDataResponse(
         await super.get(
           UserContext.oauth2OrAnonymous,
