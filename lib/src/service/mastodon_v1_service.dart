@@ -3,6 +3,7 @@
 // modification, are permitted provided the conditions.
 
 // 🌎 Project imports:
+import '../../mastodon_api.dart';
 import '../core/client/client_context.dart';
 import 'v1/accounts/accounts_v1_service.dart';
 import 'v1/apps/apps_v1_service.dart';
@@ -39,6 +40,9 @@ abstract class MastodonV1Service {
   /// Returns the timelines service.
   TimelinesV1Service get timelines;
 
+  /// Returns the lists service.
+  ListsV1Service get lists;
+
   /// Returns the notifications service.
   NotificationsV1Service get notifications;
 
@@ -55,6 +59,7 @@ class _MastodonV1Service implements MastodonV1Service {
         apps = AppsV1Service(instance: instance, context: context),
         accounts = AccountsV1Service(instance: instance, context: context),
         statuses = StatusesV1Service(instance: instance, context: context),
+        lists = ListsV1Service(instance: instance, context: context),
         timelines = TimelinesV1Service(instance: instance, context: context),
         notifications =
             NotificationsV1Service(instance: instance, context: context),
@@ -71,6 +76,9 @@ class _MastodonV1Service implements MastodonV1Service {
 
   @override
   final StatusesV1Service statuses;
+
+  @override
+  final ListsV1Service lists;
 
   @override
   final TimelinesV1Service timelines;
