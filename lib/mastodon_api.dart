@@ -83,6 +83,7 @@ export 'package:mastodon_api/src/service/entities/thumbnail_version.dart';
 export 'package:mastodon_api/src/service/entities/token.dart';
 export 'package:mastodon_api/src/service/entities/trends_link.dart';
 export 'package:mastodon_api/src/service/entities/usage_statistics.dart';
+export 'package:mastodon_api/src/service/entities/user_list.dart';
 export 'package:mastodon_api/src/service/mastodon_v1_service.dart';
 export 'package:mastodon_api/src/service/mastodon_v2_service.dart';
 export 'package:mastodon_api/src/service/oembed/oembed_service.dart';
