@@ -3,6 +3,8 @@
 // modification, are permitted provided the conditions.
 
 // 🌎 Project imports:
+import 'package:mastodon_api/src/service/entities/filter.dart';
+
 import '../../../core/client/client_context.dart';
 import '../../../core/client/user_context.dart';
 import '../../base_service.dart';
@@ -46,6 +48,50 @@ abstract class AccountsV2Service {
   Future<MastodonResponse<List<Suggestion>>> lookupFollowSuggestions({
     int? limit,
   });
+
+  /// Obtains a list of all filter groups for the current user.
+  ///
+  /// ## Endpoint Url
+  ///
+  /// - GET /api/v2/filters HTTP/1.1
+  ///
+  /// ## Authentication Methods
+  ///
+  /// - OAuth 2.0 (User token with `read:filters`)
+  ///
+  /// ## Required Scopes
+  ///
+  /// - read:filters
+  ///
+  /// ## Reference
+  ///
+  /// - https://docs.joinmastodon.org/methods/filters/#v2
+  Future<MastodonResponse<List<Filter>>> lookupFilters();
+
+  /// Obtains a single filter group owned by the current user.
+  ///
+  /// ## Parameters
+  ///
+  /// - [filterId]: The ID of the filter to retrieve.
+  ///
+  /// ## Endpoint Url
+  ///
+  /// - GET /api/v2/filters/:id HTTP/1.1
+  ///
+  /// ## Authentication Methods
+  ///
+  /// - OAuth 2.0 (User token with `read:filters`)
+  ///
+  /// ## Required Scopes
+  ///
+  /// - read:filters
+  ///
+  /// ## Reference
+  ///
+  /// - https://docs.joinmastodon.org/methods/filters/#v2
+  Future<MastodonResponse<Filter>> lookupFilterById({
+    required String filterId,
+  });
 }
 
 class _AccountsV2Service extends BaseService implements AccountsV2Service {
@@ -68,5 +114,27 @@ class _AccountsV2Service extends BaseService implements AccountsV2Service {
           },
         ),
         dataBuilder: Suggestion.fromJson,
+      );
+
+  @override
+  Future<MastodonResponse<List<Filter>>> lookupFilters() async =>
+      super.transformMultiDataResponse(
+        await super.get(
+          UserContext.oauth2Only,
+          '/api/v2/filters',
+        ),
+        dataBuilder: Filter.fromJson,
+      );
+
+  @override
+  Future<MastodonResponse<Filter>> lookupFilterById({
+    required String filterId,
+  }) async =>
+      super.transformSingleDataResponse(
+        await super.get(
+          UserContext.oauth2Only,
+          '/api/v2/filters/$filterId',
+        ),
+        dataBuilder: Filter.fromJson,
       );
 }
