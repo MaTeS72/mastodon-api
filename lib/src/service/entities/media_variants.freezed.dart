@@ -20,8 +20,8 @@ MediaVariants _$MediaVariantsFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MediaVariants {
-  int get width => throw _privateConstructorUsedError;
-  int get height => throw _privateConstructorUsedError;
+  int? get width => throw _privateConstructorUsedError;
+  int? get height => throw _privateConstructorUsedError;
   String? get size => throw _privateConstructorUsedError;
   double? get aspect => throw _privateConstructorUsedError;
   String? get frameRate => throw _privateConstructorUsedError;
@@ -42,8 +42,8 @@ abstract class $MediaVariantsCopyWith<$Res> {
       _$MediaVariantsCopyWithImpl<$Res, MediaVariants>;
   @useResult
   $Res call(
-      {int width,
-      int height,
+      {int? width,
+      int? height,
       String? size,
       double? aspect,
       String? frameRate,
@@ -64,8 +64,8 @@ class _$MediaVariantsCopyWithImpl<$Res, $Val extends MediaVariants>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? width = null,
-    Object? height = null,
+    Object? width = freezed,
+    Object? height = freezed,
     Object? size = freezed,
     Object? aspect = freezed,
     Object? frameRate = freezed,
@@ -73,14 +73,14 @@ class _$MediaVariantsCopyWithImpl<$Res, $Val extends MediaVariants>
     Object? bitrate = freezed,
   }) {
     return _then(_value.copyWith(
-      width: null == width
+      width: freezed == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
-              as int,
-      height: null == height
+              as int?,
+      height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       size: freezed == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
@@ -114,8 +114,8 @@ abstract class _$$MediaVariantsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int width,
-      int height,
+      {int? width,
+      int? height,
       String? size,
       double? aspect,
       String? frameRate,
@@ -134,8 +134,8 @@ class __$$MediaVariantsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? width = null,
-    Object? height = null,
+    Object? width = freezed,
+    Object? height = freezed,
     Object? size = freezed,
     Object? aspect = freezed,
     Object? frameRate = freezed,
@@ -143,14 +143,14 @@ class __$$MediaVariantsImplCopyWithImpl<$Res>
     Object? bitrate = freezed,
   }) {
     return _then(_$MediaVariantsImpl(
-      width: null == width
+      width: freezed == width
           ? _value.width
           : width // ignore: cast_nullable_to_non_nullable
-              as int,
-      height: null == height
+              as int?,
+      height: freezed == height
           ? _value.height
           : height // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       size: freezed == size
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
@@ -179,8 +179,8 @@ class __$$MediaVariantsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MediaVariantsImpl implements _MediaVariants {
   const _$MediaVariantsImpl(
-      {required this.width,
-      required this.height,
+      {this.width,
+      this.height,
       this.size,
       this.aspect,
       this.frameRate,
@@ -191,9 +191,9 @@ class _$MediaVariantsImpl implements _MediaVariants {
       _$$MediaVariantsImplFromJson(json);
 
   @override
-  final int width;
+  final int? width;
   @override
-  final int height;
+  final int? height;
   @override
   final String? size;
   @override
@@ -248,8 +248,8 @@ class _$MediaVariantsImpl implements _MediaVariants {
 
 abstract class _MediaVariants implements MediaVariants {
   const factory _MediaVariants(
-      {required final int width,
-      required final int height,
+      {final int? width,
+      final int? height,
       final String? size,
       final double? aspect,
       final String? frameRate,
@@ -260,9 +260,9 @@ abstract class _MediaVariants implements MediaVariants {
       _$MediaVariantsImpl.fromJson;
 
   @override
-  int get width;
+  int? get width;
   @override
-  int get height;
+  int? get height;
   @override
   String? get size;
   @override
