@@ -22,7 +22,7 @@ MediaMeta _$MediaMetaFromJson(Map<String, dynamic> json) {
 mixin _$MediaMeta {
   MediaFocalPoints? get focus => throw _privateConstructorUsedError;
   MediaVariants get original => throw _privateConstructorUsedError;
-  MediaVariants get small => throw _privateConstructorUsedError;
+  MediaVariants? get small => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,11 +36,11 @@ abstract class $MediaMetaCopyWith<$Res> {
       _$MediaMetaCopyWithImpl<$Res, MediaMeta>;
   @useResult
   $Res call(
-      {MediaFocalPoints? focus, MediaVariants original, MediaVariants small});
+      {MediaFocalPoints? focus, MediaVariants original, MediaVariants? small});
 
   $MediaFocalPointsCopyWith<$Res>? get focus;
   $MediaVariantsCopyWith<$Res> get original;
-  $MediaVariantsCopyWith<$Res> get small;
+  $MediaVariantsCopyWith<$Res>? get small;
 }
 
 /// @nodoc
@@ -58,7 +58,7 @@ class _$MediaMetaCopyWithImpl<$Res, $Val extends MediaMeta>
   $Res call({
     Object? focus = freezed,
     Object? original = null,
-    Object? small = null,
+    Object? small = freezed,
   }) {
     return _then(_value.copyWith(
       focus: freezed == focus
@@ -69,10 +69,10 @@ class _$MediaMetaCopyWithImpl<$Res, $Val extends MediaMeta>
           ? _value.original
           : original // ignore: cast_nullable_to_non_nullable
               as MediaVariants,
-      small: null == small
+      small: freezed == small
           ? _value.small
           : small // ignore: cast_nullable_to_non_nullable
-              as MediaVariants,
+              as MediaVariants?,
     ) as $Val);
   }
 
@@ -98,8 +98,12 @@ class _$MediaMetaCopyWithImpl<$Res, $Val extends MediaMeta>
 
   @override
   @pragma('vm:prefer-inline')
-  $MediaVariantsCopyWith<$Res> get small {
-    return $MediaVariantsCopyWith<$Res>(_value.small, (value) {
+  $MediaVariantsCopyWith<$Res>? get small {
+    if (_value.small == null) {
+      return null;
+    }
+
+    return $MediaVariantsCopyWith<$Res>(_value.small!, (value) {
       return _then(_value.copyWith(small: value) as $Val);
     });
   }
@@ -114,14 +118,14 @@ abstract class _$$MediaMetaImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {MediaFocalPoints? focus, MediaVariants original, MediaVariants small});
+      {MediaFocalPoints? focus, MediaVariants original, MediaVariants? small});
 
   @override
   $MediaFocalPointsCopyWith<$Res>? get focus;
   @override
   $MediaVariantsCopyWith<$Res> get original;
   @override
-  $MediaVariantsCopyWith<$Res> get small;
+  $MediaVariantsCopyWith<$Res>? get small;
 }
 
 /// @nodoc
@@ -137,7 +141,7 @@ class __$$MediaMetaImplCopyWithImpl<$Res>
   $Res call({
     Object? focus = freezed,
     Object? original = null,
-    Object? small = null,
+    Object? small = freezed,
   }) {
     return _then(_$MediaMetaImpl(
       focus: freezed == focus
@@ -148,10 +152,10 @@ class __$$MediaMetaImplCopyWithImpl<$Res>
           ? _value.original
           : original // ignore: cast_nullable_to_non_nullable
               as MediaVariants,
-      small: null == small
+      small: freezed == small
           ? _value.small
           : small // ignore: cast_nullable_to_non_nullable
-              as MediaVariants,
+              as MediaVariants?,
     ));
   }
 }
@@ -159,8 +163,7 @@ class __$$MediaMetaImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$MediaMetaImpl implements _MediaMeta {
-  const _$MediaMetaImpl(
-      {this.focus, required this.original, required this.small});
+  const _$MediaMetaImpl({this.focus, required this.original, this.small});
 
   factory _$MediaMetaImpl.fromJson(Map<String, dynamic> json) =>
       _$$MediaMetaImplFromJson(json);
@@ -170,7 +173,7 @@ class _$MediaMetaImpl implements _MediaMeta {
   @override
   final MediaVariants original;
   @override
-  final MediaVariants small;
+  final MediaVariants? small;
 
   @override
   String toString() {
@@ -210,7 +213,7 @@ abstract class _MediaMeta implements MediaMeta {
   const factory _MediaMeta(
       {final MediaFocalPoints? focus,
       required final MediaVariants original,
-      required final MediaVariants small}) = _$MediaMetaImpl;
+      final MediaVariants? small}) = _$MediaMetaImpl;
 
   factory _MediaMeta.fromJson(Map<String, dynamic> json) =
       _$MediaMetaImpl.fromJson;
@@ -220,7 +223,7 @@ abstract class _MediaMeta implements MediaMeta {
   @override
   MediaVariants get original;
   @override
-  MediaVariants get small;
+  MediaVariants? get small;
   @override
   @JsonKey(ignore: true)
   _$$MediaMetaImplCopyWith<_$MediaMetaImpl> get copyWith =>
