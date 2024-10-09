@@ -23,10 +23,10 @@ class Thumbnail with _$Thumbnail {
     /// A hash computed by the `BlurHash algorithm`,
     /// for generating colorful preview thumbnails when media
     /// has not been downloaded yet.
-    @JsonKey(name: 'blurhash') required String blurHash,
+    @JsonKey(name: 'blurhash') required String? blurHash,
 
     /// Links to scaled resolution images, for high DPI screens.
-    @JsonKey(name: 'versions') required ThumbnailVersion version,
+    @JsonKey(name: 'versions') required ThumbnailVersion? version,
   }) = _Thumbnail;
 
   factory Thumbnail.fromJson(Map<String, Object?> json) =>
