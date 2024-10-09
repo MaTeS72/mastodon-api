@@ -8,26 +8,37 @@ part of 'thumbnail.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ThumbnailImpl _$$ThumbnailImplFromJson(Map json) => $checkedCreate(
-      r'_$ThumbnailImpl',
-      json,
+_$_Thumbnail _$$_ThumbnailFromJson(Map json) => $checkedCreate(
+  r'_$_Thumbnail',
+  json,
       ($checkedConvert) {
-        final val = _$ThumbnailImpl(
-          url: $checkedConvert('url', (v) => v as String),
-          blurHash: $checkedConvert('blurhash', (v) => v as String),
-          version: $checkedConvert(
-              'versions',
-              (v) => ThumbnailVersion.fromJson(
-                  Map<String, Object?>.from(v as Map))),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'blurHash': 'blurhash', 'version': 'versions'},
+    final val = _$_Thumbnail(
+      url: $checkedConvert('url', (v) => v as String),
+      blurHash: $checkedConvert('blurhash', (v) => v as String?),
+      version: $checkedConvert(
+          'versions',
+              (v) => v == null
+              ? null
+              : ThumbnailVersion.fromJson(
+              Map<String, Object?>.from(v as Map))),
     );
+    return val;
+  },
+  fieldKeyMap: const {'blurHash': 'blurhash', 'version': 'versions'},
+);
 
-Map<String, dynamic> _$$ThumbnailImplToJson(_$ThumbnailImpl instance) =>
-    <String, dynamic>{
-      'url': instance.url,
-      'blurhash': instance.blurHash,
-      'versions': instance.version.toJson(),
-    };
+Map<String, dynamic> _$$_ThumbnailToJson(_$_Thumbnail instance) {
+  final val = <String, dynamic>{
+    'url': instance.url,
+  };
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('blurhash', instance.blurHash);
+  writeNotNull('versions', instance.version?.toJson());
+  return val;
+}

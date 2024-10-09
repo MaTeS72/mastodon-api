@@ -12,7 +12,7 @@ part of 'thumbnail.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Thumbnail _$ThumbnailFromJson(Map<String, dynamic> json) {
   return _Thumbnail.fromJson(json);
@@ -27,11 +27,11 @@ mixin _$Thumbnail {
   /// for generating colorful preview thumbnails when media
   /// has not been downloaded yet.
   @JsonKey(name: 'blurhash')
-  String get blurHash => throw _privateConstructorUsedError;
+  String? get blurHash => throw _privateConstructorUsedError;
 
   /// Links to scaled resolution images, for high DPI screens.
   @JsonKey(name: 'versions')
-  ThumbnailVersion get version => throw _privateConstructorUsedError;
+  ThumbnailVersion? get version => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,14 +42,14 @@ mixin _$Thumbnail {
 /// @nodoc
 abstract class $ThumbnailCopyWith<$Res> {
   factory $ThumbnailCopyWith(Thumbnail value, $Res Function(Thumbnail) then) =
-      _$ThumbnailCopyWithImpl<$Res, Thumbnail>;
+  _$ThumbnailCopyWithImpl<$Res, Thumbnail>;
   @useResult
   $Res call(
       {String url,
-      @JsonKey(name: 'blurhash') String blurHash,
-      @JsonKey(name: 'versions') ThumbnailVersion version});
+        @JsonKey(name: 'blurhash') String? blurHash,
+        @JsonKey(name: 'versions') ThumbnailVersion? version});
 
-  $ThumbnailVersionCopyWith<$Res> get version;
+  $ThumbnailVersionCopyWith<$Res>? get version;
 }
 
 /// @nodoc
@@ -66,79 +66,82 @@ class _$ThumbnailCopyWithImpl<$Res, $Val extends Thumbnail>
   @override
   $Res call({
     Object? url = null,
-    Object? blurHash = null,
-    Object? version = null,
+    Object? blurHash = freezed,
+    Object? version = freezed,
   }) {
     return _then(_value.copyWith(
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      blurHash: null == blurHash
+      as String,
+      blurHash: freezed == blurHash
           ? _value.blurHash
           : blurHash // ignore: cast_nullable_to_non_nullable
-              as String,
-      version: null == version
+      as String?,
+      version: freezed == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as ThumbnailVersion,
+      as ThumbnailVersion?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $ThumbnailVersionCopyWith<$Res> get version {
-    return $ThumbnailVersionCopyWith<$Res>(_value.version, (value) {
+  $ThumbnailVersionCopyWith<$Res>? get version {
+    if (_value.version == null) {
+      return null;
+    }
+
+    return $ThumbnailVersionCopyWith<$Res>(_value.version!, (value) {
       return _then(_value.copyWith(version: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$ThumbnailImplCopyWith<$Res>
-    implements $ThumbnailCopyWith<$Res> {
-  factory _$$ThumbnailImplCopyWith(
-          _$ThumbnailImpl value, $Res Function(_$ThumbnailImpl) then) =
-      __$$ThumbnailImplCopyWithImpl<$Res>;
+abstract class _$$_ThumbnailCopyWith<$Res> implements $ThumbnailCopyWith<$Res> {
+  factory _$$_ThumbnailCopyWith(
+      _$_Thumbnail value, $Res Function(_$_Thumbnail) then) =
+  __$$_ThumbnailCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {String url,
-      @JsonKey(name: 'blurhash') String blurHash,
-      @JsonKey(name: 'versions') ThumbnailVersion version});
+        @JsonKey(name: 'blurhash') String? blurHash,
+        @JsonKey(name: 'versions') ThumbnailVersion? version});
 
   @override
-  $ThumbnailVersionCopyWith<$Res> get version;
+  $ThumbnailVersionCopyWith<$Res>? get version;
 }
 
 /// @nodoc
-class __$$ThumbnailImplCopyWithImpl<$Res>
-    extends _$ThumbnailCopyWithImpl<$Res, _$ThumbnailImpl>
-    implements _$$ThumbnailImplCopyWith<$Res> {
-  __$$ThumbnailImplCopyWithImpl(
-      _$ThumbnailImpl _value, $Res Function(_$ThumbnailImpl) _then)
+class __$$_ThumbnailCopyWithImpl<$Res>
+    extends _$ThumbnailCopyWithImpl<$Res, _$_Thumbnail>
+    implements _$$_ThumbnailCopyWith<$Res> {
+  __$$_ThumbnailCopyWithImpl(
+      _$_Thumbnail _value, $Res Function(_$_Thumbnail) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? url = null,
-    Object? blurHash = null,
-    Object? version = null,
+    Object? blurHash = freezed,
+    Object? version = freezed,
   }) {
-    return _then(_$ThumbnailImpl(
+    return _then(_$_Thumbnail(
       url: null == url
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      blurHash: null == blurHash
+      as String,
+      blurHash: freezed == blurHash
           ? _value.blurHash
           : blurHash // ignore: cast_nullable_to_non_nullable
-              as String,
-      version: null == version
+      as String?,
+      version: freezed == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as ThumbnailVersion,
+      as ThumbnailVersion?,
     ));
   }
 }
@@ -146,14 +149,14 @@ class __$$ThumbnailImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$ThumbnailImpl implements _Thumbnail {
-  const _$ThumbnailImpl(
+class _$_Thumbnail implements _Thumbnail {
+  const _$_Thumbnail(
       {required this.url,
-      @JsonKey(name: 'blurhash') required this.blurHash,
-      @JsonKey(name: 'versions') required this.version});
+        @JsonKey(name: 'blurhash') required this.blurHash,
+        @JsonKey(name: 'versions') required this.version});
 
-  factory _$ThumbnailImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ThumbnailImplFromJson(json);
+  factory _$_Thumbnail.fromJson(Map<String, dynamic> json) =>
+      _$$_ThumbnailFromJson(json);
 
   /// The URL for the thumbnail image.
   @override
@@ -164,12 +167,12 @@ class _$ThumbnailImpl implements _Thumbnail {
   /// has not been downloaded yet.
   @override
   @JsonKey(name: 'blurhash')
-  final String blurHash;
+  final String? blurHash;
 
   /// Links to scaled resolution images, for high DPI screens.
   @override
   @JsonKey(name: 'versions')
-  final ThumbnailVersion version;
+  final ThumbnailVersion? version;
 
   @override
   String toString() {
@@ -177,10 +180,10 @@ class _$ThumbnailImpl implements _Thumbnail {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ThumbnailImpl &&
+            other is _$_Thumbnail &&
             (identical(other.url, url) || other.url == url) &&
             (identical(other.blurHash, blurHash) ||
                 other.blurHash == blurHash) &&
@@ -194,12 +197,12 @@ class _$ThumbnailImpl implements _Thumbnail {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ThumbnailImplCopyWith<_$ThumbnailImpl> get copyWith =>
-      __$$ThumbnailImplCopyWithImpl<_$ThumbnailImpl>(this, _$identity);
+  _$$_ThumbnailCopyWith<_$_Thumbnail> get copyWith =>
+      __$$_ThumbnailCopyWithImpl<_$_Thumbnail>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ThumbnailImplToJson(
+    return _$$_ThumbnailToJson(
       this,
     );
   }
@@ -207,13 +210,14 @@ class _$ThumbnailImpl implements _Thumbnail {
 
 abstract class _Thumbnail implements Thumbnail {
   const factory _Thumbnail(
-          {required final String url,
-          @JsonKey(name: 'blurhash') required final String blurHash,
-          @JsonKey(name: 'versions') required final ThumbnailVersion version}) =
-      _$ThumbnailImpl;
+      {required final String url,
+        @JsonKey(name: 'blurhash')
+        required final String? blurHash,
+        @JsonKey(name: 'versions')
+        required final ThumbnailVersion? version}) = _$_Thumbnail;
 
   factory _Thumbnail.fromJson(Map<String, dynamic> json) =
-      _$ThumbnailImpl.fromJson;
+  _$_Thumbnail.fromJson;
 
   @override
 
@@ -225,14 +229,14 @@ abstract class _Thumbnail implements Thumbnail {
   /// for generating colorful preview thumbnails when media
   /// has not been downloaded yet.
   @JsonKey(name: 'blurhash')
-  String get blurHash;
+  String? get blurHash;
   @override
 
   /// Links to scaled resolution images, for high DPI screens.
   @JsonKey(name: 'versions')
-  ThumbnailVersion get version;
+  ThumbnailVersion? get version;
   @override
   @JsonKey(ignore: true)
-  _$$ThumbnailImplCopyWith<_$ThumbnailImpl> get copyWith =>
+  _$$_ThumbnailCopyWith<_$_Thumbnail> get copyWith =>
       throw _privateConstructorUsedError;
 }
