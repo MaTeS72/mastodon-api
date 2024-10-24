@@ -279,4 +279,5 @@ const _$LanguageEnumMap = {
   Language.chineseChina: 'zh-CN',
   Language.chineseTaiwan: 'zh-TW',
   Language.zulu: 'zu',
+  Language.unknown: 'zxx',
 };

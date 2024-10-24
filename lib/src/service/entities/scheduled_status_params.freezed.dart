@@ -38,6 +38,7 @@ mixin _$ScheduledStatusParams {
   String? get inReplyToStatusId => throw _privateConstructorUsedError;
 
   /// The language that will be used for the status.
+  @JsonKey(unknownEnumValue: Language.unknown)
   Language? get language => throw _privateConstructorUsedError;
 
   ///  The visibility that the status will have once it is posted.
@@ -68,7 +69,7 @@ abstract class $ScheduledStatusParamsCopyWith<$Res> {
       ScheduledPoll? poll,
       List<String>? mediaIds,
       @JsonKey(name: 'in_reply_to_id') String? inReplyToStatusId,
-      Language? language,
+      @JsonKey(unknownEnumValue: Language.unknown) Language? language,
       Visibility? visibility,
       String? idempotency,
       @JsonKey(name: 'sensitive') bool? isSensitive});
@@ -168,7 +169,7 @@ abstract class _$$ScheduledStatusParamsImplCopyWith<$Res>
       ScheduledPoll? poll,
       List<String>? mediaIds,
       @JsonKey(name: 'in_reply_to_id') String? inReplyToStatusId,
-      Language? language,
+      @JsonKey(unknownEnumValue: Language.unknown) Language? language,
       Visibility? visibility,
       String? idempotency,
       @JsonKey(name: 'sensitive') bool? isSensitive});
@@ -250,7 +251,7 @@ class _$ScheduledStatusParamsImpl implements _ScheduledStatusParams {
       this.poll,
       final List<String>? mediaIds,
       @JsonKey(name: 'in_reply_to_id') this.inReplyToStatusId,
-      this.language,
+      @JsonKey(unknownEnumValue: Language.unknown) this.language,
       this.visibility,
       this.idempotency,
       @JsonKey(name: 'sensitive') this.isSensitive})
@@ -291,6 +292,7 @@ class _$ScheduledStatusParamsImpl implements _ScheduledStatusParams {
 
   /// The language that will be used for the status.
   @override
+  @JsonKey(unknownEnumValue: Language.unknown)
   final Language? language;
 
   ///  The visibility that the status will have once it is posted.
@@ -369,7 +371,7 @@ abstract class _ScheduledStatusParams implements ScheduledStatusParams {
           final ScheduledPoll? poll,
           final List<String>? mediaIds,
           @JsonKey(name: 'in_reply_to_id') final String? inReplyToStatusId,
-          final Language? language,
+          @JsonKey(unknownEnumValue: Language.unknown) final Language? language,
           final Visibility? visibility,
           final String? idempotency,
           @JsonKey(name: 'sensitive') final bool? isSensitive}) =
@@ -402,6 +404,7 @@ abstract class _ScheduledStatusParams implements ScheduledStatusParams {
   @override
 
   /// The language that will be used for the status.
+  @JsonKey(unknownEnumValue: Language.unknown)
   Language? get language;
   @override
 

@@ -34,6 +34,7 @@ class ScheduledStatusParams with _$ScheduledStatusParams {
     @JsonKey(name: 'in_reply_to_id') String? inReplyToStatusId,
 
     /// The language that will be used for the status.
+    @JsonKey(unknownEnumValue: Language.unknown)
     Language? language,
 
     ///  The visibility that the status will have once it is posted.

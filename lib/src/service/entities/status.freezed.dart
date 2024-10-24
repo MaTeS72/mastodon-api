@@ -49,6 +49,7 @@ mixin _$Status {
   int get reblogsCount => throw _privateConstructorUsedError;
 
   /// Primary language of this status.
+  @JsonKey(unknownEnumValue: Language.unknown)
   Language? get language => throw _privateConstructorUsedError;
 
   /// ID of the status being replied.
@@ -129,7 +130,7 @@ abstract class $StatusCopyWith<$Res> {
       int favouritesCount,
       int repliesCount,
       int reblogsCount,
-      Language? language,
+      @JsonKey(unknownEnumValue: Language.unknown) Language? language,
       String? inReplyToId,
       String? inReplyToAccountId,
       @JsonKey(name: 'favourited') bool? isFavourited,
@@ -369,7 +370,7 @@ abstract class _$$StatusImplCopyWith<$Res> implements $StatusCopyWith<$Res> {
       int favouritesCount,
       int repliesCount,
       int reblogsCount,
-      Language? language,
+      @JsonKey(unknownEnumValue: Language.unknown) Language? language,
       String? inReplyToId,
       String? inReplyToAccountId,
       @JsonKey(name: 'favourited') bool? isFavourited,
@@ -564,7 +565,7 @@ class _$StatusImpl implements _Status {
       required this.favouritesCount,
       required this.repliesCount,
       required this.reblogsCount,
-      this.language,
+      @JsonKey(unknownEnumValue: Language.unknown) this.language,
       this.inReplyToId,
       this.inReplyToAccountId,
       @JsonKey(name: 'favourited') this.isFavourited,
@@ -628,6 +629,7 @@ class _$StatusImpl implements _Status {
 
   /// Primary language of this status.
   @override
+  @JsonKey(unknownEnumValue: Language.unknown)
   final Language? language;
 
   /// ID of the status being replied.
@@ -840,7 +842,7 @@ abstract class _Status implements Status {
       required final int favouritesCount,
       required final int repliesCount,
       required final int reblogsCount,
-      final Language? language,
+      @JsonKey(unknownEnumValue: Language.unknown) final Language? language,
       final String? inReplyToId,
       final String? inReplyToAccountId,
       @JsonKey(name: 'favourited') final bool? isFavourited,
@@ -901,6 +903,7 @@ abstract class _Status implements Status {
   @override
 
   /// Primary language of this status.
+  @JsonKey(unknownEnumValue: Language.unknown)
   Language? get language;
   @override
 

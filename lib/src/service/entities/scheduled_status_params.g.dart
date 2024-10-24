@@ -27,7 +27,9 @@ _$ScheduledStatusParamsImpl _$$ScheduledStatusParamsImplFromJson(Map json) =>
           inReplyToStatusId:
               $checkedConvert('in_reply_to_id', (v) => v as String?),
           language: $checkedConvert(
-              'language', (v) => $enumDecodeNullable(_$LanguageEnumMap, v)),
+              'language',
+              (v) => $enumDecodeNullable(_$LanguageEnumMap, v,
+                  unknownValue: Language.unknown)),
           visibility: $checkedConvert(
               'visibility', (v) => $enumDecodeNullable(_$VisibilityEnumMap, v)),
           idempotency: $checkedConvert('idempotency', (v) => v as String?),
@@ -253,6 +255,7 @@ const _$LanguageEnumMap = {
   Language.chineseChina: 'zh-CN',
   Language.chineseTaiwan: 'zh-TW',
   Language.zulu: 'zu',
+  Language.unknown: 'zxx',
 };
 
 const _$VisibilityEnumMap = {
