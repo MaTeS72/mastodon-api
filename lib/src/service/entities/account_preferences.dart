@@ -32,7 +32,7 @@ class AccountPreferences with _$AccountPreferences {
       unknownEnumValue: Language.unknown,
     )
     @Default(Language.unknown)
-    required Language defaultLanguage,
+    Language defaultLanguage,
 
     /// `reading:expand:media`
     @JsonKey(name: 'reading:expand:media')
