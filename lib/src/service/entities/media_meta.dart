@@ -17,7 +17,7 @@ part 'media_meta.g.dart';
 class MediaMeta with _$MediaMeta {
   const factory MediaMeta({
     MediaFocalPoints? focus,
-    required MediaVariants original,
+    MediaVariants? original,
     MediaVariants? small,
   }) = _MediaMeta;
 

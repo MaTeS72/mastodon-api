@@ -21,8 +21,10 @@ _$MediaMetaImpl _$$MediaMetaImplFromJson(Map json) => $checkedCreate(
                       Map<String, Object?>.from(v as Map))),
           original: $checkedConvert(
               'original',
-              (v) =>
-                  MediaVariants.fromJson(Map<String, Object?>.from(v as Map))),
+              (v) => v == null
+                  ? null
+                  : MediaVariants.fromJson(
+                      Map<String, Object?>.from(v as Map))),
           small: $checkedConvert(
               'small',
               (v) => v == null
@@ -37,6 +39,6 @@ _$MediaMetaImpl _$$MediaMetaImplFromJson(Map json) => $checkedCreate(
 Map<String, dynamic> _$$MediaMetaImplToJson(_$MediaMetaImpl instance) =>
     <String, dynamic>{
       'focus': instance.focus?.toJson(),
-      'original': instance.original.toJson(),
+      'original': instance.original?.toJson(),
       'small': instance.small?.toJson(),
     };

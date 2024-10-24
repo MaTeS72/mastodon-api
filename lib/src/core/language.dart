@@ -752,7 +752,11 @@ enum Language implements Serializable {
 
   /// `zu`
   @JsonValue('zu')
-  zulu('zu', 'isiZulu');
+  zulu('zu', 'isiZulu'),
+
+  /// `zxx`
+  @JsonValue('zxx')
+  unknown('zxx', 'Unknown');
 
   /// The language code
   final String code;

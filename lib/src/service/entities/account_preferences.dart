@@ -20,19 +20,23 @@ class AccountPreferences with _$AccountPreferences {
   const factory AccountPreferences({
     /// `posting:default:visibility`
     @JsonKey(name: 'posting:default:visibility')
-        required Visibility defaultVisibility,
+    required Visibility defaultVisibility,
 
     /// `posting:default:sensitive`
     @JsonKey(name: 'posting:default:sensitive')
-        required bool isDefaultSensitive,
+    required bool isDefaultSensitive,
 
     /// `posting:default:language`
-    @JsonKey(name: 'posting:default:language')
-        required Language defaultLanguage,
+    @JsonKey(
+      name: 'posting:default:language',
+      unknownEnumValue: Language.unknown,
+    )
+    @Default(Language.unknown)
+    required Language defaultLanguage,
 
     /// `reading:expand:media`
     @JsonKey(name: 'reading:expand:media')
-        required DisplayMediaSetting expandMediaSetting,
+    required DisplayMediaSetting expandMediaSetting,
 
     /// `reading:expand:spoilers`
     @JsonKey(name: 'reading:expand:spoilers') required bool hasExpandSpoilers,
