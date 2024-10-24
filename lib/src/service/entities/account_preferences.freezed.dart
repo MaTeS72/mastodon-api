@@ -182,7 +182,7 @@ class _$AccountPreferencesImpl implements _AccountPreferences {
       required this.isDefaultSensitive,
       @JsonKey(
           name: 'posting:default:language', unknownEnumValue: Language.unknown)
-      required this.defaultLanguage = Language.unknown,
+      this.defaultLanguage = Language.unknown,
       @JsonKey(name: 'reading:expand:media') required this.expandMediaSetting,
       @JsonKey(name: 'reading:expand:spoilers')
       required this.hasExpandSpoilers});
@@ -270,7 +270,7 @@ abstract class _AccountPreferences implements AccountPreferences {
       required final bool isDefaultSensitive,
       @JsonKey(
           name: 'posting:default:language', unknownEnumValue: Language.unknown)
-      required final Language defaultLanguage,
+      final Language defaultLanguage,
       @JsonKey(name: 'reading:expand:media')
       required final DisplayMediaSetting expandMediaSetting,
       @JsonKey(name: 'reading:expand:spoilers')
