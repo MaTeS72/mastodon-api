@@ -167,8 +167,7 @@ class __$$MediaMetaImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$MediaMetaImpl implements _MediaMeta {
-  const _$MediaMetaImpl(
-      {this.focus, required this.original, required this.small});
+  const _$MediaMetaImpl({this.focus, this.original, this.small});
 
   factory _$MediaMetaImpl.fromJson(Map<String, dynamic> json) =>
       _$$MediaMetaImplFromJson(json);
@@ -217,8 +216,8 @@ class _$MediaMetaImpl implements _MediaMeta {
 abstract class _MediaMeta implements MediaMeta {
   const factory _MediaMeta(
       {final MediaFocalPoints? focus,
-      required final MediaVariants? original,
-      required final MediaVariants? small}) = _$MediaMetaImpl;
+      final MediaVariants? original,
+      final MediaVariants? small}) = _$MediaMetaImpl;
 
   factory _MediaMeta.fromJson(Map<String, dynamic> json) =
       _$MediaMetaImpl.fromJson;

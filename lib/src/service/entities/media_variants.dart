@@ -13,8 +13,8 @@ part 'media_variants.g.dart';
 @freezed
 class MediaVariants with _$MediaVariants {
   const factory MediaVariants({
-    required int width,
-    required int height,
+    int? width,
+    int? height,
     String? size,
     double? aspect,
     String? frameRate,

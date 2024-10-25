@@ -746,9 +746,17 @@ enum Language implements Serializable {
   @JsonValue('zh-CN')
   chineseChina('zh-CN', '中國 中國'),
 
+  /// `zh-TW`
+  @JsonValue('zh-TW')
+  chineseTaiwan('zh-TW', '中文'),
+
   /// `zu`
   @JsonValue('zu')
-  zulu('zu', 'isiZulu');
+  zulu('zu', 'isiZulu'),
+
+  /// `zxx`
+  @JsonValue('zxx')
+  unknown('zxx', 'Unknown');
 
   /// The language code
   final String code;

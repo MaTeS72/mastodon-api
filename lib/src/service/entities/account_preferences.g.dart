@@ -18,8 +18,12 @@ _$AccountPreferencesImpl _$$AccountPreferencesImplFromJson(Map json) =>
               (v) => $enumDecode(_$VisibilityEnumMap, v)),
           isDefaultSensitive:
               $checkedConvert('posting:default:sensitive', (v) => v as bool),
-          defaultLanguage: $checkedConvert('posting:default:language',
-              (v) => $enumDecode(_$LanguageEnumMap, v)),
+          defaultLanguage: $checkedConvert(
+              'posting:default:language',
+              (v) =>
+                  $enumDecodeNullable(_$LanguageEnumMap, v,
+                      unknownValue: Language.unknown) ??
+                  Language.unknown),
           expandMediaSetting: $checkedConvert('reading:expand:media',
               (v) => $enumDecode(_$DisplayMediaSettingEnumMap, v)),
           hasExpandSpoilers:
@@ -240,7 +244,9 @@ const _$LanguageEnumMap = {
   Language.zhuang: 'za',
   Language.chinese: 'zh',
   Language.chineseChina: 'zh-CN',
+  Language.chineseTaiwan: 'zh-TW',
   Language.zulu: 'zu',
+  Language.unknown: 'zxx',
 };
 
 const _$DisplayMediaSettingEnumMap = {

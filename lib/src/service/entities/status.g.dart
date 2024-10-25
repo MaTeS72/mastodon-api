@@ -27,7 +27,9 @@ _$StatusImpl _$$StatusImplFromJson(Map json) => $checkedCreate(
           reblogsCount:
               $checkedConvert('reblogs_count', (v) => (v as num).toInt()),
           language: $checkedConvert(
-              'language', (v) => $enumDecodeNullable(_$LanguageEnumMap, v)),
+              'language',
+              (v) => $enumDecodeNullable(_$LanguageEnumMap, v,
+                  unknownValue: Language.unknown)),
           inReplyToId: $checkedConvert('in_reply_to_id', (v) => v as String?),
           inReplyToAccountId:
               $checkedConvert('in_reply_to_account_id', (v) => v as String?),
@@ -330,5 +332,7 @@ const _$LanguageEnumMap = {
   Language.zhuang: 'za',
   Language.chinese: 'zh',
   Language.chineseChina: 'zh-CN',
+  Language.chineseTaiwan: 'zh-TW',
   Language.zulu: 'zu',
+  Language.unknown: 'zxx',
 };

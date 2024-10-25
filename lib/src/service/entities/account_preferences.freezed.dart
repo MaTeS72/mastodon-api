@@ -29,7 +29,7 @@ mixin _$AccountPreferences {
   bool get isDefaultSensitive => throw _privateConstructorUsedError;
 
   /// `posting:default:language`
-  @JsonKey(name: 'posting:default:language')
+  @JsonKey(name: 'posting:default:language', unknownEnumValue: Language.unknown)
   Language get defaultLanguage => throw _privateConstructorUsedError;
 
   /// `reading:expand:media`
@@ -57,7 +57,9 @@ abstract class $AccountPreferencesCopyWith<$Res> {
       {@JsonKey(name: 'posting:default:visibility')
       Visibility defaultVisibility,
       @JsonKey(name: 'posting:default:sensitive') bool isDefaultSensitive,
-      @JsonKey(name: 'posting:default:language') Language defaultLanguage,
+      @JsonKey(
+          name: 'posting:default:language', unknownEnumValue: Language.unknown)
+      Language defaultLanguage,
       @JsonKey(name: 'reading:expand:media')
       DisplayMediaSetting expandMediaSetting,
       @JsonKey(name: 'reading:expand:spoilers') bool hasExpandSpoilers});
@@ -119,7 +121,9 @@ abstract class _$$AccountPreferencesImplCopyWith<$Res>
       {@JsonKey(name: 'posting:default:visibility')
       Visibility defaultVisibility,
       @JsonKey(name: 'posting:default:sensitive') bool isDefaultSensitive,
-      @JsonKey(name: 'posting:default:language') Language defaultLanguage,
+      @JsonKey(
+          name: 'posting:default:language', unknownEnumValue: Language.unknown)
+      Language defaultLanguage,
       @JsonKey(name: 'reading:expand:media')
       DisplayMediaSetting expandMediaSetting,
       @JsonKey(name: 'reading:expand:spoilers') bool hasExpandSpoilers});
@@ -176,7 +180,9 @@ class _$AccountPreferencesImpl implements _AccountPreferences {
       required this.defaultVisibility,
       @JsonKey(name: 'posting:default:sensitive')
       required this.isDefaultSensitive,
-      @JsonKey(name: 'posting:default:language') required this.defaultLanguage,
+      @JsonKey(
+          name: 'posting:default:language', unknownEnumValue: Language.unknown)
+      this.defaultLanguage = Language.unknown,
       @JsonKey(name: 'reading:expand:media') required this.expandMediaSetting,
       @JsonKey(name: 'reading:expand:spoilers')
       required this.hasExpandSpoilers});
@@ -196,7 +202,7 @@ class _$AccountPreferencesImpl implements _AccountPreferences {
 
   /// `posting:default:language`
   @override
-  @JsonKey(name: 'posting:default:language')
+  @JsonKey(name: 'posting:default:language', unknownEnumValue: Language.unknown)
   final Language defaultLanguage;
 
   /// `reading:expand:media`
@@ -262,8 +268,9 @@ abstract class _AccountPreferences implements AccountPreferences {
       required final Visibility defaultVisibility,
       @JsonKey(name: 'posting:default:sensitive')
       required final bool isDefaultSensitive,
-      @JsonKey(name: 'posting:default:language')
-      required final Language defaultLanguage,
+      @JsonKey(
+          name: 'posting:default:language', unknownEnumValue: Language.unknown)
+      final Language defaultLanguage,
       @JsonKey(name: 'reading:expand:media')
       required final DisplayMediaSetting expandMediaSetting,
       @JsonKey(name: 'reading:expand:spoilers')
@@ -285,7 +292,7 @@ abstract class _AccountPreferences implements AccountPreferences {
   @override
 
   /// `posting:default:language`
-  @JsonKey(name: 'posting:default:language')
+  @JsonKey(name: 'posting:default:language', unknownEnumValue: Language.unknown)
   Language get defaultLanguage;
   @override
 
