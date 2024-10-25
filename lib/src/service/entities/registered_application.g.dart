@@ -19,7 +19,7 @@ _$RegisteredApplicationImpl _$$RegisteredApplicationImplFromJson(Map json) =>
           clientId: $checkedConvert('client_id', (v) => v as String),
           clientSecret: $checkedConvert('client_secret', (v) => v as String),
           redirectUri: $checkedConvert('redirect_uri', (v) => v as String),
-          vapidKey: $checkedConvert('vapid_key', (v) => v as String),
+          vapidKey: $checkedConvert('vapid_key', (v) => v as String?),
           website: $checkedConvert('website', (v) => v as String?),
         );
         return val;
@@ -40,7 +40,6 @@ Map<String, dynamic> _$$RegisteredApplicationImplToJson(
     'client_id': instance.clientId,
     'client_secret': instance.clientSecret,
     'redirect_uri': instance.redirectUri,
-    'vapid_key': instance.vapidKey,
   };
 
   void writeNotNull(String key, dynamic value) {
@@ -49,6 +48,7 @@ Map<String, dynamic> _$$RegisteredApplicationImplToJson(
     }
   }
 
+  writeNotNull('vapid_key', instance.vapidKey);
   writeNotNull('website', instance.website);
   return val;
 }

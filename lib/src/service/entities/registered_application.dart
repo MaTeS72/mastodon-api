@@ -30,7 +30,7 @@ class RegisteredApplication with _$RegisteredApplication {
     required String redirectUri,
 
     /// Used for Push Streaming API.
-    required String vapidKey,
+    String? vapidKey,
 
     /// The website associated with your application.
     String? website,
