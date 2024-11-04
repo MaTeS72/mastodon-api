@@ -57,6 +57,8 @@ export 'package:mastodon_api/src/service/entities/media_meta.dart';
 export 'package:mastodon_api/src/service/entities/media_variants.dart';
 export 'package:mastodon_api/src/service/entities/notification.dart';
 export 'package:mastodon_api/src/service/entities/notification_snapshot.dart';
+export 'package:mastodon_api/src/service/entities/notification_subscription.dart';
+export 'package:mastodon_api/src/service/entities/notification_subscription_alerts.dart';
 export 'package:mastodon_api/src/service/entities/notification_type.dart';
 export 'package:mastodon_api/src/service/entities/oembed_metadata.dart';
 export 'package:mastodon_api/src/service/entities/poll.dart';

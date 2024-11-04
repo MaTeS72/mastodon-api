@@ -3,11 +3,14 @@
 // modification, are permitted provided the conditions.
 
 // 🌎 Project imports:
+import 'package:mastodon_api/src/service/entities/notification_subscription_alerts.dart';
+
 import '../../../core/client/client_context.dart';
 import '../../../core/client/user_context.dart';
 import '../../base_service.dart';
 import '../../entities/empty.dart';
 import '../../entities/notification.dart';
+import '../../entities/notification_subscription.dart';
 import '../../entities/notification_type.dart';
 import '../../response/mastodon_response.dart';
 
@@ -65,6 +68,14 @@ abstract class NotificationsV1Service {
     List<NotificationType>? types,
     List<NotificationType>? excludeTypes,
     String? accountId,
+  });
+
+  Future<MastodonResponse<NotificationSubscription>>
+      subscribePushNotifications({
+    required String endpoint,
+    required String publicKey,
+    required String authSecret,
+    NotificationSubscriptionAlerts alerts,
   });
 
   /// View information about a notification with a given ID.
@@ -171,6 +182,35 @@ class _NotificationsV1Service extends BaseService
         ),
         dataBuilder: Notification.fromJson,
       );
+
+  @override
+  Future<MastodonResponse<NotificationSubscription>>
+      subscribePushNotifications({
+    required String endpoint,
+    required String publicKey,
+    required String authSecret,
+    NotificationSubscriptionAlerts alerts =
+        const NotificationSubscriptionAlerts(),
+    NotificationSubscriptionPolicy policy = NotificationSubscriptionPolicy.all,
+  }) async =>
+          super.transformSingleDataResponse(
+            await super.post(
+                UserContext.oauth2Only, '/api/v1/push/subscription',
+                body: {
+                  'subscription': {
+                    'endpoint': endpoint,
+                    'keys': {
+                      'p256dh': publicKey,
+                      'auth': authSecret,
+                    },
+                  },
+                  'data': {
+                    'alerts': alerts.toJson(),
+                    'policy': policy.name,
+                  }
+                }),
+            dataBuilder: NotificationSubscription.fromJson,
+          );
 
   @override
   Future<MastodonResponse<Notification>> lookupNotification({
