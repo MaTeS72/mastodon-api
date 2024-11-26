@@ -24,10 +24,6 @@ enum Visibility implements Serializable {
   @override
   String get value => name;
 
-  String toJson() => jsonEncode('visibility: $value');
+  String toJson() => jsonEncode(name);
 
-  fromJson(String json) {
-    final value = jsonDecode(json);
-    return Visibility.values.firstWhere((e) => e.name == value);
-  }
 }
