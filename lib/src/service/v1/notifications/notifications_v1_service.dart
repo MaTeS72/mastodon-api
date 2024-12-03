@@ -234,7 +234,19 @@ class _NotificationsV1Service extends BaseService
           UserContext.oauth2Only,
           '/api/v1/notification/$notificationId',
         ),
-        dataBuilder: Notification.fromJson,
+        dataBuilder: (item) {
+          try {
+            return Notification.fromJson(item);
+          } catch (e) {
+            print(e);
+            return Notification(
+              id: '',
+              type: NotificationType.unknown,
+              createdAt: DateTime.now(),
+              account: Account.empty(),
+            );
+          }
+        },
       );
 
   @override
