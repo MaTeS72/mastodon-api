@@ -24,6 +24,7 @@ mixin _$Notification {
   String get id => throw _privateConstructorUsedError;
 
   /// The type of event that resulted in the notification.
+  @JsonKey(unknownEnumValue: NotificationType.unknown)
   NotificationType get type => throw _privateConstructorUsedError;
 
   /// The timestamp of the notification.
@@ -54,6 +55,7 @@ abstract class $NotificationCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
+      @JsonKey(unknownEnumValue: NotificationType.unknown)
       NotificationType type,
       DateTime createdAt,
       Account account,
@@ -156,6 +158,7 @@ abstract class _$$NotificationImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
+      @JsonKey(unknownEnumValue: NotificationType.unknown)
       NotificationType type,
       DateTime createdAt,
       Account account,
@@ -223,7 +226,7 @@ class __$$NotificationImplCopyWithImpl<$Res>
 class _$NotificationImpl implements _Notification {
   const _$NotificationImpl(
       {required this.id,
-      required this.type,
+      @JsonKey(unknownEnumValue: NotificationType.unknown) required this.type,
       required this.createdAt,
       required this.account,
       this.status,
@@ -238,6 +241,7 @@ class _$NotificationImpl implements _Notification {
 
   /// The type of event that resulted in the notification.
   @override
+  @JsonKey(unknownEnumValue: NotificationType.unknown)
   final NotificationType type;
 
   /// The timestamp of the notification.
@@ -299,6 +303,7 @@ class _$NotificationImpl implements _Notification {
 abstract class _Notification implements Notification {
   const factory _Notification(
       {required final String id,
+      @JsonKey(unknownEnumValue: NotificationType.unknown)
       required final NotificationType type,
       required final DateTime createdAt,
       required final Account account,
@@ -315,6 +320,7 @@ abstract class _Notification implements Notification {
   @override
 
   /// The type of event that resulted in the notification.
+  @JsonKey(unknownEnumValue: NotificationType.unknown)
   NotificationType get type;
   @override
 

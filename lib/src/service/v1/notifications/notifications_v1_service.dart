@@ -3,7 +3,8 @@
 // modification, are permitted provided the conditions.
 
 // 🌎 Project imports:
-import 'package:mastodon_api/src/service/entities/notification_subscription_alerts.dart';
+import '../../entities/account.dart';
+import '../../entities/notification_subscription_alerts.dart';
 
 import '../../../core/client/client_context.dart';
 import '../../../core/client/user_context.dart';
@@ -180,7 +181,19 @@ class _NotificationsV1Service extends BaseService
             'account_id': accountId,
           },
         ),
-        dataBuilder: Notification.fromJson,
+        dataBuilder: (item) {
+          try {
+            return Notification.fromJson(item);
+          } catch (e) {
+            print(e);
+            return Notification(
+              id: '',
+              type: NotificationType.unknown,
+              createdAt: DateTime.now(),
+              account: Account.empty(),
+            );
+          }
+        },
       );
 
   @override
