@@ -23,6 +23,7 @@ class Notification with _$Notification {
     required String id,
 
     /// The type of event that resulted in the notification.
+    @JsonKey(unknownEnumValue: NotificationType.unknown)
     required NotificationType type,
 
     /// The timestamp of the notification.

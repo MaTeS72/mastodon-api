@@ -15,7 +15,9 @@ _$NotificationImpl _$$NotificationImplFromJson(Map json) => $checkedCreate(
         final val = _$NotificationImpl(
           id: $checkedConvert('id', (v) => v as String),
           type: $checkedConvert(
-              'type', (v) => $enumDecode(_$NotificationTypeEnumMap, v)),
+              'type',
+              (v) => $enumDecode(_$NotificationTypeEnumMap, v,
+                  unknownValue: NotificationType.unknown)),
           createdAt:
               $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
           account: $checkedConvert('account',
@@ -67,4 +69,6 @@ const _$NotificationTypeEnumMap = {
   NotificationType.update: 'update',
   NotificationType.adminSignUp: 'admin.sign_up',
   NotificationType.adminReport: 'admin.report',
+  NotificationType.annualReport: 'annual_report',
+  NotificationType.unknown: 'unknown',
 };
