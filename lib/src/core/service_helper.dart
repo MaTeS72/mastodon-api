@@ -72,6 +72,7 @@ abstract class Service {
     String unencodedPath, {
     Map<String, String> body = const {},
     http.Response Function(http.Response response)? validate,
+    bool simpleEncode = false,
   });
 
   Future<http.Response> patchMultipart(
@@ -255,12 +256,15 @@ class ServiceHelper implements Service {
     final String unencodedPath, {
     dynamic body = const {},
     http.Response Function(http.Response response)? validate,
+    bool simpleEncode = false,
   }) async {
     final response = await _context.patch(
       userContext,
       Uri.https(_authority, unencodedPath),
       headers: {'Content-type': 'application/json'},
-      body: converter.jsonEncode(_convertQueryParameters(body)),
+      body: converter.jsonEncode(
+        simpleEncode ? body : _convertQueryParameters(body),
+      ),
     );
 
     return validate != null ? validate(response) : response;
