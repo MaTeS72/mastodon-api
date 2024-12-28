@@ -13,14 +13,14 @@ _$MediaVariantsImpl _$$MediaVariantsImplFromJson(Map json) => $checkedCreate(
       json,
       ($checkedConvert) {
         final val = _$MediaVariantsImpl(
-          width: $checkedConvert('width', (v) => v as int?),
-          height: $checkedConvert('height', (v) => v as int?),
+          width: $checkedConvert('width', (v) => (v as num?)?.toInt()),
+          height: $checkedConvert('height', (v) => (v as num?)?.toInt()),
           size: $checkedConvert('size', (v) => v as String?),
           aspect: $checkedConvert('aspect', (v) => (v as num?)?.toDouble()),
           frameRate: $checkedConvert('frame_rate', (v) => v as String?),
           durationInSeconds:
               $checkedConvert('duration', (v) => (v as num?)?.toDouble()),
-          bitrate: $checkedConvert('bitrate', (v) => v as int?),
+          bitrate: $checkedConvert('bitrate', (v) => (v as num?)?.toInt()),
         );
         return val;
       },

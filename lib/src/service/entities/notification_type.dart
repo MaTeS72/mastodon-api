@@ -42,7 +42,13 @@ enum NotificationType implements Serializable {
 
   /// A new report has been filed
   @JsonValue('admin.report')
-  adminReport('admin.report');
+  adminReport('admin.report'),
+
+  @JsonValue('annual_report')
+  annualReport('annual_report'),
+
+  @JsonValue('unknown')
+  unknown('unknown');
 
   @override
   final String value;

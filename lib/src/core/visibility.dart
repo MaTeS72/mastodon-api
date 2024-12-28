@@ -3,6 +3,8 @@
 // modification, are permitted provided the conditions.
 
 // 🌎 Project imports:
+import 'dart:convert';
+
 import 'serializable.dart';
 
 /// Represents the visibility of specific status.
@@ -21,4 +23,7 @@ enum Visibility implements Serializable {
 
   @override
   String get value => name;
+
+  String toJson() => name;
+
 }

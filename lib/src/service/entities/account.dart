@@ -104,4 +104,23 @@ class Account with _$Account {
 
   factory Account.fromJson(Map<String, Object?> json) =>
       _$AccountFromJson(json);
+
+  factory Account.empty() => Account(
+        id: '',
+        username: '',
+        displayName: '',
+        acct: '',
+        note: '',
+        url: '',
+        avatar: '',
+        avatarStatic: '',
+        header: '',
+        headerStatic: '',
+        followersCount: 0,
+        followingCount: 0,
+        statusesCount: 0,
+        emojis: [],
+        fields: [],
+        createdAt: DateTime.now(),
+      );
 }

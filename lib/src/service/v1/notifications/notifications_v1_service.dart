@@ -3,7 +3,8 @@
 // modification, are permitted provided the conditions.
 
 // 🌎 Project imports:
-import 'package:mastodon_api/src/service/entities/notification_subscription_alerts.dart';
+import '../../entities/account.dart';
+import '../../entities/notification_subscription_alerts.dart';
 
 import '../../../core/client/client_context.dart';
 import '../../../core/client/user_context.dart';
@@ -76,7 +77,16 @@ abstract class NotificationsV1Service {
     required String publicKey,
     required String authSecret,
     NotificationSubscriptionAlerts alerts,
+    NotificationSubscriptionPolicy policy = NotificationSubscriptionPolicy.all,
   });
+
+  Future<MastodonResponse<NotificationSubscription>> updatePushNotifications({
+    required NotificationSubscriptionAlerts alerts,
+  });
+
+  Future<MastodonResponse<NotificationSubscription>> getPushSubscription();
+
+  Future<void> removePushSubscription();
 
   /// View information about a notification with a given ID.
   ///
@@ -180,7 +190,19 @@ class _NotificationsV1Service extends BaseService
             'account_id': accountId,
           },
         ),
-        dataBuilder: Notification.fromJson,
+        dataBuilder: (item) {
+          try {
+            return Notification.fromJson(item);
+          } catch (e) {
+            print(e);
+            return Notification(
+              id: '',
+              type: NotificationType.unknown,
+              createdAt: DateTime.now(),
+              account: Account.empty(),
+            );
+          }
+        },
       );
 
   @override
@@ -213,6 +235,40 @@ class _NotificationsV1Service extends BaseService
           );
 
   @override
+  Future<MastodonResponse<NotificationSubscription>> updatePushNotifications({
+    required NotificationSubscriptionAlerts alerts,
+    NotificationSubscriptionPolicy policy = NotificationSubscriptionPolicy.all,
+  }) async =>
+      super.transformSingleDataResponse(
+        await super
+            .put(UserContext.oauth2Only, '/api/v1/push/subscription', body: {
+          'data': {
+            'alerts': alerts.toJson(),
+            'policy': policy.name,
+          }
+        }),
+        dataBuilder: NotificationSubscription.fromJson,
+      );
+
+  @override
+  Future<MastodonResponse<NotificationSubscription>>
+      getPushSubscription() async => super.transformSingleDataResponse(
+            await super.get(
+              UserContext.oauth2Only,
+              '/api/v1/push/subscription',
+            ),
+            dataBuilder: NotificationSubscription.fromJson,
+          );
+
+  @override
+  Future<void> removePushSubscription() async => super.transformEmptyResponse(
+        await super.delete(
+          UserContext.oauth2Only,
+          '/api/v1/push/subscription',
+        ),
+      );
+
+  @override
   Future<MastodonResponse<Notification>> lookupNotification({
     required String notificationId,
   }) async =>
@@ -221,7 +277,19 @@ class _NotificationsV1Service extends BaseService
           UserContext.oauth2Only,
           '/api/v1/notification/$notificationId',
         ),
-        dataBuilder: Notification.fromJson,
+        dataBuilder: (item) {
+          try {
+            return Notification.fromJson(item);
+          } catch (e) {
+            print(e);
+            return Notification(
+              id: '',
+              type: NotificationType.unknown,
+              createdAt: DateTime.now(),
+              account: Account.empty(),
+            );
+          }
+        },
       );
 
   @override
