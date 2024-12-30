@@ -21,7 +21,6 @@ import 'package:mastodon_api/src/service/entities/token.dart';
 import 'package:mastodon_api/src/service/entities/user_list.dart';
 import 'package:mastodon_api/src/service/response/mastodon_response.dart';
 import 'package:mastodon_api/src/service/v1/accounts/account_default_settings_param.dart';
-import 'package:mastodon_api/src/service/v1/accounts/account_profile_meta_param.dart';
 import 'package:mastodon_api/src/service/v1/accounts/accounts_v1_service.dart';
 import 'package:mastodon_api/src/service/v1/accounts/post_privacy.dart';
 // 📦 Package imports:
@@ -196,12 +195,6 @@ void main() {
           sensitive: true,
           language: Language.english,
         ),
-        profileMeta: [
-          AccountProfileMetaParam(
-            name: 'Twitter',
-            value: '@aaaaa',
-          ),
-        ],
       );
 
       expect(response, isA<MastodonResponse>());
@@ -233,12 +226,6 @@ void main() {
             sensitive: true,
             language: Language.english,
           ),
-          profileMeta: [
-            AccountProfileMetaParam(
-              name: 'Twitter',
-              value: '@aaaaa',
-            ),
-          ],
         ),
       );
     });
@@ -267,12 +254,6 @@ void main() {
             sensitive: true,
             language: Language.english,
           ),
-          profileMeta: [
-            AccountProfileMetaParam(
-              name: 'Twitter',
-              value: '@aaaaa',
-            ),
-          ],
         ),
       );
     });

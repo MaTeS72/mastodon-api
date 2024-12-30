@@ -156,6 +156,32 @@ abstract class AccountsV1Service {
     bool? bot,
     bool? locked,
     AccountDefaultSettingsParam? defaultSettings,
+  });
+
+  /// Update the user’s metadata.
+  ///
+  /// ## Parameters
+  ///
+  /// - [profileMeta]: Profile metadata name and value.
+  ///                  By default, max 4 fields and 255 characters per
+  ///                  value.
+  ///
+  /// ## Endpoint Url
+  ///
+  /// - PATCH /api/v1/accounts/update_credentials HTTP/1.1
+  ///
+  /// ## Authentication Methods
+  ///
+  /// - OAuth 2.0
+  ///
+  /// ## Required Scopes
+  ///
+  /// - read:accounts
+  ///
+  /// ## Reference
+  ///
+  /// - https://docs.joinmastodon.org/methods/accounts/#verify_credentials
+  Future<MastodonResponse<Account>> updateAccountMetadata({
     List<AccountProfileMetaParam>? profileMeta,
   });
 
@@ -1426,7 +1452,6 @@ class _AccountsV1Service extends BaseService implements AccountsV1Service {
     bool? bot,
     bool? locked,
     AccountDefaultSettingsParam? defaultSettings,
-    List<AccountProfileMetaParam>? profileMeta,
   }) async =>
       super.transformSingleDataResponse(
         await super.patch(
@@ -1449,15 +1474,31 @@ class _AccountsV1Service extends BaseService implements AccountsV1Service {
                 if (defaultSettings?.language != null)
                   'language': defaultSettings?.language,
               },
-            'fields_attributes': profileMeta
-                ?.map(
-                  (e) => {
-                    'name': e.name,
-                    'value': e.value,
-                  },
-                )
-                .toList(),
           },
+        ),
+        dataBuilder: Account.fromJson,
+      );
+
+  @override
+  Future<MastodonResponse<Account>> updateAccountMetadata({
+    List<AccountProfileMetaParam>? profileMeta,
+  }) async =>
+      super.transformSingleDataResponse(
+        await super.patch(
+          UserContext.oauth2Only,
+          '/api/v1/accounts/update_credentials',
+          body: profileMeta != null
+              ? {
+                  "fields_attributes": {
+                    for (final entry in profileMeta.asMap().entries)
+                      entry.key.toString(): {
+                        "name": entry.value.name,
+                        "value": entry.value.value,
+                      },
+                  }
+                }
+              : null,
+          simpleEncode: true,
         ),
         dataBuilder: Account.fromJson,
       );

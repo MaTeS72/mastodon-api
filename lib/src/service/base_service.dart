@@ -32,78 +32,79 @@ typedef DataBuilder<D> = D Function(Map<String, Object?> json);
 
 abstract class _Service {
   Future<Response> get(
-    UserContext userContext,
-    String unencodedPath, {
-    Map<String, dynamic> queryParameters = const {},
-  });
+      UserContext userContext,
+      String unencodedPath, {
+        Map<String, dynamic> queryParameters = const {},
+      });
 
   Future<StreamResponse> getStream(
-    UserContext userContext,
-    final String unencodedPath, {
-    Map<String, dynamic> queryParameters = const {},
-  });
+      UserContext userContext,
+      final String unencodedPath, {
+        Map<String, dynamic> queryParameters = const {},
+      });
 
   Future<Response> post(
-    UserContext userContext,
-    String unencodedPath, {
-    Map<String, dynamic> queryParameters = const {},
-    Map<String, String> body = const {},
-  });
+      UserContext userContext,
+      String unencodedPath, {
+        Map<String, dynamic> queryParameters = const {},
+        Map<String, String> body = const {},
+      });
 
   Future<Response> delete(
-    UserContext userContext,
-    String unencodedPath,
-  );
+      UserContext userContext,
+      String unencodedPath,
+      );
 
   Future<Response> put(
-    UserContext userContext,
-    String unencodedPath, {
-    Map<String, String> body = const {},
-  });
+      UserContext userContext,
+      String unencodedPath, {
+        Map<String, String> body = const {},
+      });
 
   Future<Response> patch(
-    UserContext userContext,
-    String unencodedPath, {
-    Map<String, String> body = const {},
-  });
+      UserContext userContext,
+      String unencodedPath, {
+        Map<String, String> body = const {},
+        bool simpleEncode = false,
+      });
 
   Future<Response> postMultipart(
-    final UserContext userContext,
-    final String unencodedPath, {
-    List<MultipartFile> files = const [],
-    dynamic body,
-  });
+      final UserContext userContext,
+      final String unencodedPath, {
+        List<MultipartFile> files = const [],
+        dynamic body,
+      });
 
   Future<Response> putMultipart(
-    final UserContext userContext,
-    final String unencodedPath, {
-    List<MultipartFile> files = const [],
-    dynamic body,
-  });
+      final UserContext userContext,
+      final String unencodedPath, {
+        List<MultipartFile> files = const [],
+        dynamic body,
+      });
 
   Future<Response> patchMultipart(
-    final UserContext userContext,
-    final String unencodedPath, {
-    List<MultipartFile> files = const [],
-  });
+      final UserContext userContext,
+      final String unencodedPath, {
+        List<MultipartFile> files = const [],
+      });
 
   MastodonResponse<Empty> transformEmptyResponse(
-    Response response,
-  );
+      Response response,
+      );
 
   MastodonResponse<D> transformSingleDataResponse<D>(
-    Response response, {
-    required DataBuilder<D> dataBuilder,
-  });
+      Response response, {
+        required DataBuilder<D> dataBuilder,
+      });
 
   MastodonResponse<List<D>> transformMultiDataResponse<D>(
-    Response response, {
-    required DataBuilder<D> dataBuilder,
-  });
+      Response response, {
+        required DataBuilder<D> dataBuilder,
+      });
 
   MastodonResponse<List<D>> transformMultiRawDataResponse<D>(
-    Response response,
-  );
+      Response response,
+      );
 }
 
 abstract class BaseService implements _Service {
@@ -112,9 +113,9 @@ abstract class BaseService implements _Service {
     required String instance,
     required ClientContext context,
   }) : _helper = ServiceHelper(
-          authority: instance,
-          context: context,
-        );
+    authority: instance,
+    context: context,
+  );
 
   final ServiceHelper _helper;
 
@@ -122,11 +123,11 @@ abstract class BaseService implements _Service {
 
   @override
   Future<Response> get(
-    UserContext userContext,
-    final String unencodedPath, {
-    Map<String, String> headers = const {},
-    Map<String, dynamic> queryParameters = const {},
-  }) async =>
+      UserContext userContext,
+      final String unencodedPath, {
+        Map<String, String> headers = const {},
+        Map<String, dynamic> queryParameters = const {},
+      }) async =>
       await _helper.get(
         userContext,
         unencodedPath,
@@ -141,10 +142,10 @@ abstract class BaseService implements _Service {
 
   @override
   Future<StreamResponse> getStream(
-    UserContext userContext,
-    final String unencodedPath, {
-    Map<String, dynamic> queryParameters = const {},
-  }) async =>
+      UserContext userContext,
+      final String unencodedPath, {
+        Map<String, dynamic> queryParameters = const {},
+      }) async =>
       await _helper.getStream(
         userContext,
         unencodedPath,
@@ -158,11 +159,11 @@ abstract class BaseService implements _Service {
 
   @override
   Future<Response> post(
-    UserContext userContext,
-    final String unencodedPath, {
-    Map<String, dynamic> queryParameters = const {},
-    dynamic body = const {},
-  }) async =>
+      UserContext userContext,
+      final String unencodedPath, {
+        Map<String, dynamic> queryParameters = const {},
+        dynamic body = const {},
+      }) async =>
       await _helper.post(
         userContext,
         unencodedPath,
@@ -173,10 +174,10 @@ abstract class BaseService implements _Service {
 
   @override
   Future<Response> delete(
-    UserContext userContext,
-    final String unencodedPath, {
-    dynamic body = const {},
-  }) async =>
+      UserContext userContext,
+      final String unencodedPath, {
+        dynamic body = const {},
+      }) async =>
       await _helper.delete(
         userContext,
         unencodedPath,
@@ -186,10 +187,10 @@ abstract class BaseService implements _Service {
 
   @override
   Future<Response> put(
-    UserContext userContext,
-    final String unencodedPath, {
-    dynamic body = const {},
-  }) async =>
+      UserContext userContext,
+      final String unencodedPath, {
+        dynamic body = const {},
+      }) async =>
       await _helper.put(
         userContext,
         unencodedPath,
@@ -199,24 +200,26 @@ abstract class BaseService implements _Service {
 
   @override
   Future<Response> patch(
-    UserContext userContext,
-    final String unencodedPath, {
-    dynamic body = const {},
-  }) async =>
+      UserContext userContext,
+      final String unencodedPath, {
+        dynamic body = const {},
+        bool simpleEncode = false,
+      }) async =>
       await _helper.patch(
         userContext,
         unencodedPath,
         body: body,
         validate: checkResponse,
+        simpleEncode: simpleEncode,
       );
 
   @override
   Future<Response> postMultipart(
-    final UserContext userContext,
-    final String unencodedPath, {
-    List<MultipartFile> files = const [],
-    dynamic body,
-  }) async =>
+      final UserContext userContext,
+      final String unencodedPath, {
+        List<MultipartFile> files = const [],
+        dynamic body,
+      }) async =>
       await _helper.postMultipart(
         userContext,
         unencodedPath,
@@ -227,11 +230,11 @@ abstract class BaseService implements _Service {
 
   @override
   Future<Response> putMultipart(
-    final UserContext userContext,
-    final String unencodedPath, {
-    List<MultipartFile> files = const [],
-    dynamic body,
-  }) async =>
+      final UserContext userContext,
+      final String unencodedPath, {
+        List<MultipartFile> files = const [],
+        dynamic body,
+      }) async =>
       await _helper.putMultipart(
         userContext,
         unencodedPath,
@@ -242,11 +245,11 @@ abstract class BaseService implements _Service {
 
   @override
   Future<Response> patchMultipart(
-    final UserContext userContext,
-    final String unencodedPath, {
-    List<MultipartFile> files = const [],
-    dynamic body,
-  }) async =>
+      final UserContext userContext,
+      final String unencodedPath, {
+        List<MultipartFile> files = const [],
+        dynamic body,
+      }) async =>
       await _helper.patchMultipart(
         userContext,
         unencodedPath,
@@ -257,8 +260,8 @@ abstract class BaseService implements _Service {
 
   @override
   MastodonResponse<Empty> transformEmptyResponse(
-    Response response,
-  ) =>
+      Response response,
+      ) =>
       MastodonResponse(
         headers: response.headers,
         status: HttpStatus.valueOf(response.statusCode),
@@ -274,9 +277,9 @@ abstract class BaseService implements _Service {
 
   @override
   MastodonResponse<D> transformSingleDataResponse<D>(
-    Response response, {
-    required DataBuilder<D> dataBuilder,
-  }) =>
+      Response response, {
+        required DataBuilder<D> dataBuilder,
+      }) =>
       MastodonResponse(
         headers: response.headers,
         status: HttpStatus.valueOf(response.statusCode),
@@ -294,9 +297,9 @@ abstract class BaseService implements _Service {
 
   @override
   MastodonResponse<List<D>> transformMultiDataResponse<D>(
-    Response response, {
-    required DataBuilder<D> dataBuilder,
-  }) {
+      Response response, {
+        required DataBuilder<D> dataBuilder,
+      }) {
     final json = jsonDecode(response.body);
 
     return MastodonResponse(
@@ -317,8 +320,8 @@ abstract class BaseService implements _Service {
 
   @override
   MastodonResponse<List<D>> transformMultiRawDataResponse<D>(
-    Response response,
-  ) {
+      Response response,
+      ) {
     final json = jsonDecode(response.body);
 
     return MastodonResponse(
@@ -336,8 +339,8 @@ abstract class BaseService implements _Service {
   }
 
   Response checkResponse(
-    final Response response,
-  ) {
+      final Response response,
+      ) {
     if (HttpStatus.noContent.equalsByCode(response.statusCode)) {
       return response;
     }
@@ -382,9 +385,9 @@ abstract class BaseService implements _Service {
   }
 
   void _checkGetResponse(
-    final BaseResponse response,
-    final String event,
-  ) {
+      final BaseResponse response,
+      final String event,
+      ) {
     if (HttpStatus.unauthorized.equalsByCode(response.statusCode)) {
       throw UnauthorizedException(
         'The specified access token is invalid.',
@@ -423,12 +426,12 @@ class RateLimitConverter {
   const RateLimitConverter();
 
   Map<String, dynamic> convert(final Map<String, String> input) => {
-        //! Although it rarely occurs, there is a case where the header does not
-        //! contain rate limiting information.
-        'x-ratelimit-limit': _getInt(input, 'x-ratelimit-limit'),
-        'x-ratelimit-remaining': _getInt(input, 'x-ratelimit-remaining'),
-        'x-ratelimit-reset': _getDateTimeString(input, 'x-ratelimit-reset'),
-      };
+    //! Although it rarely occurs, there is a case where the header does not
+    //! contain rate limiting information.
+    'x-ratelimit-limit': _getInt(input, 'x-ratelimit-limit'),
+    'x-ratelimit-remaining': _getInt(input, 'x-ratelimit-remaining'),
+    'x-ratelimit-reset': _getDateTimeString(input, 'x-ratelimit-reset'),
+  };
 
   int _getInt(final Map<String, String> input, final String key) =>
       input.containsKey(key) ? int.parse(input[key]!) : 0;
