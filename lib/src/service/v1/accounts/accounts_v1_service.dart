@@ -64,6 +64,9 @@ abstract class AccountsV1Service {
   /// - [reason]: If registrations require manual approval, this text will be
   ///             reviewed by moderators.
   ///
+  /// - [dateOfBirth]: The date of birth of the user.
+  ///                 Required if the server has a minimum age requirement.
+  ///
   /// ## Endpoint Url
   ///
   /// - POST /api/v1/accounts HTTP/1.1
@@ -86,6 +89,7 @@ abstract class AccountsV1Service {
     required bool agreement,
     required Locale locale,
     String? reason,
+    DateTime? dateOfBirth,
   });
 
   /// Test to make sure that the user token works.
@@ -1412,6 +1416,7 @@ class _AccountsV1Service extends BaseService implements AccountsV1Service {
     required bool agreement,
     required Locale locale,
     String? reason,
+    DateTime? dateOfBirth,
   }) async =>
       super.transformSingleDataResponse(
         await super.post(
@@ -1424,6 +1429,8 @@ class _AccountsV1Service extends BaseService implements AccountsV1Service {
             'agreement': agreement,
             'locale': locale.toString(),
             'reason': reason,
+            if (dateOfBirth != null)
+              'date_of_birth': dateOfBirth.toIso8601String(),
           },
         ),
         dataBuilder: Token.fromJson,
