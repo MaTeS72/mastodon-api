@@ -3,6 +3,7 @@
 // modification, are permitted provided the conditions.
 
 import 'dart:io';
+import 'dart:typed_data';
 
 import 'package:http/http.dart';
 
@@ -61,6 +62,50 @@ abstract class MediaV2Service {
     String? description,
     MediaFocalPoints? focus,
   });
+
+  /// Creates a media attachment to be used with a new status (web-compatible).
+  ///
+  /// The full sized media will be processed asynchronously
+  /// in the background for large uploads.
+  ///
+  /// ## Parameters
+  ///
+  /// - [fileBytes]: The file bytes to be attached, encoded using multipart form data.
+  ///
+  /// - [filename]: The filename for the uploaded file.
+  ///
+  /// - [thumbnailBytes]: The thumbnail bytes to be attached, encoded using multipart form data.
+  ///
+  /// - [thumbnailFilename]: The filename for the thumbnail.
+  ///
+  /// - [description]: A plain-text description of the media, for accessibility
+  ///                  purposes.
+  ///
+  /// - [focus]: Two floating points (x,y) ranging from -1.0 to 1.0.
+  ///
+  /// ## Endpoint Url
+  ///
+  /// - POST /api/v2/media HTTP/1.1
+  ///
+  /// ## Authentication Methods
+  ///
+  /// - OAuth 2.0
+  ///
+  /// ## Required Scopes
+  ///
+  /// - write:media
+  ///
+  /// ## Reference
+  ///
+  /// - https://docs.joinmastodon.org/methods/media/#v2
+  Future<MastodonResponse<MediaAttachment>> uploadMediaBytes({
+    required Uint8List fileBytes,
+    required String filename,
+    Uint8List? thumbnailBytes,
+    String? thumbnailFilename,
+    String? description,
+    MediaFocalPoints? focus,
+  });
 }
 
 class _MediaV2Service extends BaseService implements MediaV2Service {
@@ -92,7 +137,38 @@ class _MediaV2Service extends BaseService implements MediaV2Service {
                 'thumbnail',
                 thumbnail.readAsBytesSync(),
                 filename: '', //! Thumbnail must be blank.
-              )
+              ),
+          ],
+          body: {
+            'description': description,
+            'focus': focus != null ? '${focus.x},${focus.y}' : null,
+          },
+        ),
+        dataBuilder: MediaAttachment.fromJson,
+      );
+
+  @override
+  Future<MastodonResponse<MediaAttachment>> uploadMediaBytes({
+    required Uint8List fileBytes,
+    required String filename,
+    Uint8List? thumbnailBytes,
+    String? thumbnailFilename,
+    String? description,
+    MediaFocalPoints? focus,
+  }) async =>
+      super.transformSingleDataResponse(
+        await super.postMultipart(
+          UserContext.oauth2Only,
+          '/api/v2/media',
+          files: [
+            MultipartFile.fromBytes('file', fileBytes, filename: filename),
+            if (thumbnailBytes != null)
+              MultipartFile.fromBytes(
+                'thumbnail',
+                thumbnailBytes,
+                filename: thumbnailFilename ??
+                    '', //! Thumbnail must be blank if no filename provided.
+              ),
           ],
           body: {
             'description': description,
