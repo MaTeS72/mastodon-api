@@ -14,11 +14,9 @@ _$InstanceStatisticsImpl _$$InstanceStatisticsImplFromJson(Map json) =>
       json,
       ($checkedConvert) {
         final val = _$InstanceStatisticsImpl(
-          userCount: $checkedConvert('user_count', (v) => (v as num).toInt()),
-          statusCount:
-              $checkedConvert('status_count', (v) => (v as num).toInt()),
-          domainCount:
-              $checkedConvert('domain_count', (v) => (v as num).toInt()),
+          userCount: $checkedConvert('user_count', (v) => v as int),
+          statusCount: $checkedConvert('status_count', (v) => v as int),
+          domainCount: $checkedConvert('domain_count', (v) => v as int),
         );
         return val;
       },

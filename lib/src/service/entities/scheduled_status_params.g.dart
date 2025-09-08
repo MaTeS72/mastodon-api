@@ -62,7 +62,7 @@ Map<String, dynamic> _$$ScheduledStatusParamsImplToJson(
   writeNotNull('media_ids', instance.mediaIds);
   writeNotNull('in_reply_to_id', instance.inReplyToStatusId);
   writeNotNull('language', _$LanguageEnumMap[instance.language]);
-  writeNotNull('visibility', _$VisibilityEnumMap[instance.visibility]);
+  writeNotNull('visibility', instance.visibility?.toJson());
   writeNotNull('idempotency', instance.idempotency);
   writeNotNull('sensitive', instance.isSensitive);
   return val;

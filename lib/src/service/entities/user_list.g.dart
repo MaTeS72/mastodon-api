@@ -17,6 +17,7 @@ _$UserListImpl _$$UserListImplFromJson(Map json) => $checkedCreate(
           title: $checkedConvert('title', (v) => v as String),
           repliesPolicy: $checkedConvert('replies_policy',
               (v) => $enumDecodeNullable(_$ListRepliesPolicyEnumMap, v)),
+          exclusive: $checkedConvert('exclusive', (v) => v as bool? ?? false),
         );
         return val;
       },
@@ -37,6 +38,7 @@ Map<String, dynamic> _$$UserListImplToJson(_$UserListImpl instance) {
 
   writeNotNull(
       'replies_policy', _$ListRepliesPolicyEnumMap[instance.repliesPolicy]);
+  val['exclusive'] = instance.exclusive;
   return val;
 }
 

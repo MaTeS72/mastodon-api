@@ -13,10 +13,9 @@ _$RateLimitImpl _$$RateLimitImplFromJson(Map json) => $checkedCreate(
       json,
       ($checkedConvert) {
         final val = _$RateLimitImpl(
-          limitCount:
-              $checkedConvert('x-ratelimit-limit', (v) => (v as num).toInt()),
-          remainingCount: $checkedConvert(
-              'x-ratelimit-remaining', (v) => (v as num).toInt()),
+          limitCount: $checkedConvert('x-ratelimit-limit', (v) => v as int),
+          remainingCount:
+              $checkedConvert('x-ratelimit-remaining', (v) => v as int),
           resetAt: $checkedConvert(
               'x-ratelimit-reset', (v) => DateTime.parse(v as String)),
         );

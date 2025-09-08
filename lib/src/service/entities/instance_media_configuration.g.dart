@@ -15,16 +15,14 @@ _$InstanceMediaConfigurationImpl _$$InstanceMediaConfigurationImplFromJson(
       json,
       ($checkedConvert) {
         final val = _$InstanceMediaConfigurationImpl(
-          maxImageSize:
-              $checkedConvert('image_size_limit', (v) => (v as num).toInt()),
+          maxImageSize: $checkedConvert('image_size_limit', (v) => v as int),
           maxImageMatrix:
-              $checkedConvert('image_matrix_limit', (v) => (v as num).toInt()),
-          maxVideoSize:
-              $checkedConvert('video_size_limit', (v) => (v as num).toInt()),
-          maxVideoRateLimit: $checkedConvert(
-              'video_frame_rate_limit', (v) => (v as num).toInt()),
+              $checkedConvert('image_matrix_limit', (v) => v as int),
+          maxVideoSize: $checkedConvert('video_size_limit', (v) => v as int),
+          maxVideoRateLimit:
+              $checkedConvert('video_frame_rate_limit', (v) => v as int),
           maxVideoMatrix:
-              $checkedConvert('video_matrix_limit', (v) => (v as num).toInt()),
+              $checkedConvert('video_matrix_limit', (v) => v as int),
           supportedMimeTypes: $checkedConvert(
               'supported_mime_types',
               (v) => (v as List<dynamic>)

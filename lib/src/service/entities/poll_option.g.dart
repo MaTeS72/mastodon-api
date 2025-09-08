@@ -14,7 +14,7 @@ _$PollOptionImpl _$$PollOptionImplFromJson(Map json) => $checkedCreate(
       ($checkedConvert) {
         final val = _$PollOptionImpl(
           title: $checkedConvert('title', (v) => v as String),
-          votesCount: $checkedConvert('votes_count', (v) => (v as num).toInt()),
+          votesCount: $checkedConvert('votes_count', (v) => v as int),
         );
         return val;
       },

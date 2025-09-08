@@ -14,7 +14,7 @@ _$PositionMarkerImpl _$$PositionMarkerImplFromJson(Map json) => $checkedCreate(
       ($checkedConvert) {
         final val = _$PositionMarkerImpl(
           lastReadId: $checkedConvert('last_read_id', (v) => v as String),
-          version: $checkedConvert('version', (v) => (v as num).toInt()),
+          version: $checkedConvert('version', (v) => v as int),
           updatedAt:
               $checkedConvert('updated_at', (v) => DateTime.parse(v as String)),
         );

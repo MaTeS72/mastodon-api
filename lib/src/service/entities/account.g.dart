@@ -23,14 +23,11 @@ _$AccountImpl _$$AccountImplFromJson(Map json) => $checkedCreate(
           avatarStatic: $checkedConvert('avatar_static', (v) => v as String),
           header: $checkedConvert('header', (v) => v as String),
           headerStatic: $checkedConvert('header_static', (v) => v as String),
-          followersCount:
-              $checkedConvert('followers_count', (v) => (v as num).toInt()),
-          followingCount:
-              $checkedConvert('following_count', (v) => (v as num).toInt()),
+          followersCount: $checkedConvert('followers_count', (v) => v as int),
+          followingCount: $checkedConvert('following_count', (v) => v as int),
           subscribingCount:
-              $checkedConvert('subscribing_count', (v) => (v as num?)?.toInt()),
-          statusesCount:
-              $checkedConvert('statuses_count', (v) => (v as num).toInt()),
+              $checkedConvert('subscribing_count', (v) => v as int?),
+          statusesCount: $checkedConvert('statuses_count', (v) => v as int),
           emojis: $checkedConvert(
               'emojis',
               (v) => (v as List<dynamic>)

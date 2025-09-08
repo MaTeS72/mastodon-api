@@ -20,10 +20,10 @@ _$OEmbedMetadataImpl _$$OEmbedMetadataImplFromJson(Map json) => $checkedCreate(
           authorUrl: $checkedConvert('author_url', (v) => v as String),
           providerName: $checkedConvert('provider_name', (v) => v as String),
           providerUrl: $checkedConvert('provider_url', (v) => v as String),
-          cacheAge: $checkedConvert('cache_age', (v) => (v as num).toInt()),
+          cacheAge: $checkedConvert('cache_age', (v) => v as int),
           html: $checkedConvert('html', (v) => v as String),
-          width: $checkedConvert('width', (v) => (v as num).toInt()),
-          height: $checkedConvert('height', (v) => (v as num?)?.toInt()),
+          width: $checkedConvert('width', (v) => v as int),
+          height: $checkedConvert('height', (v) => v as int?),
         );
         return val;
       },

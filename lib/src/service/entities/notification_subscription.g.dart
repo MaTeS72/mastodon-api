@@ -15,7 +15,7 @@ _$NotificationSubscriptionImpl _$$NotificationSubscriptionImplFromJson(
       json,
       ($checkedConvert) {
         final val = _$NotificationSubscriptionImpl(
-          id: $checkedConvert('id', (v) => (v as num).toInt()),
+          id: $checkedConvert('id', (v) => v as int),
           endpoint: $checkedConvert('endpoint', (v) => v as String),
           alerts: $checkedConvert(
               'alerts',

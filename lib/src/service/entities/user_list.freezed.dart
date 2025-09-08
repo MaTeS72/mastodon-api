@@ -29,6 +29,9 @@ mixin _$UserList {
   /// Which replies should be shown in the list.
   ListRepliesPolicy? get repliesPolicy => throw _privateConstructorUsedError;
 
+  /// Whether members of this list need to get removed from the "Home" feed.
+  bool get exclusive => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $UserListCopyWith<UserList> get copyWith =>
@@ -40,7 +43,11 @@ abstract class $UserListCopyWith<$Res> {
   factory $UserListCopyWith(UserList value, $Res Function(UserList) then) =
       _$UserListCopyWithImpl<$Res, UserList>;
   @useResult
-  $Res call({String id, String title, ListRepliesPolicy? repliesPolicy});
+  $Res call(
+      {String id,
+      String title,
+      ListRepliesPolicy? repliesPolicy,
+      bool exclusive});
 }
 
 /// @nodoc
@@ -59,6 +66,7 @@ class _$UserListCopyWithImpl<$Res, $Val extends UserList>
     Object? id = null,
     Object? title = null,
     Object? repliesPolicy = freezed,
+    Object? exclusive = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -73,6 +81,10 @@ class _$UserListCopyWithImpl<$Res, $Val extends UserList>
           ? _value.repliesPolicy
           : repliesPolicy // ignore: cast_nullable_to_non_nullable
               as ListRepliesPolicy?,
+      exclusive: null == exclusive
+          ? _value.exclusive
+          : exclusive // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -85,7 +97,11 @@ abstract class _$$UserListImplCopyWith<$Res>
       __$$UserListImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String title, ListRepliesPolicy? repliesPolicy});
+  $Res call(
+      {String id,
+      String title,
+      ListRepliesPolicy? repliesPolicy,
+      bool exclusive});
 }
 
 /// @nodoc
@@ -102,6 +118,7 @@ class __$$UserListImplCopyWithImpl<$Res>
     Object? id = null,
     Object? title = null,
     Object? repliesPolicy = freezed,
+    Object? exclusive = null,
   }) {
     return _then(_$UserListImpl(
       id: null == id
@@ -116,6 +133,10 @@ class __$$UserListImplCopyWithImpl<$Res>
           ? _value.repliesPolicy
           : repliesPolicy // ignore: cast_nullable_to_non_nullable
               as ListRepliesPolicy?,
+      exclusive: null == exclusive
+          ? _value.exclusive
+          : exclusive // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -125,7 +146,10 @@ class __$$UserListImplCopyWithImpl<$Res>
 @JsonSerializable(includeIfNull: false)
 class _$UserListImpl implements _UserList {
   const _$UserListImpl(
-      {required this.id, required this.title, this.repliesPolicy});
+      {required this.id,
+      required this.title,
+      this.repliesPolicy,
+      this.exclusive = false});
 
   factory _$UserListImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserListImplFromJson(json);
@@ -142,9 +166,14 @@ class _$UserListImpl implements _UserList {
   @override
   final ListRepliesPolicy? repliesPolicy;
 
+  /// Whether members of this list need to get removed from the "Home" feed.
+  @override
+  @JsonKey()
+  final bool exclusive;
+
   @override
   String toString() {
-    return 'UserList(id: $id, title: $title, repliesPolicy: $repliesPolicy)';
+    return 'UserList(id: $id, title: $title, repliesPolicy: $repliesPolicy, exclusive: $exclusive)';
   }
 
   @override
@@ -155,12 +184,15 @@ class _$UserListImpl implements _UserList {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.repliesPolicy, repliesPolicy) ||
-                other.repliesPolicy == repliesPolicy));
+                other.repliesPolicy == repliesPolicy) &&
+            (identical(other.exclusive, exclusive) ||
+                other.exclusive == exclusive));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, repliesPolicy);
+  int get hashCode =>
+      Object.hash(runtimeType, id, title, repliesPolicy, exclusive);
 
   @JsonKey(ignore: true)
   @override
@@ -180,7 +212,8 @@ abstract class _UserList implements UserList {
   const factory _UserList(
       {required final String id,
       required final String title,
-      final ListRepliesPolicy? repliesPolicy}) = _$UserListImpl;
+      final ListRepliesPolicy? repliesPolicy,
+      final bool exclusive}) = _$UserListImpl;
 
   factory _UserList.fromJson(Map<String, dynamic> json) =
       _$UserListImpl.fromJson;
@@ -197,6 +230,10 @@ abstract class _UserList implements UserList {
 
   /// Which replies should be shown in the list.
   ListRepliesPolicy? get repliesPolicy;
+  @override
+
+  /// Whether members of this list need to get removed from the "Home" feed.
+  bool get exclusive;
   @override
   @JsonKey(ignore: true)
   _$$UserListImplCopyWith<_$UserListImpl> get copyWith =>

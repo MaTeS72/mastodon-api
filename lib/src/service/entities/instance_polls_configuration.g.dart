@@ -15,13 +15,13 @@ _$InstancePollsConfigurationImpl _$$InstancePollsConfigurationImplFromJson(
       json,
       ($checkedConvert) {
         final val = _$InstancePollsConfigurationImpl(
-          maxOptions: $checkedConvert('max_options', (v) => (v as num).toInt()),
-          maxCharactersPerOption: $checkedConvert(
-              'max_characters_per_option', (v) => (v as num).toInt()),
+          maxOptions: $checkedConvert('max_options', (v) => v as int),
+          maxCharactersPerOption:
+              $checkedConvert('max_characters_per_option', (v) => v as int),
           maxExpiration: $checkedConvert('max_expiration',
-              (v) => const DurationConverter().fromJson((v as num).toInt())),
+              (v) => const DurationConverter().fromJson(v as int)),
           minExpiration: $checkedConvert('min_expiration',
-              (v) => const DurationConverter().fromJson((v as num).toInt())),
+              (v) => const DurationConverter().fromJson(v as int)),
         );
         return val;
       },

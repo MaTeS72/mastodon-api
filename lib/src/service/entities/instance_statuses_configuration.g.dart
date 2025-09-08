@@ -14,12 +14,11 @@ _$InstanceStatusesConfigurationImpl
           json,
           ($checkedConvert) {
             final val = _$InstanceStatusesConfigurationImpl(
-              maxCharacters:
-                  $checkedConvert('max_characters', (v) => (v as num).toInt()),
-              maxMediaAttachments: $checkedConvert(
-                  'max_media_attachments', (v) => (v as num).toInt()),
+              maxCharacters: $checkedConvert('max_characters', (v) => v as int),
+              maxMediaAttachments:
+                  $checkedConvert('max_media_attachments', (v) => v as int),
               charactersReservedPerUrl: $checkedConvert(
-                  'characters_reserved_per_url', (v) => (v as num).toInt()),
+                  'characters_reserved_per_url', (v) => v as int),
             );
             return val;
           },
