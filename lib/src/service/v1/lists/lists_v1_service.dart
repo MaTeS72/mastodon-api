@@ -292,39 +292,29 @@ class _ListsV1Service extends BaseService implements ListsV1Service {
   Future<MastodonResponse<Empty>> addAccountsToList({
     required String listId,
     required List<String> accountIds,
-  }) async {
-    final body = <String, dynamic>{};
-
-    for (int i = 0; i < accountIds.length; i++) {
-      body['account_ids[$i]'] = accountIds[i];
-    }
-
-    return super.transformEmptyResponse(
-      await super.post(
-        UserContext.oauth2Only,
-        '/api/v1/lists/$listId/accounts',
-        body: body,
-      ),
-    );
-  }
+  }) async =>
+      super.transformEmptyResponse(
+        await super.post(
+          UserContext.oauth2Only,
+          '/api/v1/lists/$listId/accounts',
+          body: {
+            'account_ids': accountIds,
+          },
+        ),
+      );
 
   @override
   Future<MastodonResponse<Empty>> removeAccountsFromList({
     required String listId,
     required List<String> accountIds,
-  }) async {
-    final body = <String, dynamic>{};
-
-    for (int i = 0; i < accountIds.length; i++) {
-      body['account_ids[$i]'] = accountIds[i];
-    }
-
-    return super.transformEmptyResponse(
-      await super.delete(
-        UserContext.oauth2Only,
-        '/api/v1/lists/$listId/accounts',
-        body: body,
-      ),
-    );
-  }
+  }) async =>
+      super.transformEmptyResponse(
+        await super.delete(
+          UserContext.oauth2Only,
+          '/api/v1/lists/$listId/accounts',
+          body: {
+            'account_ids': accountIds,
+          },
+        ),
+      );
 }
