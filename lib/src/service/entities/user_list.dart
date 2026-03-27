@@ -25,6 +25,9 @@ class UserList with _$UserList {
 
     /// Which replies should be shown in the list.
     ListRepliesPolicy? repliesPolicy,
+
+    /// Whether members of this list need to get removed from the "Home" feed.
+    @Default(false) bool exclusive,
   }) = _UserList;
 
   factory UserList.fromJson(Map<String, Object?> json) =>

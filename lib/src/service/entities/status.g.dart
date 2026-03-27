@@ -20,12 +20,9 @@ _$StatusImpl _$$StatusImplFromJson(Map json) => $checkedCreate(
           spoilerText: $checkedConvert('spoiler_text', (v) => v as String),
           visibility: $checkedConvert(
               'visibility', (v) => $enumDecode(_$VisibilityEnumMap, v)),
-          favouritesCount:
-              $checkedConvert('favourites_count', (v) => (v as num).toInt()),
-          repliesCount:
-              $checkedConvert('replies_count', (v) => (v as num).toInt()),
-          reblogsCount:
-              $checkedConvert('reblogs_count', (v) => (v as num).toInt()),
+          favouritesCount: $checkedConvert('favourites_count', (v) => v as int),
+          repliesCount: $checkedConvert('replies_count', (v) => v as int),
+          reblogsCount: $checkedConvert('reblogs_count', (v) => v as int),
           language: $checkedConvert(
               'language',
               (v) => $enumDecodeNullable(_$LanguageEnumMap, v,
@@ -114,7 +111,7 @@ Map<String, dynamic> _$$StatusImplToJson(_$StatusImpl instance) {
   val['uri'] = instance.uri;
   val['content'] = instance.content;
   val['spoiler_text'] = instance.spoilerText;
-  val['visibility'] = _$VisibilityEnumMap[instance.visibility]!;
+  val['visibility'] = instance.visibility.toJson();
   val['favourites_count'] = instance.favouritesCount;
   val['replies_count'] = instance.repliesCount;
   val['reblogs_count'] = instance.reblogsCount;

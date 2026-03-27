@@ -14,7 +14,7 @@ _$EmojiReactionImpl _$$EmojiReactionImplFromJson(Map json) => $checkedCreate(
       ($checkedConvert) {
         final val = _$EmojiReactionImpl(
           name: $checkedConvert('name', (v) => v as String),
-          count: $checkedConvert('count', (v) => (v as num).toInt()),
+          count: $checkedConvert('count', (v) => v as int),
           isReacted: $checkedConvert('me', (v) => v as bool?),
           url: $checkedConvert('url', (v) => v as String?),
           staticUrl: $checkedConvert('static_url', (v) => v as String?),

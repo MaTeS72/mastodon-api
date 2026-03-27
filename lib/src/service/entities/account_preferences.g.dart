@@ -43,8 +43,7 @@ _$AccountPreferencesImpl _$$AccountPreferencesImplFromJson(Map json) =>
 Map<String, dynamic> _$$AccountPreferencesImplToJson(
         _$AccountPreferencesImpl instance) =>
     <String, dynamic>{
-      'posting:default:visibility':
-          _$VisibilityEnumMap[instance.defaultVisibility]!,
+      'posting:default:visibility': instance.defaultVisibility.toJson(),
       'posting:default:sensitive': instance.isDefaultSensitive,
       'posting:default:language': _$LanguageEnumMap[instance.defaultLanguage]!,
       'reading:expand:media':

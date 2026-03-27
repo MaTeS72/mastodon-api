@@ -14,8 +14,7 @@ _$InstanceUsageUsersImpl _$$InstanceUsageUsersImplFromJson(Map json) =>
       json,
       ($checkedConvert) {
         final val = _$InstanceUsageUsersImpl(
-          activeMonth:
-              $checkedConvert('active_month', (v) => (v as num).toInt()),
+          activeMonth: $checkedConvert('active_month', (v) => v as int),
         );
         return val;
       },

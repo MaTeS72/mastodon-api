@@ -14,9 +14,8 @@ _$PollImpl _$$PollImplFromJson(Map json) => $checkedCreate(
       ($checkedConvert) {
         final val = _$PollImpl(
           id: $checkedConvert('id', (v) => v as String),
-          votesCount: $checkedConvert('votes_count', (v) => (v as num).toInt()),
-          votersCount:
-              $checkedConvert('voters_count', (v) => (v as num?)?.toInt()),
+          votesCount: $checkedConvert('votes_count', (v) => v as int),
+          votersCount: $checkedConvert('voters_count', (v) => v as int?),
           isMultiple: $checkedConvert('multiple', (v) => v as bool),
           isVoted: $checkedConvert('voted', (v) => v as bool?),
           isExpired: $checkedConvert('expired', (v) => v as bool),
@@ -26,11 +25,8 @@ _$PollImpl _$$PollImplFromJson(Map json) => $checkedCreate(
                   .map((e) =>
                       PollOption.fromJson(Map<String, Object?>.from(e as Map)))
                   .toList()),
-          ownVotes: $checkedConvert(
-              'own_votes',
-              (v) => (v as List<dynamic>?)
-                  ?.map((e) => (e as num).toInt())
-                  .toList()),
+          ownVotes: $checkedConvert('own_votes',
+              (v) => (v as List<dynamic>?)?.map((e) => e as int).toList()),
           emojis: $checkedConvert(
               'emojis',
               (v) => (v as List<dynamic>)

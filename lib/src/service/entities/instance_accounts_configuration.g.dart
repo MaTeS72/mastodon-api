@@ -14,8 +14,8 @@ _$InstanceAccountsConfigurationImpl
           json,
           ($checkedConvert) {
             final val = _$InstanceAccountsConfigurationImpl(
-              maxFeaturedTags: $checkedConvert(
-                  'max_featured_tags', (v) => (v as num).toInt()),
+              maxFeaturedTags:
+                  $checkedConvert('max_featured_tags', (v) => v as int),
             );
             return val;
           },

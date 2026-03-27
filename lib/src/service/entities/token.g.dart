@@ -18,7 +18,7 @@ _$TokenImpl _$$TokenImplFromJson(Map json) => $checkedCreate(
           scopes: $checkedConvert(
               'scope', (v) => const ScopeConverter().fromJson(v as String)),
           createdAt: $checkedConvert('created_at',
-              (v) => const IntDateTimeConverter().fromJson((v as num).toInt())),
+              (v) => const IntDateTimeConverter().fromJson(v as int)),
         );
         return val;
       },
