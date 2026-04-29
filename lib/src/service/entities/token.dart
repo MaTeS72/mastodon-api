@@ -16,7 +16,7 @@ part 'token.freezed.dart';
 part 'token.g.dart';
 
 @freezed
-class Token with _$Token {
+abstract class Token with _$Token {
   const factory Token({
     /// An OAuth token to be used for authorization.
     required String accessToken,

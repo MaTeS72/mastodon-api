@@ -14,7 +14,7 @@ part 'instance_media_configuration.freezed.dart';
 part 'instance_media_configuration.g.dart';
 
 @freezed
-class InstanceMediaConfiguration with _$InstanceMediaConfiguration {
+abstract class InstanceMediaConfiguration with _$InstanceMediaConfiguration {
   @JsonSerializable(includeIfNull: false)
   const factory InstanceMediaConfiguration({
     /// The maximum size of any uploaded image, in bytes.

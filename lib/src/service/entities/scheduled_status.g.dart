@@ -8,40 +8,45 @@ part of 'scheduled_status.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ScheduledStatusImpl _$$ScheduledStatusImplFromJson(Map json) =>
-    $checkedCreate(
-      r'_$ScheduledStatusImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$ScheduledStatusImpl(
-          id: $checkedConvert('id', (v) => v as String),
-          params: $checkedConvert(
-              'params',
-              (v) => ScheduledStatusParams.fromJson(
-                  Map<String, Object?>.from(v as Map))),
-          mediaAttachments: $checkedConvert(
-              'media_attachments',
-              (v) => (v as List<dynamic>)
-                  .map((e) => MediaAttachment.fromJson(
-                      Map<String, Object?>.from(e as Map)))
-                  .toList()),
-          scheduledAt: $checkedConvert(
-              'scheduled_at', (v) => DateTime.parse(v as String)),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'mediaAttachments': 'media_attachments',
-        'scheduledAt': 'scheduled_at'
-      },
+_ScheduledStatus _$ScheduledStatusFromJson(Map json) => $checkedCreate(
+  '_ScheduledStatus',
+  json,
+  ($checkedConvert) {
+    final val = _ScheduledStatus(
+      id: $checkedConvert('id', (v) => v as String),
+      params: $checkedConvert(
+        'params',
+        (v) =>
+            ScheduledStatusParams.fromJson(Map<String, Object?>.from(v as Map)),
+      ),
+      mediaAttachments: $checkedConvert(
+        'media_attachments',
+        (v) => (v as List<dynamic>)
+            .map(
+              (e) =>
+                  MediaAttachment.fromJson(Map<String, Object?>.from(e as Map)),
+            )
+            .toList(),
+      ),
+      scheduledAt: $checkedConvert(
+        'scheduled_at',
+        (v) => DateTime.parse(v as String),
+      ),
     );
+    return val;
+  },
+  fieldKeyMap: const {
+    'mediaAttachments': 'media_attachments',
+    'scheduledAt': 'scheduled_at',
+  },
+);
 
-Map<String, dynamic> _$$ScheduledStatusImplToJson(
-        _$ScheduledStatusImpl instance) =>
+Map<String, dynamic> _$ScheduledStatusToJson(_ScheduledStatus instance) =>
     <String, dynamic>{
       'id': instance.id,
       'params': instance.params.toJson(),
-      'media_attachments':
-          instance.mediaAttachments.map((e) => e.toJson()).toList(),
+      'media_attachments': instance.mediaAttachments
+          .map((e) => e.toJson())
+          .toList(),
       'scheduled_at': instance.scheduledAt.toIso8601String(),
     };

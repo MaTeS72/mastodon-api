@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,165 +9,276 @@ part of 'rule.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Rule _$RuleFromJson(Map<String, dynamic> json) {
-  return _Rule.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Rule {
-  /// An identifier for the rule.
-  String get id => throw _privateConstructorUsedError;
 
-  /// The rule to be followed.
-  String get text => throw _privateConstructorUsedError;
+/// An identifier for the rule.
+ String get id;/// The rule to be followed.
+ String get text;
+/// Create a copy of Rule
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$RuleCopyWith<Rule> get copyWith => _$RuleCopyWithImpl<Rule>(this as Rule, _$identity);
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $RuleCopyWith<Rule> get copyWith => throw _privateConstructorUsedError;
+  /// Serializes this Rule to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Rule&&(identical(other.id, id) || other.id == id)&&(identical(other.text, text) || other.text == text));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,text);
+
+@override
+String toString() {
+  return 'Rule(id: $id, text: $text)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $RuleCopyWith<$Res> {
-  factory $RuleCopyWith(Rule value, $Res Function(Rule) then) =
-      _$RuleCopyWithImpl<$Res, Rule>;
-  @useResult
-  $Res call({String id, String text});
-}
+abstract mixin class $RuleCopyWith<$Res>  {
+  factory $RuleCopyWith(Rule value, $Res Function(Rule) _then) = _$RuleCopyWithImpl;
+@useResult
+$Res call({
+ String id, String text
+});
 
+
+
+
+}
 /// @nodoc
-class _$RuleCopyWithImpl<$Res, $Val extends Rule>
+class _$RuleCopyWithImpl<$Res>
     implements $RuleCopyWith<$Res> {
-  _$RuleCopyWithImpl(this._value, this._then);
+  _$RuleCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final Rule _self;
+  final $Res Function(Rule) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? text = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      text: null == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
+/// Create a copy of Rule
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? text = null,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$RuleImplCopyWith<$Res> implements $RuleCopyWith<$Res> {
-  factory _$$RuleImplCopyWith(
-          _$RuleImpl value, $Res Function(_$RuleImpl) then) =
-      __$$RuleImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String id, String text});
 }
 
-/// @nodoc
-class __$$RuleImplCopyWithImpl<$Res>
-    extends _$RuleCopyWithImpl<$Res, _$RuleImpl>
-    implements _$$RuleImplCopyWith<$Res> {
-  __$$RuleImplCopyWithImpl(_$RuleImpl _value, $Res Function(_$RuleImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? text = null,
-  }) {
-    return _then(_$RuleImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      text: null == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Adds pattern-matching-related methods to [Rule].
+extension RulePatterns on Rule {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Rule value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Rule() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Rule value)  $default,){
+final _that = this;
+switch (_that) {
+case _Rule():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Rule value)?  $default,){
+final _that = this;
+switch (_that) {
+case _Rule() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String text)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Rule() when $default != null:
+return $default(_that.id,_that.text);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String text)  $default,) {final _that = this;
+switch (_that) {
+case _Rule():
+return $default(_that.id,_that.text);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String text)?  $default,) {final _that = this;
+switch (_that) {
+case _Rule() when $default != null:
+return $default(_that.id,_that.text);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$RuleImpl implements _Rule {
-  const _$RuleImpl({required this.id, required this.text});
 
-  factory _$RuleImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RuleImplFromJson(json);
+class _Rule implements Rule {
+  const _Rule({required this.id, required this.text});
+  factory _Rule.fromJson(Map<String, dynamic> json) => _$RuleFromJson(json);
 
-  /// An identifier for the rule.
-  @override
-  final String id;
+/// An identifier for the rule.
+@override final  String id;
+/// The rule to be followed.
+@override final  String text;
 
-  /// The rule to be followed.
-  @override
-  final String text;
+/// Create a copy of Rule
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$RuleCopyWith<_Rule> get copyWith => __$RuleCopyWithImpl<_Rule>(this, _$identity);
 
-  @override
-  String toString() {
-    return 'Rule(id: $id, text: $text)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RuleImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.text, text) || other.text == text));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, text);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RuleImplCopyWith<_$RuleImpl> get copyWith =>
-      __$$RuleImplCopyWithImpl<_$RuleImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RuleImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$RuleToJson(this, );
 }
 
-abstract class _Rule implements Rule {
-  const factory _Rule({required final String id, required final String text}) =
-      _$RuleImpl;
-
-  factory _Rule.fromJson(Map<String, dynamic> json) = _$RuleImpl.fromJson;
-
-  @override
-
-  /// An identifier for the rule.
-  String get id;
-  @override
-
-  /// The rule to be followed.
-  String get text;
-  @override
-  @JsonKey(ignore: true)
-  _$$RuleImplCopyWith<_$RuleImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Rule&&(identical(other.id, id) || other.id == id)&&(identical(other.text, text) || other.text == text));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,text);
+
+@override
+String toString() {
+  return 'Rule(id: $id, text: $text)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$RuleCopyWith<$Res> implements $RuleCopyWith<$Res> {
+  factory _$RuleCopyWith(_Rule value, $Res Function(_Rule) _then) = __$RuleCopyWithImpl;
+@override @useResult
+$Res call({
+ String id, String text
+});
+
+
+
+
+}
+/// @nodoc
+class __$RuleCopyWithImpl<$Res>
+    implements _$RuleCopyWith<$Res> {
+  __$RuleCopyWithImpl(this._self, this._then);
+
+  final _Rule _self;
+  final $Res Function(_Rule) _then;
+
+/// Create a copy of Rule
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? text = null,}) {
+  return _then(_Rule(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

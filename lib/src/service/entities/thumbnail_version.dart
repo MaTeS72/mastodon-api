@@ -11,7 +11,7 @@ part 'thumbnail_version.freezed.dart';
 part 'thumbnail_version.g.dart';
 
 @freezed
-class ThumbnailVersion with _$ThumbnailVersion {
+abstract class ThumbnailVersion with _$ThumbnailVersion {
   @JsonSerializable(includeIfNull: false)
   const factory ThumbnailVersion({
     /// The URL for the thumbnail image at 1x resolution.

@@ -11,7 +11,7 @@ part 'emoji_reaction.freezed.dart';
 part 'emoji_reaction.g.dart';
 
 @freezed
-class EmojiReaction with _$EmojiReaction {
+abstract class EmojiReaction with _$EmojiReaction {
   @JsonSerializable(includeIfNull: false)
   const factory EmojiReaction({
     /// The emoji used for the reaction. Either a unicode emoji,

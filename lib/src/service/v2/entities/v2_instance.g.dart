@@ -8,80 +8,77 @@ part of 'v2_instance.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$V2InstanceImpl _$$V2InstanceImplFromJson(Map json) => $checkedCreate(
-      r'_$V2InstanceImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$V2InstanceImpl(
-          domain: $checkedConvert('domain', (v) => v as String),
-          title: $checkedConvert('title', (v) => v as String),
-          description: $checkedConvert('description', (v) => v as String),
-          usage: $checkedConvert(
-              'usage',
-              (v) =>
-                  InstanceUsage.fromJson(Map<String, Object?>.from(v as Map))),
-          sourceUrl: $checkedConvert('source_url', (v) => v as String),
-          version: $checkedConvert('version', (v) => v as String),
-          languages: $checkedConvert(
-              'languages',
-              (v) => (v as List<dynamic>)
-                  .map((e) => $enumDecode(_$LanguageEnumMap, e))
-                  .toList()),
-          thumbnail: $checkedConvert(
-              'thumbnail',
-              (v) => v == null
-                  ? null
-                  : Thumbnail.fromJson(Map<String, Object?>.from(v as Map))),
-          configuration: $checkedConvert(
-              'configuration',
-              (v) => v == null
-                  ? null
-                  : V2InstanceConfiguration.fromJson(
-                      Map<String, Object?>.from(v as Map))),
-          registrations: $checkedConvert(
-              'registrations',
-              (v) => InstanceRegistrations.fromJson(
-                  Map<String, Object?>.from(v as Map))),
-          contact: $checkedConvert(
-              'contact',
-              (v) => InstanceContact.fromJson(
-                  Map<String, Object?>.from(v as Map))),
-          rules: $checkedConvert(
-              'rules',
-              (v) => (v as List<dynamic>?)
-                  ?.map(
-                      (e) => Rule.fromJson(Map<String, Object?>.from(e as Map)))
-                  .toList()),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'sourceUrl': 'source_url'},
+_V2Instance _$V2InstanceFromJson(Map json) => $checkedCreate(
+  '_V2Instance',
+  json,
+  ($checkedConvert) {
+    final val = _V2Instance(
+      domain: $checkedConvert('domain', (v) => v as String),
+      title: $checkedConvert('title', (v) => v as String),
+      description: $checkedConvert('description', (v) => v as String),
+      usage: $checkedConvert(
+        'usage',
+        (v) => InstanceUsage.fromJson(Map<String, Object?>.from(v as Map)),
+      ),
+      sourceUrl: $checkedConvert('source_url', (v) => v as String),
+      version: $checkedConvert('version', (v) => v as String),
+      languages: $checkedConvert(
+        'languages',
+        (v) => (v as List<dynamic>)
+            .map((e) => $enumDecode(_$LanguageEnumMap, e))
+            .toList(),
+      ),
+      thumbnail: $checkedConvert(
+        'thumbnail',
+        (v) => v == null
+            ? null
+            : Thumbnail.fromJson(Map<String, Object?>.from(v as Map)),
+      ),
+      configuration: $checkedConvert(
+        'configuration',
+        (v) => v == null
+            ? null
+            : V2InstanceConfiguration.fromJson(
+                Map<String, Object?>.from(v as Map),
+              ),
+      ),
+      registrations: $checkedConvert(
+        'registrations',
+        (v) =>
+            InstanceRegistrations.fromJson(Map<String, Object?>.from(v as Map)),
+      ),
+      contact: $checkedConvert(
+        'contact',
+        (v) => InstanceContact.fromJson(Map<String, Object?>.from(v as Map)),
+      ),
+      rules: $checkedConvert(
+        'rules',
+        (v) => (v as List<dynamic>?)
+            ?.map((e) => Rule.fromJson(Map<String, Object?>.from(e as Map)))
+            .toList(),
+      ),
     );
+    return val;
+  },
+  fieldKeyMap: const {'sourceUrl': 'source_url'},
+);
 
-Map<String, dynamic> _$$V2InstanceImplToJson(_$V2InstanceImpl instance) {
-  final val = <String, dynamic>{
-    'domain': instance.domain,
-    'title': instance.title,
-    'description': instance.description,
-    'usage': instance.usage.toJson(),
-    'source_url': instance.sourceUrl,
-    'version': instance.version,
-    'languages': instance.languages.map((e) => _$LanguageEnumMap[e]!).toList(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('thumbnail', instance.thumbnail?.toJson());
-  writeNotNull('configuration', instance.configuration?.toJson());
-  val['registrations'] = instance.registrations.toJson();
-  val['contact'] = instance.contact.toJson();
-  writeNotNull('rules', instance.rules?.map((e) => e.toJson()).toList());
-  return val;
-}
+Map<String, dynamic> _$V2InstanceToJson(
+  _V2Instance instance,
+) => <String, dynamic>{
+  'domain': instance.domain,
+  'title': instance.title,
+  'description': instance.description,
+  'usage': instance.usage.toJson(),
+  'source_url': instance.sourceUrl,
+  'version': instance.version,
+  'languages': instance.languages.map((e) => _$LanguageEnumMap[e]!).toList(),
+  'thumbnail': ?instance.thumbnail?.toJson(),
+  'configuration': ?instance.configuration?.toJson(),
+  'registrations': instance.registrations.toJson(),
+  'contact': instance.contact.toJson(),
+  'rules': ?instance.rules?.map((e) => e.toJson()).toList(),
+};
 
 const _$LanguageEnumMap = {
   Language.afar: 'aa',

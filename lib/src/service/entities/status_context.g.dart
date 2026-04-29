@@ -8,31 +8,26 @@ part of 'status_context.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$StatusesContextImpl _$$StatusesContextImplFromJson(Map json) =>
-    $checkedCreate(
-      r'_$StatusesContextImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$StatusesContextImpl(
-          ancestors: $checkedConvert(
-              'ancestors',
-              (v) => (v as List<dynamic>)
-                  .map((e) =>
-                      Status.fromJson(Map<String, Object?>.from(e as Map)))
-                  .toList()),
-          descendants: $checkedConvert(
-              'descendants',
-              (v) => (v as List<dynamic>)
-                  .map((e) =>
-                      Status.fromJson(Map<String, Object?>.from(e as Map)))
-                  .toList()),
-        );
-        return val;
-      },
-    );
+_StatusesContext _$StatusesContextFromJson(Map json) =>
+    $checkedCreate('_StatusesContext', json, ($checkedConvert) {
+      final val = _StatusesContext(
+        ancestors: $checkedConvert(
+          'ancestors',
+          (v) => (v as List<dynamic>)
+              .map((e) => Status.fromJson(Map<String, Object?>.from(e as Map)))
+              .toList(),
+        ),
+        descendants: $checkedConvert(
+          'descendants',
+          (v) => (v as List<dynamic>)
+              .map((e) => Status.fromJson(Map<String, Object?>.from(e as Map)))
+              .toList(),
+        ),
+      );
+      return val;
+    });
 
-Map<String, dynamic> _$$StatusesContextImplToJson(
-        _$StatusesContextImpl instance) =>
+Map<String, dynamic> _$StatusesContextToJson(_StatusesContext instance) =>
     <String, dynamic>{
       'ancestors': instance.ancestors.map((e) => e.toJson()).toList(),
       'descendants': instance.descendants.map((e) => e.toJson()).toList(),

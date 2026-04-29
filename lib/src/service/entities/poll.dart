@@ -15,7 +15,7 @@ part 'poll.freezed.dart';
 part 'poll.g.dart';
 
 @freezed
-class Poll with _$Poll {
+abstract class Poll with _$Poll {
   const factory Poll({
     /// The ID of the poll in the database.
     required String id,

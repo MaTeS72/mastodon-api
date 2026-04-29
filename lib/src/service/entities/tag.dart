@@ -14,7 +14,7 @@ part 'tag.freezed.dart';
 part 'tag.g.dart';
 
 @freezed
-class Tag with _$Tag {
+abstract class Tag with _$Tag {
   @JsonSerializable(includeIfNull: false)
   const factory Tag({
     /// The value of the hashtag after the # sign.

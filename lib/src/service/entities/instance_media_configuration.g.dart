@@ -8,28 +8,38 @@ part of 'instance_media_configuration.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$InstanceMediaConfigurationImpl _$$InstanceMediaConfigurationImplFromJson(
-        Map json) =>
+_InstanceMediaConfiguration _$InstanceMediaConfigurationFromJson(Map json) =>
     $checkedCreate(
-      r'_$InstanceMediaConfigurationImpl',
+      '_InstanceMediaConfiguration',
       json,
       ($checkedConvert) {
-        final val = _$InstanceMediaConfigurationImpl(
-          maxImageSize:
-              $checkedConvert('image_size_limit', (v) => (v as num).toInt()),
-          maxImageMatrix:
-              $checkedConvert('image_matrix_limit', (v) => (v as num).toInt()),
-          maxVideoSize:
-              $checkedConvert('video_size_limit', (v) => (v as num).toInt()),
+        final val = _InstanceMediaConfiguration(
+          maxImageSize: $checkedConvert(
+            'image_size_limit',
+            (v) => (v as num).toInt(),
+          ),
+          maxImageMatrix: $checkedConvert(
+            'image_matrix_limit',
+            (v) => (v as num).toInt(),
+          ),
+          maxVideoSize: $checkedConvert(
+            'video_size_limit',
+            (v) => (v as num).toInt(),
+          ),
           maxVideoRateLimit: $checkedConvert(
-              'video_frame_rate_limit', (v) => (v as num).toInt()),
-          maxVideoMatrix:
-              $checkedConvert('video_matrix_limit', (v) => (v as num).toInt()),
+            'video_frame_rate_limit',
+            (v) => (v as num).toInt(),
+          ),
+          maxVideoMatrix: $checkedConvert(
+            'video_matrix_limit',
+            (v) => (v as num).toInt(),
+          ),
           supportedMimeTypes: $checkedConvert(
-              'supported_mime_types',
-              (v) => (v as List<dynamic>)
-                  .map((e) => $enumDecode(_$MimeTypeEnumMap, e))
-                  .toList()),
+            'supported_mime_types',
+            (v) => (v as List<dynamic>)
+                .map((e) => $enumDecode(_$MimeTypeEnumMap, e))
+                .toList(),
+          ),
         );
         return val;
       },
@@ -39,22 +49,22 @@ _$InstanceMediaConfigurationImpl _$$InstanceMediaConfigurationImplFromJson(
         'maxVideoSize': 'video_size_limit',
         'maxVideoRateLimit': 'video_frame_rate_limit',
         'maxVideoMatrix': 'video_matrix_limit',
-        'supportedMimeTypes': 'supported_mime_types'
+        'supportedMimeTypes': 'supported_mime_types',
       },
     );
 
-Map<String, dynamic> _$$InstanceMediaConfigurationImplToJson(
-        _$InstanceMediaConfigurationImpl instance) =>
-    <String, dynamic>{
-      'image_size_limit': instance.maxImageSize,
-      'image_matrix_limit': instance.maxImageMatrix,
-      'video_size_limit': instance.maxVideoSize,
-      'video_frame_rate_limit': instance.maxVideoRateLimit,
-      'video_matrix_limit': instance.maxVideoMatrix,
-      'supported_mime_types': instance.supportedMimeTypes
-          .map((e) => _$MimeTypeEnumMap[e]!)
-          .toList(),
-    };
+Map<String, dynamic> _$InstanceMediaConfigurationToJson(
+  _InstanceMediaConfiguration instance,
+) => <String, dynamic>{
+  'image_size_limit': instance.maxImageSize,
+  'image_matrix_limit': instance.maxImageMatrix,
+  'video_size_limit': instance.maxVideoSize,
+  'video_frame_rate_limit': instance.maxVideoRateLimit,
+  'video_matrix_limit': instance.maxVideoMatrix,
+  'supported_mime_types': instance.supportedMimeTypes
+      .map((e) => _$MimeTypeEnumMap[e]!)
+      .toList(),
+};
 
 const _$MimeTypeEnumMap = {
   MimeType.imageJpg: 'image/jpeg',

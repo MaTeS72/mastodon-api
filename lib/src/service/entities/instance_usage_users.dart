@@ -11,7 +11,7 @@ part 'instance_usage_users.freezed.dart';
 part 'instance_usage_users.g.dart';
 
 @freezed
-class InstanceUsageUsers with _$InstanceUsageUsers {
+abstract class InstanceUsageUsers with _$InstanceUsageUsers {
   @JsonSerializable(includeIfNull: false)
   const factory InstanceUsageUsers({
     /// The number of active users in the past 4 weeks.

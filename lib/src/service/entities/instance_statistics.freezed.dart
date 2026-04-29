@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,202 +9,281 @@ part of 'instance_statistics.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-InstanceStatistics _$InstanceStatisticsFromJson(Map<String, dynamic> json) {
-  return _InstanceStatistics.fromJson(json);
-}
 
 /// @nodoc
 mixin _$InstanceStatistics {
-  /// Users registered on this instance.
-  int get userCount => throw _privateConstructorUsedError;
 
-  /// Statuses authored by users on instance.
-  int get statusCount => throw _privateConstructorUsedError;
+/// Users registered on this instance.
+ int get userCount;/// Statuses authored by users on instance.
+ int get statusCount;/// Domains federated with this instance.
+ int get domainCount;
+/// Create a copy of InstanceStatistics
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$InstanceStatisticsCopyWith<InstanceStatistics> get copyWith => _$InstanceStatisticsCopyWithImpl<InstanceStatistics>(this as InstanceStatistics, _$identity);
 
-  /// Domains federated with this instance.
-  int get domainCount => throw _privateConstructorUsedError;
+  /// Serializes this InstanceStatistics to a JSON map.
+  Map<String, dynamic> toJson();
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $InstanceStatisticsCopyWith<InstanceStatistics> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is InstanceStatistics&&(identical(other.userCount, userCount) || other.userCount == userCount)&&(identical(other.statusCount, statusCount) || other.statusCount == statusCount)&&(identical(other.domainCount, domainCount) || other.domainCount == domainCount));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,userCount,statusCount,domainCount);
+
+@override
+String toString() {
+  return 'InstanceStatistics(userCount: $userCount, statusCount: $statusCount, domainCount: $domainCount)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $InstanceStatisticsCopyWith<$Res> {
-  factory $InstanceStatisticsCopyWith(
-          InstanceStatistics value, $Res Function(InstanceStatistics) then) =
-      _$InstanceStatisticsCopyWithImpl<$Res, InstanceStatistics>;
-  @useResult
-  $Res call({int userCount, int statusCount, int domainCount});
-}
+abstract mixin class $InstanceStatisticsCopyWith<$Res>  {
+  factory $InstanceStatisticsCopyWith(InstanceStatistics value, $Res Function(InstanceStatistics) _then) = _$InstanceStatisticsCopyWithImpl;
+@useResult
+$Res call({
+ int userCount, int statusCount, int domainCount
+});
 
+
+
+
+}
 /// @nodoc
-class _$InstanceStatisticsCopyWithImpl<$Res, $Val extends InstanceStatistics>
+class _$InstanceStatisticsCopyWithImpl<$Res>
     implements $InstanceStatisticsCopyWith<$Res> {
-  _$InstanceStatisticsCopyWithImpl(this._value, this._then);
+  _$InstanceStatisticsCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final InstanceStatistics _self;
+  final $Res Function(InstanceStatistics) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? userCount = null,
-    Object? statusCount = null,
-    Object? domainCount = null,
-  }) {
-    return _then(_value.copyWith(
-      userCount: null == userCount
-          ? _value.userCount
-          : userCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      statusCount: null == statusCount
-          ? _value.statusCount
-          : statusCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      domainCount: null == domainCount
-          ? _value.domainCount
-          : domainCount // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
+/// Create a copy of InstanceStatistics
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? userCount = null,Object? statusCount = null,Object? domainCount = null,}) {
+  return _then(_self.copyWith(
+userCount: null == userCount ? _self.userCount : userCount // ignore: cast_nullable_to_non_nullable
+as int,statusCount: null == statusCount ? _self.statusCount : statusCount // ignore: cast_nullable_to_non_nullable
+as int,domainCount: null == domainCount ? _self.domainCount : domainCount // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
 }
 
-/// @nodoc
-abstract class _$$InstanceStatisticsImplCopyWith<$Res>
-    implements $InstanceStatisticsCopyWith<$Res> {
-  factory _$$InstanceStatisticsImplCopyWith(_$InstanceStatisticsImpl value,
-          $Res Function(_$InstanceStatisticsImpl) then) =
-      __$$InstanceStatisticsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({int userCount, int statusCount, int domainCount});
 }
 
-/// @nodoc
-class __$$InstanceStatisticsImplCopyWithImpl<$Res>
-    extends _$InstanceStatisticsCopyWithImpl<$Res, _$InstanceStatisticsImpl>
-    implements _$$InstanceStatisticsImplCopyWith<$Res> {
-  __$$InstanceStatisticsImplCopyWithImpl(_$InstanceStatisticsImpl _value,
-      $Res Function(_$InstanceStatisticsImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? userCount = null,
-    Object? statusCount = null,
-    Object? domainCount = null,
-  }) {
-    return _then(_$InstanceStatisticsImpl(
-      userCount: null == userCount
-          ? _value.userCount
-          : userCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      statusCount: null == statusCount
-          ? _value.statusCount
-          : statusCount // ignore: cast_nullable_to_non_nullable
-              as int,
-      domainCount: null == domainCount
-          ? _value.domainCount
-          : domainCount // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
+/// Adds pattern-matching-related methods to [InstanceStatistics].
+extension InstanceStatisticsPatterns on InstanceStatistics {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _InstanceStatistics value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _InstanceStatistics() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _InstanceStatistics value)  $default,){
+final _that = this;
+switch (_that) {
+case _InstanceStatistics():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _InstanceStatistics value)?  $default,){
+final _that = this;
+switch (_that) {
+case _InstanceStatistics() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int userCount,  int statusCount,  int domainCount)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _InstanceStatistics() when $default != null:
+return $default(_that.userCount,_that.statusCount,_that.domainCount);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int userCount,  int statusCount,  int domainCount)  $default,) {final _that = this;
+switch (_that) {
+case _InstanceStatistics():
+return $default(_that.userCount,_that.statusCount,_that.domainCount);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int userCount,  int statusCount,  int domainCount)?  $default,) {final _that = this;
+switch (_that) {
+case _InstanceStatistics() when $default != null:
+return $default(_that.userCount,_that.statusCount,_that.domainCount);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$InstanceStatisticsImpl implements _InstanceStatistics {
-  const _$InstanceStatisticsImpl(
-      {required this.userCount,
-      required this.statusCount,
-      required this.domainCount});
 
-  factory _$InstanceStatisticsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$InstanceStatisticsImplFromJson(json);
+class _InstanceStatistics implements InstanceStatistics {
+  const _InstanceStatistics({required this.userCount, required this.statusCount, required this.domainCount});
+  factory _InstanceStatistics.fromJson(Map<String, dynamic> json) => _$InstanceStatisticsFromJson(json);
 
-  /// Users registered on this instance.
-  @override
-  final int userCount;
+/// Users registered on this instance.
+@override final  int userCount;
+/// Statuses authored by users on instance.
+@override final  int statusCount;
+/// Domains federated with this instance.
+@override final  int domainCount;
 
-  /// Statuses authored by users on instance.
-  @override
-  final int statusCount;
+/// Create a copy of InstanceStatistics
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$InstanceStatisticsCopyWith<_InstanceStatistics> get copyWith => __$InstanceStatisticsCopyWithImpl<_InstanceStatistics>(this, _$identity);
 
-  /// Domains federated with this instance.
-  @override
-  final int domainCount;
-
-  @override
-  String toString() {
-    return 'InstanceStatistics(userCount: $userCount, statusCount: $statusCount, domainCount: $domainCount)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InstanceStatisticsImpl &&
-            (identical(other.userCount, userCount) ||
-                other.userCount == userCount) &&
-            (identical(other.statusCount, statusCount) ||
-                other.statusCount == statusCount) &&
-            (identical(other.domainCount, domainCount) ||
-                other.domainCount == domainCount));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, userCount, statusCount, domainCount);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InstanceStatisticsImplCopyWith<_$InstanceStatisticsImpl> get copyWith =>
-      __$$InstanceStatisticsImplCopyWithImpl<_$InstanceStatisticsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InstanceStatisticsImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$InstanceStatisticsToJson(this, );
 }
 
-abstract class _InstanceStatistics implements InstanceStatistics {
-  const factory _InstanceStatistics(
-      {required final int userCount,
-      required final int statusCount,
-      required final int domainCount}) = _$InstanceStatisticsImpl;
-
-  factory _InstanceStatistics.fromJson(Map<String, dynamic> json) =
-      _$InstanceStatisticsImpl.fromJson;
-
-  @override
-
-  /// Users registered on this instance.
-  int get userCount;
-  @override
-
-  /// Statuses authored by users on instance.
-  int get statusCount;
-  @override
-
-  /// Domains federated with this instance.
-  int get domainCount;
-  @override
-  @JsonKey(ignore: true)
-  _$$InstanceStatisticsImplCopyWith<_$InstanceStatisticsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InstanceStatistics&&(identical(other.userCount, userCount) || other.userCount == userCount)&&(identical(other.statusCount, statusCount) || other.statusCount == statusCount)&&(identical(other.domainCount, domainCount) || other.domainCount == domainCount));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,userCount,statusCount,domainCount);
+
+@override
+String toString() {
+  return 'InstanceStatistics(userCount: $userCount, statusCount: $statusCount, domainCount: $domainCount)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$InstanceStatisticsCopyWith<$Res> implements $InstanceStatisticsCopyWith<$Res> {
+  factory _$InstanceStatisticsCopyWith(_InstanceStatistics value, $Res Function(_InstanceStatistics) _then) = __$InstanceStatisticsCopyWithImpl;
+@override @useResult
+$Res call({
+ int userCount, int statusCount, int domainCount
+});
+
+
+
+
+}
+/// @nodoc
+class __$InstanceStatisticsCopyWithImpl<$Res>
+    implements _$InstanceStatisticsCopyWith<$Res> {
+  __$InstanceStatisticsCopyWithImpl(this._self, this._then);
+
+  final _InstanceStatistics _self;
+  final $Res Function(_InstanceStatistics) _then;
+
+/// Create a copy of InstanceStatistics
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? userCount = null,Object? statusCount = null,Object? domainCount = null,}) {
+  return _then(_InstanceStatistics(
+userCount: null == userCount ? _self.userCount : userCount // ignore: cast_nullable_to_non_nullable
+as int,statusCount: null == statusCount ? _self.statusCount : statusCount // ignore: cast_nullable_to_non_nullable
+as int,domainCount: null == domainCount ? _self.domainCount : domainCount // ignore: cast_nullable_to_non_nullable
+as int,
+  ));
+}
+
+
+}
+
+// dart format on

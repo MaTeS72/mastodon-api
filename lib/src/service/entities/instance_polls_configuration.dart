@@ -14,7 +14,7 @@ part 'instance_polls_configuration.freezed.dart';
 part 'instance_polls_configuration.g.dart';
 
 @freezed
-class InstancePollsConfiguration with _$InstancePollsConfiguration {
+abstract class InstancePollsConfiguration with _$InstancePollsConfiguration {
   @JsonSerializable(includeIfNull: false)
   const factory InstancePollsConfiguration({
     /// Each poll is allowed to have up to this many options.

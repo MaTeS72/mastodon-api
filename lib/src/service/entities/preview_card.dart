@@ -14,7 +14,7 @@ part 'preview_card.freezed.dart';
 part 'preview_card.g.dart';
 
 @freezed
-class PreviewCard with _$PreviewCard {
+abstract class PreviewCard with _$PreviewCard {
   const factory PreviewCard({
     /// Location of linked resource.
     required String url,

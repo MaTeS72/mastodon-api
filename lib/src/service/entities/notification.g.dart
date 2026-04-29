@@ -8,54 +8,51 @@ part of 'notification.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$NotificationImpl _$$NotificationImplFromJson(Map json) => $checkedCreate(
-      r'_$NotificationImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$NotificationImpl(
-          id: $checkedConvert('id', (v) => v as String),
-          type: $checkedConvert(
-              'type',
-              (v) => $enumDecode(_$NotificationTypeEnumMap, v,
-                  unknownValue: NotificationType.unknown)),
-          createdAt:
-              $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
-          account: $checkedConvert('account',
-              (v) => Account.fromJson(Map<String, Object?>.from(v as Map))),
-          status: $checkedConvert(
-              'status',
-              (v) => v == null
-                  ? null
-                  : Status.fromJson(Map<String, Object?>.from(v as Map))),
-          report: $checkedConvert(
-              'report',
-              (v) => v == null
-                  ? null
-                  : Report.fromJson(Map<String, Object?>.from(v as Map))),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'createdAt': 'created_at'},
-    );
+_Notification _$NotificationFromJson(Map json) =>
+    $checkedCreate('_Notification', json, ($checkedConvert) {
+      final val = _Notification(
+        id: $checkedConvert('id', (v) => v as String),
+        type: $checkedConvert(
+          'type',
+          (v) => $enumDecode(
+            _$NotificationTypeEnumMap,
+            v,
+            unknownValue: NotificationType.unknown,
+          ),
+        ),
+        createdAt: $checkedConvert(
+          'created_at',
+          (v) => DateTime.parse(v as String),
+        ),
+        account: $checkedConvert(
+          'account',
+          (v) => Account.fromJson(Map<String, Object?>.from(v as Map)),
+        ),
+        status: $checkedConvert(
+          'status',
+          (v) => v == null
+              ? null
+              : Status.fromJson(Map<String, Object?>.from(v as Map)),
+        ),
+        report: $checkedConvert(
+          'report',
+          (v) => v == null
+              ? null
+              : Report.fromJson(Map<String, Object?>.from(v as Map)),
+        ),
+      );
+      return val;
+    }, fieldKeyMap: const {'createdAt': 'created_at'});
 
-Map<String, dynamic> _$$NotificationImplToJson(_$NotificationImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'type': _$NotificationTypeEnumMap[instance.type]!,
-    'created_at': instance.createdAt.toIso8601String(),
-    'account': instance.account.toJson(),
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('status', instance.status?.toJson());
-  writeNotNull('report', instance.report?.toJson());
-  return val;
-}
+Map<String, dynamic> _$NotificationToJson(_Notification instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'type': _$NotificationTypeEnumMap[instance.type]!,
+      'created_at': instance.createdAt.toIso8601String(),
+      'account': instance.account.toJson(),
+      'status': ?instance.status?.toJson(),
+      'report': ?instance.report?.toJson(),
+    };
 
 const _$NotificationTypeEnumMap = {
   NotificationType.mention: 'mention',

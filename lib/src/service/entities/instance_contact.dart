@@ -14,7 +14,7 @@ part 'instance_contact.freezed.dart';
 part 'instance_contact.g.dart';
 
 @freezed
-class InstanceContact with _$InstanceContact {
+abstract class InstanceContact with _$InstanceContact {
   @JsonSerializable(includeIfNull: false)
   const factory InstanceContact({
     /// An email address that can be messaged regarding inquiries or issues.

@@ -14,6 +14,7 @@ import 'application.dart';
 import 'emoji.dart';
 import 'media_attachment.dart';
 import 'poll.dart';
+import 'preview_card.dart';
 import 'tag.dart';
 
 // 🌎 Project imports:
@@ -22,7 +23,7 @@ part 'status.freezed.dart';
 part 'status.g.dart';
 
 @freezed
-class Status with _$Status {
+abstract class Status with _$Status {
   @JsonSerializable(includeIfNull: false)
   const factory Status({
     /// ID of the status in the database.
@@ -104,6 +105,9 @@ class Status with _$Status {
 
     /// Hashtags used within the status content.
     required List<Tag> tags,
+
+    /// Preview card for links included within the status, if any.
+    PreviewCard? card,
 
     /// The date when this status was created.
     required DateTime createdAt,

@@ -16,7 +16,7 @@ part 'notification.freezed.dart';
 part 'notification.g.dart';
 
 @freezed
-class Notification with _$Notification {
+abstract class Notification with _$Notification {
   @JsonSerializable(includeIfNull: false)
   const factory Notification({
     /// The id of the notification in the database.

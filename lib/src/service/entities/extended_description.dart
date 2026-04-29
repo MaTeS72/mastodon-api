@@ -9,7 +9,7 @@ part 'extended_description.freezed.dart';
 part 'extended_description.g.dart';
 
 @freezed
-class ExtendedDescription with _$ExtendedDescription {
+abstract class ExtendedDescription with _$ExtendedDescription {
   const factory ExtendedDescription({
     /// The rendered HTML content of the extended description.
     required String content,

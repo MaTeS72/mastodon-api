@@ -14,7 +14,7 @@ part 'notification_snapshot.g.dart';
 
 /// Represents the last read position within a user's timelines.
 @freezed
-class NotificationSnapshot with _$NotificationSnapshot {
+abstract class NotificationSnapshot with _$NotificationSnapshot {
   const factory NotificationSnapshot({
     /// Snapshot for notifications.
     @JsonKey(name: 'notifications') required PositionMarker marker,

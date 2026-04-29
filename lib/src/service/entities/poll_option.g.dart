@@ -8,20 +8,16 @@ part of 'poll_option.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PollOptionImpl _$$PollOptionImplFromJson(Map json) => $checkedCreate(
-      r'_$PollOptionImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$PollOptionImpl(
-          title: $checkedConvert('title', (v) => v as String),
-          votesCount: $checkedConvert('votes_count', (v) => (v as num).toInt()),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'votesCount': 'votes_count'},
-    );
+_PollOption _$PollOptionFromJson(Map json) =>
+    $checkedCreate('_PollOption', json, ($checkedConvert) {
+      final val = _PollOption(
+        title: $checkedConvert('title', (v) => v as String),
+        votesCount: $checkedConvert('votes_count', (v) => (v as num).toInt()),
+      );
+      return val;
+    }, fieldKeyMap: const {'votesCount': 'votes_count'});
 
-Map<String, dynamic> _$$PollOptionImplToJson(_$PollOptionImpl instance) =>
+Map<String, dynamic> _$PollOptionToJson(_PollOption instance) =>
     <String, dynamic>{
       'title': instance.title,
       'votes_count': instance.votesCount,

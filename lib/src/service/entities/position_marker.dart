@@ -12,7 +12,7 @@ part 'position_marker.g.dart';
 
 /// Represents the last read position within a user's timelines.
 @freezed
-class PositionMarker with _$PositionMarker {
+abstract class PositionMarker with _$PositionMarker {
   const factory PositionMarker({
     /// The ID of the most recently viewed entity.
     required String lastReadId,

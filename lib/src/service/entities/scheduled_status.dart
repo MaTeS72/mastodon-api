@@ -14,7 +14,7 @@ part 'scheduled_status.freezed.dart';
 part 'scheduled_status.g.dart';
 
 @freezed
-class ScheduledStatus with _$ScheduledStatus {
+abstract class ScheduledStatus with _$ScheduledStatus {
   @JsonSerializable(includeIfNull: false)
   const factory ScheduledStatus({
     /// ID of the scheduled status in the database.

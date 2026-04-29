@@ -20,7 +20,7 @@ part 'v2_instance.freezed.dart';
 part 'v2_instance.g.dart';
 
 @freezed
-class V2Instance with _$V2Instance {
+abstract class V2Instance with _$V2Instance {
   @JsonSerializable(includeIfNull: false)
   const factory V2Instance({
     /// The domain name of the instance.

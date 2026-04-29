@@ -14,7 +14,7 @@ part 'user_list.freezed.dart';
 part 'user_list.g.dart';
 
 @freezed
-class UserList with _$UserList {
+abstract class UserList with _$UserList {
   @JsonSerializable(includeIfNull: false)
   const factory UserList({
     /// The internal database ID of the list.

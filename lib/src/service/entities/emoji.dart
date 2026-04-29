@@ -11,7 +11,7 @@ part 'emoji.freezed.dart';
 part 'emoji.g.dart';
 
 @freezed
-class Emoji with _$Emoji {
+abstract class Emoji with _$Emoji {
   @JsonSerializable(includeIfNull: false)
   const factory Emoji({
     /// The name of the custom emoji.

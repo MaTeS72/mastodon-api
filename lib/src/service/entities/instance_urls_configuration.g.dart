@@ -8,21 +8,14 @@ part of 'instance_urls_configuration.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$InstanceUrlsConfigurationImpl _$$InstanceUrlsConfigurationImplFromJson(
-        Map json) =>
-    $checkedCreate(
-      r'_$InstanceUrlsConfigurationImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$InstanceUrlsConfigurationImpl(
-          streaming: $checkedConvert('streaming', (v) => v as String),
-        );
-        return val;
-      },
-    );
+_InstanceUrlsConfiguration _$InstanceUrlsConfigurationFromJson(Map json) =>
+    $checkedCreate('_InstanceUrlsConfiguration', json, ($checkedConvert) {
+      final val = _InstanceUrlsConfiguration(
+        streaming: $checkedConvert('streaming', (v) => v as String),
+      );
+      return val;
+    });
 
-Map<String, dynamic> _$$InstanceUrlsConfigurationImplToJson(
-        _$InstanceUrlsConfigurationImpl instance) =>
-    <String, dynamic>{
-      'streaming': instance.streaming,
-    };
+Map<String, dynamic> _$InstanceUrlsConfigurationToJson(
+  _InstanceUrlsConfiguration instance,
+) => <String, dynamic>{'streaming': instance.streaming};

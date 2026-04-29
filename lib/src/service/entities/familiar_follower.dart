@@ -14,7 +14,7 @@ part 'familiar_follower.freezed.dart';
 part 'familiar_follower.g.dart';
 
 @freezed
-class FamiliarFollower with _$FamiliarFollower {
+abstract class FamiliarFollower with _$FamiliarFollower {
   @JsonSerializable(includeIfNull: false)
   const factory FamiliarFollower({
     /// The ID of the Account in the database.

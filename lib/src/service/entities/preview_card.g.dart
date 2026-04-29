@@ -8,41 +8,43 @@ part of 'preview_card.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$PreviewCardImpl _$$PreviewCardImplFromJson(Map json) => $checkedCreate(
-      r'_$PreviewCardImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$PreviewCardImpl(
-          url: $checkedConvert('url', (v) => v as String),
-          title: $checkedConvert('title', (v) => v as String),
-          description: $checkedConvert('description', (v) => v as String),
-          type: $checkedConvert(
-              'type', (v) => $enumDecode(_$PreviewCardTypeEnumMap, v)),
-          authorName: $checkedConvert('author_name', (v) => v as String),
-          authorUrl: $checkedConvert('author_url', (v) => v as String),
-          providerName: $checkedConvert('provider_name', (v) => v as String),
-          providerUrl: $checkedConvert('provider_url', (v) => v as String),
-          html: $checkedConvert('html', (v) => v as String),
-          width: $checkedConvert('width', (v) => (v as num).toInt()),
-          height: $checkedConvert('height', (v) => (v as num).toInt()),
-          imageUrl: $checkedConvert('image', (v) => v as String?),
-          embedUrl: $checkedConvert('embed_url', (v) => v as String),
-          blurHash: $checkedConvert('blurhash', (v) => v as String?),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'authorName': 'author_name',
-        'authorUrl': 'author_url',
-        'providerName': 'provider_name',
-        'providerUrl': 'provider_url',
-        'imageUrl': 'image',
-        'embedUrl': 'embed_url',
-        'blurHash': 'blurhash'
-      },
+_PreviewCard _$PreviewCardFromJson(Map json) => $checkedCreate(
+  '_PreviewCard',
+  json,
+  ($checkedConvert) {
+    final val = _PreviewCard(
+      url: $checkedConvert('url', (v) => v as String),
+      title: $checkedConvert('title', (v) => v as String),
+      description: $checkedConvert('description', (v) => v as String),
+      type: $checkedConvert(
+        'type',
+        (v) => $enumDecode(_$PreviewCardTypeEnumMap, v),
+      ),
+      authorName: $checkedConvert('author_name', (v) => v as String),
+      authorUrl: $checkedConvert('author_url', (v) => v as String),
+      providerName: $checkedConvert('provider_name', (v) => v as String),
+      providerUrl: $checkedConvert('provider_url', (v) => v as String),
+      html: $checkedConvert('html', (v) => v as String),
+      width: $checkedConvert('width', (v) => (v as num).toInt()),
+      height: $checkedConvert('height', (v) => (v as num).toInt()),
+      imageUrl: $checkedConvert('image', (v) => v as String?),
+      embedUrl: $checkedConvert('embed_url', (v) => v as String),
+      blurHash: $checkedConvert('blurhash', (v) => v as String?),
     );
+    return val;
+  },
+  fieldKeyMap: const {
+    'authorName': 'author_name',
+    'authorUrl': 'author_url',
+    'providerName': 'provider_name',
+    'providerUrl': 'provider_url',
+    'imageUrl': 'image',
+    'embedUrl': 'embed_url',
+    'blurHash': 'blurhash',
+  },
+);
 
-Map<String, dynamic> _$$PreviewCardImplToJson(_$PreviewCardImpl instance) =>
+Map<String, dynamic> _$PreviewCardToJson(_PreviewCard instance) =>
     <String, dynamic>{
       'url': instance.url,
       'title': instance.title,

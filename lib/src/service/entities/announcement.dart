@@ -18,7 +18,7 @@ part 'announcement.freezed.dart';
 part 'announcement.g.dart';
 
 @freezed
-class Announcement with _$Announcement {
+abstract class Announcement with _$Announcement {
   @JsonSerializable(includeIfNull: false)
   const factory Announcement({
     /// The ID of the announcement in the database.

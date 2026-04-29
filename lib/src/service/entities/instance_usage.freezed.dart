@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,162 +9,289 @@ part of 'instance_usage.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-InstanceUsage _$InstanceUsageFromJson(Map<String, dynamic> json) {
-  return _InstanceUsage.fromJson(json);
-}
 
 /// @nodoc
 mixin _$InstanceUsage {
-  /// Usage data related to users on this instance.
-  InstanceUsageUsers get users => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $InstanceUsageCopyWith<InstanceUsage> get copyWith =>
-      throw _privateConstructorUsedError;
+/// Usage data related to users on this instance.
+ InstanceUsageUsers get users;
+/// Create a copy of InstanceUsage
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$InstanceUsageCopyWith<InstanceUsage> get copyWith => _$InstanceUsageCopyWithImpl<InstanceUsage>(this as InstanceUsage, _$identity);
+
+  /// Serializes this InstanceUsage to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is InstanceUsage&&(identical(other.users, users) || other.users == users));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,users);
+
+@override
+String toString() {
+  return 'InstanceUsage(users: $users)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $InstanceUsageCopyWith<$Res> {
-  factory $InstanceUsageCopyWith(
-          InstanceUsage value, $Res Function(InstanceUsage) then) =
-      _$InstanceUsageCopyWithImpl<$Res, InstanceUsage>;
-  @useResult
-  $Res call({InstanceUsageUsers users});
+abstract mixin class $InstanceUsageCopyWith<$Res>  {
+  factory $InstanceUsageCopyWith(InstanceUsage value, $Res Function(InstanceUsage) _then) = _$InstanceUsageCopyWithImpl;
+@useResult
+$Res call({
+ InstanceUsageUsers users
+});
 
-  $InstanceUsageUsersCopyWith<$Res> get users;
+
+$InstanceUsageUsersCopyWith<$Res> get users;
+
 }
-
 /// @nodoc
-class _$InstanceUsageCopyWithImpl<$Res, $Val extends InstanceUsage>
+class _$InstanceUsageCopyWithImpl<$Res>
     implements $InstanceUsageCopyWith<$Res> {
-  _$InstanceUsageCopyWithImpl(this._value, this._then);
+  _$InstanceUsageCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final InstanceUsage _self;
+  final $Res Function(InstanceUsage) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? users = null,
-  }) {
-    return _then(_value.copyWith(
-      users: null == users
-          ? _value.users
-          : users // ignore: cast_nullable_to_non_nullable
-              as InstanceUsageUsers,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $InstanceUsageUsersCopyWith<$Res> get users {
-    return $InstanceUsageUsersCopyWith<$Res>(_value.users, (value) {
-      return _then(_value.copyWith(users: value) as $Val);
-    });
-  }
+/// Create a copy of InstanceUsage
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? users = null,}) {
+  return _then(_self.copyWith(
+users: null == users ? _self.users : users // ignore: cast_nullable_to_non_nullable
+as InstanceUsageUsers,
+  ));
+}
+/// Create a copy of InstanceUsage
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$InstanceUsageUsersCopyWith<$Res> get users {
+  
+  return $InstanceUsageUsersCopyWith<$Res>(_self.users, (value) {
+    return _then(_self.copyWith(users: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$InstanceUsageImplCopyWith<$Res>
-    implements $InstanceUsageCopyWith<$Res> {
-  factory _$$InstanceUsageImplCopyWith(
-          _$InstanceUsageImpl value, $Res Function(_$InstanceUsageImpl) then) =
-      __$$InstanceUsageImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({InstanceUsageUsers users});
 
-  @override
-  $InstanceUsageUsersCopyWith<$Res> get users;
+/// Adds pattern-matching-related methods to [InstanceUsage].
+extension InstanceUsagePatterns on InstanceUsage {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _InstanceUsage value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _InstanceUsage() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _InstanceUsage value)  $default,){
+final _that = this;
+switch (_that) {
+case _InstanceUsage():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _InstanceUsage value)?  $default,){
+final _that = this;
+switch (_that) {
+case _InstanceUsage() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( InstanceUsageUsers users)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _InstanceUsage() when $default != null:
+return $default(_that.users);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( InstanceUsageUsers users)  $default,) {final _that = this;
+switch (_that) {
+case _InstanceUsage():
+return $default(_that.users);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( InstanceUsageUsers users)?  $default,) {final _that = this;
+switch (_that) {
+case _InstanceUsage() when $default != null:
+return $default(_that.users);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-class __$$InstanceUsageImplCopyWithImpl<$Res>
-    extends _$InstanceUsageCopyWithImpl<$Res, _$InstanceUsageImpl>
-    implements _$$InstanceUsageImplCopyWith<$Res> {
-  __$$InstanceUsageImplCopyWithImpl(
-      _$InstanceUsageImpl _value, $Res Function(_$InstanceUsageImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? users = null,
-  }) {
-    return _then(_$InstanceUsageImpl(
-      users: null == users
-          ? _value.users
-          : users // ignore: cast_nullable_to_non_nullable
-              as InstanceUsageUsers,
-    ));
-  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$InstanceUsageImpl implements _InstanceUsage {
-  const _$InstanceUsageImpl({required this.users});
+class _InstanceUsage implements InstanceUsage {
+  const _InstanceUsage({required this.users});
+  factory _InstanceUsage.fromJson(Map<String, dynamic> json) => _$InstanceUsageFromJson(json);
 
-  factory _$InstanceUsageImpl.fromJson(Map<String, dynamic> json) =>
-      _$$InstanceUsageImplFromJson(json);
+/// Usage data related to users on this instance.
+@override final  InstanceUsageUsers users;
 
-  /// Usage data related to users on this instance.
-  @override
-  final InstanceUsageUsers users;
+/// Create a copy of InstanceUsage
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$InstanceUsageCopyWith<_InstanceUsage> get copyWith => __$InstanceUsageCopyWithImpl<_InstanceUsage>(this, _$identity);
 
-  @override
-  String toString() {
-    return 'InstanceUsage(users: $users)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InstanceUsageImpl &&
-            (identical(other.users, users) || other.users == users));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, users);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InstanceUsageImplCopyWith<_$InstanceUsageImpl> get copyWith =>
-      __$$InstanceUsageImplCopyWithImpl<_$InstanceUsageImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InstanceUsageImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$InstanceUsageToJson(this, );
 }
 
-abstract class _InstanceUsage implements InstanceUsage {
-  const factory _InstanceUsage({required final InstanceUsageUsers users}) =
-      _$InstanceUsageImpl;
-
-  factory _InstanceUsage.fromJson(Map<String, dynamic> json) =
-      _$InstanceUsageImpl.fromJson;
-
-  @override
-
-  /// Usage data related to users on this instance.
-  InstanceUsageUsers get users;
-  @override
-  @JsonKey(ignore: true)
-  _$$InstanceUsageImplCopyWith<_$InstanceUsageImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InstanceUsage&&(identical(other.users, users) || other.users == users));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,users);
+
+@override
+String toString() {
+  return 'InstanceUsage(users: $users)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$InstanceUsageCopyWith<$Res> implements $InstanceUsageCopyWith<$Res> {
+  factory _$InstanceUsageCopyWith(_InstanceUsage value, $Res Function(_InstanceUsage) _then) = __$InstanceUsageCopyWithImpl;
+@override @useResult
+$Res call({
+ InstanceUsageUsers users
+});
+
+
+@override $InstanceUsageUsersCopyWith<$Res> get users;
+
+}
+/// @nodoc
+class __$InstanceUsageCopyWithImpl<$Res>
+    implements _$InstanceUsageCopyWith<$Res> {
+  __$InstanceUsageCopyWithImpl(this._self, this._then);
+
+  final _InstanceUsage _self;
+  final $Res Function(_InstanceUsage) _then;
+
+/// Create a copy of InstanceUsage
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? users = null,}) {
+  return _then(_InstanceUsage(
+users: null == users ? _self.users : users // ignore: cast_nullable_to_non_nullable
+as InstanceUsageUsers,
+  ));
+}
+
+/// Create a copy of InstanceUsage
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$InstanceUsageUsersCopyWith<$Res> get users {
+  
+  return $InstanceUsageUsersCopyWith<$Res>(_self.users, (value) {
+    return _then(_self.copyWith(users: value));
+  });
+}
+}
+
+// dart format on

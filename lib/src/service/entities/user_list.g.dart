@@ -8,37 +8,24 @@ part of 'user_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$UserListImpl _$$UserListImplFromJson(Map json) => $checkedCreate(
-      r'_$UserListImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$UserListImpl(
-          id: $checkedConvert('id', (v) => v as String),
-          title: $checkedConvert('title', (v) => v as String),
-          repliesPolicy: $checkedConvert('replies_policy',
-              (v) => $enumDecodeNullable(_$ListRepliesPolicyEnumMap, v)),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'repliesPolicy': 'replies_policy'},
-    );
+_UserList _$UserListFromJson(Map json) =>
+    $checkedCreate('_UserList', json, ($checkedConvert) {
+      final val = _UserList(
+        id: $checkedConvert('id', (v) => v as String),
+        title: $checkedConvert('title', (v) => v as String),
+        repliesPolicy: $checkedConvert(
+          'replies_policy',
+          (v) => $enumDecodeNullable(_$ListRepliesPolicyEnumMap, v),
+        ),
+      );
+      return val;
+    }, fieldKeyMap: const {'repliesPolicy': 'replies_policy'});
 
-Map<String, dynamic> _$$UserListImplToJson(_$UserListImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'title': instance.title,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull(
-      'replies_policy', _$ListRepliesPolicyEnumMap[instance.repliesPolicy]);
-  return val;
-}
+Map<String, dynamic> _$UserListToJson(_UserList instance) => <String, dynamic>{
+  'id': instance.id,
+  'title': instance.title,
+  'replies_policy': ?_$ListRepliesPolicyEnumMap[instance.repliesPolicy],
+};
 
 const _$ListRepliesPolicyEnumMap = {
   ListRepliesPolicy.followed: 'followed',

@@ -19,7 +19,7 @@ part 'v2_instance_configuration.freezed.dart';
 part 'v2_instance_configuration.g.dart';
 
 @freezed
-class V2InstanceConfiguration with _$V2InstanceConfiguration {
+abstract class V2InstanceConfiguration with _$V2InstanceConfiguration {
   @JsonSerializable(includeIfNull: false)
   const factory V2InstanceConfiguration({
     /// URLs of interest for clients apps.

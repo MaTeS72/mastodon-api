@@ -8,43 +8,52 @@ part of 'account_preferences.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AccountPreferencesImpl _$$AccountPreferencesImplFromJson(Map json) =>
-    $checkedCreate(
-      r'_$AccountPreferencesImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$AccountPreferencesImpl(
-          defaultVisibility: $checkedConvert('posting:default:visibility',
-              (v) => $enumDecode(_$VisibilityEnumMap, v)),
-          isDefaultSensitive:
-              $checkedConvert('posting:default:sensitive', (v) => v as bool),
-          defaultLanguage: $checkedConvert(
-              'posting:default:language',
-              (v) =>
-                  $enumDecodeNullable(_$LanguageEnumMap, v,
-                      unknownValue: Language.unknown) ??
-                  Language.unknown),
-          expandMediaSetting: $checkedConvert('reading:expand:media',
-              (v) => $enumDecode(_$DisplayMediaSettingEnumMap, v)),
-          hasExpandSpoilers:
-              $checkedConvert('reading:expand:spoilers', (v) => v as bool),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'defaultVisibility': 'posting:default:visibility',
-        'isDefaultSensitive': 'posting:default:sensitive',
-        'defaultLanguage': 'posting:default:language',
-        'expandMediaSetting': 'reading:expand:media',
-        'hasExpandSpoilers': 'reading:expand:spoilers'
-      },
+_AccountPreferences _$AccountPreferencesFromJson(Map json) => $checkedCreate(
+  '_AccountPreferences',
+  json,
+  ($checkedConvert) {
+    final val = _AccountPreferences(
+      defaultVisibility: $checkedConvert(
+        'posting:default:visibility',
+        (v) => $enumDecode(_$VisibilityEnumMap, v),
+      ),
+      isDefaultSensitive: $checkedConvert(
+        'posting:default:sensitive',
+        (v) => v as bool,
+      ),
+      defaultLanguage: $checkedConvert(
+        'posting:default:language',
+        (v) =>
+            $enumDecodeNullable(
+              _$LanguageEnumMap,
+              v,
+              unknownValue: Language.unknown,
+            ) ??
+            Language.unknown,
+      ),
+      expandMediaSetting: $checkedConvert(
+        'reading:expand:media',
+        (v) => $enumDecode(_$DisplayMediaSettingEnumMap, v),
+      ),
+      hasExpandSpoilers: $checkedConvert(
+        'reading:expand:spoilers',
+        (v) => v as bool,
+      ),
     );
+    return val;
+  },
+  fieldKeyMap: const {
+    'defaultVisibility': 'posting:default:visibility',
+    'isDefaultSensitive': 'posting:default:sensitive',
+    'defaultLanguage': 'posting:default:language',
+    'expandMediaSetting': 'reading:expand:media',
+    'hasExpandSpoilers': 'reading:expand:spoilers',
+  },
+);
 
-Map<String, dynamic> _$$AccountPreferencesImplToJson(
-        _$AccountPreferencesImpl instance) =>
+Map<String, dynamic> _$AccountPreferencesToJson(_AccountPreferences instance) =>
     <String, dynamic>{
-      'posting:default:visibility':
-          _$VisibilityEnumMap[instance.defaultVisibility]!,
+      'posting:default:visibility': instance.defaultVisibility.toJson(),
       'posting:default:sensitive': instance.isDefaultSensitive,
       'posting:default:language': _$LanguageEnumMap[instance.defaultLanguage]!,
       'reading:expand:media':

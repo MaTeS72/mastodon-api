@@ -11,7 +11,7 @@ part 'instance_urls_configuration.freezed.dart';
 part 'instance_urls_configuration.g.dart';
 
 @freezed
-class InstanceUrlsConfiguration with _$InstanceUrlsConfiguration {
+abstract class InstanceUrlsConfiguration with _$InstanceUrlsConfiguration {
   @JsonSerializable(includeIfNull: false)
   const factory InstanceUrlsConfiguration({
     /// The Web Sockets URL for connecting to the streaming API.

@@ -8,48 +8,53 @@ part of 'trends_link.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TrendsLinkImpl _$$TrendsLinkImplFromJson(Map json) => $checkedCreate(
-      r'_$TrendsLinkImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$TrendsLinkImpl(
-          url: $checkedConvert('url', (v) => v as String),
-          title: $checkedConvert('title', (v) => v as String),
-          description: $checkedConvert('description', (v) => v as String),
-          type: $checkedConvert(
-              'type', (v) => $enumDecode(_$PreviewCardTypeEnumMap, v)),
-          authorName: $checkedConvert('author_name', (v) => v as String),
-          authorUrl: $checkedConvert('author_url', (v) => v as String),
-          providerName: $checkedConvert('provider_name', (v) => v as String),
-          providerUrl: $checkedConvert('provider_url', (v) => v as String),
-          html: $checkedConvert('html', (v) => v as String),
-          width: $checkedConvert('width', (v) => (v as num).toInt()),
-          height: $checkedConvert('height', (v) => (v as num).toInt()),
-          imageUrl: $checkedConvert('image', (v) => v as String?),
-          embedUrl: $checkedConvert('embed_url', (v) => v as String),
-          blurHash: $checkedConvert('blurhash', (v) => v as String?),
-          usageHistory: $checkedConvert(
-              'history',
-              (v) => (v as List<dynamic>)
-                  .map((e) => UsageStatistics.fromJson(
-                      Map<String, Object?>.from(e as Map)))
-                  .toList()),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'authorName': 'author_name',
-        'authorUrl': 'author_url',
-        'providerName': 'provider_name',
-        'providerUrl': 'provider_url',
-        'imageUrl': 'image',
-        'embedUrl': 'embed_url',
-        'blurHash': 'blurhash',
-        'usageHistory': 'history'
-      },
+_TrendsLink _$TrendsLinkFromJson(Map json) => $checkedCreate(
+  '_TrendsLink',
+  json,
+  ($checkedConvert) {
+    final val = _TrendsLink(
+      url: $checkedConvert('url', (v) => v as String),
+      title: $checkedConvert('title', (v) => v as String),
+      description: $checkedConvert('description', (v) => v as String),
+      type: $checkedConvert(
+        'type',
+        (v) => $enumDecode(_$PreviewCardTypeEnumMap, v),
+      ),
+      authorName: $checkedConvert('author_name', (v) => v as String),
+      authorUrl: $checkedConvert('author_url', (v) => v as String),
+      providerName: $checkedConvert('provider_name', (v) => v as String),
+      providerUrl: $checkedConvert('provider_url', (v) => v as String),
+      html: $checkedConvert('html', (v) => v as String),
+      width: $checkedConvert('width', (v) => (v as num).toInt()),
+      height: $checkedConvert('height', (v) => (v as num).toInt()),
+      imageUrl: $checkedConvert('image', (v) => v as String?),
+      embedUrl: $checkedConvert('embed_url', (v) => v as String),
+      blurHash: $checkedConvert('blurhash', (v) => v as String?),
+      usageHistory: $checkedConvert(
+        'history',
+        (v) => (v as List<dynamic>)
+            .map(
+              (e) =>
+                  UsageStatistics.fromJson(Map<String, Object?>.from(e as Map)),
+            )
+            .toList(),
+      ),
     );
+    return val;
+  },
+  fieldKeyMap: const {
+    'authorName': 'author_name',
+    'authorUrl': 'author_url',
+    'providerName': 'provider_name',
+    'providerUrl': 'provider_url',
+    'imageUrl': 'image',
+    'embedUrl': 'embed_url',
+    'blurHash': 'blurhash',
+    'usageHistory': 'history',
+  },
+);
 
-Map<String, dynamic> _$$TrendsLinkImplToJson(_$TrendsLinkImpl instance) =>
+Map<String, dynamic> _$TrendsLinkToJson(_TrendsLink instance) =>
     <String, dynamic>{
       'url': instance.url,
       'title': instance.title,

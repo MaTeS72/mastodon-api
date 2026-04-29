@@ -11,7 +11,7 @@ part 'filter_keyword.freezed.dart';
 part 'filter_keyword.g.dart';
 
 @freezed
-class FilterKeyword with _$FilterKeyword {
+abstract class FilterKeyword with _$FilterKeyword {
   @JsonSerializable(includeIfNull: false)
   const factory FilterKeyword({
     /// The ID of the FilterKeyword in the database.

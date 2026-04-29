@@ -8,35 +8,32 @@ part of 'media_meta.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$MediaMetaImpl _$$MediaMetaImplFromJson(Map json) => $checkedCreate(
-      r'_$MediaMetaImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$MediaMetaImpl(
-          focus: $checkedConvert(
-              'focus',
-              (v) => v == null
-                  ? null
-                  : MediaFocalPoints.fromJson(
-                      Map<String, Object?>.from(v as Map))),
-          original: $checkedConvert(
-              'original',
-              (v) => v == null
-                  ? null
-                  : MediaVariants.fromJson(
-                      Map<String, Object?>.from(v as Map))),
-          small: $checkedConvert(
-              'small',
-              (v) => v == null
-                  ? null
-                  : MediaVariants.fromJson(
-                      Map<String, Object?>.from(v as Map))),
-        );
-        return val;
-      },
-    );
+_MediaMeta _$MediaMetaFromJson(Map json) =>
+    $checkedCreate('_MediaMeta', json, ($checkedConvert) {
+      final val = _MediaMeta(
+        focus: $checkedConvert(
+          'focus',
+          (v) => v == null
+              ? null
+              : MediaFocalPoints.fromJson(Map<String, Object?>.from(v as Map)),
+        ),
+        original: $checkedConvert(
+          'original',
+          (v) => v == null
+              ? null
+              : MediaVariants.fromJson(Map<String, Object?>.from(v as Map)),
+        ),
+        small: $checkedConvert(
+          'small',
+          (v) => v == null
+              ? null
+              : MediaVariants.fromJson(Map<String, Object?>.from(v as Map)),
+        ),
+      );
+      return val;
+    });
 
-Map<String, dynamic> _$$MediaMetaImplToJson(_$MediaMetaImpl instance) =>
+Map<String, dynamic> _$MediaMetaToJson(_MediaMeta instance) =>
     <String, dynamic>{
       'focus': instance.focus?.toJson(),
       'original': instance.original?.toJson(),

@@ -14,7 +14,7 @@ part 'conversation.freezed.dart';
 part 'conversation.g.dart';
 
 @freezed
-class Conversation with _$Conversation {
+abstract class Conversation with _$Conversation {
   @JsonSerializable(includeIfNull: false)
   const factory Conversation({
     /// The ID of the conversation in the database.

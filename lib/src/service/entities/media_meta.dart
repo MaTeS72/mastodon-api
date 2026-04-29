@@ -14,7 +14,7 @@ part 'media_meta.freezed.dart';
 part 'media_meta.g.dart';
 
 @freezed
-class MediaMeta with _$MediaMeta {
+abstract class MediaMeta with _$MediaMeta {
   const factory MediaMeta({
     MediaFocalPoints? focus,
     MediaVariants? original,

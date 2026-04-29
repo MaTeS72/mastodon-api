@@ -11,7 +11,7 @@ part 'poll_option.freezed.dart';
 part 'poll_option.g.dart';
 
 @freezed
-class PollOption with _$PollOption {
+abstract class PollOption with _$PollOption {
   const factory PollOption({
     /// The title of this option.
     required String title,

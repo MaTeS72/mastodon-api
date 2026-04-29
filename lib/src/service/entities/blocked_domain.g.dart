@@ -8,27 +8,29 @@ part of 'blocked_domain.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BlockedDomainImpl _$$BlockedDomainImplFromJson(Map json) => $checkedCreate(
-      r'_$BlockedDomainImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$BlockedDomainImpl(
-          name: $checkedConvert('domain', (v) => v as String),
-          sha256digest: $checkedConvert('digest', (v) => v as String),
-          severity: $checkedConvert(
-              'severity', (v) => $enumDecode(_$BlockSeverityEnumMap, v)),
-          reason: $checkedConvert('comment', (v) => v as String?),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'name': 'domain',
-        'sha256digest': 'digest',
-        'reason': 'comment'
-      },
+_BlockedDomain _$BlockedDomainFromJson(Map json) => $checkedCreate(
+  '_BlockedDomain',
+  json,
+  ($checkedConvert) {
+    final val = _BlockedDomain(
+      name: $checkedConvert('domain', (v) => v as String),
+      sha256digest: $checkedConvert('digest', (v) => v as String),
+      severity: $checkedConvert(
+        'severity',
+        (v) => $enumDecode(_$BlockSeverityEnumMap, v),
+      ),
+      reason: $checkedConvert('comment', (v) => v as String?),
     );
+    return val;
+  },
+  fieldKeyMap: const {
+    'name': 'domain',
+    'sha256digest': 'digest',
+    'reason': 'comment',
+  },
+);
 
-Map<String, dynamic> _$$BlockedDomainImplToJson(_$BlockedDomainImpl instance) =>
+Map<String, dynamic> _$BlockedDomainToJson(_BlockedDomain instance) =>
     <String, dynamic>{
       'domain': instance.name,
       'digest': instance.sha256digest,

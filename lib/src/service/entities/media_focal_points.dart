@@ -12,7 +12,7 @@ part 'media_focal_points.g.dart';
 
 /// See https://docs.joinmastodon.org/api/guidelines/#focal-points .
 @freezed
-class MediaFocalPoints with _$MediaFocalPoints {
+abstract class MediaFocalPoints with _$MediaFocalPoints {
   @Assert('-1.0 <= x && x <= 1.0')
   @Assert('-1.0 <= y && y <= 1.0')
   const factory MediaFocalPoints({

@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,330 +9,303 @@ part of 'instance_media_configuration.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-InstanceMediaConfiguration _$InstanceMediaConfigurationFromJson(
-    Map<String, dynamic> json) {
-  return _InstanceMediaConfiguration.fromJson(json);
-}
 
 /// @nodoc
 mixin _$InstanceMediaConfiguration {
-  /// The maximum size of any uploaded image, in bytes.
-  @JsonKey(name: 'image_size_limit')
-  int get maxImageSize => throw _privateConstructorUsedError;
 
-  ///The maximum number of pixels (width times height) for image uploads.
-  @JsonKey(name: 'image_matrix_limit')
-  int get maxImageMatrix => throw _privateConstructorUsedError;
+/// The maximum size of any uploaded image, in bytes.
+@JsonKey(name: 'image_size_limit') int get maxImageSize;///The maximum number of pixels (width times height) for image uploads.
+@JsonKey(name: 'image_matrix_limit') int get maxImageMatrix;/// The maximum size of any uploaded video, in bytes.
+@JsonKey(name: 'video_size_limit') int get maxVideoSize;/// The maximum frame rate for any uploaded video.
+@JsonKey(name: 'video_frame_rate_limit') int get maxVideoRateLimit;/// The maximum number of pixels (width times height) for video uploads.
+@JsonKey(name: 'video_matrix_limit') int get maxVideoMatrix;/// Contains MIME types that can be uploaded.
+ List<MimeType> get supportedMimeTypes;
+/// Create a copy of InstanceMediaConfiguration
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$InstanceMediaConfigurationCopyWith<InstanceMediaConfiguration> get copyWith => _$InstanceMediaConfigurationCopyWithImpl<InstanceMediaConfiguration>(this as InstanceMediaConfiguration, _$identity);
 
-  /// The maximum size of any uploaded video, in bytes.
-  @JsonKey(name: 'video_size_limit')
-  int get maxVideoSize => throw _privateConstructorUsedError;
+  /// Serializes this InstanceMediaConfiguration to a JSON map.
+  Map<String, dynamic> toJson();
 
-  /// The maximum frame rate for any uploaded video.
-  @JsonKey(name: 'video_frame_rate_limit')
-  int get maxVideoRateLimit => throw _privateConstructorUsedError;
 
-  /// The maximum number of pixels (width times height) for video uploads.
-  @JsonKey(name: 'video_matrix_limit')
-  int get maxVideoMatrix => throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is InstanceMediaConfiguration&&(identical(other.maxImageSize, maxImageSize) || other.maxImageSize == maxImageSize)&&(identical(other.maxImageMatrix, maxImageMatrix) || other.maxImageMatrix == maxImageMatrix)&&(identical(other.maxVideoSize, maxVideoSize) || other.maxVideoSize == maxVideoSize)&&(identical(other.maxVideoRateLimit, maxVideoRateLimit) || other.maxVideoRateLimit == maxVideoRateLimit)&&(identical(other.maxVideoMatrix, maxVideoMatrix) || other.maxVideoMatrix == maxVideoMatrix)&&const DeepCollectionEquality().equals(other.supportedMimeTypes, supportedMimeTypes));
+}
 
-  /// Contains MIME types that can be uploaded.
-  List<MimeType> get supportedMimeTypes => throw _privateConstructorUsedError;
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,maxImageSize,maxImageMatrix,maxVideoSize,maxVideoRateLimit,maxVideoMatrix,const DeepCollectionEquality().hash(supportedMimeTypes));
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $InstanceMediaConfigurationCopyWith<InstanceMediaConfiguration>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'InstanceMediaConfiguration(maxImageSize: $maxImageSize, maxImageMatrix: $maxImageMatrix, maxVideoSize: $maxVideoSize, maxVideoRateLimit: $maxVideoRateLimit, maxVideoMatrix: $maxVideoMatrix, supportedMimeTypes: $supportedMimeTypes)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $InstanceMediaConfigurationCopyWith<$Res> {
-  factory $InstanceMediaConfigurationCopyWith(InstanceMediaConfiguration value,
-          $Res Function(InstanceMediaConfiguration) then) =
-      _$InstanceMediaConfigurationCopyWithImpl<$Res,
-          InstanceMediaConfiguration>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'image_size_limit') int maxImageSize,
-      @JsonKey(name: 'image_matrix_limit') int maxImageMatrix,
-      @JsonKey(name: 'video_size_limit') int maxVideoSize,
-      @JsonKey(name: 'video_frame_rate_limit') int maxVideoRateLimit,
-      @JsonKey(name: 'video_matrix_limit') int maxVideoMatrix,
-      List<MimeType> supportedMimeTypes});
-}
+abstract mixin class $InstanceMediaConfigurationCopyWith<$Res>  {
+  factory $InstanceMediaConfigurationCopyWith(InstanceMediaConfiguration value, $Res Function(InstanceMediaConfiguration) _then) = _$InstanceMediaConfigurationCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'image_size_limit') int maxImageSize,@JsonKey(name: 'image_matrix_limit') int maxImageMatrix,@JsonKey(name: 'video_size_limit') int maxVideoSize,@JsonKey(name: 'video_frame_rate_limit') int maxVideoRateLimit,@JsonKey(name: 'video_matrix_limit') int maxVideoMatrix, List<MimeType> supportedMimeTypes
+});
 
+
+
+
+}
 /// @nodoc
-class _$InstanceMediaConfigurationCopyWithImpl<$Res,
-        $Val extends InstanceMediaConfiguration>
+class _$InstanceMediaConfigurationCopyWithImpl<$Res>
     implements $InstanceMediaConfigurationCopyWith<$Res> {
-  _$InstanceMediaConfigurationCopyWithImpl(this._value, this._then);
+  _$InstanceMediaConfigurationCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final InstanceMediaConfiguration _self;
+  final $Res Function(InstanceMediaConfiguration) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? maxImageSize = null,
-    Object? maxImageMatrix = null,
-    Object? maxVideoSize = null,
-    Object? maxVideoRateLimit = null,
-    Object? maxVideoMatrix = null,
-    Object? supportedMimeTypes = null,
-  }) {
-    return _then(_value.copyWith(
-      maxImageSize: null == maxImageSize
-          ? _value.maxImageSize
-          : maxImageSize // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxImageMatrix: null == maxImageMatrix
-          ? _value.maxImageMatrix
-          : maxImageMatrix // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxVideoSize: null == maxVideoSize
-          ? _value.maxVideoSize
-          : maxVideoSize // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxVideoRateLimit: null == maxVideoRateLimit
-          ? _value.maxVideoRateLimit
-          : maxVideoRateLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxVideoMatrix: null == maxVideoMatrix
-          ? _value.maxVideoMatrix
-          : maxVideoMatrix // ignore: cast_nullable_to_non_nullable
-              as int,
-      supportedMimeTypes: null == supportedMimeTypes
-          ? _value.supportedMimeTypes
-          : supportedMimeTypes // ignore: cast_nullable_to_non_nullable
-              as List<MimeType>,
-    ) as $Val);
-  }
+/// Create a copy of InstanceMediaConfiguration
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? maxImageSize = null,Object? maxImageMatrix = null,Object? maxVideoSize = null,Object? maxVideoRateLimit = null,Object? maxVideoMatrix = null,Object? supportedMimeTypes = null,}) {
+  return _then(_self.copyWith(
+maxImageSize: null == maxImageSize ? _self.maxImageSize : maxImageSize // ignore: cast_nullable_to_non_nullable
+as int,maxImageMatrix: null == maxImageMatrix ? _self.maxImageMatrix : maxImageMatrix // ignore: cast_nullable_to_non_nullable
+as int,maxVideoSize: null == maxVideoSize ? _self.maxVideoSize : maxVideoSize // ignore: cast_nullable_to_non_nullable
+as int,maxVideoRateLimit: null == maxVideoRateLimit ? _self.maxVideoRateLimit : maxVideoRateLimit // ignore: cast_nullable_to_non_nullable
+as int,maxVideoMatrix: null == maxVideoMatrix ? _self.maxVideoMatrix : maxVideoMatrix // ignore: cast_nullable_to_non_nullable
+as int,supportedMimeTypes: null == supportedMimeTypes ? _self.supportedMimeTypes : supportedMimeTypes // ignore: cast_nullable_to_non_nullable
+as List<MimeType>,
+  ));
 }
 
-/// @nodoc
-abstract class _$$InstanceMediaConfigurationImplCopyWith<$Res>
-    implements $InstanceMediaConfigurationCopyWith<$Res> {
-  factory _$$InstanceMediaConfigurationImplCopyWith(
-          _$InstanceMediaConfigurationImpl value,
-          $Res Function(_$InstanceMediaConfigurationImpl) then) =
-      __$$InstanceMediaConfigurationImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'image_size_limit') int maxImageSize,
-      @JsonKey(name: 'image_matrix_limit') int maxImageMatrix,
-      @JsonKey(name: 'video_size_limit') int maxVideoSize,
-      @JsonKey(name: 'video_frame_rate_limit') int maxVideoRateLimit,
-      @JsonKey(name: 'video_matrix_limit') int maxVideoMatrix,
-      List<MimeType> supportedMimeTypes});
 }
 
-/// @nodoc
-class __$$InstanceMediaConfigurationImplCopyWithImpl<$Res>
-    extends _$InstanceMediaConfigurationCopyWithImpl<$Res,
-        _$InstanceMediaConfigurationImpl>
-    implements _$$InstanceMediaConfigurationImplCopyWith<$Res> {
-  __$$InstanceMediaConfigurationImplCopyWithImpl(
-      _$InstanceMediaConfigurationImpl _value,
-      $Res Function(_$InstanceMediaConfigurationImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? maxImageSize = null,
-    Object? maxImageMatrix = null,
-    Object? maxVideoSize = null,
-    Object? maxVideoRateLimit = null,
-    Object? maxVideoMatrix = null,
-    Object? supportedMimeTypes = null,
-  }) {
-    return _then(_$InstanceMediaConfigurationImpl(
-      maxImageSize: null == maxImageSize
-          ? _value.maxImageSize
-          : maxImageSize // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxImageMatrix: null == maxImageMatrix
-          ? _value.maxImageMatrix
-          : maxImageMatrix // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxVideoSize: null == maxVideoSize
-          ? _value.maxVideoSize
-          : maxVideoSize // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxVideoRateLimit: null == maxVideoRateLimit
-          ? _value.maxVideoRateLimit
-          : maxVideoRateLimit // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxVideoMatrix: null == maxVideoMatrix
-          ? _value.maxVideoMatrix
-          : maxVideoMatrix // ignore: cast_nullable_to_non_nullable
-              as int,
-      supportedMimeTypes: null == supportedMimeTypes
-          ? _value._supportedMimeTypes
-          : supportedMimeTypes // ignore: cast_nullable_to_non_nullable
-              as List<MimeType>,
-    ));
-  }
+/// Adds pattern-matching-related methods to [InstanceMediaConfiguration].
+extension InstanceMediaConfigurationPatterns on InstanceMediaConfiguration {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _InstanceMediaConfiguration value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _InstanceMediaConfiguration() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _InstanceMediaConfiguration value)  $default,){
+final _that = this;
+switch (_that) {
+case _InstanceMediaConfiguration():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _InstanceMediaConfiguration value)?  $default,){
+final _that = this;
+switch (_that) {
+case _InstanceMediaConfiguration() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'image_size_limit')  int maxImageSize, @JsonKey(name: 'image_matrix_limit')  int maxImageMatrix, @JsonKey(name: 'video_size_limit')  int maxVideoSize, @JsonKey(name: 'video_frame_rate_limit')  int maxVideoRateLimit, @JsonKey(name: 'video_matrix_limit')  int maxVideoMatrix,  List<MimeType> supportedMimeTypes)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _InstanceMediaConfiguration() when $default != null:
+return $default(_that.maxImageSize,_that.maxImageMatrix,_that.maxVideoSize,_that.maxVideoRateLimit,_that.maxVideoMatrix,_that.supportedMimeTypes);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'image_size_limit')  int maxImageSize, @JsonKey(name: 'image_matrix_limit')  int maxImageMatrix, @JsonKey(name: 'video_size_limit')  int maxVideoSize, @JsonKey(name: 'video_frame_rate_limit')  int maxVideoRateLimit, @JsonKey(name: 'video_matrix_limit')  int maxVideoMatrix,  List<MimeType> supportedMimeTypes)  $default,) {final _that = this;
+switch (_that) {
+case _InstanceMediaConfiguration():
+return $default(_that.maxImageSize,_that.maxImageMatrix,_that.maxVideoSize,_that.maxVideoRateLimit,_that.maxVideoMatrix,_that.supportedMimeTypes);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'image_size_limit')  int maxImageSize, @JsonKey(name: 'image_matrix_limit')  int maxImageMatrix, @JsonKey(name: 'video_size_limit')  int maxVideoSize, @JsonKey(name: 'video_frame_rate_limit')  int maxVideoRateLimit, @JsonKey(name: 'video_matrix_limit')  int maxVideoMatrix,  List<MimeType> supportedMimeTypes)?  $default,) {final _that = this;
+switch (_that) {
+case _InstanceMediaConfiguration() when $default != null:
+return $default(_that.maxImageSize,_that.maxImageMatrix,_that.maxVideoSize,_that.maxVideoRateLimit,_that.maxVideoMatrix,_that.supportedMimeTypes);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$InstanceMediaConfigurationImpl implements _InstanceMediaConfiguration {
-  const _$InstanceMediaConfigurationImpl(
-      {@JsonKey(name: 'image_size_limit') required this.maxImageSize,
-      @JsonKey(name: 'image_matrix_limit') required this.maxImageMatrix,
-      @JsonKey(name: 'video_size_limit') required this.maxVideoSize,
-      @JsonKey(name: 'video_frame_rate_limit') required this.maxVideoRateLimit,
-      @JsonKey(name: 'video_matrix_limit') required this.maxVideoMatrix,
-      required final List<MimeType> supportedMimeTypes})
-      : _supportedMimeTypes = supportedMimeTypes;
+class _InstanceMediaConfiguration implements InstanceMediaConfiguration {
+  const _InstanceMediaConfiguration({@JsonKey(name: 'image_size_limit') required this.maxImageSize, @JsonKey(name: 'image_matrix_limit') required this.maxImageMatrix, @JsonKey(name: 'video_size_limit') required this.maxVideoSize, @JsonKey(name: 'video_frame_rate_limit') required this.maxVideoRateLimit, @JsonKey(name: 'video_matrix_limit') required this.maxVideoMatrix, required final  List<MimeType> supportedMimeTypes}): _supportedMimeTypes = supportedMimeTypes;
+  factory _InstanceMediaConfiguration.fromJson(Map<String, dynamic> json) => _$InstanceMediaConfigurationFromJson(json);
 
-  factory _$InstanceMediaConfigurationImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$InstanceMediaConfigurationImplFromJson(json);
-
-  /// The maximum size of any uploaded image, in bytes.
-  @override
-  @JsonKey(name: 'image_size_limit')
-  final int maxImageSize;
-
-  ///The maximum number of pixels (width times height) for image uploads.
-  @override
-  @JsonKey(name: 'image_matrix_limit')
-  final int maxImageMatrix;
-
-  /// The maximum size of any uploaded video, in bytes.
-  @override
-  @JsonKey(name: 'video_size_limit')
-  final int maxVideoSize;
-
-  /// The maximum frame rate for any uploaded video.
-  @override
-  @JsonKey(name: 'video_frame_rate_limit')
-  final int maxVideoRateLimit;
-
-  /// The maximum number of pixels (width times height) for video uploads.
-  @override
-  @JsonKey(name: 'video_matrix_limit')
-  final int maxVideoMatrix;
-
-  /// Contains MIME types that can be uploaded.
-  final List<MimeType> _supportedMimeTypes;
-
-  /// Contains MIME types that can be uploaded.
-  @override
-  List<MimeType> get supportedMimeTypes {
-    if (_supportedMimeTypes is EqualUnmodifiableListView)
-      return _supportedMimeTypes;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_supportedMimeTypes);
-  }
-
-  @override
-  String toString() {
-    return 'InstanceMediaConfiguration(maxImageSize: $maxImageSize, maxImageMatrix: $maxImageMatrix, maxVideoSize: $maxVideoSize, maxVideoRateLimit: $maxVideoRateLimit, maxVideoMatrix: $maxVideoMatrix, supportedMimeTypes: $supportedMimeTypes)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InstanceMediaConfigurationImpl &&
-            (identical(other.maxImageSize, maxImageSize) ||
-                other.maxImageSize == maxImageSize) &&
-            (identical(other.maxImageMatrix, maxImageMatrix) ||
-                other.maxImageMatrix == maxImageMatrix) &&
-            (identical(other.maxVideoSize, maxVideoSize) ||
-                other.maxVideoSize == maxVideoSize) &&
-            (identical(other.maxVideoRateLimit, maxVideoRateLimit) ||
-                other.maxVideoRateLimit == maxVideoRateLimit) &&
-            (identical(other.maxVideoMatrix, maxVideoMatrix) ||
-                other.maxVideoMatrix == maxVideoMatrix) &&
-            const DeepCollectionEquality()
-                .equals(other._supportedMimeTypes, _supportedMimeTypes));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      maxImageSize,
-      maxImageMatrix,
-      maxVideoSize,
-      maxVideoRateLimit,
-      maxVideoMatrix,
-      const DeepCollectionEquality().hash(_supportedMimeTypes));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InstanceMediaConfigurationImplCopyWith<_$InstanceMediaConfigurationImpl>
-      get copyWith => __$$InstanceMediaConfigurationImplCopyWithImpl<
-          _$InstanceMediaConfigurationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InstanceMediaConfigurationImplToJson(
-      this,
-    );
-  }
+/// The maximum size of any uploaded image, in bytes.
+@override@JsonKey(name: 'image_size_limit') final  int maxImageSize;
+///The maximum number of pixels (width times height) for image uploads.
+@override@JsonKey(name: 'image_matrix_limit') final  int maxImageMatrix;
+/// The maximum size of any uploaded video, in bytes.
+@override@JsonKey(name: 'video_size_limit') final  int maxVideoSize;
+/// The maximum frame rate for any uploaded video.
+@override@JsonKey(name: 'video_frame_rate_limit') final  int maxVideoRateLimit;
+/// The maximum number of pixels (width times height) for video uploads.
+@override@JsonKey(name: 'video_matrix_limit') final  int maxVideoMatrix;
+/// Contains MIME types that can be uploaded.
+ final  List<MimeType> _supportedMimeTypes;
+/// Contains MIME types that can be uploaded.
+@override List<MimeType> get supportedMimeTypes {
+  if (_supportedMimeTypes is EqualUnmodifiableListView) return _supportedMimeTypes;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_supportedMimeTypes);
 }
 
-abstract class _InstanceMediaConfiguration
-    implements InstanceMediaConfiguration {
-  const factory _InstanceMediaConfiguration(
-      {@JsonKey(name: 'image_size_limit') required final int maxImageSize,
-      @JsonKey(name: 'image_matrix_limit') required final int maxImageMatrix,
-      @JsonKey(name: 'video_size_limit') required final int maxVideoSize,
-      @JsonKey(name: 'video_frame_rate_limit')
-      required final int maxVideoRateLimit,
-      @JsonKey(name: 'video_matrix_limit') required final int maxVideoMatrix,
-      required final List<MimeType>
-          supportedMimeTypes}) = _$InstanceMediaConfigurationImpl;
 
-  factory _InstanceMediaConfiguration.fromJson(Map<String, dynamic> json) =
-      _$InstanceMediaConfigurationImpl.fromJson;
+/// Create a copy of InstanceMediaConfiguration
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$InstanceMediaConfigurationCopyWith<_InstanceMediaConfiguration> get copyWith => __$InstanceMediaConfigurationCopyWithImpl<_InstanceMediaConfiguration>(this, _$identity);
 
-  @override
-
-  /// The maximum size of any uploaded image, in bytes.
-  @JsonKey(name: 'image_size_limit')
-  int get maxImageSize;
-  @override
-
-  ///The maximum number of pixels (width times height) for image uploads.
-  @JsonKey(name: 'image_matrix_limit')
-  int get maxImageMatrix;
-  @override
-
-  /// The maximum size of any uploaded video, in bytes.
-  @JsonKey(name: 'video_size_limit')
-  int get maxVideoSize;
-  @override
-
-  /// The maximum frame rate for any uploaded video.
-  @JsonKey(name: 'video_frame_rate_limit')
-  int get maxVideoRateLimit;
-  @override
-
-  /// The maximum number of pixels (width times height) for video uploads.
-  @JsonKey(name: 'video_matrix_limit')
-  int get maxVideoMatrix;
-  @override
-
-  /// Contains MIME types that can be uploaded.
-  List<MimeType> get supportedMimeTypes;
-  @override
-  @JsonKey(ignore: true)
-  _$$InstanceMediaConfigurationImplCopyWith<_$InstanceMediaConfigurationImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+Map<String, dynamic> toJson() {
+  return _$InstanceMediaConfigurationToJson(this, );
 }
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InstanceMediaConfiguration&&(identical(other.maxImageSize, maxImageSize) || other.maxImageSize == maxImageSize)&&(identical(other.maxImageMatrix, maxImageMatrix) || other.maxImageMatrix == maxImageMatrix)&&(identical(other.maxVideoSize, maxVideoSize) || other.maxVideoSize == maxVideoSize)&&(identical(other.maxVideoRateLimit, maxVideoRateLimit) || other.maxVideoRateLimit == maxVideoRateLimit)&&(identical(other.maxVideoMatrix, maxVideoMatrix) || other.maxVideoMatrix == maxVideoMatrix)&&const DeepCollectionEquality().equals(other._supportedMimeTypes, _supportedMimeTypes));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,maxImageSize,maxImageMatrix,maxVideoSize,maxVideoRateLimit,maxVideoMatrix,const DeepCollectionEquality().hash(_supportedMimeTypes));
+
+@override
+String toString() {
+  return 'InstanceMediaConfiguration(maxImageSize: $maxImageSize, maxImageMatrix: $maxImageMatrix, maxVideoSize: $maxVideoSize, maxVideoRateLimit: $maxVideoRateLimit, maxVideoMatrix: $maxVideoMatrix, supportedMimeTypes: $supportedMimeTypes)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$InstanceMediaConfigurationCopyWith<$Res> implements $InstanceMediaConfigurationCopyWith<$Res> {
+  factory _$InstanceMediaConfigurationCopyWith(_InstanceMediaConfiguration value, $Res Function(_InstanceMediaConfiguration) _then) = __$InstanceMediaConfigurationCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'image_size_limit') int maxImageSize,@JsonKey(name: 'image_matrix_limit') int maxImageMatrix,@JsonKey(name: 'video_size_limit') int maxVideoSize,@JsonKey(name: 'video_frame_rate_limit') int maxVideoRateLimit,@JsonKey(name: 'video_matrix_limit') int maxVideoMatrix, List<MimeType> supportedMimeTypes
+});
+
+
+
+
+}
+/// @nodoc
+class __$InstanceMediaConfigurationCopyWithImpl<$Res>
+    implements _$InstanceMediaConfigurationCopyWith<$Res> {
+  __$InstanceMediaConfigurationCopyWithImpl(this._self, this._then);
+
+  final _InstanceMediaConfiguration _self;
+  final $Res Function(_InstanceMediaConfiguration) _then;
+
+/// Create a copy of InstanceMediaConfiguration
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? maxImageSize = null,Object? maxImageMatrix = null,Object? maxVideoSize = null,Object? maxVideoRateLimit = null,Object? maxVideoMatrix = null,Object? supportedMimeTypes = null,}) {
+  return _then(_InstanceMediaConfiguration(
+maxImageSize: null == maxImageSize ? _self.maxImageSize : maxImageSize // ignore: cast_nullable_to_non_nullable
+as int,maxImageMatrix: null == maxImageMatrix ? _self.maxImageMatrix : maxImageMatrix // ignore: cast_nullable_to_non_nullable
+as int,maxVideoSize: null == maxVideoSize ? _self.maxVideoSize : maxVideoSize // ignore: cast_nullable_to_non_nullable
+as int,maxVideoRateLimit: null == maxVideoRateLimit ? _self.maxVideoRateLimit : maxVideoRateLimit // ignore: cast_nullable_to_non_nullable
+as int,maxVideoMatrix: null == maxVideoMatrix ? _self.maxVideoMatrix : maxVideoMatrix // ignore: cast_nullable_to_non_nullable
+as int,supportedMimeTypes: null == supportedMimeTypes ? _self._supportedMimeTypes : supportedMimeTypes // ignore: cast_nullable_to_non_nullable
+as List<MimeType>,
+  ));
+}
+
+
+}
+
+// dart format on

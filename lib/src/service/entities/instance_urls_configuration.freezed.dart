@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,156 +9,271 @@ part of 'instance_urls_configuration.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-InstanceUrlsConfiguration _$InstanceUrlsConfigurationFromJson(
-    Map<String, dynamic> json) {
-  return _InstanceUrlsConfiguration.fromJson(json);
-}
 
 /// @nodoc
 mixin _$InstanceUrlsConfiguration {
-  /// The Web Sockets URL for connecting to the streaming API.
-  String get streaming => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $InstanceUrlsConfigurationCopyWith<InstanceUrlsConfiguration> get copyWith =>
-      throw _privateConstructorUsedError;
+/// The Web Sockets URL for connecting to the streaming API.
+ String get streaming;
+/// Create a copy of InstanceUrlsConfiguration
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$InstanceUrlsConfigurationCopyWith<InstanceUrlsConfiguration> get copyWith => _$InstanceUrlsConfigurationCopyWithImpl<InstanceUrlsConfiguration>(this as InstanceUrlsConfiguration, _$identity);
+
+  /// Serializes this InstanceUrlsConfiguration to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is InstanceUrlsConfiguration&&(identical(other.streaming, streaming) || other.streaming == streaming));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,streaming);
+
+@override
+String toString() {
+  return 'InstanceUrlsConfiguration(streaming: $streaming)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $InstanceUrlsConfigurationCopyWith<$Res> {
-  factory $InstanceUrlsConfigurationCopyWith(InstanceUrlsConfiguration value,
-          $Res Function(InstanceUrlsConfiguration) then) =
-      _$InstanceUrlsConfigurationCopyWithImpl<$Res, InstanceUrlsConfiguration>;
-  @useResult
-  $Res call({String streaming});
-}
+abstract mixin class $InstanceUrlsConfigurationCopyWith<$Res>  {
+  factory $InstanceUrlsConfigurationCopyWith(InstanceUrlsConfiguration value, $Res Function(InstanceUrlsConfiguration) _then) = _$InstanceUrlsConfigurationCopyWithImpl;
+@useResult
+$Res call({
+ String streaming
+});
 
+
+
+
+}
 /// @nodoc
-class _$InstanceUrlsConfigurationCopyWithImpl<$Res,
-        $Val extends InstanceUrlsConfiguration>
+class _$InstanceUrlsConfigurationCopyWithImpl<$Res>
     implements $InstanceUrlsConfigurationCopyWith<$Res> {
-  _$InstanceUrlsConfigurationCopyWithImpl(this._value, this._then);
+  _$InstanceUrlsConfigurationCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final InstanceUrlsConfiguration _self;
+  final $Res Function(InstanceUrlsConfiguration) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? streaming = null,
-  }) {
-    return _then(_value.copyWith(
-      streaming: null == streaming
-          ? _value.streaming
-          : streaming // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
+/// Create a copy of InstanceUrlsConfiguration
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? streaming = null,}) {
+  return _then(_self.copyWith(
+streaming: null == streaming ? _self.streaming : streaming // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$InstanceUrlsConfigurationImplCopyWith<$Res>
-    implements $InstanceUrlsConfigurationCopyWith<$Res> {
-  factory _$$InstanceUrlsConfigurationImplCopyWith(
-          _$InstanceUrlsConfigurationImpl value,
-          $Res Function(_$InstanceUrlsConfigurationImpl) then) =
-      __$$InstanceUrlsConfigurationImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String streaming});
 }
 
-/// @nodoc
-class __$$InstanceUrlsConfigurationImplCopyWithImpl<$Res>
-    extends _$InstanceUrlsConfigurationCopyWithImpl<$Res,
-        _$InstanceUrlsConfigurationImpl>
-    implements _$$InstanceUrlsConfigurationImplCopyWith<$Res> {
-  __$$InstanceUrlsConfigurationImplCopyWithImpl(
-      _$InstanceUrlsConfigurationImpl _value,
-      $Res Function(_$InstanceUrlsConfigurationImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? streaming = null,
-  }) {
-    return _then(_$InstanceUrlsConfigurationImpl(
-      streaming: null == streaming
-          ? _value.streaming
-          : streaming // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Adds pattern-matching-related methods to [InstanceUrlsConfiguration].
+extension InstanceUrlsConfigurationPatterns on InstanceUrlsConfiguration {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _InstanceUrlsConfiguration value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _InstanceUrlsConfiguration() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _InstanceUrlsConfiguration value)  $default,){
+final _that = this;
+switch (_that) {
+case _InstanceUrlsConfiguration():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _InstanceUrlsConfiguration value)?  $default,){
+final _that = this;
+switch (_that) {
+case _InstanceUrlsConfiguration() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String streaming)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _InstanceUrlsConfiguration() when $default != null:
+return $default(_that.streaming);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String streaming)  $default,) {final _that = this;
+switch (_that) {
+case _InstanceUrlsConfiguration():
+return $default(_that.streaming);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String streaming)?  $default,) {final _that = this;
+switch (_that) {
+case _InstanceUrlsConfiguration() when $default != null:
+return $default(_that.streaming);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$InstanceUrlsConfigurationImpl implements _InstanceUrlsConfiguration {
-  const _$InstanceUrlsConfigurationImpl({required this.streaming});
+class _InstanceUrlsConfiguration implements InstanceUrlsConfiguration {
+  const _InstanceUrlsConfiguration({required this.streaming});
+  factory _InstanceUrlsConfiguration.fromJson(Map<String, dynamic> json) => _$InstanceUrlsConfigurationFromJson(json);
 
-  factory _$InstanceUrlsConfigurationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$InstanceUrlsConfigurationImplFromJson(json);
+/// The Web Sockets URL for connecting to the streaming API.
+@override final  String streaming;
 
-  /// The Web Sockets URL for connecting to the streaming API.
-  @override
-  final String streaming;
+/// Create a copy of InstanceUrlsConfiguration
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$InstanceUrlsConfigurationCopyWith<_InstanceUrlsConfiguration> get copyWith => __$InstanceUrlsConfigurationCopyWithImpl<_InstanceUrlsConfiguration>(this, _$identity);
 
-  @override
-  String toString() {
-    return 'InstanceUrlsConfiguration(streaming: $streaming)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InstanceUrlsConfigurationImpl &&
-            (identical(other.streaming, streaming) ||
-                other.streaming == streaming));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, streaming);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InstanceUrlsConfigurationImplCopyWith<_$InstanceUrlsConfigurationImpl>
-      get copyWith => __$$InstanceUrlsConfigurationImplCopyWithImpl<
-          _$InstanceUrlsConfigurationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InstanceUrlsConfigurationImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$InstanceUrlsConfigurationToJson(this, );
 }
 
-abstract class _InstanceUrlsConfiguration implements InstanceUrlsConfiguration {
-  const factory _InstanceUrlsConfiguration({required final String streaming}) =
-      _$InstanceUrlsConfigurationImpl;
-
-  factory _InstanceUrlsConfiguration.fromJson(Map<String, dynamic> json) =
-      _$InstanceUrlsConfigurationImpl.fromJson;
-
-  @override
-
-  /// The Web Sockets URL for connecting to the streaming API.
-  String get streaming;
-  @override
-  @JsonKey(ignore: true)
-  _$$InstanceUrlsConfigurationImplCopyWith<_$InstanceUrlsConfigurationImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InstanceUrlsConfiguration&&(identical(other.streaming, streaming) || other.streaming == streaming));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,streaming);
+
+@override
+String toString() {
+  return 'InstanceUrlsConfiguration(streaming: $streaming)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$InstanceUrlsConfigurationCopyWith<$Res> implements $InstanceUrlsConfigurationCopyWith<$Res> {
+  factory _$InstanceUrlsConfigurationCopyWith(_InstanceUrlsConfiguration value, $Res Function(_InstanceUrlsConfiguration) _then) = __$InstanceUrlsConfigurationCopyWithImpl;
+@override @useResult
+$Res call({
+ String streaming
+});
+
+
+
+
+}
+/// @nodoc
+class __$InstanceUrlsConfigurationCopyWithImpl<$Res>
+    implements _$InstanceUrlsConfigurationCopyWith<$Res> {
+  __$InstanceUrlsConfigurationCopyWithImpl(this._self, this._then);
+
+  final _InstanceUrlsConfiguration _self;
+  final $Res Function(_InstanceUrlsConfiguration) _then;
+
+/// Create a copy of InstanceUrlsConfiguration
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? streaming = null,}) {
+  return _then(_InstanceUrlsConfiguration(
+streaming: null == streaming ? _self.streaming : streaming // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

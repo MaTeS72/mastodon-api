@@ -14,7 +14,7 @@ part 'status_snapshot.g.dart';
 
 /// Represents the last read position within a user's timelines.
 @freezed
-class StatusSnapshot with _$StatusSnapshot {
+abstract class StatusSnapshot with _$StatusSnapshot {
   const factory StatusSnapshot({
     /// Snapshot for home timeline.
     @JsonKey(name: 'home') required PositionMarker marker,

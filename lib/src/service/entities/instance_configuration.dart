@@ -17,7 +17,7 @@ part 'instance_configuration.freezed.dart';
 part 'instance_configuration.g.dart';
 
 @freezed
-class InstanceConfiguration with _$InstanceConfiguration {
+abstract class InstanceConfiguration with _$InstanceConfiguration {
   @JsonSerializable(includeIfNull: false)
   const factory InstanceConfiguration({
     /// Limits related to accounts.

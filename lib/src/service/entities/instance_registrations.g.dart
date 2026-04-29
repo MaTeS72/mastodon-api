@@ -8,15 +8,17 @@ part of 'instance_registrations.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$InstanceRegistrationsImpl _$$InstanceRegistrationsImplFromJson(Map json) =>
+_InstanceRegistrations _$InstanceRegistrationsFromJson(Map json) =>
     $checkedCreate(
-      r'_$InstanceRegistrationsImpl',
+      '_InstanceRegistrations',
       json,
       ($checkedConvert) {
-        final val = _$InstanceRegistrationsImpl(
+        final val = _InstanceRegistrations(
           isEnabled: $checkedConvert('enabled', (v) => v as bool),
-          isApprovalRequired:
-              $checkedConvert('approval_required', (v) => v as bool),
+          isApprovalRequired: $checkedConvert(
+            'approval_required',
+            (v) => v as bool,
+          ),
           closedMessage: $checkedConvert('message', (v) => v as String?),
         );
         return val;
@@ -24,23 +26,14 @@ _$InstanceRegistrationsImpl _$$InstanceRegistrationsImplFromJson(Map json) =>
       fieldKeyMap: const {
         'isEnabled': 'enabled',
         'isApprovalRequired': 'approval_required',
-        'closedMessage': 'message'
+        'closedMessage': 'message',
       },
     );
 
-Map<String, dynamic> _$$InstanceRegistrationsImplToJson(
-    _$InstanceRegistrationsImpl instance) {
-  final val = <String, dynamic>{
-    'enabled': instance.isEnabled,
-    'approval_required': instance.isApprovalRequired,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('message', instance.closedMessage);
-  return val;
-}
+Map<String, dynamic> _$InstanceRegistrationsToJson(
+  _InstanceRegistrations instance,
+) => <String, dynamic>{
+  'enabled': instance.isEnabled,
+  'approval_required': instance.isApprovalRequired,
+  'message': ?instance.closedMessage,
+};

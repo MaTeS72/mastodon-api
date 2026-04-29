@@ -11,7 +11,7 @@ part 'notification_subscription_alerts.freezed.dart';
 part 'notification_subscription_alerts.g.dart';
 
 @freezed
-class NotificationSubscriptionAlerts with _$NotificationSubscriptionAlerts {
+abstract class NotificationSubscriptionAlerts with _$NotificationSubscriptionAlerts {
   @JsonSerializable(includeIfNull: false)
   const factory NotificationSubscriptionAlerts({
     @Default(false) bool mention,

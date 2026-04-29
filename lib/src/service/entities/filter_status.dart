@@ -11,7 +11,7 @@ part 'filter_status.freezed.dart';
 part 'filter_status.g.dart';
 
 @freezed
-class FilterStatus with _$FilterStatus {
+abstract class FilterStatus with _$FilterStatus {
   @JsonSerializable(includeIfNull: false)
   const factory FilterStatus({
     /// The ID of the FilterStatus in the database.

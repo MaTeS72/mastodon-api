@@ -8,12 +8,12 @@ part of 'registered_application.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RegisteredApplicationImpl _$$RegisteredApplicationImplFromJson(Map json) =>
+_RegisteredApplication _$RegisteredApplicationFromJson(Map json) =>
     $checkedCreate(
-      r'_$RegisteredApplicationImpl',
+      '_RegisteredApplication',
       json,
       ($checkedConvert) {
-        final val = _$RegisteredApplicationImpl(
+        final val = _RegisteredApplication(
           id: $checkedConvert('id', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
           clientId: $checkedConvert('client_id', (v) => v as String),
@@ -28,27 +28,18 @@ _$RegisteredApplicationImpl _$$RegisteredApplicationImplFromJson(Map json) =>
         'clientId': 'client_id',
         'clientSecret': 'client_secret',
         'redirectUri': 'redirect_uri',
-        'vapidKey': 'vapid_key'
+        'vapidKey': 'vapid_key',
       },
     );
 
-Map<String, dynamic> _$$RegisteredApplicationImplToJson(
-    _$RegisteredApplicationImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'name': instance.name,
-    'client_id': instance.clientId,
-    'client_secret': instance.clientSecret,
-    'redirect_uri': instance.redirectUri,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('vapid_key', instance.vapidKey);
-  writeNotNull('website', instance.website);
-  return val;
-}
+Map<String, dynamic> _$RegisteredApplicationToJson(
+  _RegisteredApplication instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'name': instance.name,
+  'client_id': instance.clientId,
+  'client_secret': instance.clientSecret,
+  'redirect_uri': instance.redirectUri,
+  'vapid_key': ?instance.vapidKey,
+  'website': ?instance.website,
+};

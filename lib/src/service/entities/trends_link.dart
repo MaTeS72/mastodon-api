@@ -15,7 +15,7 @@ part 'trends_link.freezed.dart';
 part 'trends_link.g.dart';
 
 @freezed
-class TrendsLink with _$TrendsLink {
+abstract class TrendsLink with _$TrendsLink {
   const factory TrendsLink({
     /// Location of linked resource.
     required String url,

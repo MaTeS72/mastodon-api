@@ -8,28 +8,34 @@ part of 'rate_limit.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RateLimitImpl _$$RateLimitImplFromJson(Map json) => $checkedCreate(
-      r'_$RateLimitImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$RateLimitImpl(
-          limitCount:
-              $checkedConvert('x-ratelimit-limit', (v) => (v as num).toInt()),
-          remainingCount: $checkedConvert(
-              'x-ratelimit-remaining', (v) => (v as num).toInt()),
-          resetAt: $checkedConvert(
-              'x-ratelimit-reset', (v) => DateTime.parse(v as String)),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'limitCount': 'x-ratelimit-limit',
-        'remainingCount': 'x-ratelimit-remaining',
-        'resetAt': 'x-ratelimit-reset'
-      },
+_RateLimit _$RateLimitFromJson(Map json) => $checkedCreate(
+  '_RateLimit',
+  json,
+  ($checkedConvert) {
+    final val = _RateLimit(
+      limitCount: $checkedConvert(
+        'x-ratelimit-limit',
+        (v) => (v as num).toInt(),
+      ),
+      remainingCount: $checkedConvert(
+        'x-ratelimit-remaining',
+        (v) => (v as num).toInt(),
+      ),
+      resetAt: $checkedConvert(
+        'x-ratelimit-reset',
+        (v) => DateTime.parse(v as String),
+      ),
     );
+    return val;
+  },
+  fieldKeyMap: const {
+    'limitCount': 'x-ratelimit-limit',
+    'remainingCount': 'x-ratelimit-remaining',
+    'resetAt': 'x-ratelimit-reset',
+  },
+);
 
-Map<String, dynamic> _$$RateLimitImplToJson(_$RateLimitImpl instance) =>
+Map<String, dynamic> _$RateLimitToJson(_RateLimit instance) =>
     <String, dynamic>{
       'x-ratelimit-limit': instance.limitCount,
       'x-ratelimit-remaining': instance.remainingCount,

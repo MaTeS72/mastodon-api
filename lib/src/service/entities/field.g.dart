@@ -8,33 +8,21 @@ part of 'field.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FieldImpl _$$FieldImplFromJson(Map json) => $checkedCreate(
-      r'_$FieldImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$FieldImpl(
-          name: $checkedConvert('name', (v) => v as String),
-          value: $checkedConvert('value', (v) => v as String),
-          verifiedAt: $checkedConvert('verified_at',
-              (v) => v == null ? null : DateTime.parse(v as String)),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'verifiedAt': 'verified_at'},
-    );
+_Field _$FieldFromJson(Map json) =>
+    $checkedCreate('_Field', json, ($checkedConvert) {
+      final val = _Field(
+        name: $checkedConvert('name', (v) => v as String),
+        value: $checkedConvert('value', (v) => v as String),
+        verifiedAt: $checkedConvert(
+          'verified_at',
+          (v) => v == null ? null : DateTime.parse(v as String),
+        ),
+      );
+      return val;
+    }, fieldKeyMap: const {'verifiedAt': 'verified_at'});
 
-Map<String, dynamic> _$$FieldImplToJson(_$FieldImpl instance) {
-  final val = <String, dynamic>{
-    'name': instance.name,
-    'value': instance.value,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('verified_at', instance.verifiedAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$FieldToJson(_Field instance) => <String, dynamic>{
+  'name': instance.name,
+  'value': instance.value,
+  'verified_at': ?instance.verifiedAt?.toIso8601String(),
+};

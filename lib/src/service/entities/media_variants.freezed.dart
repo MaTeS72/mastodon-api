@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,273 +9,287 @@ part of 'media_variants.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-MediaVariants _$MediaVariantsFromJson(Map<String, dynamic> json) {
-  return _MediaVariants.fromJson(json);
-}
 
 /// @nodoc
 mixin _$MediaVariants {
-  int? get width => throw _privateConstructorUsedError;
-  int? get height => throw _privateConstructorUsedError;
-  String? get size => throw _privateConstructorUsedError;
-  double? get aspect => throw _privateConstructorUsedError;
-  String? get frameRate => throw _privateConstructorUsedError;
-  @JsonKey(name: 'duration')
-  double? get durationInSeconds => throw _privateConstructorUsedError;
-  int? get bitrate => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $MediaVariantsCopyWith<MediaVariants> get copyWith =>
-      throw _privateConstructorUsedError;
+ int? get width; int? get height; String? get size; double? get aspect; String? get frameRate;@JsonKey(name: 'duration') double? get durationInSeconds; int? get bitrate;
+/// Create a copy of MediaVariants
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$MediaVariantsCopyWith<MediaVariants> get copyWith => _$MediaVariantsCopyWithImpl<MediaVariants>(this as MediaVariants, _$identity);
+
+  /// Serializes this MediaVariants to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is MediaVariants&&(identical(other.width, width) || other.width == width)&&(identical(other.height, height) || other.height == height)&&(identical(other.size, size) || other.size == size)&&(identical(other.aspect, aspect) || other.aspect == aspect)&&(identical(other.frameRate, frameRate) || other.frameRate == frameRate)&&(identical(other.durationInSeconds, durationInSeconds) || other.durationInSeconds == durationInSeconds)&&(identical(other.bitrate, bitrate) || other.bitrate == bitrate));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,width,height,size,aspect,frameRate,durationInSeconds,bitrate);
+
+@override
+String toString() {
+  return 'MediaVariants(width: $width, height: $height, size: $size, aspect: $aspect, frameRate: $frameRate, durationInSeconds: $durationInSeconds, bitrate: $bitrate)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $MediaVariantsCopyWith<$Res> {
-  factory $MediaVariantsCopyWith(
-          MediaVariants value, $Res Function(MediaVariants) then) =
-      _$MediaVariantsCopyWithImpl<$Res, MediaVariants>;
-  @useResult
-  $Res call(
-      {int? width,
-      int? height,
-      String? size,
-      double? aspect,
-      String? frameRate,
-      @JsonKey(name: 'duration') double? durationInSeconds,
-      int? bitrate});
-}
+abstract mixin class $MediaVariantsCopyWith<$Res>  {
+  factory $MediaVariantsCopyWith(MediaVariants value, $Res Function(MediaVariants) _then) = _$MediaVariantsCopyWithImpl;
+@useResult
+$Res call({
+ int? width, int? height, String? size, double? aspect, String? frameRate,@JsonKey(name: 'duration') double? durationInSeconds, int? bitrate
+});
 
+
+
+
+}
 /// @nodoc
-class _$MediaVariantsCopyWithImpl<$Res, $Val extends MediaVariants>
+class _$MediaVariantsCopyWithImpl<$Res>
     implements $MediaVariantsCopyWith<$Res> {
-  _$MediaVariantsCopyWithImpl(this._value, this._then);
+  _$MediaVariantsCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final MediaVariants _self;
+  final $Res Function(MediaVariants) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? width = freezed,
-    Object? height = freezed,
-    Object? size = freezed,
-    Object? aspect = freezed,
-    Object? frameRate = freezed,
-    Object? durationInSeconds = freezed,
-    Object? bitrate = freezed,
-  }) {
-    return _then(_value.copyWith(
-      width: freezed == width
-          ? _value.width
-          : width // ignore: cast_nullable_to_non_nullable
-              as int?,
-      height: freezed == height
-          ? _value.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as int?,
-      size: freezed == size
-          ? _value.size
-          : size // ignore: cast_nullable_to_non_nullable
-              as String?,
-      aspect: freezed == aspect
-          ? _value.aspect
-          : aspect // ignore: cast_nullable_to_non_nullable
-              as double?,
-      frameRate: freezed == frameRate
-          ? _value.frameRate
-          : frameRate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      durationInSeconds: freezed == durationInSeconds
-          ? _value.durationInSeconds
-          : durationInSeconds // ignore: cast_nullable_to_non_nullable
-              as double?,
-      bitrate: freezed == bitrate
-          ? _value.bitrate
-          : bitrate // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
-  }
+/// Create a copy of MediaVariants
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? width = freezed,Object? height = freezed,Object? size = freezed,Object? aspect = freezed,Object? frameRate = freezed,Object? durationInSeconds = freezed,Object? bitrate = freezed,}) {
+  return _then(_self.copyWith(
+width: freezed == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
+as int?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
+as int?,size: freezed == size ? _self.size : size // ignore: cast_nullable_to_non_nullable
+as String?,aspect: freezed == aspect ? _self.aspect : aspect // ignore: cast_nullable_to_non_nullable
+as double?,frameRate: freezed == frameRate ? _self.frameRate : frameRate // ignore: cast_nullable_to_non_nullable
+as String?,durationInSeconds: freezed == durationInSeconds ? _self.durationInSeconds : durationInSeconds // ignore: cast_nullable_to_non_nullable
+as double?,bitrate: freezed == bitrate ? _self.bitrate : bitrate // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
 }
 
-/// @nodoc
-abstract class _$$MediaVariantsImplCopyWith<$Res>
-    implements $MediaVariantsCopyWith<$Res> {
-  factory _$$MediaVariantsImplCopyWith(
-          _$MediaVariantsImpl value, $Res Function(_$MediaVariantsImpl) then) =
-      __$$MediaVariantsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {int? width,
-      int? height,
-      String? size,
-      double? aspect,
-      String? frameRate,
-      @JsonKey(name: 'duration') double? durationInSeconds,
-      int? bitrate});
 }
 
-/// @nodoc
-class __$$MediaVariantsImplCopyWithImpl<$Res>
-    extends _$MediaVariantsCopyWithImpl<$Res, _$MediaVariantsImpl>
-    implements _$$MediaVariantsImplCopyWith<$Res> {
-  __$$MediaVariantsImplCopyWithImpl(
-      _$MediaVariantsImpl _value, $Res Function(_$MediaVariantsImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? width = freezed,
-    Object? height = freezed,
-    Object? size = freezed,
-    Object? aspect = freezed,
-    Object? frameRate = freezed,
-    Object? durationInSeconds = freezed,
-    Object? bitrate = freezed,
-  }) {
-    return _then(_$MediaVariantsImpl(
-      width: freezed == width
-          ? _value.width
-          : width // ignore: cast_nullable_to_non_nullable
-              as int?,
-      height: freezed == height
-          ? _value.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as int?,
-      size: freezed == size
-          ? _value.size
-          : size // ignore: cast_nullable_to_non_nullable
-              as String?,
-      aspect: freezed == aspect
-          ? _value.aspect
-          : aspect // ignore: cast_nullable_to_non_nullable
-              as double?,
-      frameRate: freezed == frameRate
-          ? _value.frameRate
-          : frameRate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      durationInSeconds: freezed == durationInSeconds
-          ? _value.durationInSeconds
-          : durationInSeconds // ignore: cast_nullable_to_non_nullable
-              as double?,
-      bitrate: freezed == bitrate
-          ? _value.bitrate
-          : bitrate // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
+/// Adds pattern-matching-related methods to [MediaVariants].
+extension MediaVariantsPatterns on MediaVariants {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _MediaVariants value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _MediaVariants() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _MediaVariants value)  $default,){
+final _that = this;
+switch (_that) {
+case _MediaVariants():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _MediaVariants value)?  $default,){
+final _that = this;
+switch (_that) {
+case _MediaVariants() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? width,  int? height,  String? size,  double? aspect,  String? frameRate, @JsonKey(name: 'duration')  double? durationInSeconds,  int? bitrate)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _MediaVariants() when $default != null:
+return $default(_that.width,_that.height,_that.size,_that.aspect,_that.frameRate,_that.durationInSeconds,_that.bitrate);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? width,  int? height,  String? size,  double? aspect,  String? frameRate, @JsonKey(name: 'duration')  double? durationInSeconds,  int? bitrate)  $default,) {final _that = this;
+switch (_that) {
+case _MediaVariants():
+return $default(_that.width,_that.height,_that.size,_that.aspect,_that.frameRate,_that.durationInSeconds,_that.bitrate);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? width,  int? height,  String? size,  double? aspect,  String? frameRate, @JsonKey(name: 'duration')  double? durationInSeconds,  int? bitrate)?  $default,) {final _that = this;
+switch (_that) {
+case _MediaVariants() when $default != null:
+return $default(_that.width,_that.height,_that.size,_that.aspect,_that.frameRate,_that.durationInSeconds,_that.bitrate);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$MediaVariantsImpl implements _MediaVariants {
-  const _$MediaVariantsImpl(
-      {this.width,
-      this.height,
-      this.size,
-      this.aspect,
-      this.frameRate,
-      @JsonKey(name: 'duration') this.durationInSeconds,
-      this.bitrate});
 
-  factory _$MediaVariantsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MediaVariantsImplFromJson(json);
+class _MediaVariants implements MediaVariants {
+  const _MediaVariants({this.width, this.height, this.size, this.aspect, this.frameRate, @JsonKey(name: 'duration') this.durationInSeconds, this.bitrate});
+  factory _MediaVariants.fromJson(Map<String, dynamic> json) => _$MediaVariantsFromJson(json);
 
-  @override
-  final int? width;
-  @override
-  final int? height;
-  @override
-  final String? size;
-  @override
-  final double? aspect;
-  @override
-  final String? frameRate;
-  @override
-  @JsonKey(name: 'duration')
-  final double? durationInSeconds;
-  @override
-  final int? bitrate;
+@override final  int? width;
+@override final  int? height;
+@override final  String? size;
+@override final  double? aspect;
+@override final  String? frameRate;
+@override@JsonKey(name: 'duration') final  double? durationInSeconds;
+@override final  int? bitrate;
 
-  @override
-  String toString() {
-    return 'MediaVariants(width: $width, height: $height, size: $size, aspect: $aspect, frameRate: $frameRate, durationInSeconds: $durationInSeconds, bitrate: $bitrate)';
-  }
+/// Create a copy of MediaVariants
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$MediaVariantsCopyWith<_MediaVariants> get copyWith => __$MediaVariantsCopyWithImpl<_MediaVariants>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$MediaVariantsImpl &&
-            (identical(other.width, width) || other.width == width) &&
-            (identical(other.height, height) || other.height == height) &&
-            (identical(other.size, size) || other.size == size) &&
-            (identical(other.aspect, aspect) || other.aspect == aspect) &&
-            (identical(other.frameRate, frameRate) ||
-                other.frameRate == frameRate) &&
-            (identical(other.durationInSeconds, durationInSeconds) ||
-                other.durationInSeconds == durationInSeconds) &&
-            (identical(other.bitrate, bitrate) || other.bitrate == bitrate));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, width, height, size, aspect,
-      frameRate, durationInSeconds, bitrate);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$MediaVariantsImplCopyWith<_$MediaVariantsImpl> get copyWith =>
-      __$$MediaVariantsImplCopyWithImpl<_$MediaVariantsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MediaVariantsImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$MediaVariantsToJson(this, );
 }
 
-abstract class _MediaVariants implements MediaVariants {
-  const factory _MediaVariants(
-      {final int? width,
-      final int? height,
-      final String? size,
-      final double? aspect,
-      final String? frameRate,
-      @JsonKey(name: 'duration') final double? durationInSeconds,
-      final int? bitrate}) = _$MediaVariantsImpl;
-
-  factory _MediaVariants.fromJson(Map<String, dynamic> json) =
-      _$MediaVariantsImpl.fromJson;
-
-  @override
-  int? get width;
-  @override
-  int? get height;
-  @override
-  String? get size;
-  @override
-  double? get aspect;
-  @override
-  String? get frameRate;
-  @override
-  @JsonKey(name: 'duration')
-  double? get durationInSeconds;
-  @override
-  int? get bitrate;
-  @override
-  @JsonKey(ignore: true)
-  _$$MediaVariantsImplCopyWith<_$MediaVariantsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MediaVariants&&(identical(other.width, width) || other.width == width)&&(identical(other.height, height) || other.height == height)&&(identical(other.size, size) || other.size == size)&&(identical(other.aspect, aspect) || other.aspect == aspect)&&(identical(other.frameRate, frameRate) || other.frameRate == frameRate)&&(identical(other.durationInSeconds, durationInSeconds) || other.durationInSeconds == durationInSeconds)&&(identical(other.bitrate, bitrate) || other.bitrate == bitrate));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,width,height,size,aspect,frameRate,durationInSeconds,bitrate);
+
+@override
+String toString() {
+  return 'MediaVariants(width: $width, height: $height, size: $size, aspect: $aspect, frameRate: $frameRate, durationInSeconds: $durationInSeconds, bitrate: $bitrate)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$MediaVariantsCopyWith<$Res> implements $MediaVariantsCopyWith<$Res> {
+  factory _$MediaVariantsCopyWith(_MediaVariants value, $Res Function(_MediaVariants) _then) = __$MediaVariantsCopyWithImpl;
+@override @useResult
+$Res call({
+ int? width, int? height, String? size, double? aspect, String? frameRate,@JsonKey(name: 'duration') double? durationInSeconds, int? bitrate
+});
+
+
+
+
+}
+/// @nodoc
+class __$MediaVariantsCopyWithImpl<$Res>
+    implements _$MediaVariantsCopyWith<$Res> {
+  __$MediaVariantsCopyWithImpl(this._self, this._then);
+
+  final _MediaVariants _self;
+  final $Res Function(_MediaVariants) _then;
+
+/// Create a copy of MediaVariants
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? width = freezed,Object? height = freezed,Object? size = freezed,Object? aspect = freezed,Object? frameRate = freezed,Object? durationInSeconds = freezed,Object? bitrate = freezed,}) {
+  return _then(_MediaVariants(
+width: freezed == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
+as int?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
+as int?,size: freezed == size ? _self.size : size // ignore: cast_nullable_to_non_nullable
+as String?,aspect: freezed == aspect ? _self.aspect : aspect // ignore: cast_nullable_to_non_nullable
+as double?,frameRate: freezed == frameRate ? _self.frameRate : frameRate // ignore: cast_nullable_to_non_nullable
+as String?,durationInSeconds: freezed == durationInSeconds ? _self.durationInSeconds : durationInSeconds // ignore: cast_nullable_to_non_nullable
+as double?,bitrate: freezed == bitrate ? _self.bitrate : bitrate // ignore: cast_nullable_to_non_nullable
+as int?,
+  ));
+}
+
+
+}
+
+// dart format on

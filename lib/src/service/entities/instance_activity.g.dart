@@ -8,32 +8,38 @@ part of 'instance_activity.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$InstanceActivityImpl _$$InstanceActivityImplFromJson(Map json) =>
-    $checkedCreate(
-      r'_$InstanceActivityImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$InstanceActivityImpl(
-          week: $checkedConvert('week',
-              (v) => const UnixTimestampConverter().fromJson(v as String)),
-          statusCount: $checkedConvert(
-              'statuses', (v) => const IntConverter().fromJson(v as String)),
-          loginCount: $checkedConvert(
-              'logins', (v) => const IntConverter().fromJson(v as String)),
-          registrationCount: $checkedConvert('registrations',
-              (v) => const IntConverter().fromJson(v as String)),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'statusCount': 'statuses',
-        'loginCount': 'logins',
-        'registrationCount': 'registrations'
-      },
+_InstanceActivity _$InstanceActivityFromJson(Map json) => $checkedCreate(
+  '_InstanceActivity',
+  json,
+  ($checkedConvert) {
+    final val = _InstanceActivity(
+      week: $checkedConvert(
+        'week',
+        (v) => const UnixTimestampConverter().fromJson(v as String),
+      ),
+      statusCount: $checkedConvert(
+        'statuses',
+        (v) => const IntConverter().fromJson(v as String),
+      ),
+      loginCount: $checkedConvert(
+        'logins',
+        (v) => const IntConverter().fromJson(v as String),
+      ),
+      registrationCount: $checkedConvert(
+        'registrations',
+        (v) => const IntConverter().fromJson(v as String),
+      ),
     );
+    return val;
+  },
+  fieldKeyMap: const {
+    'statusCount': 'statuses',
+    'loginCount': 'logins',
+    'registrationCount': 'registrations',
+  },
+);
 
-Map<String, dynamic> _$$InstanceActivityImplToJson(
-        _$InstanceActivityImpl instance) =>
+Map<String, dynamic> _$InstanceActivityToJson(_InstanceActivity instance) =>
     <String, dynamic>{
       'week': const UnixTimestampConverter().toJson(instance.week),
       'statuses': const IntConverter().toJson(instance.statusCount),

@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,224 +9,281 @@ part of 'instance_registrations.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-InstanceRegistrations _$InstanceRegistrationsFromJson(
-    Map<String, dynamic> json) {
-  return _InstanceRegistrations.fromJson(json);
-}
 
 /// @nodoc
 mixin _$InstanceRegistrations {
-  /// Whether registrations are enabled.
-  @JsonKey(name: 'enabled')
-  bool get isEnabled => throw _privateConstructorUsedError;
 
-  /// Whether registrations require moderator approval.
-  @JsonKey(name: 'approval_required')
-  bool get isApprovalRequired => throw _privateConstructorUsedError;
+/// Whether registrations are enabled.
+@JsonKey(name: 'enabled') bool get isEnabled;/// Whether registrations require moderator approval.
+@JsonKey(name: 'approval_required') bool get isApprovalRequired;/// A custom message to be shown when registrations are closed.
+@JsonKey(name: 'message') String? get closedMessage;
+/// Create a copy of InstanceRegistrations
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$InstanceRegistrationsCopyWith<InstanceRegistrations> get copyWith => _$InstanceRegistrationsCopyWithImpl<InstanceRegistrations>(this as InstanceRegistrations, _$identity);
 
-  /// A custom message to be shown when registrations are closed.
-  @JsonKey(name: 'message')
-  String? get closedMessage => throw _privateConstructorUsedError;
+  /// Serializes this InstanceRegistrations to a JSON map.
+  Map<String, dynamic> toJson();
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $InstanceRegistrationsCopyWith<InstanceRegistrations> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is InstanceRegistrations&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&(identical(other.isApprovalRequired, isApprovalRequired) || other.isApprovalRequired == isApprovalRequired)&&(identical(other.closedMessage, closedMessage) || other.closedMessage == closedMessage));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,isEnabled,isApprovalRequired,closedMessage);
+
+@override
+String toString() {
+  return 'InstanceRegistrations(isEnabled: $isEnabled, isApprovalRequired: $isApprovalRequired, closedMessage: $closedMessage)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $InstanceRegistrationsCopyWith<$Res> {
-  factory $InstanceRegistrationsCopyWith(InstanceRegistrations value,
-          $Res Function(InstanceRegistrations) then) =
-      _$InstanceRegistrationsCopyWithImpl<$Res, InstanceRegistrations>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'enabled') bool isEnabled,
-      @JsonKey(name: 'approval_required') bool isApprovalRequired,
-      @JsonKey(name: 'message') String? closedMessage});
-}
+abstract mixin class $InstanceRegistrationsCopyWith<$Res>  {
+  factory $InstanceRegistrationsCopyWith(InstanceRegistrations value, $Res Function(InstanceRegistrations) _then) = _$InstanceRegistrationsCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'enabled') bool isEnabled,@JsonKey(name: 'approval_required') bool isApprovalRequired,@JsonKey(name: 'message') String? closedMessage
+});
 
+
+
+
+}
 /// @nodoc
-class _$InstanceRegistrationsCopyWithImpl<$Res,
-        $Val extends InstanceRegistrations>
+class _$InstanceRegistrationsCopyWithImpl<$Res>
     implements $InstanceRegistrationsCopyWith<$Res> {
-  _$InstanceRegistrationsCopyWithImpl(this._value, this._then);
+  _$InstanceRegistrationsCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final InstanceRegistrations _self;
+  final $Res Function(InstanceRegistrations) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? isEnabled = null,
-    Object? isApprovalRequired = null,
-    Object? closedMessage = freezed,
-  }) {
-    return _then(_value.copyWith(
-      isEnabled: null == isEnabled
-          ? _value.isEnabled
-          : isEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isApprovalRequired: null == isApprovalRequired
-          ? _value.isApprovalRequired
-          : isApprovalRequired // ignore: cast_nullable_to_non_nullable
-              as bool,
-      closedMessage: freezed == closedMessage
-          ? _value.closedMessage
-          : closedMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
+/// Create a copy of InstanceRegistrations
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? isEnabled = null,Object? isApprovalRequired = null,Object? closedMessage = freezed,}) {
+  return _then(_self.copyWith(
+isEnabled: null == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
+as bool,isApprovalRequired: null == isApprovalRequired ? _self.isApprovalRequired : isApprovalRequired // ignore: cast_nullable_to_non_nullable
+as bool,closedMessage: freezed == closedMessage ? _self.closedMessage : closedMessage // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
-abstract class _$$InstanceRegistrationsImplCopyWith<$Res>
-    implements $InstanceRegistrationsCopyWith<$Res> {
-  factory _$$InstanceRegistrationsImplCopyWith(
-          _$InstanceRegistrationsImpl value,
-          $Res Function(_$InstanceRegistrationsImpl) then) =
-      __$$InstanceRegistrationsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'enabled') bool isEnabled,
-      @JsonKey(name: 'approval_required') bool isApprovalRequired,
-      @JsonKey(name: 'message') String? closedMessage});
 }
 
-/// @nodoc
-class __$$InstanceRegistrationsImplCopyWithImpl<$Res>
-    extends _$InstanceRegistrationsCopyWithImpl<$Res,
-        _$InstanceRegistrationsImpl>
-    implements _$$InstanceRegistrationsImplCopyWith<$Res> {
-  __$$InstanceRegistrationsImplCopyWithImpl(_$InstanceRegistrationsImpl _value,
-      $Res Function(_$InstanceRegistrationsImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? isEnabled = null,
-    Object? isApprovalRequired = null,
-    Object? closedMessage = freezed,
-  }) {
-    return _then(_$InstanceRegistrationsImpl(
-      isEnabled: null == isEnabled
-          ? _value.isEnabled
-          : isEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isApprovalRequired: null == isApprovalRequired
-          ? _value.isApprovalRequired
-          : isApprovalRequired // ignore: cast_nullable_to_non_nullable
-              as bool,
-      closedMessage: freezed == closedMessage
-          ? _value.closedMessage
-          : closedMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+/// Adds pattern-matching-related methods to [InstanceRegistrations].
+extension InstanceRegistrationsPatterns on InstanceRegistrations {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _InstanceRegistrations value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _InstanceRegistrations() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _InstanceRegistrations value)  $default,){
+final _that = this;
+switch (_that) {
+case _InstanceRegistrations():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _InstanceRegistrations value)?  $default,){
+final _that = this;
+switch (_that) {
+case _InstanceRegistrations() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'enabled')  bool isEnabled, @JsonKey(name: 'approval_required')  bool isApprovalRequired, @JsonKey(name: 'message')  String? closedMessage)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _InstanceRegistrations() when $default != null:
+return $default(_that.isEnabled,_that.isApprovalRequired,_that.closedMessage);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'enabled')  bool isEnabled, @JsonKey(name: 'approval_required')  bool isApprovalRequired, @JsonKey(name: 'message')  String? closedMessage)  $default,) {final _that = this;
+switch (_that) {
+case _InstanceRegistrations():
+return $default(_that.isEnabled,_that.isApprovalRequired,_that.closedMessage);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'enabled')  bool isEnabled, @JsonKey(name: 'approval_required')  bool isApprovalRequired, @JsonKey(name: 'message')  String? closedMessage)?  $default,) {final _that = this;
+switch (_that) {
+case _InstanceRegistrations() when $default != null:
+return $default(_that.isEnabled,_that.isApprovalRequired,_that.closedMessage);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$InstanceRegistrationsImpl implements _InstanceRegistrations {
-  const _$InstanceRegistrationsImpl(
-      {@JsonKey(name: 'enabled') required this.isEnabled,
-      @JsonKey(name: 'approval_required') required this.isApprovalRequired,
-      @JsonKey(name: 'message') this.closedMessage});
+class _InstanceRegistrations implements InstanceRegistrations {
+  const _InstanceRegistrations({@JsonKey(name: 'enabled') required this.isEnabled, @JsonKey(name: 'approval_required') required this.isApprovalRequired, @JsonKey(name: 'message') this.closedMessage});
+  factory _InstanceRegistrations.fromJson(Map<String, dynamic> json) => _$InstanceRegistrationsFromJson(json);
 
-  factory _$InstanceRegistrationsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$InstanceRegistrationsImplFromJson(json);
+/// Whether registrations are enabled.
+@override@JsonKey(name: 'enabled') final  bool isEnabled;
+/// Whether registrations require moderator approval.
+@override@JsonKey(name: 'approval_required') final  bool isApprovalRequired;
+/// A custom message to be shown when registrations are closed.
+@override@JsonKey(name: 'message') final  String? closedMessage;
 
-  /// Whether registrations are enabled.
-  @override
-  @JsonKey(name: 'enabled')
-  final bool isEnabled;
+/// Create a copy of InstanceRegistrations
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$InstanceRegistrationsCopyWith<_InstanceRegistrations> get copyWith => __$InstanceRegistrationsCopyWithImpl<_InstanceRegistrations>(this, _$identity);
 
-  /// Whether registrations require moderator approval.
-  @override
-  @JsonKey(name: 'approval_required')
-  final bool isApprovalRequired;
-
-  /// A custom message to be shown when registrations are closed.
-  @override
-  @JsonKey(name: 'message')
-  final String? closedMessage;
-
-  @override
-  String toString() {
-    return 'InstanceRegistrations(isEnabled: $isEnabled, isApprovalRequired: $isApprovalRequired, closedMessage: $closedMessage)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InstanceRegistrationsImpl &&
-            (identical(other.isEnabled, isEnabled) ||
-                other.isEnabled == isEnabled) &&
-            (identical(other.isApprovalRequired, isApprovalRequired) ||
-                other.isApprovalRequired == isApprovalRequired) &&
-            (identical(other.closedMessage, closedMessage) ||
-                other.closedMessage == closedMessage));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, isEnabled, isApprovalRequired, closedMessage);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InstanceRegistrationsImplCopyWith<_$InstanceRegistrationsImpl>
-      get copyWith => __$$InstanceRegistrationsImplCopyWithImpl<
-          _$InstanceRegistrationsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InstanceRegistrationsImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$InstanceRegistrationsToJson(this, );
 }
 
-abstract class _InstanceRegistrations implements InstanceRegistrations {
-  const factory _InstanceRegistrations(
-          {@JsonKey(name: 'enabled') required final bool isEnabled,
-          @JsonKey(name: 'approval_required')
-          required final bool isApprovalRequired,
-          @JsonKey(name: 'message') final String? closedMessage}) =
-      _$InstanceRegistrationsImpl;
-
-  factory _InstanceRegistrations.fromJson(Map<String, dynamic> json) =
-      _$InstanceRegistrationsImpl.fromJson;
-
-  @override
-
-  /// Whether registrations are enabled.
-  @JsonKey(name: 'enabled')
-  bool get isEnabled;
-  @override
-
-  /// Whether registrations require moderator approval.
-  @JsonKey(name: 'approval_required')
-  bool get isApprovalRequired;
-  @override
-
-  /// A custom message to be shown when registrations are closed.
-  @JsonKey(name: 'message')
-  String? get closedMessage;
-  @override
-  @JsonKey(ignore: true)
-  _$$InstanceRegistrationsImplCopyWith<_$InstanceRegistrationsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _InstanceRegistrations&&(identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled)&&(identical(other.isApprovalRequired, isApprovalRequired) || other.isApprovalRequired == isApprovalRequired)&&(identical(other.closedMessage, closedMessage) || other.closedMessage == closedMessage));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,isEnabled,isApprovalRequired,closedMessage);
+
+@override
+String toString() {
+  return 'InstanceRegistrations(isEnabled: $isEnabled, isApprovalRequired: $isApprovalRequired, closedMessage: $closedMessage)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$InstanceRegistrationsCopyWith<$Res> implements $InstanceRegistrationsCopyWith<$Res> {
+  factory _$InstanceRegistrationsCopyWith(_InstanceRegistrations value, $Res Function(_InstanceRegistrations) _then) = __$InstanceRegistrationsCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'enabled') bool isEnabled,@JsonKey(name: 'approval_required') bool isApprovalRequired,@JsonKey(name: 'message') String? closedMessage
+});
+
+
+
+
+}
+/// @nodoc
+class __$InstanceRegistrationsCopyWithImpl<$Res>
+    implements _$InstanceRegistrationsCopyWith<$Res> {
+  __$InstanceRegistrationsCopyWithImpl(this._self, this._then);
+
+  final _InstanceRegistrations _self;
+  final $Res Function(_InstanceRegistrations) _then;
+
+/// Create a copy of InstanceRegistrations
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? isEnabled = null,Object? isApprovalRequired = null,Object? closedMessage = freezed,}) {
+  return _then(_InstanceRegistrations(
+isEnabled: null == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
+as bool,isApprovalRequired: null == isApprovalRequired ? _self.isApprovalRequired : isApprovalRequired // ignore: cast_nullable_to_non_nullable
+as bool,closedMessage: freezed == closedMessage ? _self.closedMessage : closedMessage // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+// dart format on

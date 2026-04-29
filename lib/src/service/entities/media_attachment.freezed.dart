@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,366 +9,334 @@ part of 'media_attachment.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-MediaAttachment _$MediaAttachmentFromJson(Map<String, dynamic> json) {
-  return _MediaAttachment.fromJson(json);
-}
 
 /// @nodoc
 mixin _$MediaAttachment {
-  /// The ID of the attachment in the database.
-  String get id => throw _privateConstructorUsedError;
 
-  /// The type of the attachment.
-  MediaAttachmentType get type => throw _privateConstructorUsedError;
+/// The ID of the attachment in the database.
+ String get id;/// The type of the attachment.
+ MediaAttachmentType get type;/// The location of the original full-size attachment.
+ String? get url;/// The location of a scaled-down preview of the attachment.
+ String? get previewUrl;/// The location of the full-size original attachment on the remote website.
+ String? get remoteUrl;/// Metadata returned by Paperclip.
+ MediaMeta? get meta;/// Alternate text that describes what is in the media attachment, to be
+/// used for the visually impaired or when media attachments do not load.
+ String? get description;/// A hash computed by the BlurHash algorithm, for generating colorful
+/// preview thumbnails when media has not been downloaded yet.
+@JsonKey(name: 'blurhash') String? get blurHash;
+/// Create a copy of MediaAttachment
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$MediaAttachmentCopyWith<MediaAttachment> get copyWith => _$MediaAttachmentCopyWithImpl<MediaAttachment>(this as MediaAttachment, _$identity);
 
-  /// The location of the original full-size attachment.
-  String? get url => throw _privateConstructorUsedError;
+  /// Serializes this MediaAttachment to a JSON map.
+  Map<String, dynamic> toJson();
 
-  /// The location of a scaled-down preview of the attachment.
-  String? get previewUrl => throw _privateConstructorUsedError;
 
-  /// The location of the full-size original attachment on the remote website.
-  String? get remoteUrl => throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is MediaAttachment&&(identical(other.id, id) || other.id == id)&&(identical(other.type, type) || other.type == type)&&(identical(other.url, url) || other.url == url)&&(identical(other.previewUrl, previewUrl) || other.previewUrl == previewUrl)&&(identical(other.remoteUrl, remoteUrl) || other.remoteUrl == remoteUrl)&&(identical(other.meta, meta) || other.meta == meta)&&(identical(other.description, description) || other.description == description)&&(identical(other.blurHash, blurHash) || other.blurHash == blurHash));
+}
 
-  /// Metadata returned by Paperclip.
-  MediaMeta? get meta => throw _privateConstructorUsedError;
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,type,url,previewUrl,remoteUrl,meta,description,blurHash);
 
-  /// Alternate text that describes what is in the media attachment, to be
-  /// used for the visually impaired or when media attachments do not load.
-  String? get description => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'MediaAttachment(id: $id, type: $type, url: $url, previewUrl: $previewUrl, remoteUrl: $remoteUrl, meta: $meta, description: $description, blurHash: $blurHash)';
+}
 
-  /// A hash computed by the BlurHash algorithm, for generating colorful
-  /// preview thumbnails when media has not been downloaded yet.
-  @JsonKey(name: 'blurhash')
-  String? get blurHash => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $MediaAttachmentCopyWith<MediaAttachment> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MediaAttachmentCopyWith<$Res> {
-  factory $MediaAttachmentCopyWith(
-          MediaAttachment value, $Res Function(MediaAttachment) then) =
-      _$MediaAttachmentCopyWithImpl<$Res, MediaAttachment>;
-  @useResult
-  $Res call(
-      {String id,
-      MediaAttachmentType type,
-      String? url,
-      String? previewUrl,
-      String? remoteUrl,
-      MediaMeta? meta,
-      String? description,
-      @JsonKey(name: 'blurhash') String? blurHash});
+abstract mixin class $MediaAttachmentCopyWith<$Res>  {
+  factory $MediaAttachmentCopyWith(MediaAttachment value, $Res Function(MediaAttachment) _then) = _$MediaAttachmentCopyWithImpl;
+@useResult
+$Res call({
+ String id, MediaAttachmentType type, String? url, String? previewUrl, String? remoteUrl, MediaMeta? meta, String? description,@JsonKey(name: 'blurhash') String? blurHash
+});
 
-  $MediaMetaCopyWith<$Res>? get meta;
+
+$MediaMetaCopyWith<$Res>? get meta;
+
 }
-
 /// @nodoc
-class _$MediaAttachmentCopyWithImpl<$Res, $Val extends MediaAttachment>
+class _$MediaAttachmentCopyWithImpl<$Res>
     implements $MediaAttachmentCopyWith<$Res> {
-  _$MediaAttachmentCopyWithImpl(this._value, this._then);
+  _$MediaAttachmentCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final MediaAttachment _self;
+  final $Res Function(MediaAttachment) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? type = null,
-    Object? url = freezed,
-    Object? previewUrl = freezed,
-    Object? remoteUrl = freezed,
-    Object? meta = freezed,
-    Object? description = freezed,
-    Object? blurHash = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as MediaAttachmentType,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      previewUrl: freezed == previewUrl
-          ? _value.previewUrl
-          : previewUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      remoteUrl: freezed == remoteUrl
-          ? _value.remoteUrl
-          : remoteUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      meta: freezed == meta
-          ? _value.meta
-          : meta // ignore: cast_nullable_to_non_nullable
-              as MediaMeta?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      blurHash: freezed == blurHash
-          ? _value.blurHash
-          : blurHash // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+/// Create a copy of MediaAttachment
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? type = null,Object? url = freezed,Object? previewUrl = freezed,Object? remoteUrl = freezed,Object? meta = freezed,Object? description = freezed,Object? blurHash = freezed,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as MediaAttachmentType,url: freezed == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String?,previewUrl: freezed == previewUrl ? _self.previewUrl : previewUrl // ignore: cast_nullable_to_non_nullable
+as String?,remoteUrl: freezed == remoteUrl ? _self.remoteUrl : remoteUrl // ignore: cast_nullable_to_non_nullable
+as String?,meta: freezed == meta ? _self.meta : meta // ignore: cast_nullable_to_non_nullable
+as MediaMeta?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String?,blurHash: freezed == blurHash ? _self.blurHash : blurHash // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+/// Create a copy of MediaAttachment
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$MediaMetaCopyWith<$Res>? get meta {
+    if (_self.meta == null) {
+    return null;
   }
 
-  @override
-  @pragma('vm:prefer-inline')
-  $MediaMetaCopyWith<$Res>? get meta {
-    if (_value.meta == null) {
-      return null;
-    }
-
-    return $MediaMetaCopyWith<$Res>(_value.meta!, (value) {
-      return _then(_value.copyWith(meta: value) as $Val);
-    });
-  }
+  return $MediaMetaCopyWith<$Res>(_self.meta!, (value) {
+    return _then(_self.copyWith(meta: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$MediaAttachmentImplCopyWith<$Res>
-    implements $MediaAttachmentCopyWith<$Res> {
-  factory _$$MediaAttachmentImplCopyWith(_$MediaAttachmentImpl value,
-          $Res Function(_$MediaAttachmentImpl) then) =
-      __$$MediaAttachmentImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      MediaAttachmentType type,
-      String? url,
-      String? previewUrl,
-      String? remoteUrl,
-      MediaMeta? meta,
-      String? description,
-      @JsonKey(name: 'blurhash') String? blurHash});
 
-  @override
-  $MediaMetaCopyWith<$Res>? get meta;
+/// Adds pattern-matching-related methods to [MediaAttachment].
+extension MediaAttachmentPatterns on MediaAttachment {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _MediaAttachment value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _MediaAttachment() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _MediaAttachment value)  $default,){
+final _that = this;
+switch (_that) {
+case _MediaAttachment():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _MediaAttachment value)?  $default,){
+final _that = this;
+switch (_that) {
+case _MediaAttachment() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  MediaAttachmentType type,  String? url,  String? previewUrl,  String? remoteUrl,  MediaMeta? meta,  String? description, @JsonKey(name: 'blurhash')  String? blurHash)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _MediaAttachment() when $default != null:
+return $default(_that.id,_that.type,_that.url,_that.previewUrl,_that.remoteUrl,_that.meta,_that.description,_that.blurHash);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  MediaAttachmentType type,  String? url,  String? previewUrl,  String? remoteUrl,  MediaMeta? meta,  String? description, @JsonKey(name: 'blurhash')  String? blurHash)  $default,) {final _that = this;
+switch (_that) {
+case _MediaAttachment():
+return $default(_that.id,_that.type,_that.url,_that.previewUrl,_that.remoteUrl,_that.meta,_that.description,_that.blurHash);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  MediaAttachmentType type,  String? url,  String? previewUrl,  String? remoteUrl,  MediaMeta? meta,  String? description, @JsonKey(name: 'blurhash')  String? blurHash)?  $default,) {final _that = this;
+switch (_that) {
+case _MediaAttachment() when $default != null:
+return $default(_that.id,_that.type,_that.url,_that.previewUrl,_that.remoteUrl,_that.meta,_that.description,_that.blurHash);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-class __$$MediaAttachmentImplCopyWithImpl<$Res>
-    extends _$MediaAttachmentCopyWithImpl<$Res, _$MediaAttachmentImpl>
-    implements _$$MediaAttachmentImplCopyWith<$Res> {
-  __$$MediaAttachmentImplCopyWithImpl(
-      _$MediaAttachmentImpl _value, $Res Function(_$MediaAttachmentImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? type = null,
-    Object? url = freezed,
-    Object? previewUrl = freezed,
-    Object? remoteUrl = freezed,
-    Object? meta = freezed,
-    Object? description = freezed,
-    Object? blurHash = freezed,
-  }) {
-    return _then(_$MediaAttachmentImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as MediaAttachmentType,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      previewUrl: freezed == previewUrl
-          ? _value.previewUrl
-          : previewUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      remoteUrl: freezed == remoteUrl
-          ? _value.remoteUrl
-          : remoteUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      meta: freezed == meta
-          ? _value.meta
-          : meta // ignore: cast_nullable_to_non_nullable
-              as MediaMeta?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      blurHash: freezed == blurHash
-          ? _value.blurHash
-          : blurHash // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$MediaAttachmentImpl implements _MediaAttachment {
-  const _$MediaAttachmentImpl(
-      {required this.id,
-      required this.type,
-      this.url,
-      required this.previewUrl,
-      this.remoteUrl,
-      this.meta,
-      this.description,
-      @JsonKey(name: 'blurhash') this.blurHash});
 
-  factory _$MediaAttachmentImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MediaAttachmentImplFromJson(json);
+class _MediaAttachment implements MediaAttachment {
+  const _MediaAttachment({required this.id, required this.type, this.url, required this.previewUrl, this.remoteUrl, this.meta, this.description, @JsonKey(name: 'blurhash') this.blurHash});
+  factory _MediaAttachment.fromJson(Map<String, dynamic> json) => _$MediaAttachmentFromJson(json);
 
-  /// The ID of the attachment in the database.
-  @override
-  final String id;
+/// The ID of the attachment in the database.
+@override final  String id;
+/// The type of the attachment.
+@override final  MediaAttachmentType type;
+/// The location of the original full-size attachment.
+@override final  String? url;
+/// The location of a scaled-down preview of the attachment.
+@override final  String? previewUrl;
+/// The location of the full-size original attachment on the remote website.
+@override final  String? remoteUrl;
+/// Metadata returned by Paperclip.
+@override final  MediaMeta? meta;
+/// Alternate text that describes what is in the media attachment, to be
+/// used for the visually impaired or when media attachments do not load.
+@override final  String? description;
+/// A hash computed by the BlurHash algorithm, for generating colorful
+/// preview thumbnails when media has not been downloaded yet.
+@override@JsonKey(name: 'blurhash') final  String? blurHash;
 
-  /// The type of the attachment.
-  @override
-  final MediaAttachmentType type;
+/// Create a copy of MediaAttachment
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$MediaAttachmentCopyWith<_MediaAttachment> get copyWith => __$MediaAttachmentCopyWithImpl<_MediaAttachment>(this, _$identity);
 
-  /// The location of the original full-size attachment.
-  @override
-  final String? url;
-
-  /// The location of a scaled-down preview of the attachment.
-  @override
-  final String? previewUrl;
-
-  /// The location of the full-size original attachment on the remote website.
-  @override
-  final String? remoteUrl;
-
-  /// Metadata returned by Paperclip.
-  @override
-  final MediaMeta? meta;
-
-  /// Alternate text that describes what is in the media attachment, to be
-  /// used for the visually impaired or when media attachments do not load.
-  @override
-  final String? description;
-
-  /// A hash computed by the BlurHash algorithm, for generating colorful
-  /// preview thumbnails when media has not been downloaded yet.
-  @override
-  @JsonKey(name: 'blurhash')
-  final String? blurHash;
-
-  @override
-  String toString() {
-    return 'MediaAttachment(id: $id, type: $type, url: $url, previewUrl: $previewUrl, remoteUrl: $remoteUrl, meta: $meta, description: $description, blurHash: $blurHash)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$MediaAttachmentImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.previewUrl, previewUrl) ||
-                other.previewUrl == previewUrl) &&
-            (identical(other.remoteUrl, remoteUrl) ||
-                other.remoteUrl == remoteUrl) &&
-            (identical(other.meta, meta) || other.meta == meta) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.blurHash, blurHash) ||
-                other.blurHash == blurHash));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, type, url, previewUrl,
-      remoteUrl, meta, description, blurHash);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$MediaAttachmentImplCopyWith<_$MediaAttachmentImpl> get copyWith =>
-      __$$MediaAttachmentImplCopyWithImpl<_$MediaAttachmentImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MediaAttachmentImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$MediaAttachmentToJson(this, );
 }
 
-abstract class _MediaAttachment implements MediaAttachment {
-  const factory _MediaAttachment(
-          {required final String id,
-          required final MediaAttachmentType type,
-          final String? url,
-          required final String? previewUrl,
-          final String? remoteUrl,
-          final MediaMeta? meta,
-          final String? description,
-          @JsonKey(name: 'blurhash') final String? blurHash}) =
-      _$MediaAttachmentImpl;
-
-  factory _MediaAttachment.fromJson(Map<String, dynamic> json) =
-      _$MediaAttachmentImpl.fromJson;
-
-  @override
-
-  /// The ID of the attachment in the database.
-  String get id;
-  @override
-
-  /// The type of the attachment.
-  MediaAttachmentType get type;
-  @override
-
-  /// The location of the original full-size attachment.
-  String? get url;
-  @override
-
-  /// The location of a scaled-down preview of the attachment.
-  String? get previewUrl;
-  @override
-
-  /// The location of the full-size original attachment on the remote website.
-  String? get remoteUrl;
-  @override
-
-  /// Metadata returned by Paperclip.
-  MediaMeta? get meta;
-  @override
-
-  /// Alternate text that describes what is in the media attachment, to be
-  /// used for the visually impaired or when media attachments do not load.
-  String? get description;
-  @override
-
-  /// A hash computed by the BlurHash algorithm, for generating colorful
-  /// preview thumbnails when media has not been downloaded yet.
-  @JsonKey(name: 'blurhash')
-  String? get blurHash;
-  @override
-  @JsonKey(ignore: true)
-  _$$MediaAttachmentImplCopyWith<_$MediaAttachmentImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MediaAttachment&&(identical(other.id, id) || other.id == id)&&(identical(other.type, type) || other.type == type)&&(identical(other.url, url) || other.url == url)&&(identical(other.previewUrl, previewUrl) || other.previewUrl == previewUrl)&&(identical(other.remoteUrl, remoteUrl) || other.remoteUrl == remoteUrl)&&(identical(other.meta, meta) || other.meta == meta)&&(identical(other.description, description) || other.description == description)&&(identical(other.blurHash, blurHash) || other.blurHash == blurHash));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,type,url,previewUrl,remoteUrl,meta,description,blurHash);
+
+@override
+String toString() {
+  return 'MediaAttachment(id: $id, type: $type, url: $url, previewUrl: $previewUrl, remoteUrl: $remoteUrl, meta: $meta, description: $description, blurHash: $blurHash)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$MediaAttachmentCopyWith<$Res> implements $MediaAttachmentCopyWith<$Res> {
+  factory _$MediaAttachmentCopyWith(_MediaAttachment value, $Res Function(_MediaAttachment) _then) = __$MediaAttachmentCopyWithImpl;
+@override @useResult
+$Res call({
+ String id, MediaAttachmentType type, String? url, String? previewUrl, String? remoteUrl, MediaMeta? meta, String? description,@JsonKey(name: 'blurhash') String? blurHash
+});
+
+
+@override $MediaMetaCopyWith<$Res>? get meta;
+
+}
+/// @nodoc
+class __$MediaAttachmentCopyWithImpl<$Res>
+    implements _$MediaAttachmentCopyWith<$Res> {
+  __$MediaAttachmentCopyWithImpl(this._self, this._then);
+
+  final _MediaAttachment _self;
+  final $Res Function(_MediaAttachment) _then;
+
+/// Create a copy of MediaAttachment
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? type = null,Object? url = freezed,Object? previewUrl = freezed,Object? remoteUrl = freezed,Object? meta = freezed,Object? description = freezed,Object? blurHash = freezed,}) {
+  return _then(_MediaAttachment(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as MediaAttachmentType,url: freezed == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String?,previewUrl: freezed == previewUrl ? _self.previewUrl : previewUrl // ignore: cast_nullable_to_non_nullable
+as String?,remoteUrl: freezed == remoteUrl ? _self.remoteUrl : remoteUrl // ignore: cast_nullable_to_non_nullable
+as String?,meta: freezed == meta ? _self.meta : meta // ignore: cast_nullable_to_non_nullable
+as MediaMeta?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String?,blurHash: freezed == blurHash ? _self.blurHash : blurHash // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+/// Create a copy of MediaAttachment
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$MediaMetaCopyWith<$Res>? get meta {
+    if (_self.meta == null) {
+    return null;
+  }
+
+  return $MediaMetaCopyWith<$Res>(_self.meta!, (value) {
+    return _then(_self.copyWith(meta: value));
+  });
+}
+}
+
+// dart format on
