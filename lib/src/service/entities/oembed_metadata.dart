@@ -11,7 +11,7 @@ part 'oembed_metadata.freezed.dart';
 part 'oembed_metadata.g.dart';
 
 @freezed
-class OEmbedMetadata with _$OEmbedMetadata {
+abstract class OEmbedMetadata with _$OEmbedMetadata {
   @JsonSerializable(includeIfNull: false)
   const factory OEmbedMetadata({
     required String type,

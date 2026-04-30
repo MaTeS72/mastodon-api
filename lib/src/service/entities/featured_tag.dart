@@ -13,7 +13,7 @@ part 'featured_tag.freezed.dart';
 part 'featured_tag.g.dart';
 
 @freezed
-class FeaturedTag with _$FeaturedTag {
+abstract class FeaturedTag with _$FeaturedTag {
   @JsonSerializable(includeIfNull: false)
   const factory FeaturedTag({
     /// The internal ID of the featured tag in the database.

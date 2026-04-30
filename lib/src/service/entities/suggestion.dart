@@ -15,7 +15,7 @@ part 'suggestion.freezed.dart';
 part 'suggestion.g.dart';
 
 @freezed
-class Suggestion with _$Suggestion {
+abstract class Suggestion with _$Suggestion {
   @JsonSerializable(includeIfNull: false)
   const factory Suggestion({
     /// The reason this account is being suggested.

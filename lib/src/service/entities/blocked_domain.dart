@@ -14,7 +14,7 @@ part 'blocked_domain.freezed.dart';
 part 'blocked_domain.g.dart';
 
 @freezed
-class BlockedDomain with _$BlockedDomain {
+abstract class BlockedDomain with _$BlockedDomain {
   const factory BlockedDomain({
     /// The domain which is blocked.
     ///

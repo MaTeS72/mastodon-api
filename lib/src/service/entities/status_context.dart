@@ -12,7 +12,7 @@ part 'status_context.freezed.dart';
 part 'status_context.g.dart';
 
 @freezed
-class StatusContext with _$StatusContext {
+abstract class StatusContext with _$StatusContext {
   @JsonSerializable(includeIfNull: false)
   const factory StatusContext({
     /// Parents in the thread.

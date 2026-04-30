@@ -11,7 +11,7 @@ part 'instance_accounts_configuration.freezed.dart';
 part 'instance_accounts_configuration.g.dart';
 
 @freezed
-class InstanceAccountsConfiguration with _$InstanceAccountsConfiguration {
+abstract class InstanceAccountsConfiguration with _$InstanceAccountsConfiguration {
   @JsonSerializable(includeIfNull: false)
   const factory InstanceAccountsConfiguration({
     /// The maximum number of featured tags allowed for each account.

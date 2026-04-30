@@ -11,7 +11,7 @@ part 'application.freezed.dart';
 part 'application.g.dart';
 
 @freezed
-class Application with _$Application {
+abstract class Application with _$Application {
   @JsonSerializable(includeIfNull: false)
   const factory Application({
     /// The name of your application.

@@ -8,21 +8,17 @@ part of 'status_source.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$StatusSourceImpl _$$StatusSourceImplFromJson(Map json) => $checkedCreate(
-      r'_$StatusSourceImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$StatusSourceImpl(
-          id: $checkedConvert('id', (v) => v as String),
-          text: $checkedConvert('text', (v) => v as String),
-          spoilerText: $checkedConvert('spoiler_text', (v) => v as String),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'spoilerText': 'spoiler_text'},
-    );
+_StatusSource _$StatusSourceFromJson(Map json) =>
+    $checkedCreate('_StatusSource', json, ($checkedConvert) {
+      final val = _StatusSource(
+        id: $checkedConvert('id', (v) => v as String),
+        text: $checkedConvert('text', (v) => v as String),
+        spoilerText: $checkedConvert('spoiler_text', (v) => v as String),
+      );
+      return val;
+    }, fieldKeyMap: const {'spoilerText': 'spoiler_text'});
 
-Map<String, dynamic> _$$StatusSourceImplToJson(_$StatusSourceImpl instance) =>
+Map<String, dynamic> _$StatusSourceToJson(_StatusSource instance) =>
     <String, dynamic>{
       'id': instance.id,
       'text': instance.text,

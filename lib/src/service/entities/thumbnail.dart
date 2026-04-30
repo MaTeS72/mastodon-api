@@ -14,7 +14,7 @@ part 'thumbnail.freezed.dart';
 part 'thumbnail.g.dart';
 
 @freezed
-class Thumbnail with _$Thumbnail {
+abstract class Thumbnail with _$Thumbnail {
   @JsonSerializable(includeIfNull: false)
   const factory Thumbnail({
     /// The URL for the thumbnail image.

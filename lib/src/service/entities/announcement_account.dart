@@ -11,7 +11,7 @@ part 'announcement_account.freezed.dart';
 part 'announcement_account.g.dart';
 
 @freezed
-class AnnouncementAccount with _$AnnouncementAccount {
+abstract class AnnouncementAccount with _$AnnouncementAccount {
   @JsonSerializable(includeIfNull: false)
   const factory AnnouncementAccount({
     /// The account ID of the mentioned user.

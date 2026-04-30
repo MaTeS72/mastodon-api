@@ -18,7 +18,7 @@ part 'instance.freezed.dart';
 part 'instance.g.dart';
 
 @freezed
-class Instance with _$Instance {
+abstract class Instance with _$Instance {
   @JsonSerializable(includeIfNull: false)
   const factory Instance({
     /// The domain name of the instance.

@@ -15,7 +15,7 @@ part 'scheduled_status_params.freezed.dart';
 part 'scheduled_status_params.g.dart';
 
 @freezed
-class ScheduledStatusParams with _$ScheduledStatusParams {
+abstract class ScheduledStatusParams with _$ScheduledStatusParams {
   @JsonSerializable(includeIfNull: false)
   const factory ScheduledStatusParams({
     /// Text to be used as status content.

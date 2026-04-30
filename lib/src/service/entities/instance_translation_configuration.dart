@@ -11,7 +11,7 @@ part 'instance_translation_configuration.freezed.dart';
 part 'instance_translation_configuration.g.dart';
 
 @freezed
-class InstanceTranslationConfiguration with _$InstanceTranslationConfiguration {
+abstract class InstanceTranslationConfiguration with _$InstanceTranslationConfiguration {
   @JsonSerializable(includeIfNull: false)
   const factory InstanceTranslationConfiguration({
     /// The Web Sockets URL for connecting to the streaming API.

@@ -17,7 +17,7 @@ part 'status_edit.g.dart';
 
 /// Represents a revision of a status that has been edited.
 @freezed
-class StatusEdit with _$StatusEdit {
+abstract class StatusEdit with _$StatusEdit {
   @JsonSerializable(includeIfNull: false)
   const factory StatusEdit({
     /// The content of the status at this revision.

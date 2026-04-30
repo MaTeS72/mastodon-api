@@ -9,7 +9,7 @@ part 'instance_statistics.freezed.dart';
 part 'instance_statistics.g.dart';
 
 @freezed
-class InstanceStatistics with _$InstanceStatistics {
+abstract class InstanceStatistics with _$InstanceStatistics {
   const factory InstanceStatistics({
     /// Users registered on this instance.
     required int userCount,

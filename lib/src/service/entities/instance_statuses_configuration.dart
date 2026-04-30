@@ -11,7 +11,7 @@ part 'instance_statuses_configuration.freezed.dart';
 part 'instance_statuses_configuration.g.dart';
 
 @freezed
-class InstanceStatusesConfiguration with _$InstanceStatusesConfiguration {
+abstract class InstanceStatusesConfiguration with _$InstanceStatusesConfiguration {
   @JsonSerializable(includeIfNull: false)
   const factory InstanceStatusesConfiguration({
     /// The maximum number of allowed characters per status.

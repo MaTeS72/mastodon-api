@@ -8,30 +8,40 @@ part of 'scheduled_status_params.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ScheduledStatusParamsImpl _$$ScheduledStatusParamsImplFromJson(Map json) =>
+_ScheduledStatusParams _$ScheduledStatusParamsFromJson(Map json) =>
     $checkedCreate(
-      r'_$ScheduledStatusParamsImpl',
+      '_ScheduledStatusParams',
       json,
       ($checkedConvert) {
-        final val = _$ScheduledStatusParamsImpl(
+        final val = _ScheduledStatusParams(
           text: $checkedConvert('text', (v) => v as String),
           spoilerText: $checkedConvert('spoiler_text', (v) => v as String?),
           poll: $checkedConvert(
-              'poll',
-              (v) => v == null
-                  ? null
-                  : ScheduledPoll.fromJson(
-                      Map<String, Object?>.from(v as Map))),
-          mediaIds: $checkedConvert('media_ids',
-              (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
-          inReplyToStatusId:
-              $checkedConvert('in_reply_to_id', (v) => v as String?),
+            'poll',
+            (v) => v == null
+                ? null
+                : ScheduledPoll.fromJson(Map<String, Object?>.from(v as Map)),
+          ),
+          mediaIds: $checkedConvert(
+            'media_ids',
+            (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+          ),
+          inReplyToStatusId: $checkedConvert(
+            'in_reply_to_id',
+            (v) => v as String?,
+          ),
           language: $checkedConvert(
-              'language',
-              (v) => $enumDecodeNullable(_$LanguageEnumMap, v,
-                  unknownValue: Language.unknown)),
+            'language',
+            (v) => $enumDecodeNullable(
+              _$LanguageEnumMap,
+              v,
+              unknownValue: Language.unknown,
+            ),
+          ),
           visibility: $checkedConvert(
-              'visibility', (v) => $enumDecodeNullable(_$VisibilityEnumMap, v)),
+            'visibility',
+            (v) => $enumDecodeNullable(_$VisibilityEnumMap, v),
+          ),
           idempotency: $checkedConvert('idempotency', (v) => v as String?),
           isSensitive: $checkedConvert('sensitive', (v) => v as bool?),
         );
@@ -41,32 +51,23 @@ _$ScheduledStatusParamsImpl _$$ScheduledStatusParamsImplFromJson(Map json) =>
         'spoilerText': 'spoiler_text',
         'mediaIds': 'media_ids',
         'inReplyToStatusId': 'in_reply_to_id',
-        'isSensitive': 'sensitive'
+        'isSensitive': 'sensitive',
       },
     );
 
-Map<String, dynamic> _$$ScheduledStatusParamsImplToJson(
-    _$ScheduledStatusParamsImpl instance) {
-  final val = <String, dynamic>{
-    'text': instance.text,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('spoiler_text', instance.spoilerText);
-  writeNotNull('poll', instance.poll?.toJson());
-  writeNotNull('media_ids', instance.mediaIds);
-  writeNotNull('in_reply_to_id', instance.inReplyToStatusId);
-  writeNotNull('language', _$LanguageEnumMap[instance.language]);
-  writeNotNull('visibility', _$VisibilityEnumMap[instance.visibility]);
-  writeNotNull('idempotency', instance.idempotency);
-  writeNotNull('sensitive', instance.isSensitive);
-  return val;
-}
+Map<String, dynamic> _$ScheduledStatusParamsToJson(
+  _ScheduledStatusParams instance,
+) => <String, dynamic>{
+  'text': instance.text,
+  'spoiler_text': ?instance.spoilerText,
+  'poll': ?instance.poll?.toJson(),
+  'media_ids': ?instance.mediaIds,
+  'in_reply_to_id': ?instance.inReplyToStatusId,
+  'language': ?_$LanguageEnumMap[instance.language],
+  'visibility': ?instance.visibility?.toJson(),
+  'idempotency': ?instance.idempotency,
+  'sensitive': ?instance.isSensitive,
+};
 
 const _$LanguageEnumMap = {
   Language.afar: 'aa',

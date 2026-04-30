@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,262 +9,291 @@ part of 'emoji.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Emoji _$EmojiFromJson(Map<String, dynamic> json) {
-  return _Emoji.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Emoji {
-  /// The name of the custom emoji.
-  @JsonKey(name: 'shortcode')
-  String get code => throw _privateConstructorUsedError;
 
-  /// A link to the custom emoji.
-  String get url => throw _privateConstructorUsedError;
+/// The name of the custom emoji.
+@JsonKey(name: 'shortcode') String get code;/// A link to the custom emoji.
+ String get url;/// A link to a static copy of the custom emoji.
+ String? get staticUrl;/// Whether this Emoji should be visible in the picker or unlisted.
+@JsonKey(name: 'visible_in_picker') bool get isVisibleInPicker;/// Used for sorting custom emoji in the picker.
+ String? get category;
+/// Create a copy of Emoji
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$EmojiCopyWith<Emoji> get copyWith => _$EmojiCopyWithImpl<Emoji>(this as Emoji, _$identity);
 
-  /// A link to a static copy of the custom emoji.
-  String? get staticUrl => throw _privateConstructorUsedError;
+  /// Serializes this Emoji to a JSON map.
+  Map<String, dynamic> toJson();
 
-  /// Whether this Emoji should be visible in the picker or unlisted.
-  @JsonKey(name: 'visible_in_picker')
-  bool get isVisibleInPicker => throw _privateConstructorUsedError;
 
-  /// Used for sorting custom emoji in the picker.
-  String? get category => throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Emoji&&(identical(other.code, code) || other.code == code)&&(identical(other.url, url) || other.url == url)&&(identical(other.staticUrl, staticUrl) || other.staticUrl == staticUrl)&&(identical(other.isVisibleInPicker, isVisibleInPicker) || other.isVisibleInPicker == isVisibleInPicker)&&(identical(other.category, category) || other.category == category));
+}
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $EmojiCopyWith<Emoji> get copyWith => throw _privateConstructorUsedError;
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,code,url,staticUrl,isVisibleInPicker,category);
+
+@override
+String toString() {
+  return 'Emoji(code: $code, url: $url, staticUrl: $staticUrl, isVisibleInPicker: $isVisibleInPicker, category: $category)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $EmojiCopyWith<$Res> {
-  factory $EmojiCopyWith(Emoji value, $Res Function(Emoji) then) =
-      _$EmojiCopyWithImpl<$Res, Emoji>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'shortcode') String code,
-      String url,
-      String? staticUrl,
-      @JsonKey(name: 'visible_in_picker') bool isVisibleInPicker,
-      String? category});
-}
+abstract mixin class $EmojiCopyWith<$Res>  {
+  factory $EmojiCopyWith(Emoji value, $Res Function(Emoji) _then) = _$EmojiCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'shortcode') String code, String url, String? staticUrl,@JsonKey(name: 'visible_in_picker') bool isVisibleInPicker, String? category
+});
 
+
+
+
+}
 /// @nodoc
-class _$EmojiCopyWithImpl<$Res, $Val extends Emoji>
+class _$EmojiCopyWithImpl<$Res>
     implements $EmojiCopyWith<$Res> {
-  _$EmojiCopyWithImpl(this._value, this._then);
+  _$EmojiCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final Emoji _self;
+  final $Res Function(Emoji) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? code = null,
-    Object? url = null,
-    Object? staticUrl = freezed,
-    Object? isVisibleInPicker = null,
-    Object? category = freezed,
-  }) {
-    return _then(_value.copyWith(
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      staticUrl: freezed == staticUrl
-          ? _value.staticUrl
-          : staticUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isVisibleInPicker: null == isVisibleInPicker
-          ? _value.isVisibleInPicker
-          : isVisibleInPicker // ignore: cast_nullable_to_non_nullable
-              as bool,
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
+/// Create a copy of Emoji
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? code = null,Object? url = null,Object? staticUrl = freezed,Object? isVisibleInPicker = null,Object? category = freezed,}) {
+  return _then(_self.copyWith(
+code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String,staticUrl: freezed == staticUrl ? _self.staticUrl : staticUrl // ignore: cast_nullable_to_non_nullable
+as String?,isVisibleInPicker: null == isVisibleInPicker ? _self.isVisibleInPicker : isVisibleInPicker // ignore: cast_nullable_to_non_nullable
+as bool,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
-abstract class _$$EmojiImplCopyWith<$Res> implements $EmojiCopyWith<$Res> {
-  factory _$$EmojiImplCopyWith(
-          _$EmojiImpl value, $Res Function(_$EmojiImpl) then) =
-      __$$EmojiImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'shortcode') String code,
-      String url,
-      String? staticUrl,
-      @JsonKey(name: 'visible_in_picker') bool isVisibleInPicker,
-      String? category});
 }
 
-/// @nodoc
-class __$$EmojiImplCopyWithImpl<$Res>
-    extends _$EmojiCopyWithImpl<$Res, _$EmojiImpl>
-    implements _$$EmojiImplCopyWith<$Res> {
-  __$$EmojiImplCopyWithImpl(
-      _$EmojiImpl _value, $Res Function(_$EmojiImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? code = null,
-    Object? url = null,
-    Object? staticUrl = freezed,
-    Object? isVisibleInPicker = null,
-    Object? category = freezed,
-  }) {
-    return _then(_$EmojiImpl(
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      url: null == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String,
-      staticUrl: freezed == staticUrl
-          ? _value.staticUrl
-          : staticUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isVisibleInPicker: null == isVisibleInPicker
-          ? _value.isVisibleInPicker
-          : isVisibleInPicker // ignore: cast_nullable_to_non_nullable
-              as bool,
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+/// Adds pattern-matching-related methods to [Emoji].
+extension EmojiPatterns on Emoji {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Emoji value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Emoji() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Emoji value)  $default,){
+final _that = this;
+switch (_that) {
+case _Emoji():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Emoji value)?  $default,){
+final _that = this;
+switch (_that) {
+case _Emoji() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'shortcode')  String code,  String url,  String? staticUrl, @JsonKey(name: 'visible_in_picker')  bool isVisibleInPicker,  String? category)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Emoji() when $default != null:
+return $default(_that.code,_that.url,_that.staticUrl,_that.isVisibleInPicker,_that.category);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'shortcode')  String code,  String url,  String? staticUrl, @JsonKey(name: 'visible_in_picker')  bool isVisibleInPicker,  String? category)  $default,) {final _that = this;
+switch (_that) {
+case _Emoji():
+return $default(_that.code,_that.url,_that.staticUrl,_that.isVisibleInPicker,_that.category);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'shortcode')  String code,  String url,  String? staticUrl, @JsonKey(name: 'visible_in_picker')  bool isVisibleInPicker,  String? category)?  $default,) {final _that = this;
+switch (_that) {
+case _Emoji() when $default != null:
+return $default(_that.code,_that.url,_that.staticUrl,_that.isVisibleInPicker,_that.category);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$EmojiImpl implements _Emoji {
-  const _$EmojiImpl(
-      {@JsonKey(name: 'shortcode') required this.code,
-      required this.url,
-      this.staticUrl,
-      @JsonKey(name: 'visible_in_picker') required this.isVisibleInPicker,
-      this.category});
+class _Emoji implements Emoji {
+  const _Emoji({@JsonKey(name: 'shortcode') required this.code, required this.url, this.staticUrl, @JsonKey(name: 'visible_in_picker') required this.isVisibleInPicker, this.category});
+  factory _Emoji.fromJson(Map<String, dynamic> json) => _$EmojiFromJson(json);
 
-  factory _$EmojiImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EmojiImplFromJson(json);
+/// The name of the custom emoji.
+@override@JsonKey(name: 'shortcode') final  String code;
+/// A link to the custom emoji.
+@override final  String url;
+/// A link to a static copy of the custom emoji.
+@override final  String? staticUrl;
+/// Whether this Emoji should be visible in the picker or unlisted.
+@override@JsonKey(name: 'visible_in_picker') final  bool isVisibleInPicker;
+/// Used for sorting custom emoji in the picker.
+@override final  String? category;
 
-  /// The name of the custom emoji.
-  @override
-  @JsonKey(name: 'shortcode')
-  final String code;
+/// Create a copy of Emoji
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$EmojiCopyWith<_Emoji> get copyWith => __$EmojiCopyWithImpl<_Emoji>(this, _$identity);
 
-  /// A link to the custom emoji.
-  @override
-  final String url;
-
-  /// A link to a static copy of the custom emoji.
-  @override
-  final String? staticUrl;
-
-  /// Whether this Emoji should be visible in the picker or unlisted.
-  @override
-  @JsonKey(name: 'visible_in_picker')
-  final bool isVisibleInPicker;
-
-  /// Used for sorting custom emoji in the picker.
-  @override
-  final String? category;
-
-  @override
-  String toString() {
-    return 'Emoji(code: $code, url: $url, staticUrl: $staticUrl, isVisibleInPicker: $isVisibleInPicker, category: $category)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$EmojiImpl &&
-            (identical(other.code, code) || other.code == code) &&
-            (identical(other.url, url) || other.url == url) &&
-            (identical(other.staticUrl, staticUrl) ||
-                other.staticUrl == staticUrl) &&
-            (identical(other.isVisibleInPicker, isVisibleInPicker) ||
-                other.isVisibleInPicker == isVisibleInPicker) &&
-            (identical(other.category, category) ||
-                other.category == category));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, code, url, staticUrl, isVisibleInPicker, category);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$EmojiImplCopyWith<_$EmojiImpl> get copyWith =>
-      __$$EmojiImplCopyWithImpl<_$EmojiImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$EmojiImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$EmojiToJson(this, );
 }
 
-abstract class _Emoji implements Emoji {
-  const factory _Emoji(
-      {@JsonKey(name: 'shortcode') required final String code,
-      required final String url,
-      final String? staticUrl,
-      @JsonKey(name: 'visible_in_picker') required final bool isVisibleInPicker,
-      final String? category}) = _$EmojiImpl;
-
-  factory _Emoji.fromJson(Map<String, dynamic> json) = _$EmojiImpl.fromJson;
-
-  @override
-
-  /// The name of the custom emoji.
-  @JsonKey(name: 'shortcode')
-  String get code;
-  @override
-
-  /// A link to the custom emoji.
-  String get url;
-  @override
-
-  /// A link to a static copy of the custom emoji.
-  String? get staticUrl;
-  @override
-
-  /// Whether this Emoji should be visible in the picker or unlisted.
-  @JsonKey(name: 'visible_in_picker')
-  bool get isVisibleInPicker;
-  @override
-
-  /// Used for sorting custom emoji in the picker.
-  String? get category;
-  @override
-  @JsonKey(ignore: true)
-  _$$EmojiImplCopyWith<_$EmojiImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Emoji&&(identical(other.code, code) || other.code == code)&&(identical(other.url, url) || other.url == url)&&(identical(other.staticUrl, staticUrl) || other.staticUrl == staticUrl)&&(identical(other.isVisibleInPicker, isVisibleInPicker) || other.isVisibleInPicker == isVisibleInPicker)&&(identical(other.category, category) || other.category == category));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,code,url,staticUrl,isVisibleInPicker,category);
+
+@override
+String toString() {
+  return 'Emoji(code: $code, url: $url, staticUrl: $staticUrl, isVisibleInPicker: $isVisibleInPicker, category: $category)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$EmojiCopyWith<$Res> implements $EmojiCopyWith<$Res> {
+  factory _$EmojiCopyWith(_Emoji value, $Res Function(_Emoji) _then) = __$EmojiCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'shortcode') String code, String url, String? staticUrl,@JsonKey(name: 'visible_in_picker') bool isVisibleInPicker, String? category
+});
+
+
+
+
+}
+/// @nodoc
+class __$EmojiCopyWithImpl<$Res>
+    implements _$EmojiCopyWith<$Res> {
+  __$EmojiCopyWithImpl(this._self, this._then);
+
+  final _Emoji _self;
+  final $Res Function(_Emoji) _then;
+
+/// Create a copy of Emoji
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? code = null,Object? url = null,Object? staticUrl = freezed,Object? isVisibleInPicker = null,Object? category = freezed,}) {
+  return _then(_Emoji(
+code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
+as String,staticUrl: freezed == staticUrl ? _self.staticUrl : staticUrl // ignore: cast_nullable_to_non_nullable
+as String?,isVisibleInPicker: null == isVisibleInPicker ? _self.isVisibleInPicker : isVisibleInPicker // ignore: cast_nullable_to_non_nullable
+as bool,category: freezed == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+// dart format on

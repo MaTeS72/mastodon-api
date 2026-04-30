@@ -15,7 +15,7 @@ part 'instance_activity.freezed.dart';
 part 'instance_activity.g.dart';
 
 @freezed
-class InstanceActivity with _$InstanceActivity {
+abstract class InstanceActivity with _$InstanceActivity {
   @JsonSerializable(includeIfNull: false)
   const factory InstanceActivity({
     /// Midnight at the first day of the week.

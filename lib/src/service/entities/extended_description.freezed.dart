@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,174 +9,276 @@ part of 'extended_description.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ExtendedDescription _$ExtendedDescriptionFromJson(Map<String, dynamic> json) {
-  return _ExtendedDescription.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ExtendedDescription {
-  /// The rendered HTML content of the extended description.
-  String get content => throw _privateConstructorUsedError;
 
-  /// A timestamp of when the extended description was last updated.
-  DateTime get updatedAt => throw _privateConstructorUsedError;
+/// The rendered HTML content of the extended description.
+ String get content;/// A timestamp of when the extended description was last updated.
+ DateTime get updatedAt;
+/// Create a copy of ExtendedDescription
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ExtendedDescriptionCopyWith<ExtendedDescription> get copyWith => _$ExtendedDescriptionCopyWithImpl<ExtendedDescription>(this as ExtendedDescription, _$identity);
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ExtendedDescriptionCopyWith<ExtendedDescription> get copyWith =>
-      throw _privateConstructorUsedError;
+  /// Serializes this ExtendedDescription to a JSON map.
+  Map<String, dynamic> toJson();
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ExtendedDescription&&(identical(other.content, content) || other.content == content)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,content,updatedAt);
+
+@override
+String toString() {
+  return 'ExtendedDescription(content: $content, updatedAt: $updatedAt)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ExtendedDescriptionCopyWith<$Res> {
-  factory $ExtendedDescriptionCopyWith(
-          ExtendedDescription value, $Res Function(ExtendedDescription) then) =
-      _$ExtendedDescriptionCopyWithImpl<$Res, ExtendedDescription>;
-  @useResult
-  $Res call({String content, DateTime updatedAt});
-}
+abstract mixin class $ExtendedDescriptionCopyWith<$Res>  {
+  factory $ExtendedDescriptionCopyWith(ExtendedDescription value, $Res Function(ExtendedDescription) _then) = _$ExtendedDescriptionCopyWithImpl;
+@useResult
+$Res call({
+ String content, DateTime updatedAt
+});
 
+
+
+
+}
 /// @nodoc
-class _$ExtendedDescriptionCopyWithImpl<$Res, $Val extends ExtendedDescription>
+class _$ExtendedDescriptionCopyWithImpl<$Res>
     implements $ExtendedDescriptionCopyWith<$Res> {
-  _$ExtendedDescriptionCopyWithImpl(this._value, this._then);
+  _$ExtendedDescriptionCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ExtendedDescription _self;
+  final $Res Function(ExtendedDescription) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? content = null,
-    Object? updatedAt = null,
-  }) {
-    return _then(_value.copyWith(
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ) as $Val);
-  }
+/// Create a copy of ExtendedDescription
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? content = null,Object? updatedAt = null,}) {
+  return _then(_self.copyWith(
+content: null == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
+as String,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime,
+  ));
 }
 
-/// @nodoc
-abstract class _$$ExtendedDescriptionImplCopyWith<$Res>
-    implements $ExtendedDescriptionCopyWith<$Res> {
-  factory _$$ExtendedDescriptionImplCopyWith(_$ExtendedDescriptionImpl value,
-          $Res Function(_$ExtendedDescriptionImpl) then) =
-      __$$ExtendedDescriptionImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String content, DateTime updatedAt});
 }
 
-/// @nodoc
-class __$$ExtendedDescriptionImplCopyWithImpl<$Res>
-    extends _$ExtendedDescriptionCopyWithImpl<$Res, _$ExtendedDescriptionImpl>
-    implements _$$ExtendedDescriptionImplCopyWith<$Res> {
-  __$$ExtendedDescriptionImplCopyWithImpl(_$ExtendedDescriptionImpl _value,
-      $Res Function(_$ExtendedDescriptionImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? content = null,
-    Object? updatedAt = null,
-  }) {
-    return _then(_$ExtendedDescriptionImpl(
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
-              as String,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ));
-  }
+/// Adds pattern-matching-related methods to [ExtendedDescription].
+extension ExtendedDescriptionPatterns on ExtendedDescription {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ExtendedDescription value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ExtendedDescription() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ExtendedDescription value)  $default,){
+final _that = this;
+switch (_that) {
+case _ExtendedDescription():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ExtendedDescription value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ExtendedDescription() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String content,  DateTime updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ExtendedDescription() when $default != null:
+return $default(_that.content,_that.updatedAt);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String content,  DateTime updatedAt)  $default,) {final _that = this;
+switch (_that) {
+case _ExtendedDescription():
+return $default(_that.content,_that.updatedAt);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String content,  DateTime updatedAt)?  $default,) {final _that = this;
+switch (_that) {
+case _ExtendedDescription() when $default != null:
+return $default(_that.content,_that.updatedAt);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ExtendedDescriptionImpl implements _ExtendedDescription {
-  const _$ExtendedDescriptionImpl(
-      {required this.content, required this.updatedAt});
 
-  factory _$ExtendedDescriptionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ExtendedDescriptionImplFromJson(json);
+class _ExtendedDescription implements ExtendedDescription {
+  const _ExtendedDescription({required this.content, required this.updatedAt});
+  factory _ExtendedDescription.fromJson(Map<String, dynamic> json) => _$ExtendedDescriptionFromJson(json);
 
-  /// The rendered HTML content of the extended description.
-  @override
-  final String content;
+/// The rendered HTML content of the extended description.
+@override final  String content;
+/// A timestamp of when the extended description was last updated.
+@override final  DateTime updatedAt;
 
-  /// A timestamp of when the extended description was last updated.
-  @override
-  final DateTime updatedAt;
+/// Create a copy of ExtendedDescription
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ExtendedDescriptionCopyWith<_ExtendedDescription> get copyWith => __$ExtendedDescriptionCopyWithImpl<_ExtendedDescription>(this, _$identity);
 
-  @override
-  String toString() {
-    return 'ExtendedDescription(content: $content, updatedAt: $updatedAt)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ExtendedDescriptionImpl &&
-            (identical(other.content, content) || other.content == content) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, content, updatedAt);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ExtendedDescriptionImplCopyWith<_$ExtendedDescriptionImpl> get copyWith =>
-      __$$ExtendedDescriptionImplCopyWithImpl<_$ExtendedDescriptionImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ExtendedDescriptionImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$ExtendedDescriptionToJson(this, );
 }
 
-abstract class _ExtendedDescription implements ExtendedDescription {
-  const factory _ExtendedDescription(
-      {required final String content,
-      required final DateTime updatedAt}) = _$ExtendedDescriptionImpl;
-
-  factory _ExtendedDescription.fromJson(Map<String, dynamic> json) =
-      _$ExtendedDescriptionImpl.fromJson;
-
-  @override
-
-  /// The rendered HTML content of the extended description.
-  String get content;
-  @override
-
-  /// A timestamp of when the extended description was last updated.
-  DateTime get updatedAt;
-  @override
-  @JsonKey(ignore: true)
-  _$$ExtendedDescriptionImplCopyWith<_$ExtendedDescriptionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ExtendedDescription&&(identical(other.content, content) || other.content == content)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,content,updatedAt);
+
+@override
+String toString() {
+  return 'ExtendedDescription(content: $content, updatedAt: $updatedAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ExtendedDescriptionCopyWith<$Res> implements $ExtendedDescriptionCopyWith<$Res> {
+  factory _$ExtendedDescriptionCopyWith(_ExtendedDescription value, $Res Function(_ExtendedDescription) _then) = __$ExtendedDescriptionCopyWithImpl;
+@override @useResult
+$Res call({
+ String content, DateTime updatedAt
+});
+
+
+
+
+}
+/// @nodoc
+class __$ExtendedDescriptionCopyWithImpl<$Res>
+    implements _$ExtendedDescriptionCopyWith<$Res> {
+  __$ExtendedDescriptionCopyWithImpl(this._self, this._then);
+
+  final _ExtendedDescription _self;
+  final $Res Function(_ExtendedDescription) _then;
+
+/// Create a copy of ExtendedDescription
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? content = null,Object? updatedAt = null,}) {
+  return _then(_ExtendedDescription(
+content: null == content ? _self.content : content // ignore: cast_nullable_to_non_nullable
+as String,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime,
+  ));
+}
+
+
+}
+
+// dart format on

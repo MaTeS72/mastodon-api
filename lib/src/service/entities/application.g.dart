@@ -8,32 +8,19 @@ part of 'application.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ApplicationImpl _$$ApplicationImplFromJson(Map json) => $checkedCreate(
-      r'_$ApplicationImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$ApplicationImpl(
-          name: $checkedConvert('name', (v) => v as String),
-          vapidKey: $checkedConvert('vapid_key', (v) => v as String?),
-          website: $checkedConvert('website', (v) => v as String?),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'vapidKey': 'vapid_key'},
-    );
+_Application _$ApplicationFromJson(Map json) =>
+    $checkedCreate('_Application', json, ($checkedConvert) {
+      final val = _Application(
+        name: $checkedConvert('name', (v) => v as String),
+        vapidKey: $checkedConvert('vapid_key', (v) => v as String?),
+        website: $checkedConvert('website', (v) => v as String?),
+      );
+      return val;
+    }, fieldKeyMap: const {'vapidKey': 'vapid_key'});
 
-Map<String, dynamic> _$$ApplicationImplToJson(_$ApplicationImpl instance) {
-  final val = <String, dynamic>{
-    'name': instance.name,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('vapid_key', instance.vapidKey);
-  writeNotNull('website', instance.website);
-  return val;
-}
+Map<String, dynamic> _$ApplicationToJson(_Application instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'vapid_key': ?instance.vapidKey,
+      'website': ?instance.website,
+    };

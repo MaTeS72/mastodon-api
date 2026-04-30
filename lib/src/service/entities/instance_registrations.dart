@@ -11,7 +11,7 @@ part 'instance_registrations.freezed.dart';
 part 'instance_registrations.g.dart';
 
 @freezed
-class InstanceRegistrations with _$InstanceRegistrations {
+abstract class InstanceRegistrations with _$InstanceRegistrations {
   @JsonSerializable(includeIfNull: false)
   const factory InstanceRegistrations({
     /// Whether registrations are enabled.

@@ -9,7 +9,7 @@ part 'rule.freezed.dart';
 part 'rule.g.dart';
 
 @freezed
-class Rule with _$Rule {
+abstract class Rule with _$Rule {
   const factory Rule({
     /// An identifier for the rule.
     required String id,

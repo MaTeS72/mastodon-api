@@ -8,20 +8,16 @@ part of 'rule.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RuleImpl _$$RuleImplFromJson(Map json) => $checkedCreate(
-      r'_$RuleImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$RuleImpl(
-          id: $checkedConvert('id', (v) => v as String),
-          text: $checkedConvert('text', (v) => v as String),
-        );
-        return val;
-      },
-    );
+_Rule _$RuleFromJson(Map json) =>
+    $checkedCreate('_Rule', json, ($checkedConvert) {
+      final val = _Rule(
+        id: $checkedConvert('id', (v) => v as String),
+        text: $checkedConvert('text', (v) => v as String),
+      );
+      return val;
+    });
 
-Map<String, dynamic> _$$RuleImplToJson(_$RuleImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'text': instance.text,
-    };
+Map<String, dynamic> _$RuleToJson(_Rule instance) => <String, dynamic>{
+  'id': instance.id,
+  'text': instance.text,
+};

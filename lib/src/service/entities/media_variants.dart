@@ -11,7 +11,7 @@ part 'media_variants.freezed.dart';
 part 'media_variants.g.dart';
 
 @freezed
-class MediaVariants with _$MediaVariants {
+abstract class MediaVariants with _$MediaVariants {
   const factory MediaVariants({
     int? width,
     int? height,

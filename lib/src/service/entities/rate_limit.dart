@@ -11,7 +11,7 @@ part 'rate_limit.freezed.dart';
 part 'rate_limit.g.dart';
 
 @freezed
-class RateLimit with _$RateLimit {
+abstract class RateLimit with _$RateLimit {
   // ignore: unused_element
   const RateLimit._();
 

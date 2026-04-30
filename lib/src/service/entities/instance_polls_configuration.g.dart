@@ -8,20 +8,25 @@ part of 'instance_polls_configuration.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$InstancePollsConfigurationImpl _$$InstancePollsConfigurationImplFromJson(
-        Map json) =>
+_InstancePollsConfiguration _$InstancePollsConfigurationFromJson(Map json) =>
     $checkedCreate(
-      r'_$InstancePollsConfigurationImpl',
+      '_InstancePollsConfiguration',
       json,
       ($checkedConvert) {
-        final val = _$InstancePollsConfigurationImpl(
+        final val = _InstancePollsConfiguration(
           maxOptions: $checkedConvert('max_options', (v) => (v as num).toInt()),
           maxCharactersPerOption: $checkedConvert(
-              'max_characters_per_option', (v) => (v as num).toInt()),
-          maxExpiration: $checkedConvert('max_expiration',
-              (v) => const DurationConverter().fromJson((v as num).toInt())),
-          minExpiration: $checkedConvert('min_expiration',
-              (v) => const DurationConverter().fromJson((v as num).toInt())),
+            'max_characters_per_option',
+            (v) => (v as num).toInt(),
+          ),
+          maxExpiration: $checkedConvert(
+            'max_expiration',
+            (v) => const DurationConverter().fromJson((v as num).toInt()),
+          ),
+          minExpiration: $checkedConvert(
+            'min_expiration',
+            (v) => const DurationConverter().fromJson((v as num).toInt()),
+          ),
         );
         return val;
       },
@@ -29,17 +34,15 @@ _$InstancePollsConfigurationImpl _$$InstancePollsConfigurationImplFromJson(
         'maxOptions': 'max_options',
         'maxCharactersPerOption': 'max_characters_per_option',
         'maxExpiration': 'max_expiration',
-        'minExpiration': 'min_expiration'
+        'minExpiration': 'min_expiration',
       },
     );
 
-Map<String, dynamic> _$$InstancePollsConfigurationImplToJson(
-        _$InstancePollsConfigurationImpl instance) =>
-    <String, dynamic>{
-      'max_options': instance.maxOptions,
-      'max_characters_per_option': instance.maxCharactersPerOption,
-      'max_expiration':
-          const DurationConverter().toJson(instance.maxExpiration),
-      'min_expiration':
-          const DurationConverter().toJson(instance.minExpiration),
-    };
+Map<String, dynamic> _$InstancePollsConfigurationToJson(
+  _InstancePollsConfiguration instance,
+) => <String, dynamic>{
+  'max_options': instance.maxOptions,
+  'max_characters_per_option': instance.maxCharactersPerOption,
+  'max_expiration': const DurationConverter().toJson(instance.maxExpiration),
+  'min_expiration': const DurationConverter().toJson(instance.minExpiration),
+};

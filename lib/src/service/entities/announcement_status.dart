@@ -11,7 +11,7 @@ part 'announcement_status.freezed.dart';
 part 'announcement_status.g.dart';
 
 @freezed
-class AnnouncementStatus with _$AnnouncementStatus {
+abstract class AnnouncementStatus with _$AnnouncementStatus {
   @JsonSerializable(includeIfNull: false)
   const factory AnnouncementStatus({
     /// The ID of an attached Status in the database.

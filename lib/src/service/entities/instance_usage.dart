@@ -14,7 +14,7 @@ part 'instance_usage.freezed.dart';
 part 'instance_usage.g.dart';
 
 @freezed
-class InstanceUsage with _$InstanceUsage {
+abstract class InstanceUsage with _$InstanceUsage {
   @JsonSerializable(includeIfNull: false)
   const factory InstanceUsage({
     /// Usage data related to users on this instance.

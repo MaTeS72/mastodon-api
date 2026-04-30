@@ -16,7 +16,7 @@ part 'v2_search.freezed.dart';
 part 'v2_search.g.dart';
 
 @freezed
-class V2Search with _$V2Search {
+abstract class V2Search with _$V2Search {
   @JsonSerializable(includeIfNull: false)
   const factory V2Search({
     /// [Account] objects related to search query.

@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,247 +9,290 @@ part of 'blocked_domain.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-BlockedDomain _$BlockedDomainFromJson(Map<String, dynamic> json) {
-  return _BlockedDomain.fromJson(json);
-}
 
 /// @nodoc
 mixin _$BlockedDomain {
-  /// The domain which is blocked.
-  ///
-  /// This may be obfuscated or partially censored.
-  @JsonKey(name: 'domain')
-  String get name => throw _privateConstructorUsedError;
 
-  /// The SHA256 hash digest of the domain string.
-  @JsonKey(name: 'digest')
-  String get sha256digest => throw _privateConstructorUsedError;
+/// The domain which is blocked.
+///
+/// This may be obfuscated or partially censored.
+@JsonKey(name: 'domain') String get name;/// The SHA256 hash digest of the domain string.
+@JsonKey(name: 'digest') String get sha256digest;/// The level to which the domain is blocked.
+ BlockSeverity get severity;/// An optional reason for the domain block.
+@JsonKey(name: 'comment') String? get reason;
+/// Create a copy of BlockedDomain
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$BlockedDomainCopyWith<BlockedDomain> get copyWith => _$BlockedDomainCopyWithImpl<BlockedDomain>(this as BlockedDomain, _$identity);
 
-  /// The level to which the domain is blocked.
-  BlockSeverity get severity => throw _privateConstructorUsedError;
+  /// Serializes this BlockedDomain to a JSON map.
+  Map<String, dynamic> toJson();
 
-  /// An optional reason for the domain block.
-  @JsonKey(name: 'comment')
-  String? get reason => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $BlockedDomainCopyWith<BlockedDomain> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BlockedDomain&&(identical(other.name, name) || other.name == name)&&(identical(other.sha256digest, sha256digest) || other.sha256digest == sha256digest)&&(identical(other.severity, severity) || other.severity == severity)&&(identical(other.reason, reason) || other.reason == reason));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,name,sha256digest,severity,reason);
+
+@override
+String toString() {
+  return 'BlockedDomain(name: $name, sha256digest: $sha256digest, severity: $severity, reason: $reason)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $BlockedDomainCopyWith<$Res> {
-  factory $BlockedDomainCopyWith(
-          BlockedDomain value, $Res Function(BlockedDomain) then) =
-      _$BlockedDomainCopyWithImpl<$Res, BlockedDomain>;
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'domain') String name,
-      @JsonKey(name: 'digest') String sha256digest,
-      BlockSeverity severity,
-      @JsonKey(name: 'comment') String? reason});
-}
+abstract mixin class $BlockedDomainCopyWith<$Res>  {
+  factory $BlockedDomainCopyWith(BlockedDomain value, $Res Function(BlockedDomain) _then) = _$BlockedDomainCopyWithImpl;
+@useResult
+$Res call({
+@JsonKey(name: 'domain') String name,@JsonKey(name: 'digest') String sha256digest, BlockSeverity severity,@JsonKey(name: 'comment') String? reason
+});
 
+
+
+
+}
 /// @nodoc
-class _$BlockedDomainCopyWithImpl<$Res, $Val extends BlockedDomain>
+class _$BlockedDomainCopyWithImpl<$Res>
     implements $BlockedDomainCopyWith<$Res> {
-  _$BlockedDomainCopyWithImpl(this._value, this._then);
+  _$BlockedDomainCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final BlockedDomain _self;
+  final $Res Function(BlockedDomain) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? sha256digest = null,
-    Object? severity = null,
-    Object? reason = freezed,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      sha256digest: null == sha256digest
-          ? _value.sha256digest
-          : sha256digest // ignore: cast_nullable_to_non_nullable
-              as String,
-      severity: null == severity
-          ? _value.severity
-          : severity // ignore: cast_nullable_to_non_nullable
-              as BlockSeverity,
-      reason: freezed == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
+/// Create a copy of BlockedDomain
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? sha256digest = null,Object? severity = null,Object? reason = freezed,}) {
+  return _then(_self.copyWith(
+name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,sha256digest: null == sha256digest ? _self.sha256digest : sha256digest // ignore: cast_nullable_to_non_nullable
+as String,severity: null == severity ? _self.severity : severity // ignore: cast_nullable_to_non_nullable
+as BlockSeverity,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
-abstract class _$$BlockedDomainImplCopyWith<$Res>
-    implements $BlockedDomainCopyWith<$Res> {
-  factory _$$BlockedDomainImplCopyWith(
-          _$BlockedDomainImpl value, $Res Function(_$BlockedDomainImpl) then) =
-      __$$BlockedDomainImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(name: 'domain') String name,
-      @JsonKey(name: 'digest') String sha256digest,
-      BlockSeverity severity,
-      @JsonKey(name: 'comment') String? reason});
 }
 
-/// @nodoc
-class __$$BlockedDomainImplCopyWithImpl<$Res>
-    extends _$BlockedDomainCopyWithImpl<$Res, _$BlockedDomainImpl>
-    implements _$$BlockedDomainImplCopyWith<$Res> {
-  __$$BlockedDomainImplCopyWithImpl(
-      _$BlockedDomainImpl _value, $Res Function(_$BlockedDomainImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? sha256digest = null,
-    Object? severity = null,
-    Object? reason = freezed,
-  }) {
-    return _then(_$BlockedDomainImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      sha256digest: null == sha256digest
-          ? _value.sha256digest
-          : sha256digest // ignore: cast_nullable_to_non_nullable
-              as String,
-      severity: null == severity
-          ? _value.severity
-          : severity // ignore: cast_nullable_to_non_nullable
-              as BlockSeverity,
-      reason: freezed == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+/// Adds pattern-matching-related methods to [BlockedDomain].
+extension BlockedDomainPatterns on BlockedDomain {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _BlockedDomain value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _BlockedDomain() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _BlockedDomain value)  $default,){
+final _that = this;
+switch (_that) {
+case _BlockedDomain():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _BlockedDomain value)?  $default,){
+final _that = this;
+switch (_that) {
+case _BlockedDomain() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'domain')  String name, @JsonKey(name: 'digest')  String sha256digest,  BlockSeverity severity, @JsonKey(name: 'comment')  String? reason)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _BlockedDomain() when $default != null:
+return $default(_that.name,_that.sha256digest,_that.severity,_that.reason);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'domain')  String name, @JsonKey(name: 'digest')  String sha256digest,  BlockSeverity severity, @JsonKey(name: 'comment')  String? reason)  $default,) {final _that = this;
+switch (_that) {
+case _BlockedDomain():
+return $default(_that.name,_that.sha256digest,_that.severity,_that.reason);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'domain')  String name, @JsonKey(name: 'digest')  String sha256digest,  BlockSeverity severity, @JsonKey(name: 'comment')  String? reason)?  $default,) {final _that = this;
+switch (_that) {
+case _BlockedDomain() when $default != null:
+return $default(_that.name,_that.sha256digest,_that.severity,_that.reason);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$BlockedDomainImpl implements _BlockedDomain {
-  const _$BlockedDomainImpl(
-      {@JsonKey(name: 'domain') required this.name,
-      @JsonKey(name: 'digest') required this.sha256digest,
-      required this.severity,
-      @JsonKey(name: 'comment') this.reason});
 
-  factory _$BlockedDomainImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BlockedDomainImplFromJson(json);
+class _BlockedDomain implements BlockedDomain {
+  const _BlockedDomain({@JsonKey(name: 'domain') required this.name, @JsonKey(name: 'digest') required this.sha256digest, required this.severity, @JsonKey(name: 'comment') this.reason});
+  factory _BlockedDomain.fromJson(Map<String, dynamic> json) => _$BlockedDomainFromJson(json);
 
-  /// The domain which is blocked.
-  ///
-  /// This may be obfuscated or partially censored.
-  @override
-  @JsonKey(name: 'domain')
-  final String name;
+/// The domain which is blocked.
+///
+/// This may be obfuscated or partially censored.
+@override@JsonKey(name: 'domain') final  String name;
+/// The SHA256 hash digest of the domain string.
+@override@JsonKey(name: 'digest') final  String sha256digest;
+/// The level to which the domain is blocked.
+@override final  BlockSeverity severity;
+/// An optional reason for the domain block.
+@override@JsonKey(name: 'comment') final  String? reason;
 
-  /// The SHA256 hash digest of the domain string.
-  @override
-  @JsonKey(name: 'digest')
-  final String sha256digest;
+/// Create a copy of BlockedDomain
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$BlockedDomainCopyWith<_BlockedDomain> get copyWith => __$BlockedDomainCopyWithImpl<_BlockedDomain>(this, _$identity);
 
-  /// The level to which the domain is blocked.
-  @override
-  final BlockSeverity severity;
-
-  /// An optional reason for the domain block.
-  @override
-  @JsonKey(name: 'comment')
-  final String? reason;
-
-  @override
-  String toString() {
-    return 'BlockedDomain(name: $name, sha256digest: $sha256digest, severity: $severity, reason: $reason)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BlockedDomainImpl &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.sha256digest, sha256digest) ||
-                other.sha256digest == sha256digest) &&
-            (identical(other.severity, severity) ||
-                other.severity == severity) &&
-            (identical(other.reason, reason) || other.reason == reason));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, name, sha256digest, severity, reason);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$BlockedDomainImplCopyWith<_$BlockedDomainImpl> get copyWith =>
-      __$$BlockedDomainImplCopyWithImpl<_$BlockedDomainImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BlockedDomainImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$BlockedDomainToJson(this, );
 }
 
-abstract class _BlockedDomain implements BlockedDomain {
-  const factory _BlockedDomain(
-      {@JsonKey(name: 'domain') required final String name,
-      @JsonKey(name: 'digest') required final String sha256digest,
-      required final BlockSeverity severity,
-      @JsonKey(name: 'comment') final String? reason}) = _$BlockedDomainImpl;
-
-  factory _BlockedDomain.fromJson(Map<String, dynamic> json) =
-      _$BlockedDomainImpl.fromJson;
-
-  @override
-
-  /// The domain which is blocked.
-  ///
-  /// This may be obfuscated or partially censored.
-  @JsonKey(name: 'domain')
-  String get name;
-  @override
-
-  /// The SHA256 hash digest of the domain string.
-  @JsonKey(name: 'digest')
-  String get sha256digest;
-  @override
-
-  /// The level to which the domain is blocked.
-  BlockSeverity get severity;
-  @override
-
-  /// An optional reason for the domain block.
-  @JsonKey(name: 'comment')
-  String? get reason;
-  @override
-  @JsonKey(ignore: true)
-  _$$BlockedDomainImplCopyWith<_$BlockedDomainImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BlockedDomain&&(identical(other.name, name) || other.name == name)&&(identical(other.sha256digest, sha256digest) || other.sha256digest == sha256digest)&&(identical(other.severity, severity) || other.severity == severity)&&(identical(other.reason, reason) || other.reason == reason));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,name,sha256digest,severity,reason);
+
+@override
+String toString() {
+  return 'BlockedDomain(name: $name, sha256digest: $sha256digest, severity: $severity, reason: $reason)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$BlockedDomainCopyWith<$Res> implements $BlockedDomainCopyWith<$Res> {
+  factory _$BlockedDomainCopyWith(_BlockedDomain value, $Res Function(_BlockedDomain) _then) = __$BlockedDomainCopyWithImpl;
+@override @useResult
+$Res call({
+@JsonKey(name: 'domain') String name,@JsonKey(name: 'digest') String sha256digest, BlockSeverity severity,@JsonKey(name: 'comment') String? reason
+});
+
+
+
+
+}
+/// @nodoc
+class __$BlockedDomainCopyWithImpl<$Res>
+    implements _$BlockedDomainCopyWith<$Res> {
+  __$BlockedDomainCopyWithImpl(this._self, this._then);
+
+  final _BlockedDomain _self;
+  final $Res Function(_BlockedDomain) _then;
+
+/// Create a copy of BlockedDomain
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? sha256digest = null,Object? severity = null,Object? reason = freezed,}) {
+  return _then(_BlockedDomain(
+name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,sha256digest: null == sha256digest ? _self.sha256digest : sha256digest // ignore: cast_nullable_to_non_nullable
+as String,severity: null == severity ? _self.severity : severity // ignore: cast_nullable_to_non_nullable
+as BlockSeverity,reason: freezed == reason ? _self.reason : reason // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+// dart format on

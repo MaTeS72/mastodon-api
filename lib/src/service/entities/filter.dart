@@ -13,7 +13,7 @@ part 'filter.freezed.dart';
 part 'filter.g.dart';
 
 @freezed
-class Filter with _$Filter {
+abstract class Filter with _$Filter {
   @JsonSerializable(includeIfNull: false)
   const factory Filter({
     /// The ID of the filter in the database.

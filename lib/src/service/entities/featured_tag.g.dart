@@ -8,58 +8,52 @@ part of 'featured_tag.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$FeaturedTagImpl _$$FeaturedTagImplFromJson(Map json) => $checkedCreate(
-      r'_$FeaturedTagImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$FeaturedTagImpl(
-          id: $checkedConvert('id', (v) => v as String),
-          name: $checkedConvert('name', (v) => v as String),
-          url: $checkedConvert('url', (v) => v as String?),
-          statusesCount: $checkedConvert(
-              'statuses_count',
-              (v) => _$JsonConverterFromJson<String, int>(
-                  v, const IntConverter().fromJson)),
-          lastStatusAt: $checkedConvert('last_status_at',
-              (v) => v == null ? null : DateTime.parse(v as String)),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'statusesCount': 'statuses_count',
-        'lastStatusAt': 'last_status_at'
-      },
+_FeaturedTag _$FeaturedTagFromJson(Map json) => $checkedCreate(
+  '_FeaturedTag',
+  json,
+  ($checkedConvert) {
+    final val = _FeaturedTag(
+      id: $checkedConvert('id', (v) => v as String),
+      name: $checkedConvert('name', (v) => v as String),
+      url: $checkedConvert('url', (v) => v as String?),
+      statusesCount: $checkedConvert(
+        'statuses_count',
+        (v) => _$JsonConverterFromJson<String, int>(
+          v,
+          const IntConverter().fromJson,
+        ),
+      ),
+      lastStatusAt: $checkedConvert(
+        'last_status_at',
+        (v) => v == null ? null : DateTime.parse(v as String),
+      ),
     );
+    return val;
+  },
+  fieldKeyMap: const {
+    'statusesCount': 'statuses_count',
+    'lastStatusAt': 'last_status_at',
+  },
+);
 
-Map<String, dynamic> _$$FeaturedTagImplToJson(_$FeaturedTagImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-    'name': instance.name,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('url', instance.url);
-  writeNotNull(
-      'statuses_count',
-      _$JsonConverterToJson<String, int>(
-          instance.statusesCount, const IntConverter().toJson));
-  writeNotNull('last_status_at', instance.lastStatusAt?.toIso8601String());
-  return val;
-}
+Map<String, dynamic> _$FeaturedTagToJson(_FeaturedTag instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'url': ?instance.url,
+      'statuses_count': ?_$JsonConverterToJson<String, int>(
+        instance.statusesCount,
+        const IntConverter().toJson,
+      ),
+      'last_status_at': ?instance.lastStatusAt?.toIso8601String(),
+    };
 
 Value? _$JsonConverterFromJson<Json, Value>(
   Object? json,
   Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
+) => json == null ? null : fromJson(json as Json);
 
 Json? _$JsonConverterToJson<Json, Value>(
   Value? value,
   Json? Function(Value value) toJson,
-) =>
-    value == null ? null : toJson(value);
+) => value == null ? null : toJson(value);

@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,441 +9,352 @@ part of 'report.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Report _$ReportFromJson(Map<String, dynamic> json) {
-  return _Report.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Report {
-  /// The ID of the report in the database.
-  String get id => throw _privateConstructorUsedError;
 
-  /// The generic reason for the report.
-  ReportCategory get category => throw _privateConstructorUsedError;
+/// The ID of the report in the database.
+ String get id;/// The generic reason for the report.
+ ReportCategory get category;/// The reason for the report.
+ String get comment;/// The domain name of the instance.
+ List<String>? get statusIds;/// The domain name of the instance.
+ List<String>? get ruleIds;/// The account that was reported.
+@JsonKey(name: 'target_account') Account get account;/// Whether the report was forwarded to a remote domain.
+@JsonKey(name: 'forwarded') bool get isForwarded;/// Whether an action was taken yet.
+@JsonKey(name: 'action_taken') bool get isActionTaken;/// When an action was taken against the report.
+ DateTime? get actionTakenAt;/// When the report was created.
+ DateTime get createdAt;
+/// Create a copy of Report
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ReportCopyWith<Report> get copyWith => _$ReportCopyWithImpl<Report>(this as Report, _$identity);
 
-  /// The reason for the report.
-  String get comment => throw _privateConstructorUsedError;
+  /// Serializes this Report to a JSON map.
+  Map<String, dynamic> toJson();
 
-  /// The domain name of the instance.
-  List<String>? get statusIds => throw _privateConstructorUsedError;
 
-  /// The domain name of the instance.
-  List<String>? get ruleIds => throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Report&&(identical(other.id, id) || other.id == id)&&(identical(other.category, category) || other.category == category)&&(identical(other.comment, comment) || other.comment == comment)&&const DeepCollectionEquality().equals(other.statusIds, statusIds)&&const DeepCollectionEquality().equals(other.ruleIds, ruleIds)&&(identical(other.account, account) || other.account == account)&&(identical(other.isForwarded, isForwarded) || other.isForwarded == isForwarded)&&(identical(other.isActionTaken, isActionTaken) || other.isActionTaken == isActionTaken)&&(identical(other.actionTakenAt, actionTakenAt) || other.actionTakenAt == actionTakenAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+}
 
-  /// The account that was reported.
-  @JsonKey(name: 'target_account')
-  Account get account => throw _privateConstructorUsedError;
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,category,comment,const DeepCollectionEquality().hash(statusIds),const DeepCollectionEquality().hash(ruleIds),account,isForwarded,isActionTaken,actionTakenAt,createdAt);
 
-  /// Whether the report was forwarded to a remote domain.
-  @JsonKey(name: 'forwarded')
-  bool get isForwarded => throw _privateConstructorUsedError;
+@override
+String toString() {
+  return 'Report(id: $id, category: $category, comment: $comment, statusIds: $statusIds, ruleIds: $ruleIds, account: $account, isForwarded: $isForwarded, isActionTaken: $isActionTaken, actionTakenAt: $actionTakenAt, createdAt: $createdAt)';
+}
 
-  /// Whether an action was taken yet.
-  @JsonKey(name: 'action_taken')
-  bool get isActionTaken => throw _privateConstructorUsedError;
 
-  /// When an action was taken against the report.
-  DateTime? get actionTakenAt => throw _privateConstructorUsedError;
-
-  /// When the report was created.
-  DateTime get createdAt => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ReportCopyWith<Report> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ReportCopyWith<$Res> {
-  factory $ReportCopyWith(Report value, $Res Function(Report) then) =
-      _$ReportCopyWithImpl<$Res, Report>;
-  @useResult
-  $Res call(
-      {String id,
-      ReportCategory category,
-      String comment,
-      List<String>? statusIds,
-      List<String>? ruleIds,
-      @JsonKey(name: 'target_account') Account account,
-      @JsonKey(name: 'forwarded') bool isForwarded,
-      @JsonKey(name: 'action_taken') bool isActionTaken,
-      DateTime? actionTakenAt,
-      DateTime createdAt});
+abstract mixin class $ReportCopyWith<$Res>  {
+  factory $ReportCopyWith(Report value, $Res Function(Report) _then) = _$ReportCopyWithImpl;
+@useResult
+$Res call({
+ String id, ReportCategory category, String comment, List<String>? statusIds, List<String>? ruleIds,@JsonKey(name: 'target_account') Account account,@JsonKey(name: 'forwarded') bool isForwarded,@JsonKey(name: 'action_taken') bool isActionTaken, DateTime? actionTakenAt, DateTime createdAt
+});
 
-  $AccountCopyWith<$Res> get account;
+
+$AccountCopyWith<$Res> get account;
+
 }
-
 /// @nodoc
-class _$ReportCopyWithImpl<$Res, $Val extends Report>
+class _$ReportCopyWithImpl<$Res>
     implements $ReportCopyWith<$Res> {
-  _$ReportCopyWithImpl(this._value, this._then);
+  _$ReportCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final Report _self;
+  final $Res Function(Report) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? category = null,
-    Object? comment = null,
-    Object? statusIds = freezed,
-    Object? ruleIds = freezed,
-    Object? account = null,
-    Object? isForwarded = null,
-    Object? isActionTaken = null,
-    Object? actionTakenAt = freezed,
-    Object? createdAt = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as ReportCategory,
-      comment: null == comment
-          ? _value.comment
-          : comment // ignore: cast_nullable_to_non_nullable
-              as String,
-      statusIds: freezed == statusIds
-          ? _value.statusIds
-          : statusIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      ruleIds: freezed == ruleIds
-          ? _value.ruleIds
-          : ruleIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      account: null == account
-          ? _value.account
-          : account // ignore: cast_nullable_to_non_nullable
-              as Account,
-      isForwarded: null == isForwarded
-          ? _value.isForwarded
-          : isForwarded // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isActionTaken: null == isActionTaken
-          ? _value.isActionTaken
-          : isActionTaken // ignore: cast_nullable_to_non_nullable
-              as bool,
-      actionTakenAt: freezed == actionTakenAt
-          ? _value.actionTakenAt
-          : actionTakenAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $AccountCopyWith<$Res> get account {
-    return $AccountCopyWith<$Res>(_value.account, (value) {
-      return _then(_value.copyWith(account: value) as $Val);
-    });
-  }
+/// Create a copy of Report
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? category = null,Object? comment = null,Object? statusIds = freezed,Object? ruleIds = freezed,Object? account = null,Object? isForwarded = null,Object? isActionTaken = null,Object? actionTakenAt = freezed,Object? createdAt = null,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,category: null == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
+as ReportCategory,comment: null == comment ? _self.comment : comment // ignore: cast_nullable_to_non_nullable
+as String,statusIds: freezed == statusIds ? _self.statusIds : statusIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,ruleIds: freezed == ruleIds ? _self.ruleIds : ruleIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,account: null == account ? _self.account : account // ignore: cast_nullable_to_non_nullable
+as Account,isForwarded: null == isForwarded ? _self.isForwarded : isForwarded // ignore: cast_nullable_to_non_nullable
+as bool,isActionTaken: null == isActionTaken ? _self.isActionTaken : isActionTaken // ignore: cast_nullable_to_non_nullable
+as bool,actionTakenAt: freezed == actionTakenAt ? _self.actionTakenAt : actionTakenAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime,
+  ));
+}
+/// Create a copy of Report
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AccountCopyWith<$Res> get account {
+  
+  return $AccountCopyWith<$Res>(_self.account, (value) {
+    return _then(_self.copyWith(account: value));
+  });
+}
 }
 
-/// @nodoc
-abstract class _$$ReportImplCopyWith<$Res> implements $ReportCopyWith<$Res> {
-  factory _$$ReportImplCopyWith(
-          _$ReportImpl value, $Res Function(_$ReportImpl) then) =
-      __$$ReportImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      ReportCategory category,
-      String comment,
-      List<String>? statusIds,
-      List<String>? ruleIds,
-      @JsonKey(name: 'target_account') Account account,
-      @JsonKey(name: 'forwarded') bool isForwarded,
-      @JsonKey(name: 'action_taken') bool isActionTaken,
-      DateTime? actionTakenAt,
-      DateTime createdAt});
 
-  @override
-  $AccountCopyWith<$Res> get account;
+/// Adds pattern-matching-related methods to [Report].
+extension ReportPatterns on Report {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Report value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Report() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Report value)  $default,){
+final _that = this;
+switch (_that) {
+case _Report():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Report value)?  $default,){
+final _that = this;
+switch (_that) {
+case _Report() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  ReportCategory category,  String comment,  List<String>? statusIds,  List<String>? ruleIds, @JsonKey(name: 'target_account')  Account account, @JsonKey(name: 'forwarded')  bool isForwarded, @JsonKey(name: 'action_taken')  bool isActionTaken,  DateTime? actionTakenAt,  DateTime createdAt)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Report() when $default != null:
+return $default(_that.id,_that.category,_that.comment,_that.statusIds,_that.ruleIds,_that.account,_that.isForwarded,_that.isActionTaken,_that.actionTakenAt,_that.createdAt);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  ReportCategory category,  String comment,  List<String>? statusIds,  List<String>? ruleIds, @JsonKey(name: 'target_account')  Account account, @JsonKey(name: 'forwarded')  bool isForwarded, @JsonKey(name: 'action_taken')  bool isActionTaken,  DateTime? actionTakenAt,  DateTime createdAt)  $default,) {final _that = this;
+switch (_that) {
+case _Report():
+return $default(_that.id,_that.category,_that.comment,_that.statusIds,_that.ruleIds,_that.account,_that.isForwarded,_that.isActionTaken,_that.actionTakenAt,_that.createdAt);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  ReportCategory category,  String comment,  List<String>? statusIds,  List<String>? ruleIds, @JsonKey(name: 'target_account')  Account account, @JsonKey(name: 'forwarded')  bool isForwarded, @JsonKey(name: 'action_taken')  bool isActionTaken,  DateTime? actionTakenAt,  DateTime createdAt)?  $default,) {final _that = this;
+switch (_that) {
+case _Report() when $default != null:
+return $default(_that.id,_that.category,_that.comment,_that.statusIds,_that.ruleIds,_that.account,_that.isForwarded,_that.isActionTaken,_that.actionTakenAt,_that.createdAt);case _:
+  return null;
+
+}
 }
 
-/// @nodoc
-class __$$ReportImplCopyWithImpl<$Res>
-    extends _$ReportCopyWithImpl<$Res, _$ReportImpl>
-    implements _$$ReportImplCopyWith<$Res> {
-  __$$ReportImplCopyWithImpl(
-      _$ReportImpl _value, $Res Function(_$ReportImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? category = null,
-    Object? comment = null,
-    Object? statusIds = freezed,
-    Object? ruleIds = freezed,
-    Object? account = null,
-    Object? isForwarded = null,
-    Object? isActionTaken = null,
-    Object? actionTakenAt = freezed,
-    Object? createdAt = null,
-  }) {
-    return _then(_$ReportImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as ReportCategory,
-      comment: null == comment
-          ? _value.comment
-          : comment // ignore: cast_nullable_to_non_nullable
-              as String,
-      statusIds: freezed == statusIds
-          ? _value._statusIds
-          : statusIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      ruleIds: freezed == ruleIds
-          ? _value._ruleIds
-          : ruleIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      account: null == account
-          ? _value.account
-          : account // ignore: cast_nullable_to_non_nullable
-              as Account,
-      isForwarded: null == isForwarded
-          ? _value.isForwarded
-          : isForwarded // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isActionTaken: null == isActionTaken
-          ? _value.isActionTaken
-          : isActionTaken // ignore: cast_nullable_to_non_nullable
-              as bool,
-      actionTakenAt: freezed == actionTakenAt
-          ? _value.actionTakenAt
-          : actionTakenAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ));
-  }
 }
 
 /// @nodoc
 
 @JsonSerializable(includeIfNull: false)
-class _$ReportImpl implements _Report {
-  const _$ReportImpl(
-      {required this.id,
-      required this.category,
-      required this.comment,
-      final List<String>? statusIds,
-      final List<String>? ruleIds,
-      @JsonKey(name: 'target_account') required this.account,
-      @JsonKey(name: 'forwarded') required this.isForwarded,
-      @JsonKey(name: 'action_taken') required this.isActionTaken,
-      this.actionTakenAt,
-      required this.createdAt})
-      : _statusIds = statusIds,
-        _ruleIds = ruleIds;
+class _Report implements Report {
+  const _Report({required this.id, required this.category, required this.comment, final  List<String>? statusIds, final  List<String>? ruleIds, @JsonKey(name: 'target_account') required this.account, @JsonKey(name: 'forwarded') required this.isForwarded, @JsonKey(name: 'action_taken') required this.isActionTaken, this.actionTakenAt, required this.createdAt}): _statusIds = statusIds,_ruleIds = ruleIds;
+  factory _Report.fromJson(Map<String, dynamic> json) => _$ReportFromJson(json);
 
-  factory _$ReportImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ReportImplFromJson(json);
-
-  /// The ID of the report in the database.
-  @override
-  final String id;
-
-  /// The generic reason for the report.
-  @override
-  final ReportCategory category;
-
-  /// The reason for the report.
-  @override
-  final String comment;
-
-  /// The domain name of the instance.
-  final List<String>? _statusIds;
-
-  /// The domain name of the instance.
-  @override
-  List<String>? get statusIds {
-    final value = _statusIds;
-    if (value == null) return null;
-    if (_statusIds is EqualUnmodifiableListView) return _statusIds;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// The domain name of the instance.
-  final List<String>? _ruleIds;
-
-  /// The domain name of the instance.
-  @override
-  List<String>? get ruleIds {
-    final value = _ruleIds;
-    if (value == null) return null;
-    if (_ruleIds is EqualUnmodifiableListView) return _ruleIds;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// The account that was reported.
-  @override
-  @JsonKey(name: 'target_account')
-  final Account account;
-
-  /// Whether the report was forwarded to a remote domain.
-  @override
-  @JsonKey(name: 'forwarded')
-  final bool isForwarded;
-
-  /// Whether an action was taken yet.
-  @override
-  @JsonKey(name: 'action_taken')
-  final bool isActionTaken;
-
-  /// When an action was taken against the report.
-  @override
-  final DateTime? actionTakenAt;
-
-  /// When the report was created.
-  @override
-  final DateTime createdAt;
-
-  @override
-  String toString() {
-    return 'Report(id: $id, category: $category, comment: $comment, statusIds: $statusIds, ruleIds: $ruleIds, account: $account, isForwarded: $isForwarded, isActionTaken: $isActionTaken, actionTakenAt: $actionTakenAt, createdAt: $createdAt)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ReportImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.category, category) ||
-                other.category == category) &&
-            (identical(other.comment, comment) || other.comment == comment) &&
-            const DeepCollectionEquality()
-                .equals(other._statusIds, _statusIds) &&
-            const DeepCollectionEquality().equals(other._ruleIds, _ruleIds) &&
-            (identical(other.account, account) || other.account == account) &&
-            (identical(other.isForwarded, isForwarded) ||
-                other.isForwarded == isForwarded) &&
-            (identical(other.isActionTaken, isActionTaken) ||
-                other.isActionTaken == isActionTaken) &&
-            (identical(other.actionTakenAt, actionTakenAt) ||
-                other.actionTakenAt == actionTakenAt) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      category,
-      comment,
-      const DeepCollectionEquality().hash(_statusIds),
-      const DeepCollectionEquality().hash(_ruleIds),
-      account,
-      isForwarded,
-      isActionTaken,
-      actionTakenAt,
-      createdAt);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ReportImplCopyWith<_$ReportImpl> get copyWith =>
-      __$$ReportImplCopyWithImpl<_$ReportImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ReportImplToJson(
-      this,
-    );
-  }
+/// The ID of the report in the database.
+@override final  String id;
+/// The generic reason for the report.
+@override final  ReportCategory category;
+/// The reason for the report.
+@override final  String comment;
+/// The domain name of the instance.
+ final  List<String>? _statusIds;
+/// The domain name of the instance.
+@override List<String>? get statusIds {
+  final value = _statusIds;
+  if (value == null) return null;
+  if (_statusIds is EqualUnmodifiableListView) return _statusIds;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
 }
 
-abstract class _Report implements Report {
-  const factory _Report(
-      {required final String id,
-      required final ReportCategory category,
-      required final String comment,
-      final List<String>? statusIds,
-      final List<String>? ruleIds,
-      @JsonKey(name: 'target_account') required final Account account,
-      @JsonKey(name: 'forwarded') required final bool isForwarded,
-      @JsonKey(name: 'action_taken') required final bool isActionTaken,
-      final DateTime? actionTakenAt,
-      required final DateTime createdAt}) = _$ReportImpl;
-
-  factory _Report.fromJson(Map<String, dynamic> json) = _$ReportImpl.fromJson;
-
-  @override
-
-  /// The ID of the report in the database.
-  String get id;
-  @override
-
-  /// The generic reason for the report.
-  ReportCategory get category;
-  @override
-
-  /// The reason for the report.
-  String get comment;
-  @override
-
-  /// The domain name of the instance.
-  List<String>? get statusIds;
-  @override
-
-  /// The domain name of the instance.
-  List<String>? get ruleIds;
-  @override
-
-  /// The account that was reported.
-  @JsonKey(name: 'target_account')
-  Account get account;
-  @override
-
-  /// Whether the report was forwarded to a remote domain.
-  @JsonKey(name: 'forwarded')
-  bool get isForwarded;
-  @override
-
-  /// Whether an action was taken yet.
-  @JsonKey(name: 'action_taken')
-  bool get isActionTaken;
-  @override
-
-  /// When an action was taken against the report.
-  DateTime? get actionTakenAt;
-  @override
-
-  /// When the report was created.
-  DateTime get createdAt;
-  @override
-  @JsonKey(ignore: true)
-  _$$ReportImplCopyWith<_$ReportImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+/// The domain name of the instance.
+ final  List<String>? _ruleIds;
+/// The domain name of the instance.
+@override List<String>? get ruleIds {
+  final value = _ruleIds;
+  if (value == null) return null;
+  if (_ruleIds is EqualUnmodifiableListView) return _ruleIds;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
 }
+
+/// The account that was reported.
+@override@JsonKey(name: 'target_account') final  Account account;
+/// Whether the report was forwarded to a remote domain.
+@override@JsonKey(name: 'forwarded') final  bool isForwarded;
+/// Whether an action was taken yet.
+@override@JsonKey(name: 'action_taken') final  bool isActionTaken;
+/// When an action was taken against the report.
+@override final  DateTime? actionTakenAt;
+/// When the report was created.
+@override final  DateTime createdAt;
+
+/// Create a copy of Report
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ReportCopyWith<_Report> get copyWith => __$ReportCopyWithImpl<_Report>(this, _$identity);
+
+@override
+Map<String, dynamic> toJson() {
+  return _$ReportToJson(this, );
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Report&&(identical(other.id, id) || other.id == id)&&(identical(other.category, category) || other.category == category)&&(identical(other.comment, comment) || other.comment == comment)&&const DeepCollectionEquality().equals(other._statusIds, _statusIds)&&const DeepCollectionEquality().equals(other._ruleIds, _ruleIds)&&(identical(other.account, account) || other.account == account)&&(identical(other.isForwarded, isForwarded) || other.isForwarded == isForwarded)&&(identical(other.isActionTaken, isActionTaken) || other.isActionTaken == isActionTaken)&&(identical(other.actionTakenAt, actionTakenAt) || other.actionTakenAt == actionTakenAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,category,comment,const DeepCollectionEquality().hash(_statusIds),const DeepCollectionEquality().hash(_ruleIds),account,isForwarded,isActionTaken,actionTakenAt,createdAt);
+
+@override
+String toString() {
+  return 'Report(id: $id, category: $category, comment: $comment, statusIds: $statusIds, ruleIds: $ruleIds, account: $account, isForwarded: $isForwarded, isActionTaken: $isActionTaken, actionTakenAt: $actionTakenAt, createdAt: $createdAt)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ReportCopyWith<$Res> implements $ReportCopyWith<$Res> {
+  factory _$ReportCopyWith(_Report value, $Res Function(_Report) _then) = __$ReportCopyWithImpl;
+@override @useResult
+$Res call({
+ String id, ReportCategory category, String comment, List<String>? statusIds, List<String>? ruleIds,@JsonKey(name: 'target_account') Account account,@JsonKey(name: 'forwarded') bool isForwarded,@JsonKey(name: 'action_taken') bool isActionTaken, DateTime? actionTakenAt, DateTime createdAt
+});
+
+
+@override $AccountCopyWith<$Res> get account;
+
+}
+/// @nodoc
+class __$ReportCopyWithImpl<$Res>
+    implements _$ReportCopyWith<$Res> {
+  __$ReportCopyWithImpl(this._self, this._then);
+
+  final _Report _self;
+  final $Res Function(_Report) _then;
+
+/// Create a copy of Report
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? category = null,Object? comment = null,Object? statusIds = freezed,Object? ruleIds = freezed,Object? account = null,Object? isForwarded = null,Object? isActionTaken = null,Object? actionTakenAt = freezed,Object? createdAt = null,}) {
+  return _then(_Report(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,category: null == category ? _self.category : category // ignore: cast_nullable_to_non_nullable
+as ReportCategory,comment: null == comment ? _self.comment : comment // ignore: cast_nullable_to_non_nullable
+as String,statusIds: freezed == statusIds ? _self._statusIds : statusIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,ruleIds: freezed == ruleIds ? _self._ruleIds : ruleIds // ignore: cast_nullable_to_non_nullable
+as List<String>?,account: null == account ? _self.account : account // ignore: cast_nullable_to_non_nullable
+as Account,isForwarded: null == isForwarded ? _self.isForwarded : isForwarded // ignore: cast_nullable_to_non_nullable
+as bool,isActionTaken: null == isActionTaken ? _self.isActionTaken : isActionTaken // ignore: cast_nullable_to_non_nullable
+as bool,actionTakenAt: freezed == actionTakenAt ? _self.actionTakenAt : actionTakenAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime,
+  ));
+}
+
+/// Create a copy of Report
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AccountCopyWith<$Res> get account {
+  
+  return $AccountCopyWith<$Res>(_self.account, (value) {
+    return _then(_self.copyWith(account: value));
+  });
+}
+}
+
+// dart format on

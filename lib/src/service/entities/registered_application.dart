@@ -11,7 +11,7 @@ part 'registered_application.freezed.dart';
 part 'registered_application.g.dart';
 
 @freezed
-class RegisteredApplication with _$RegisteredApplication {
+abstract class RegisteredApplication with _$RegisteredApplication {
   @JsonSerializable(includeIfNull: false)
   const factory RegisteredApplication({
     /// The id of of this application.

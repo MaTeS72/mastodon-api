@@ -8,27 +8,22 @@ part of 'announcement_account.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AnnouncementAccountImpl _$$AnnouncementAccountImplFromJson(Map json) =>
-    $checkedCreate(
-      r'_$AnnouncementAccountImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$AnnouncementAccountImpl(
-          id: $checkedConvert('id', (v) => v as String),
-          username: $checkedConvert('username', (v) => v as String),
-          url: $checkedConvert('url', (v) => v as String),
-          webFingerAccountUri: $checkedConvert('acct', (v) => v as String),
-        );
-        return val;
-      },
-      fieldKeyMap: const {'webFingerAccountUri': 'acct'},
-    );
+_AnnouncementAccount _$AnnouncementAccountFromJson(Map json) =>
+    $checkedCreate('_AnnouncementAccount', json, ($checkedConvert) {
+      final val = _AnnouncementAccount(
+        id: $checkedConvert('id', (v) => v as String),
+        username: $checkedConvert('username', (v) => v as String),
+        url: $checkedConvert('url', (v) => v as String),
+        webFingerAccountUri: $checkedConvert('acct', (v) => v as String),
+      );
+      return val;
+    }, fieldKeyMap: const {'webFingerAccountUri': 'acct'});
 
-Map<String, dynamic> _$$AnnouncementAccountImplToJson(
-        _$AnnouncementAccountImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'username': instance.username,
-      'url': instance.url,
-      'acct': instance.webFingerAccountUri,
-    };
+Map<String, dynamic> _$AnnouncementAccountToJson(
+  _AnnouncementAccount instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'username': instance.username,
+  'url': instance.url,
+  'acct': instance.webFingerAccountUri,
+};

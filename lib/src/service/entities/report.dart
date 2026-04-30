@@ -14,7 +14,7 @@ part 'report.freezed.dart';
 part 'report.g.dart';
 
 @freezed
-class Report with _$Report {
+abstract class Report with _$Report {
   @JsonSerializable(includeIfNull: false)
   const factory Report({
     /// The ID of the report in the database.

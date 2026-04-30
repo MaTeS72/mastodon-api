@@ -13,7 +13,7 @@ part 'notification_subscription.freezed.dart';
 part 'notification_subscription.g.dart';
 
 @freezed
-class NotificationSubscription with _$NotificationSubscription {
+abstract class NotificationSubscription with _$NotificationSubscription {
   @JsonSerializable(includeIfNull: false)
   const factory NotificationSubscription({
     required int id,

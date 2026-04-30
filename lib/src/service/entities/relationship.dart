@@ -14,7 +14,7 @@ part 'relationship.freezed.dart';
 part 'relationship.g.dart';
 
 @freezed
-class Relationship with _$Relationship {
+abstract class Relationship with _$Relationship {
   @JsonSerializable(includeIfNull: false)
   const factory Relationship({
     /// The account ID.

@@ -8,137 +8,156 @@ part of 'status.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$StatusImpl _$$StatusImplFromJson(Map json) => $checkedCreate(
-      r'_$StatusImpl',
-      json,
-      ($checkedConvert) {
-        final val = _$StatusImpl(
-          id: $checkedConvert('id', (v) => v as String),
-          url: $checkedConvert('url', (v) => v as String?),
-          uri: $checkedConvert('uri', (v) => v as String),
-          content: $checkedConvert('content', (v) => v as String),
-          spoilerText: $checkedConvert('spoiler_text', (v) => v as String),
-          visibility: $checkedConvert(
-              'visibility', (v) => $enumDecode(_$VisibilityEnumMap, v)),
-          favouritesCount:
-              $checkedConvert('favourites_count', (v) => (v as num).toInt()),
-          repliesCount:
-              $checkedConvert('replies_count', (v) => (v as num).toInt()),
-          reblogsCount:
-              $checkedConvert('reblogs_count', (v) => (v as num).toInt()),
-          language: $checkedConvert(
-              'language',
-              (v) => $enumDecodeNullable(_$LanguageEnumMap, v,
-                  unknownValue: Language.unknown)),
-          inReplyToId: $checkedConvert('in_reply_to_id', (v) => v as String?),
-          inReplyToAccountId:
-              $checkedConvert('in_reply_to_account_id', (v) => v as String?),
-          isFavourited: $checkedConvert('favourited', (v) => v as bool?),
-          isReblogged: $checkedConvert('reblogged', (v) => v as bool?),
-          isMuted: $checkedConvert('muted', (v) => v as bool?),
-          isBookmarked: $checkedConvert('bookmarked', (v) => v as bool?),
-          isSensitive: $checkedConvert('sensitive', (v) => v as bool?),
-          isPinned: $checkedConvert('pinned', (v) => v as bool?),
-          lastStatusAt: $checkedConvert('last_status_at',
-              (v) => v == null ? null : DateTime.parse(v as String)),
-          account: $checkedConvert('account',
-              (v) => Account.fromJson(Map<String, Object?>.from(v as Map))),
-          application: $checkedConvert(
-              'application',
-              (v) => v == null
-                  ? null
-                  : Application.fromJson(Map<String, Object?>.from(v as Map))),
-          poll: $checkedConvert(
-              'poll',
-              (v) => v == null
-                  ? null
-                  : Poll.fromJson(Map<String, Object?>.from(v as Map))),
-          reblog: $checkedConvert(
-              'reblog',
-              (v) => v == null
-                  ? null
-                  : Status.fromJson(Map<String, Object?>.from(v as Map))),
-          mediaAttachments: $checkedConvert(
-              'media_attachments',
-              (v) => (v as List<dynamic>)
-                  .map((e) => MediaAttachment.fromJson(
-                      Map<String, Object?>.from(e as Map)))
-                  .toList()),
-          emojis: $checkedConvert(
-              'emojis',
-              (v) => (v as List<dynamic>)
-                  .map((e) =>
-                      Emoji.fromJson(Map<String, Object?>.from(e as Map)))
-                  .toList()),
-          tags: $checkedConvert(
-              'tags',
-              (v) => (v as List<dynamic>)
-                  .map((e) => Tag.fromJson(Map<String, Object?>.from(e as Map)))
-                  .toList()),
-          createdAt:
-              $checkedConvert('created_at', (v) => DateTime.parse(v as String)),
-        );
-        return val;
-      },
-      fieldKeyMap: const {
-        'spoilerText': 'spoiler_text',
-        'favouritesCount': 'favourites_count',
-        'repliesCount': 'replies_count',
-        'reblogsCount': 'reblogs_count',
-        'inReplyToId': 'in_reply_to_id',
-        'inReplyToAccountId': 'in_reply_to_account_id',
-        'isFavourited': 'favourited',
-        'isReblogged': 'reblogged',
-        'isMuted': 'muted',
-        'isBookmarked': 'bookmarked',
-        'isSensitive': 'sensitive',
-        'isPinned': 'pinned',
-        'lastStatusAt': 'last_status_at',
-        'mediaAttachments': 'media_attachments',
-        'createdAt': 'created_at'
-      },
+_Status _$StatusFromJson(Map json) => $checkedCreate(
+  '_Status',
+  json,
+  ($checkedConvert) {
+    final val = _Status(
+      id: $checkedConvert('id', (v) => v as String),
+      url: $checkedConvert('url', (v) => v as String?),
+      uri: $checkedConvert('uri', (v) => v as String),
+      content: $checkedConvert('content', (v) => v as String),
+      spoilerText: $checkedConvert('spoiler_text', (v) => v as String),
+      visibility: $checkedConvert(
+        'visibility',
+        (v) => $enumDecode(_$VisibilityEnumMap, v),
+      ),
+      favouritesCount: $checkedConvert(
+        'favourites_count',
+        (v) => (v as num).toInt(),
+      ),
+      repliesCount: $checkedConvert('replies_count', (v) => (v as num).toInt()),
+      reblogsCount: $checkedConvert('reblogs_count', (v) => (v as num).toInt()),
+      language: $checkedConvert(
+        'language',
+        (v) => $enumDecodeNullable(
+          _$LanguageEnumMap,
+          v,
+          unknownValue: Language.unknown,
+        ),
+      ),
+      inReplyToId: $checkedConvert('in_reply_to_id', (v) => v as String?),
+      inReplyToAccountId: $checkedConvert(
+        'in_reply_to_account_id',
+        (v) => v as String?,
+      ),
+      isFavourited: $checkedConvert('favourited', (v) => v as bool?),
+      isReblogged: $checkedConvert('reblogged', (v) => v as bool?),
+      isMuted: $checkedConvert('muted', (v) => v as bool?),
+      isBookmarked: $checkedConvert('bookmarked', (v) => v as bool?),
+      isSensitive: $checkedConvert('sensitive', (v) => v as bool?),
+      isPinned: $checkedConvert('pinned', (v) => v as bool?),
+      lastStatusAt: $checkedConvert(
+        'last_status_at',
+        (v) => v == null ? null : DateTime.parse(v as String),
+      ),
+      account: $checkedConvert(
+        'account',
+        (v) => Account.fromJson(Map<String, Object?>.from(v as Map)),
+      ),
+      application: $checkedConvert(
+        'application',
+        (v) => v == null
+            ? null
+            : Application.fromJson(Map<String, Object?>.from(v as Map)),
+      ),
+      poll: $checkedConvert(
+        'poll',
+        (v) => v == null
+            ? null
+            : Poll.fromJson(Map<String, Object?>.from(v as Map)),
+      ),
+      reblog: $checkedConvert(
+        'reblog',
+        (v) => v == null
+            ? null
+            : Status.fromJson(Map<String, Object?>.from(v as Map)),
+      ),
+      mediaAttachments: $checkedConvert(
+        'media_attachments',
+        (v) => (v as List<dynamic>)
+            .map(
+              (e) =>
+                  MediaAttachment.fromJson(Map<String, Object?>.from(e as Map)),
+            )
+            .toList(),
+      ),
+      emojis: $checkedConvert(
+        'emojis',
+        (v) => (v as List<dynamic>)
+            .map((e) => Emoji.fromJson(Map<String, Object?>.from(e as Map)))
+            .toList(),
+      ),
+      tags: $checkedConvert(
+        'tags',
+        (v) => (v as List<dynamic>)
+            .map((e) => Tag.fromJson(Map<String, Object?>.from(e as Map)))
+            .toList(),
+      ),
+      card: $checkedConvert(
+        'card',
+        (v) => v == null
+            ? null
+            : PreviewCard.fromJson(Map<String, Object?>.from(v as Map)),
+      ),
+      createdAt: $checkedConvert(
+        'created_at',
+        (v) => DateTime.parse(v as String),
+      ),
     );
+    return val;
+  },
+  fieldKeyMap: const {
+    'spoilerText': 'spoiler_text',
+    'favouritesCount': 'favourites_count',
+    'repliesCount': 'replies_count',
+    'reblogsCount': 'reblogs_count',
+    'inReplyToId': 'in_reply_to_id',
+    'inReplyToAccountId': 'in_reply_to_account_id',
+    'isFavourited': 'favourited',
+    'isReblogged': 'reblogged',
+    'isMuted': 'muted',
+    'isBookmarked': 'bookmarked',
+    'isSensitive': 'sensitive',
+    'isPinned': 'pinned',
+    'lastStatusAt': 'last_status_at',
+    'mediaAttachments': 'media_attachments',
+    'createdAt': 'created_at',
+  },
+);
 
-Map<String, dynamic> _$$StatusImplToJson(_$StatusImpl instance) {
-  final val = <String, dynamic>{
-    'id': instance.id,
-  };
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('url', instance.url);
-  val['uri'] = instance.uri;
-  val['content'] = instance.content;
-  val['spoiler_text'] = instance.spoilerText;
-  val['visibility'] = _$VisibilityEnumMap[instance.visibility]!;
-  val['favourites_count'] = instance.favouritesCount;
-  val['replies_count'] = instance.repliesCount;
-  val['reblogs_count'] = instance.reblogsCount;
-  writeNotNull('language', _$LanguageEnumMap[instance.language]);
-  writeNotNull('in_reply_to_id', instance.inReplyToId);
-  writeNotNull('in_reply_to_account_id', instance.inReplyToAccountId);
-  writeNotNull('favourited', instance.isFavourited);
-  writeNotNull('reblogged', instance.isReblogged);
-  writeNotNull('muted', instance.isMuted);
-  writeNotNull('bookmarked', instance.isBookmarked);
-  writeNotNull('sensitive', instance.isSensitive);
-  writeNotNull('pinned', instance.isPinned);
-  writeNotNull('last_status_at', instance.lastStatusAt?.toIso8601String());
-  val['account'] = instance.account.toJson();
-  writeNotNull('application', instance.application?.toJson());
-  writeNotNull('poll', instance.poll?.toJson());
-  writeNotNull('reblog', instance.reblog?.toJson());
-  val['media_attachments'] =
-      instance.mediaAttachments.map((e) => e.toJson()).toList();
-  val['emojis'] = instance.emojis.map((e) => e.toJson()).toList();
-  val['tags'] = instance.tags.map((e) => e.toJson()).toList();
-  val['created_at'] = instance.createdAt.toIso8601String();
-  return val;
-}
+Map<String, dynamic> _$StatusToJson(_Status instance) => <String, dynamic>{
+  'id': instance.id,
+  'url': ?instance.url,
+  'uri': instance.uri,
+  'content': instance.content,
+  'spoiler_text': instance.spoilerText,
+  'visibility': instance.visibility.toJson(),
+  'favourites_count': instance.favouritesCount,
+  'replies_count': instance.repliesCount,
+  'reblogs_count': instance.reblogsCount,
+  'language': ?_$LanguageEnumMap[instance.language],
+  'in_reply_to_id': ?instance.inReplyToId,
+  'in_reply_to_account_id': ?instance.inReplyToAccountId,
+  'favourited': ?instance.isFavourited,
+  'reblogged': ?instance.isReblogged,
+  'muted': ?instance.isMuted,
+  'bookmarked': ?instance.isBookmarked,
+  'sensitive': ?instance.isSensitive,
+  'pinned': ?instance.isPinned,
+  'last_status_at': ?instance.lastStatusAt?.toIso8601String(),
+  'account': instance.account.toJson(),
+  'application': ?instance.application?.toJson(),
+  'poll': ?instance.poll?.toJson(),
+  'reblog': ?instance.reblog?.toJson(),
+  'media_attachments': instance.mediaAttachments
+      .map((e) => e.toJson())
+      .toList(),
+  'emojis': instance.emojis.map((e) => e.toJson()).toList(),
+  'tags': instance.tags.map((e) => e.toJson()).toList(),
+  'card': ?instance.card?.toJson(),
+  'created_at': instance.createdAt.toIso8601String(),
+};
 
 const _$VisibilityEnumMap = {
   Visibility.public: 'public',

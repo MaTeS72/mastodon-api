@@ -15,7 +15,7 @@ part 'account_preferences.freezed.dart';
 part 'account_preferences.g.dart';
 
 @freezed
-class AccountPreferences with _$AccountPreferences {
+abstract class AccountPreferences with _$AccountPreferences {
   @JsonSerializable(includeIfNull: false)
   const factory AccountPreferences({
     /// `posting:default:visibility`

@@ -13,7 +13,7 @@ part 'scheduled_poll.freezed.dart';
 part 'scheduled_poll.g.dart';
 
 @freezed
-class ScheduledPoll with _$ScheduledPoll {
+abstract class ScheduledPoll with _$ScheduledPoll {
   @JsonSerializable(includeIfNull: false)
   const factory ScheduledPoll({
     /// The poll options to be used.

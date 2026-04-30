@@ -15,7 +15,7 @@ part 'usage_statistics.freezed.dart';
 part 'usage_statistics.g.dart';
 
 @freezed
-class UsageStatistics with _$UsageStatistics {
+abstract class UsageStatistics with _$UsageStatistics {
   const factory UsageStatistics({
     /// The recorded date time of this history.
     @JsonKey(name: 'day')
