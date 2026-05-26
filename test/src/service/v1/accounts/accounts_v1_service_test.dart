@@ -2638,6 +2638,34 @@ void main() {
         ),
       );
     });
+
+    test('forwards pagination cursors as query parameters', () async {
+      final accountsService = AccountsV1Service(
+        instance: 'test',
+        context: context.buildGetStub(
+          'test',
+          UserContext.oauth2Only,
+          '/api/v1/bookmarks',
+          'test/src/service/v1/accounts/data/lookup_bookmarked_statuses.json',
+          {
+            'limit': '40',
+            'max_id': '111111',
+            'min_id': '222222',
+            'since_id': '333333',
+          },
+        ),
+      );
+
+      final response = await accountsService.lookupBookmarkedStatuses(
+        limit: 40,
+        maxId: '111111',
+        minId: '222222',
+        sinceId: '333333',
+      );
+
+      expect(response, isA<MastodonResponse>());
+      expect(response.data, isA<List<Status>>());
+    });
   });
 
   group('.lookupBlockedDomains', () {

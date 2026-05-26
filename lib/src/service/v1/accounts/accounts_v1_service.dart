@@ -1216,6 +1216,12 @@ abstract class AccountsV1Service {
   /// - [limit]: Maximum number of results to return. Defaults to 20 statuses.
   ///            Max 40 statuses.
   ///
+  /// - [maxId]: Return results older than this ID.
+  ///
+  /// - [minId]: Return results immediately newer than this ID.
+  ///
+  /// - [sinceId]: Return results newer than this ID.
+  ///
   /// ## Endpoint Url
   ///
   /// - GET /api/v1/bookmarks HTTP/1.1
@@ -1233,6 +1239,9 @@ abstract class AccountsV1Service {
   /// - https://docs.joinmastodon.org/methods/bookmarks/#get
   Future<MastodonResponse<List<Status>>> lookupBookmarkedStatuses({
     int? limit,
+    String? maxId,
+    String? minId,
+    String? sinceId,
   });
 
   /// View domains the user has blocked.
@@ -2066,6 +2075,9 @@ class _AccountsV1Service extends BaseService implements AccountsV1Service {
   @override
   Future<MastodonResponse<List<Status>>> lookupBookmarkedStatuses({
     int? limit,
+    String? maxId,
+    String? minId,
+    String? sinceId,
   }) async =>
       super.transformMultiDataResponse(
         await super.get(
@@ -2073,6 +2085,9 @@ class _AccountsV1Service extends BaseService implements AccountsV1Service {
           '/api/v1/bookmarks',
           queryParameters: {
             'limit': limit,
+            if (maxId != null) 'max_id': maxId,
+            if (minId != null) 'min_id': minId,
+            if (sinceId != null) 'since_id': sinceId,
           },
         ),
         dataBuilder: Status.fromJson,
