@@ -769,6 +769,11 @@ enum Language implements Serializable {
   @override
   String get value => code;
 
+  /// Serializes to the ISO code so this enum can be jsonEncoded directly in
+  /// request bodies (mirrors `Visibility.toJson`). Without this, passing a
+  /// `language` to status create/update throws during body encoding.
+  String toJson() => value;
+
   /// Returns the [Language] associated with [code].
   static Language valueOf(final String code) {
     final $code = code.toLowerCase();
