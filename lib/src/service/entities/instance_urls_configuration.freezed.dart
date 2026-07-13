@@ -16,7 +16,10 @@ T _$identity<T>(T value) => value;
 mixin _$InstanceUrlsConfiguration {
 
 /// The Web Sockets URL for connecting to the streaming API.
- String get streaming;
+///
+/// Nullable because Mastodon-compatible servers without a streaming
+/// API (e.g. Pixelfed) send `"streaming": null`.
+ String? get streaming;
 /// Create a copy of InstanceUrlsConfiguration
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -49,7 +52,7 @@ abstract mixin class $InstanceUrlsConfigurationCopyWith<$Res>  {
   factory $InstanceUrlsConfigurationCopyWith(InstanceUrlsConfiguration value, $Res Function(InstanceUrlsConfiguration) _then) = _$InstanceUrlsConfigurationCopyWithImpl;
 @useResult
 $Res call({
- String streaming
+ String? streaming
 });
 
 
@@ -66,10 +69,10 @@ class _$InstanceUrlsConfigurationCopyWithImpl<$Res>
 
 /// Create a copy of InstanceUrlsConfiguration
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? streaming = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? streaming = freezed,}) {
   return _then(_self.copyWith(
-streaming: null == streaming ? _self.streaming : streaming // ignore: cast_nullable_to_non_nullable
-as String,
+streaming: freezed == streaming ? _self.streaming : streaming // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -154,7 +157,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String streaming)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? streaming)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _InstanceUrlsConfiguration() when $default != null:
 return $default(_that.streaming);case _:
@@ -175,7 +178,7 @@ return $default(_that.streaming);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String streaming)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? streaming)  $default,) {final _that = this;
 switch (_that) {
 case _InstanceUrlsConfiguration():
 return $default(_that.streaming);case _:
@@ -195,7 +198,7 @@ return $default(_that.streaming);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String streaming)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? streaming)?  $default,) {final _that = this;
 switch (_that) {
 case _InstanceUrlsConfiguration() when $default != null:
 return $default(_that.streaming);case _:
@@ -210,11 +213,14 @@ return $default(_that.streaming);case _:
 
 @JsonSerializable(includeIfNull: false)
 class _InstanceUrlsConfiguration implements InstanceUrlsConfiguration {
-  const _InstanceUrlsConfiguration({required this.streaming});
+  const _InstanceUrlsConfiguration({this.streaming});
   factory _InstanceUrlsConfiguration.fromJson(Map<String, dynamic> json) => _$InstanceUrlsConfigurationFromJson(json);
 
 /// The Web Sockets URL for connecting to the streaming API.
-@override final  String streaming;
+///
+/// Nullable because Mastodon-compatible servers without a streaming
+/// API (e.g. Pixelfed) send `"streaming": null`.
+@override final  String? streaming;
 
 /// Create a copy of InstanceUrlsConfiguration
 /// with the given fields replaced by the non-null parameter values.
@@ -249,7 +255,7 @@ abstract mixin class _$InstanceUrlsConfigurationCopyWith<$Res> implements $Insta
   factory _$InstanceUrlsConfigurationCopyWith(_InstanceUrlsConfiguration value, $Res Function(_InstanceUrlsConfiguration) _then) = __$InstanceUrlsConfigurationCopyWithImpl;
 @override @useResult
 $Res call({
- String streaming
+ String? streaming
 });
 
 
@@ -266,10 +272,10 @@ class __$InstanceUrlsConfigurationCopyWithImpl<$Res>
 
 /// Create a copy of InstanceUrlsConfiguration
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? streaming = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? streaming = freezed,}) {
   return _then(_InstanceUrlsConfiguration(
-streaming: null == streaming ? _self.streaming : streaming // ignore: cast_nullable_to_non_nullable
-as String,
+streaming: freezed == streaming ? _self.streaming : streaming // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 

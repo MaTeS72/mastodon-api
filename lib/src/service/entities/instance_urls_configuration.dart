@@ -15,7 +15,10 @@ abstract class InstanceUrlsConfiguration with _$InstanceUrlsConfiguration {
   @JsonSerializable(includeIfNull: false)
   const factory InstanceUrlsConfiguration({
     /// The Web Sockets URL for connecting to the streaming API.
-    required String streaming,
+    ///
+    /// Nullable because Mastodon-compatible servers without a streaming
+    /// API (e.g. Pixelfed) send `"streaming": null`.
+    String? streaming,
   }) = _InstanceUrlsConfiguration;
 
   factory InstanceUrlsConfiguration.fromJson(Map<String, Object?> json) =>

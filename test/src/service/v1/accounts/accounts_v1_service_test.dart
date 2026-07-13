@@ -1316,6 +1316,33 @@ void main() {
       );
     });
 
+    test('pixelfed case with missing note, notifying and blocked_by',
+        () async {
+      final accountsService = AccountsV1Service(
+        instance: 'test',
+        context: context.buildGetStub(
+          'test',
+          UserContext.oauth2Only,
+          '/api/v1/accounts/relationships',
+          'test/src/service/v1/accounts/data/'
+              'lookup_relationships_pixelfed.json',
+          {
+            'id[]': ['728832770840001304'],
+          },
+        ),
+      );
+
+      final response = await accountsService
+          .lookupRelationships(accountIds: ['728832770840001304']);
+
+      expect(response.data, isA<List<Relationship>>());
+      expect(response.data.single.isFollowing, isTrue);
+      expect(response.data.single.bio, '');
+      expect(response.data.single.isNotifying, isFalse);
+      expect(response.data.single.isBlocked, isFalse);
+      expect(response.data.single.languages, isNull);
+    });
+
     test('when unauthorized', () async {
       final accountsService = AccountsV1Service(
         instance: 'test',

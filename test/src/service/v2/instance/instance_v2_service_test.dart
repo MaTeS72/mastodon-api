@@ -35,6 +35,25 @@ void main() {
       expect(response.data, isA<V2Instance>());
     });
 
+    test('pixelfed case with null streaming url', () async {
+      final instanceService = InstanceV2Service(
+        instance: 'test',
+        context: context.buildGetStub(
+          'test',
+          UserContext.oauth2OrAnonymous,
+          '/api/v2/instance',
+          'test/src/service/v2/instance/data/pixelfed_instance.json',
+          {},
+        ),
+      );
+
+      final response = await instanceService.lookupInformation();
+
+      expect(response.data, isA<V2Instance>());
+      expect(response.data.domain, 'pixelfed.social');
+      expect(response.data.configuration?.urls.streaming, isNull);
+    });
+
     test('when unauthorized', () async {
       final instanceService = InstanceV2Service(
         instance: 'test',

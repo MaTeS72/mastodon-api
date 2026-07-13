@@ -14,21 +14,27 @@ _Relationship _$RelationshipFromJson(Map json) => $checkedCreate(
   ($checkedConvert) {
     final val = _Relationship(
       id: $checkedConvert('id', (v) => v as String),
-      bio: $checkedConvert('note', (v) => v as String),
-      isFollowing: $checkedConvert('following', (v) => v as bool),
-      isFollowed: $checkedConvert('followed_by', (v) => v as bool),
-      isShowingReblogs: $checkedConvert('showing_reblogs', (v) => v as bool),
-      isNotifying: $checkedConvert('notifying', (v) => v as bool),
-      isBlocking: $checkedConvert('blocking', (v) => v as bool),
-      isBlocked: $checkedConvert('blocked_by', (v) => v as bool),
-      isMuting: $checkedConvert('muting', (v) => v as bool),
+      bio: $checkedConvert('note', (v) => v as String? ?? ''),
+      isFollowing: $checkedConvert('following', (v) => v as bool? ?? false),
+      isFollowed: $checkedConvert('followed_by', (v) => v as bool? ?? false),
+      isShowingReblogs: $checkedConvert(
+        'showing_reblogs',
+        (v) => v as bool? ?? false,
+      ),
+      isNotifying: $checkedConvert('notifying', (v) => v as bool? ?? false),
+      isBlocking: $checkedConvert('blocking', (v) => v as bool? ?? false),
+      isBlocked: $checkedConvert('blocked_by', (v) => v as bool? ?? false),
+      isMuting: $checkedConvert('muting', (v) => v as bool? ?? false),
       isMutingNotifications: $checkedConvert(
         'muting_notifications',
-        (v) => v as bool,
+        (v) => v as bool? ?? false,
       ),
-      isRequested: $checkedConvert('requested', (v) => v as bool),
-      isDomainBlocking: $checkedConvert('domain_blocking', (v) => v as bool),
-      isEndorsed: $checkedConvert('endorsed', (v) => v as bool),
+      isRequested: $checkedConvert('requested', (v) => v as bool? ?? false),
+      isDomainBlocking: $checkedConvert(
+        'domain_blocking',
+        (v) => v as bool? ?? false,
+      ),
+      isEndorsed: $checkedConvert('endorsed', (v) => v as bool? ?? false),
       languages: $checkedConvert(
         'languages',
         (v) => (v as List<dynamic>?)
@@ -54,24 +60,23 @@ _Relationship _$RelationshipFromJson(Map json) => $checkedCreate(
   },
 );
 
-Map<String, dynamic> _$RelationshipToJson(
-  _Relationship instance,
-) => <String, dynamic>{
-  'id': instance.id,
-  'note': instance.bio,
-  'following': instance.isFollowing,
-  'followed_by': instance.isFollowed,
-  'showing_reblogs': instance.isShowingReblogs,
-  'notifying': instance.isNotifying,
-  'blocking': instance.isBlocking,
-  'blocked_by': instance.isBlocked,
-  'muting': instance.isMuting,
-  'muting_notifications': instance.isMutingNotifications,
-  'requested': instance.isRequested,
-  'domain_blocking': instance.isDomainBlocking,
-  'endorsed': instance.isEndorsed,
-  'languages': ?instance.languages?.map((e) => _$LanguageEnumMap[e]!).toList(),
-};
+Map<String, dynamic> _$RelationshipToJson(_Relationship instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'note': instance.bio,
+      'following': instance.isFollowing,
+      'followed_by': instance.isFollowed,
+      'showing_reblogs': instance.isShowingReblogs,
+      'notifying': instance.isNotifying,
+      'blocking': instance.isBlocking,
+      'blocked_by': instance.isBlocked,
+      'muting': instance.isMuting,
+      'muting_notifications': instance.isMutingNotifications,
+      'requested': instance.isRequested,
+      'domain_blocking': instance.isDomainBlocking,
+      'endorsed': instance.isEndorsed,
+      'languages': ?instance.languages?.map((e) => e.toJson()).toList(),
+    };
 
 const _$LanguageEnumMap = {
   Language.afar: 'aa',
