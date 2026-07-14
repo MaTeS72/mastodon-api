@@ -11,11 +11,11 @@ part of 'instance_urls_configuration.dart';
 _InstanceUrlsConfiguration _$InstanceUrlsConfigurationFromJson(Map json) =>
     $checkedCreate('_InstanceUrlsConfiguration', json, ($checkedConvert) {
       final val = _InstanceUrlsConfiguration(
-        streaming: $checkedConvert('streaming', (v) => v as String),
+        streaming: $checkedConvert('streaming', (v) => v as String?),
       );
       return val;
     });
 
 Map<String, dynamic> _$InstanceUrlsConfigurationToJson(
   _InstanceUrlsConfiguration instance,
-) => <String, dynamic>{'streaming': instance.streaming};
+) => <String, dynamic>{'streaming': ?instance.streaming};
