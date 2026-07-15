@@ -44,6 +44,45 @@ MockClientContext buildGetStub(
   return mockClientContext;
 }
 
+/// Builds a GET stub whose response is delivered as raw UTF-8 [Response.bytes]
+/// with a caller-supplied `Content-Type` header.
+///
+/// This reproduces servers (e.g. GoToSocial) that return UTF-8 payloads without
+/// `charset=utf-8`, where `http`'s [Response.body] getter would fall back to
+/// latin1 and corrupt non-ASCII text. The default [contentType] omits the
+/// charset so the response bytes are the only source of truth for the encoding.
+MockClientContext buildGetBytesStub(
+  final String instance,
+  final UserContext userContext,
+  final String unencodedPath,
+  final String resourcePath,
+  final Map<String, dynamic> queryParameters, {
+  Map<String, String> headers = const {},
+  String contentType = 'application/json',
+  int statusCode = 200,
+}) {
+  final mockClientContext = MockClientContext();
+  final requestUri = Uri.https(instance, unencodedPath, queryParameters);
+
+  when(mockClientContext.get(
+    userContext,
+    requestUri,
+    headers: headers,
+  )).thenAnswer(
+    (_) async => Response.bytes(
+      utf8.encode(await File(resourcePath).readAsString()),
+      statusCode,
+      headers: {'content-type': contentType},
+      request: Request(
+        'GET',
+        requestUri,
+      ),
+    ),
+  );
+
+  return mockClientContext;
+}
+
 MockClientContext buildPostStub(
   final String instance,
   final UserContext userContext,

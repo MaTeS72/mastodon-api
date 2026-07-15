@@ -133,7 +133,7 @@ abstract class BaseService implements _Service {
         unencodedPath,
         queryParameters: queryParameters,
         validate: (response) {
-          _checkGetResponse(response, response.body);
+          _checkGetResponse(response, response.utf8Body);
 
           return response;
         },
@@ -291,7 +291,7 @@ abstract class BaseService implements _Service {
           rateLimitConverter.convert(response.headers),
         ),
         data: dataBuilder(
-          jsonDecode(response.body),
+          jsonDecode(response.utf8Body),
         ),
       );
 
@@ -300,7 +300,7 @@ abstract class BaseService implements _Service {
       Response response, {
         required DataBuilder<D> dataBuilder,
       }) {
-    final json = jsonDecode(response.body);
+    final json = jsonDecode(response.utf8Body);
 
     return MastodonResponse(
       headers: response.headers,
@@ -322,7 +322,7 @@ abstract class BaseService implements _Service {
   MastodonResponse<List<D>> transformMultiRawDataResponse<D>(
       Response response,
       ) {
-    final json = jsonDecode(response.body);
+    final json = jsonDecode(response.utf8Body);
 
     return MastodonResponse(
       headers: response.headers,
@@ -346,7 +346,7 @@ abstract class BaseService implements _Service {
     }
 
     if (HttpStatus.ok.equalsByCode(response.statusCode) &&
-        response.body.isEmpty) {
+        response.utf8Body.isEmpty) {
       //! No JSON in response but okay, it's succeeded.
       return response;
     }
@@ -379,7 +379,7 @@ abstract class BaseService implements _Service {
       );
     }
 
-    tryJsonDecode(response, response.body);
+    tryJsonDecode(response, response.utf8Body);
 
     return response;
   }
@@ -443,4 +443,18 @@ class RateLimitConverter {
 
     return DateTime.parse(input[key]!).toLocal().toIso8601String();
   }
+}
+
+extension on Response {
+  /// Decodes the response body as UTF-8, regardless of the `charset` in the
+  /// `Content-Type` header.
+  ///
+  /// The `http` package's [Response.body] getter derives the encoding from the
+  /// `Content-Type` header and falls back to `latin1` when `charset` is absent
+  /// or unrecognised. Some Mastodon-compatible servers (e.g. GoToSocial) return
+  /// bodies without `charset=utf-8`, which corrupts non-ASCII text such as
+  /// Cyrillic into mojibake (`Ð¾ Ñ Ð½ Ðµ …`). Mastodon API payloads are always
+  /// UTF-8, so decode them as such. `allowMalformed` guards against a hard
+  /// crash if a truly invalid byte sequence ever arrives.
+  String get utf8Body => utf8.decode(bodyBytes, allowMalformed: true);
 }
